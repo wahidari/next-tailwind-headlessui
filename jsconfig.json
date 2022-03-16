@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "baseUrl": "./",
+      "paths": {
+        "@validations/*": ["validations/*"],
+        "@public/*": ["public/*"],
+        "@components/*": ["components/*"],
+        "@styles/*": ["styles/*"],
+        "@utils/*": ["utils/*"],
+      }
+    },
+    "exclude": ["node_modules"]
+  }
+  

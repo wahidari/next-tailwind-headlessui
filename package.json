@@ -1,21 +1,24 @@
 {
+  "name": "next-tailwind-headlessui-starter",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@headlessui/react": "^1.4.0",
-    "@heroicons/react": "^1.0.4",
-    "highlight.js": "^11.2.0",
-    "next": "latest",
+    "@headlessui/react": "^1.5.0",
+    "@heroicons/react": "^1.0.5",
+    "next": "12.0.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.6",
-    "postcss": "^8.3.5",
-    "tailwindcss": "^2.2.4"
+    "autoprefixer": "^10.4.0",
+    "eslint": "8.5.0",
+    "eslint-config-next": "12.0.7",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.7"
   }
 }
