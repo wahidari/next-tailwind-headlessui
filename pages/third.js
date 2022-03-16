@@ -3,7 +3,7 @@ import Image from "next/image";
 import Footer from "../components/Footer"
 import Navbar from "../components/Navbar";
 
-export default function Second() {
+export default function Third() {
     return (
         <div>
             <Head>
@@ -16,7 +16,7 @@ export default function Second() {
             </Head>
             <Navbar />
 
-            <main className="container px-5">
+            <main className="container mx-auto">
                 <section className="text-gray-600 body-font">
                     <div className="container px-5 py-24 mx-auto">
                         <div className="flex flex-col text-center w-full mb-20">
@@ -26,7 +26,7 @@ export default function Second() {
                             <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
                                 Whatever cardigan tote bag tumblr hexagon
                                 brooklyn asymmetrical gentrify, subway tile poke
-                                farm-to-table. Franzen you probably haven't
+                                farm-to-table. Franzen you probably havent
                                 heard of them man bun deep jianbing selfies
                                 heirloom prism food truck ugh squid celiac
                                 humblebrag.
@@ -41,7 +41,7 @@ export default function Second() {
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
                                         strokeWidth="2"
-                                        className="text-indigo-500 w-12 h-12 mb-3 inline-block"
+                                        className="text-blue-500 w-12 h-12 mb-3 inline-block"
                                         viewBox="0 0 24 24"
                                     >
                                         <path d="M8 17l4 4 4-4m-4-5v9"></path>
@@ -61,7 +61,7 @@ export default function Second() {
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
                                         strokeWidth="2"
-                                        className="text-indigo-500 w-12 h-12 mb-3 inline-block"
+                                        className="text-blue-500 w-12 h-12 mb-3 inline-block"
                                         viewBox="0 0 24 24"
                                     >
                                         <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
@@ -82,7 +82,7 @@ export default function Second() {
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
                                         strokeWidth="2"
-                                        className="text-indigo-500 w-12 h-12 mb-3 inline-block"
+                                        className="text-blue-500 w-12 h-12 mb-3 inline-block"
                                         viewBox="0 0 24 24"
                                     >
                                         <path d="M3 18v-6a9 9 0 0118 0v6"></path>
@@ -102,7 +102,7 @@ export default function Second() {
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
                                         strokeWidth="2"
-                                        className="text-indigo-500 w-12 h-12 mb-3 inline-block"
+                                        className="text-blue-500 w-12 h-12 mb-3 inline-block"
                                         viewBox="0 0 24 24"
                                     >
                                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>

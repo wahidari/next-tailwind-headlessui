@@ -16,7 +16,7 @@ export default function Second() {
             </Head>
             <Navbar />
 
-            <main className="container px-5">
+            <main className="container mx-auto">
                 <section className="text-gray-600 body-font">
                     <div className="container px-5 py-24 mx-auto">
                         <div className="text-center mb-20">
@@ -29,16 +29,15 @@ export default function Second() {
                                 juice poutine, ramps microdosing banh mi pug.
                             </p>
                             <div className="flex mt-6 justify-center">
-                                <div className="w-16 h-1 rounded-full bg-indigo-500 inline-flex"></div>
+                                <div className="w-16 h-1 rounded-full bg-blue-500 inline-flex"></div>
                             </div>
                         </div>
                         <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
                             <div className="p-4 md:w-1/3 flex flex-col text-center items-center">
-                                <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+                                <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-blue-100 text-blue-500 mb-5 flex-shrink-0">
                                     <svg
                                         fill="none"
                                         stroke="currentColor"
-                                        strokeLinejoin="round"
                                         strokeLinejoin="round"
                                         strokeWidth="2"
                                         className="w-10 h-10"
@@ -58,7 +57,7 @@ export default function Second() {
                                         microdosing banh mi pug VHS try-hard.
                                     </p>
                                     <a
-                                        className="mt-3 text-indigo-500 inline-flex items-center"
+                                        className="mt-3 text-blue-500 inline-flex items-center"
                                         href="#"
                                     >
                                         Learn More
@@ -77,11 +76,10 @@ export default function Second() {
                                 </div>
                             </div>
                             <div className="p-4 md:w-1/3 flex flex-col text-center items-center">
-                                <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+                                <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-blue-100 text-blue-500 mb-5 flex-shrink-0">
                                     <svg
                                         fill="none"
                                         stroke="currentColor"
-                                        strokeLinejoin="round"
                                         strokeLinejoin="round"
                                         strokeWidth="2"
                                         className="w-10 h-10"
@@ -103,14 +101,13 @@ export default function Second() {
                                         microdosing banh mi pug VHS try-hard.
                                     </p>
                                     <a
-                                        className="mt-3 text-indigo-500 inline-flex items-center"
+                                        className="mt-3 text-blue-500 inline-flex items-center"
                                         href="#"
                                     >
                                         Learn More
                                         <svg
                                             fill="none"
                                             stroke="currentColor"
-                                            strokeLinejoin="round"
                                             strokeLinejoin="round"
                                             strokeWidth="2"
                                             className="w-4 h-4 ml-2"
@@ -122,11 +119,10 @@ export default function Second() {
                                 </div>
                             </div>
                             <div className="p-4 md:w-1/3 flex flex-col text-center items-center">
-                                <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+                                <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-blue-100 text-blue-500 mb-5 flex-shrink-0">
                                     <svg
                                         fill="none"
                                         stroke="currentColor"
-                                        strokeLinejoin="round"
                                         strokeLinejoin="round"
                                         strokeWidth="2"
                                         className="w-10 h-10"
@@ -147,14 +143,13 @@ export default function Second() {
                                         microdosing banh mi pug VHS try-hard.
                                     </p>
                                     <a
-                                        className="mt-3 text-indigo-500 inline-flex items-center"
+                                        className="mt-3 text-blue-500 inline-flex items-center"
                                         href="#"
                                     >
                                         Learn More
                                         <svg
                                             fill="none"
                                             stroke="currentColor"
-                                            strokeLinejoin="round"
                                             strokeLinejoin="round"
                                             strokeWidth="2"
                                             className="w-4 h-4 ml-2"
@@ -166,7 +161,7 @@ export default function Second() {
                                 </div>
                             </div>
                         </div>
-                        <button className="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                        <button className="flex mx-auto mt-16 text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">
                             Button
                         </button>
                     </div>
