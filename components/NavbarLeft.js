@@ -11,7 +11,7 @@ export default function Navbar() {
         {({ open }) => (
           <>
             <div className="container mx-auto px-5">
-              <div className="flex items-center justify-between h-16">
+              <div className="flex items-center justify-between md:justify-start h-16">
                 {/* web logo  */}
                 <div className="flex-shrink-0">
                   <Link href="/">
@@ -73,9 +73,6 @@ export default function Navbar() {
                         </>
                       )}
                     </Popover>
-                    <ActiveLink activeClassName="bg-blue-500 text-white" href="/nav-bar">
-                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-blue-400 hover:text-white">Navbar</a>
-                    </ActiveLink>
                   </div>
                 </div>
                 {/* End Nav Link  */}
@@ -133,9 +130,6 @@ export default function Navbar() {
                     </>
                   )}
                 </Menu>
-                <ActiveLink activeClassName="bg-blue-500 text-white" href="/nav-bar">
-                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-blue-400 hover:text-white">Navbar</a>
-                </ActiveLink>
               </div>
             </Disclosure.Panel>
             {/* End Mobile menu panel */}
