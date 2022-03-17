@@ -4,6 +4,8 @@ import Footer from "@components/Footer";
 import Navbar from "@components/Navbar";
 import NavbarLeft from "@components/NavbarLeft";
 import NavbarCenter from "@components/NavbarCenter";
+import NavbarFromRight from "@components/NavbarFromRight";
+import NavbarFromLeft from "@components/NavbarFromLeft";
 import Menu from "@components/Menu";
 
 export default function Nav() {
@@ -23,6 +25,10 @@ export default function Nav() {
             <NavbarLeft />
             <br/>
             <NavbarCenter />
+            <br/>
+            <NavbarFromRight />
+            <br/>
+            <NavbarFromLeft />
 
             <main className="container mx-auto">
                 <section className="text-gray-600 body-font">
