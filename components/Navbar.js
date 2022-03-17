@@ -29,11 +29,11 @@ export default function Navbar() {
                 {/* Nav Link  */}
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">
-                    <ActiveLink activeClassName="bg-blue-500 text-white" href="/">
-                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-blue-400 hover:text-white">First</a>
+                    <ActiveLink activeClassName="bg-gray-800 text-white" href="/">
+                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">First</a>
                     </ActiveLink>
-                    <ActiveLink activeClassName="bg-blue-500 text-white" href="/second">
-                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-blue-400 hover:text-white">Second</a>
+                    <ActiveLink activeClassName="bg-gray-800 text-white" href="/second">
+                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">Second</a>
                     </ActiveLink>
                     <Popover className="relative">
                       {({ open }) => (
@@ -54,19 +54,19 @@ export default function Navbar() {
                             leaveTo="opacity-0 scale-95"
                           >
                             <Popover.Panel className="absolute bg-white shadow space-y-1 top-12 px-2 py-2 rounded w-40">
-                              <ActiveLink activeClassName="bg-blue-500 text-white" href="/third">
-                                <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-blue-400 hover:text-white">Third</a>
+                              <ActiveLink activeClassName="bg-gray-800 text-white" href="/third">
+                                <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">Third</a>
                               </ActiveLink>
-                              <ActiveLink activeClassName="bg-blue-500 text-white" href="/fourth">
-                                <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-blue-400 hover:text-white">Fourth</a>
+                              <ActiveLink activeClassName="bg-gray-800 text-white" href="/fourth">
+                                <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">Fourth</a>
                               </ActiveLink>
                             </Popover.Panel>
                           </Transition>
                         </>
                       )}
                     </Popover>
-                    <ActiveLink activeClassName="bg-blue-500 text-white" href="/nav-bar">
-                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-blue-400 hover:text-white">Navbar</a>
+                    <ActiveLink activeClassName="bg-gray-800 text-white" href="/nav-bar">
+                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">Navbar</a>
                     </ActiveLink>
                   </div>
                 </div>
@@ -74,7 +74,7 @@ export default function Navbar() {
 
                 {/* Mobile menu button */}
                 <div className="-mr-2 flex md:hidden">
-                  <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-white hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-500 focus:ring-white">
+                  <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                     <span className="sr-only">
                       Open main menu
                     </span>
@@ -92,11 +92,11 @@ export default function Navbar() {
             {/* Mobile menu panel */}
             <Disclosure.Panel className="md:hidden">
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <ActiveLink activeClassName="bg-blue-500 text-white" href="/">
-                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-blue-400 hover:text-white">First</a>
+                <ActiveLink activeClassName="bg-gray-800 text-white" href="/">
+                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">First</a>
                 </ActiveLink>
-                <ActiveLink activeClassName="bg-blue-500 text-white" href="/second">
-                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-blue-400 hover:text-white">Second</a>
+                <ActiveLink activeClassName="bg-gray-800 text-white" href="/second">
+                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">Second</a>
                 </ActiveLink>
                 <Menu>
                   {({ open }) => (
@@ -112,21 +112,21 @@ export default function Navbar() {
                       </Menu.Button>
                       <Menu.Items className="space-y-1 px-3">
                         <Menu.Item>
-                          <ActiveLink activeClassName="bg-blue-500 text-white" href="/third">
-                            <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-blue-400 hover:text-white">Third</a>
+                          <ActiveLink activeClassName="bg-gray-800 text-white" href="/third">
+                            <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">Third</a>
                           </ActiveLink>
                         </Menu.Item>
                         <Menu.Item>
-                          <ActiveLink activeClassName="bg-blue-500 text-white" href="/fourth">
-                            <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-blue-400 hover:text-white">Fourth</a>
+                          <ActiveLink activeClassName="bg-gray-800 text-white" href="/fourth">
+                            <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">Fourth</a>
                           </ActiveLink>
                         </Menu.Item>
                       </Menu.Items>
                     </>
                   )}
                 </Menu>
-                <ActiveLink activeClassName="bg-blue-500 text-white" href="/nav-bar">
-                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-blue-400 hover:text-white">Navbar</a>
+                <ActiveLink activeClassName="bg-gray-800 text-white" href="/nav-bar">
+                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">Navbar</a>
                 </ActiveLink>
               </div>
             </Disclosure.Panel>

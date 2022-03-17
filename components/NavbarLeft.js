@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Fragment } from 'react'
-import { Disclosure, Menu, Popover, Transition } from '@headlessui/react'
+import { Menu, Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon, ChevronRightIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import ActiveLink from '@components/ActiveLink'
 
@@ -70,7 +70,7 @@ export default function Navbar() {
 
               {/* Mobile menu button */}
               <div className="-mr-2 flex md:hidden">
-                <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-500 hover:text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+                <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-500 hover:text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-900">
                   <span className="sr-only">Open main menu</span>
                   <MenuIcon className="h-6 w-6" aria-hidden="true" />
                 </Popover.Button>
@@ -108,7 +108,7 @@ export default function Navbar() {
                   </div>
                   {/* CLose Mobile Menu Button  */}
                   <div>
-                    <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-500 hover:text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+                    <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-500 hover:text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-800">
                       <span className="sr-only">Close main menu</span>
                       <XIcon className="h-6 w-6" aria-hidden="true" />
                     </Popover.Button>
@@ -149,6 +149,9 @@ export default function Navbar() {
                       </>
                     )}
                   </Menu>
+                  <ActiveLink activeClassName="bg-gray-800 text-white" href="/nav-bar">
+                    <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-800">Navbar</a>
+                  </ActiveLink>
                 </div>
               </div>
             </Popover.Panel>

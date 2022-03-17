@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Fragment, useState } from 'react'
-import { Dialog, Transition, Disclosure, Menu, Popover } from '@headlessui/react'
+import { Dialog, Transition, Menu, Popover } from '@headlessui/react'
 import { ChevronDownIcon, ChevronRightIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import ActiveLink from '@components/ActiveLink'
 
@@ -73,7 +73,7 @@ export default function NavbarSlide() {
 
           {/* Nav Button  */}
           <div className="hidden md:block">
-            <button className="inline-flex mr-2 text-white bg-blue-500 border-0 py-1.5 px-4 focus:outline-none hover:bg-blue-600 rounded text-base font-medium">
+            <button className="inline-flex mr-2 text-white bg-gray-800 border-0 py-1.5 px-4 focus:outline-none hover:bg-gray-900 rounded text-base font-medium">
               Login
             </button>
             <button className="inline-flex text-dark-500 border-2 py-1.5 px-4 focus:outline-none hover:bg-gray-300 duration-300 rounded text-base font-medium">
@@ -84,7 +84,7 @@ export default function NavbarSlide() {
 
           {/* Mobile menu button */}
           <div className="-mr-1 flex md:hidden">
-            <button onClick={() => setOpenMobileMenu(true)} className="inline-flex items-center justify-center p-1.5 rounded-md text-gray-600 hover:text-white hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-500 focus:ring-white">
+            <button onClick={() => setOpenMobileMenu(true)} className="inline-flex items-center justify-center p-1.5 rounded-md text-gray-600 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
               <span className="sr-only">Open panel</span>
               <MenuIcon className="block h-6 w-6" aria-hidden="true" />
             </button>
@@ -184,7 +184,7 @@ export default function NavbarSlide() {
                           </ActiveLink>
                           <hr className="my-1 mx-2"/>
                           <div className="pt-2 mx-2">
-                            <button className="w-full text-white bg-blue-500 border-0 py-1.5 px-4 focus:outline-none hover:bg-blue-600 rounded text-base font-medium">
+                            <button className="w-full text-white bg-gray-800 border-0 py-1.5 px-4 focus:outline-none hover:bg-gray-900 rounded text-base font-medium">
                               Login
                             </button>
                           </div>

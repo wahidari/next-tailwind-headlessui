@@ -75,7 +75,7 @@ export default function Navbar() {
 
                 {/* Nav Button  */}
                 <div className="hidden md:block">
-                  <button className="inline-flex text-white bg-blue-500 border-0 py-1.5 px-4 focus:outline-none hover:bg-blue-600 rounded text-base font-medium">
+                  <button className="inline-flex text-white bg-gray-800 border-0 py-1.5 px-4 focus:outline-none hover:bg-gray-900 rounded text-base font-medium">
                     Login
                   </button>
                 </div>
@@ -83,7 +83,7 @@ export default function Navbar() {
 
                 {/* Mobile menu button */}
                 <div className="-mr-2 flex md:hidden">
-                  <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-white hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-500 focus:ring-white">
+                  <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                     <span className="sr-only">
                       Open main menu
                     </span>
@@ -154,7 +154,7 @@ export default function Navbar() {
                   <hr className="mx-3" />
                   <div className="pt-2 mx-3">
 
-                    <button className="w-full text-white bg-blue-500 border-0 py-1.5 px-4 focus:outline-none hover:bg-blue-600 rounded text-base font-medium">
+                    <button className="w-full text-white bg-gray-800 border-0 py-1.5 px-4 focus:outline-none hover:bg-gray-900 rounded text-base font-medium">
                       Login
                     </button>
                   </div>

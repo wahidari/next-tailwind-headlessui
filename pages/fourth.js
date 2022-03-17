@@ -116,7 +116,7 @@ export default function Fourth() {
                         </div>
                         <div className="flex pl-4 mt-4 lg:w-2/3 w-full mx-auto">
                             <a
-                                className="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0"
+                                className="text-gray-800 inline-flex items-center md:mb-2 lg:mb-0"
                                 href="#"
                             >
                                 Learn More
@@ -132,7 +132,7 @@ export default function Fourth() {
                                     <path d="M5 12h14M12 5l7 7-7 7"></path>
                                 </svg>
                             </a>
-                            <button className="flex ml-auto text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded">
+                            <button className="flex ml-auto text-white bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-900 rounded">
                                 Button
                             </button>
                         </div>
