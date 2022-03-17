@@ -33,7 +33,7 @@ export default function Navbar() {
                       <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">First</a>
                     </ActiveLink>
                     <ActiveLink activeClassName="bg-gray-800 text-white" href="/design-system">
-                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">Design System</a>
+                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">Components</a>
                     </ActiveLink>
                     <ActiveLink activeClassName="bg-gray-800 text-white" href="/second">
                       <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">Second</a>
@@ -98,9 +98,13 @@ export default function Navbar() {
                 <ActiveLink activeClassName="bg-gray-800 text-white" href="/">
                   <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">First</a>
                 </ActiveLink>
+                <ActiveLink activeClassName="bg-gray-800 text-white" href="/design-system">
+                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">Components</a>
+                </ActiveLink>
                 <ActiveLink activeClassName="bg-gray-800 text-white" href="/second">
                   <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">Second</a>
-                </ActiveLink>
+                </ActiveLink
+
                 <Menu>
                   {({ open }) => (
                     <>
