@@ -32,6 +32,9 @@ export default function Navbar() {
                     <ActiveLink activeClassName="bg-gray-800 text-white" href="/">
                       <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">First</a>
                     </ActiveLink>
+                    <ActiveLink activeClassName="bg-gray-800 text-white" href="/design-system">
+                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">Design System</a>
+                    </ActiveLink>
                     <ActiveLink activeClassName="bg-gray-800 text-white" href="/second">
                       <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">Second</a>
                     </ActiveLink>
