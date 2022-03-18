@@ -6,7 +6,7 @@ export default function ButtonPills({ className, type, value, onClick, disabled,
 			onClick={onClick}
 			value={value}
 			className={`
-				text-sm text-white transition-all outline-none px-4 py-2 rounded-full font-medium bg-blue-500 
+				text-sm text-white transition-all outline-none px-3 py-1.5 rounded-full font-medium bg-blue-500 
 				${className ? className + " " : ""}
 				${disabled ? "cursor-not-allowed" : "hover:bg-blue-600"} 
 				`}
@@ -24,7 +24,7 @@ ButtonPills.green = ({ className, type, value, onClick, disabled, children, ...r
 			onClick={onClick}
 			value={value}
 			className={`
-				text-sm text-white transition-all outline-none px-4 py-2 rounded-full font-medium bg-emerald-500
+				text-sm text-white transition-all outline-none px-3 py-1.5 rounded-full font-medium bg-emerald-500
 				${className ? className + " " : ""}
 				${disabled ? "cursor-not-allowed" : "hover:bg-emerald-600"} 
 				`}
@@ -42,9 +42,27 @@ ButtonPills.yellow = ({ className, type, value, onClick, disabled, children, ...
 			onClick={onClick}
 			value={value}
 			className={`
-				text-sm text-white transition-all outline-none px-4 py-2 rounded-full font-medium bg-amber-500
+				text-sm text-white transition-all outline-none px-3 py-1.5 rounded-full font-medium bg-amber-500
 				${className ? className + " " : ""}
 				${disabled ? "cursor-not-allowed" : "hover:bg-amber-600"} 
+				`}
+		>
+			{children}
+		</button>
+	);
+}
+
+ButtonPills.orange = ({ className, type, value, onClick, disabled, children, ...rest }) => {
+	return (
+		<button
+			{...rest}
+			type={type}
+			onClick={onClick}
+			value={value}
+			className={`
+				text-sm text-white transition-all outline-none px-3 py-1.5 rounded-full font-medium bg-orange-500
+				${className ? className + " " : ""}
+				${disabled ? "cursor-not-allowed" : "hover:bg-orange-600"} 
 				`}
 		>
 			{children}
@@ -60,9 +78,27 @@ ButtonPills.red = ({ className, type, value, onClick, disabled, children, ...res
 			onClick={onClick}
 			value={value}
 			className={`
-				text-sm text-white transition-all outline-none px-4 py-2 rounded-full font-medium bg-red-500
+				text-sm text-white transition-all outline-none px-3 py-1.5 rounded-full font-medium bg-red-500
 				${className ? className + " " : ""}
 				${disabled ? "cursor-not-allowed" : "hover:bg-red-600"} 
+				`}
+		>
+			{children}
+		</button>
+	);
+}
+
+ButtonPills.purple = ({ className, type, value, onClick, disabled, children, ...rest }) => {
+	return (
+		<button
+			{...rest}
+			type={type}
+			onClick={onClick}
+			value={value}
+			className={`
+				text-sm text-white transition-all outline-none px-3 py-1.5 rounded-full font-medium bg-violet-500
+				${className ? className + " " : ""}
+				${disabled ? "cursor-not-allowed" : "hover:bg-violet-600"} 
 				`}
 		>
 			{children}
@@ -78,7 +114,7 @@ ButtonPills.dark = ({ className, type, value, onClick, disabled, children, ...re
 			onClick={onClick}
 			value={value}
 			className={`
-				text-sm text-white transition-all outline-none px-4 py-2 rounded-full font-medium bg-gray-500
+				text-sm text-white transition-all outline-none px-3 py-1.5 rounded-full font-medium bg-gray-500
 				${className ? className + " " : ""}
 				${disabled ? "cursor-not-allowed" : "hover:bg-gray-600"} 
 				`}

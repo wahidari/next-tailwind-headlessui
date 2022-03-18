@@ -1,6 +1,7 @@
-import { useContext } from "react";
-import { GlobalContext } from "@utils/GlobalContext";
+import { Fragment, useContext } from "react";
 import Head from "next/head";
+import { GlobalContext } from "@utils/GlobalContext";
+import { Transition } from '@headlessui/react'
 import Button from "@components/Button";
 import ButtonOutline from "@components/ButtonOutline";
 import ButtonPills from "@components/ButtonPills";
@@ -16,7 +17,8 @@ import Badge from "@components/Badge";
 import BadgeOutline from "@components/BadgeOutline";
 import BadgePills from "@components/BadgePills";
 import BadgeOutlinePills from "@components/BadgeOutlinePills";
-import Loading from "@components/Loading";
+import Skeletons from "@components/Skeletons";
+import { MoonIcon, SunIcon } from "@heroicons/react/outline";
 import Section from "@components/Section";
 
 export default function Third() {
@@ -47,92 +49,22 @@ export default function Third() {
 				</section>
 				<section className="my-10 mx-5 fixed bottom-3 md:bottom-1/3 right-3 md:right-10 z-10">
 					<Heading.h3>Dark Mode</Heading.h3>
-					<div
+					{darkMode ? 
+						<button onClick={() => setDarkMode(!darkMode)} className="w-8 h-8 p-1 transition-all ease-in duration-300 bg-neutral-800 hover:bg-neutral-700 text-white rounded-full">
+							<SunIcon />
+						</button>
+						:
+						<button onClick={() => setDarkMode(!darkMode)} className="w-8 h-8 p-1 transition-all ease-in duration-300 bg-gray-100 hover:bg-gray-200 rounded-full">
+							<MoonIcon />
+						</button>
+						
+					}
+					{/* <div
 						onClick={() => setDarkMode(!darkMode)}
 						className="transition-all cursor pointer w-12 h-7 dark:bg-blue-500 bg-neutral-300 rounded-full relative"
 					>
 						<div className="h-5 w-5 bg-white rounded-full absolute top-1 transition-all dark:left-6 left-1"></div>
-					</div>
-				</section>
-				<section className="my-10 mx-5">
-					<Heading.h3>Button</Heading.h3>
-					<div className="flex items-center flex-wrap gap-2">
-						<Button>Default</Button>
-						<Button.green>Green</Button.green>
-						<Button.yellow>Yellow</Button.yellow>
-						<Button.red>Red</Button.red>
-						<Button.dark>Dark</Button.dark>
-					</div>
-					<Code code={
-						`import Button from "@components/Button";
-
-<Button>Default</Button>
-<Button.green>Green</Button.green>
-<Button.yellow>Yellow</Button.yellow>
-<Button.red>Red</Button.red>
-<Button.dark>Dark</Button.dark>`
-					}>
-					</Code>
-				</section>
-				<section className="my-10 mx-5">
-					<Heading.h3>Button Outline</Heading.h3>
-					<div className="flex items-center flex-wrap gap-2">
-						<ButtonOutline>Default</ButtonOutline>
-						<ButtonOutline.green>Green</ButtonOutline.green>
-						<ButtonOutline.yellow>Yellow</ButtonOutline.yellow>
-						<ButtonOutline.red>Red</ButtonOutline.red>
-						<ButtonOutline.dark>Dark</ButtonOutline.dark>
-					</div>
-					<Code code={
-						`import ButtonOutline from "@components/ButtonOutline";
-
-<ButtonOutline>Default</ButtonOutline>
-<ButtonOutline.green>Green</ButtonOutline.green>
-<ButtonOutline.yellow>Yellow</ButtonOutline.yellow>
-<ButtonOutline.red>Red</ButtonOutline.red>
-<ButtonOutline.dark>Dark</ButtonOutline.dark>`
-					}>
-					</Code>
-				</section>
-				<section className="my-10 mx-5">
-					<Heading.h3>Button Pills</Heading.h3>
-					<div className="flex items-center flex-wrap gap-2">
-						<ButtonPills>Default</ButtonPills>
-						<ButtonPills.green>Green</ButtonPills.green>
-						<ButtonPills.yellow>Yellow</ButtonPills.yellow>
-						<ButtonPills.red>Red</ButtonPills.red>
-						<ButtonPills.dark>Dark</ButtonPills.dark>
-					</div>
-					<Code code={
-						`import ButtonPills from "@components/ButtonPills";
-
-<ButtonPills>Default</ButtonPills>
-<ButtonPills.green>Green</ButtonPills.green>
-<ButtonPills.yellow>Yellow</ButtonPills.yellow>
-<ButtonPills.red>Red</ButtonPills.red>
-<ButtonPills.dark>Dark</ButtonPills.dark>`
-					}>
-					</Code>
-				</section>
-				<section className="my-10 mx-5">
-					<Heading.h3>Button Outline Pills</Heading.h3>
-					<div className="flex items-center flex-wrap gap-2">
-						<ButtonOutlinePills>Default</ButtonOutlinePills>
-						<ButtonOutlinePills.green>Green</ButtonOutlinePills.green>
-						<ButtonOutlinePills.yellow>Yellow</ButtonOutlinePills.yellow>
-						<ButtonOutlinePills.red>Red</ButtonOutlinePills.red>
-						<ButtonOutlinePills.dark>Dark</ButtonOutlinePills.dark>
-					</div>
-					<Code code={
-						`import ButtonOutlinePills from "@components/ButtonOutlinePills";
-
-<ButtonOutlinePills>Default</ButtonOutlinePills>
-<ButtonOutlinePills.green>Green</ButtonOutlinePills.green>
-<ButtonOutlinePills.yellow>Yellow</ButtonOutlinePills.yellow>
-<ButtonOutlinePills.red>Red</ButtonOutlinePills.red>
-<ButtonOutlinePills.dark>Dark</ButtonOutlinePills.dark>`
-					}>
-					</Code>
+					</div> */}
 				</section>
 				<section className="my-10 mx-5">
 					<Heading.h3>Heading</Heading.h3>
@@ -169,6 +101,100 @@ export default function Third() {
 <Text.medium>Text Medium</Text.medium>
 <Text.bold>Text Bold</Text.bold>
 <Text.extrabold>Text Extra Bold</Text.extrabold>`
+					}>
+					</Code>
+				</section>
+				<section className="my-10 mx-5">
+					<Heading.h3>Button</Heading.h3>
+					<div className="flex items-center flex-wrap gap-2">
+						<Button>Default</Button>
+						<Button.green>Green</Button.green>
+						<Button.yellow>Yellow</Button.yellow>
+						<Button.orange>Orange</Button.orange>
+						<Button.red>Red</Button.red>
+						<Button.purple>Purple</Button.purple>
+						<Button.dark>Dark</Button.dark>
+					</div>
+					<Code code={
+						`import Button from "@components/Button";
+
+<Button>Default</Button>
+<Button.green>Green</Button.green>
+<Button.yellow>Yellow</Button.yellow>
+<Button.orange>Orange</Button.orange>
+<Button.red>Red</Button.red>
+<Button.purple>Purple</Button.purple>
+<Button.dark>Dark</Button.dark>`
+					}>
+					</Code>
+				</section>
+				<section className="my-10 mx-5">
+					<Heading.h3>Button Outline</Heading.h3>
+					<div className="flex items-center flex-wrap gap-2">
+						<ButtonOutline>Default</ButtonOutline>
+						<ButtonOutline.green>Green</ButtonOutline.green>
+						<ButtonOutline.yellow>Yellow</ButtonOutline.yellow>
+						<ButtonOutline.orange>Orange</ButtonOutline.orange>
+						<ButtonOutline.red>Red</ButtonOutline.red>
+						<ButtonOutline.purple>Purple</ButtonOutline.purple>
+						<ButtonOutline.dark>Dark</ButtonOutline.dark>
+					</div>
+					<Code code={
+						`import ButtonOutline from "@components/ButtonOutline";
+
+<ButtonOutline>Default</ButtonOutline>
+<ButtonOutline.green>Green</ButtonOutline.green>
+<ButtonOutline.yellow>Yellow</ButtonOutline.yellow>
+<ButtonOutline.orange>Orange</ButtonOutline.orange>
+<ButtonOutline.red>Red</ButtonOutline.red>
+<ButtonOutline.purple>Purple</ButtonOutline.purple>
+<ButtonOutline.dark>Dark</ButtonOutline.dark>`
+					}>
+					</Code>
+				</section>
+				<section className="my-10 mx-5">
+					<Heading.h3>Button Pills</Heading.h3>
+					<div className="flex items-center flex-wrap gap-2">
+						<ButtonPills>Default</ButtonPills>
+						<ButtonPills.green>Green</ButtonPills.green>
+						<ButtonPills.yellow>Yellow</ButtonPills.yellow>
+						<ButtonPills.orange>Orange</ButtonPills.orange>
+						<ButtonPills.red>Red</ButtonPills.red>
+						<ButtonPills.purple>Purple</ButtonPills.purple>
+						<ButtonPills.dark>Dark</ButtonPills.dark>
+					</div>
+					<Code code={
+						`import ButtonPills from "@components/ButtonPills";
+
+<ButtonPills>Default</ButtonPills>
+<ButtonPills.green>Green</ButtonPills.green>
+<ButtonPills.yellow>Yellow</ButtonPills.yellow>
+<ButtonPills.orange>Orange</ButtonPills.orange>
+<ButtonPills.red>Red</ButtonPills.red>
+<ButtonPills.purple>Purple</ButtonPills.purple>
+<ButtonPills.dark>Dark</ButtonPills.dark>`
+					}>
+					</Code>
+				</section>
+				<section className="my-10 mx-5">
+					<Heading.h3>Button Outline Pills</Heading.h3>
+					<div className="flex items-center flex-wrap gap-2">
+						<ButtonOutlinePills>Default</ButtonOutlinePills>
+						<ButtonOutlinePills.green>Green</ButtonOutlinePills.green>
+						<ButtonOutlinePills.yellow>Yellow</ButtonOutlinePills.yellow>
+						<ButtonOutlinePills.orange>Orange</ButtonOutlinePills.orange>
+						<ButtonOutlinePills.red>Red</ButtonOutlinePills.red>
+						<ButtonOutlinePills.purple>Purple</ButtonOutlinePills.purple>
+						<ButtonOutlinePills.dark>Dark</ButtonOutlinePills.dark>
+					</div>
+					<Code code={
+						`import ButtonOutlinePills from "@components/ButtonOutlinePills";
+
+<ButtonOutlinePills>Default</ButtonOutlinePills>
+<ButtonOutlinePills.green>Green</ButtonOutlinePills.green>
+<ButtonOutlinePills.yellow>Yellow</ButtonOutlinePills.yellow>
+<ButtonOutlinePills.red>Red</ButtonOutlinePills.red>
+<ButtonOutlinePills.dark>Dark</ButtonOutlinePills.dark>`
 					}>
 					</Code>
 				</section>
@@ -313,16 +339,16 @@ export default function Third() {
 					</Code>
 				</section>
 				<section className="my-10 mx-5">
-					<Heading.h3>Loading</Heading.h3>
-					<Loading className="!h-32 w-full" />
-					<Loading className="max-w-[12rem]" />
-					<Loading className="max-w-[24rem]" />
+					<Heading.h3>Skeletons</Heading.h3>
+					<Skeletons className="!h-32 w-full" />
+					<Skeletons className="max-w-[12rem]" />
+					<Skeletons className="max-w-[24rem]" />
 					<Code code={
-						`import Loading from "@components/Loading";
+						`import Skeletons from "@components/Skeletons";
 
-<Loading className="max-w-[12rem] h-[10rem]" />
-<Loading className="max-w-[24rem]" />
-<Loading className="max-w-[24rem]" />`
+<Skeletons className="!h-32 w-full" />
+<Skeletons className="max-w-[12rem]" />
+<Skeletons className="max-w-[24rem]" />`
 					}>
 					</Code>
 				</section>
