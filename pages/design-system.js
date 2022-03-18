@@ -20,6 +20,7 @@ import BadgeOutlinePills from "@components/BadgeOutlinePills";
 import Skeletons from "@components/Skeletons";
 import { DownloadIcon, InformationCircleIcon, MoonIcon, PlusCircleIcon, SunIcon } from "@heroicons/react/outline";
 import Section from "@components/Section";
+import Container from "@components/Container";
 
 export default function Third() {
 	const { darkMode, setDarkMode } = useContext(GlobalContext);
@@ -101,6 +102,26 @@ export default function Third() {
 					</Code>
 				</Section>
 
+				<Section id="container" name="Container" className="px-2 sm:px-6 md:px-12">
+					<Container>
+						<Text>Container Default</Text>
+					</Container>
+					<Container small>
+						<Text>Container Small</Text>
+					</Container>
+					<Code code={
+						`import Container from "@components/Container";
+
+<Container>
+	<Text>Container Default</Text>
+</Container>
+<Container small>
+	<Text>Container Small</Text>
+</Container>`
+					}>
+					</Code>
+				</Section>
+
 				<Section id="heading" name="Heading" className="px-2 sm:px-6 md:px-12">
 					<Heading>Heading Default</Heading>
 					<Heading.h2>Heading 2</Heading.h2>
@@ -122,16 +143,16 @@ export default function Third() {
 				</Section>
 
 				<Section id="text" name="Text" className="px-2 sm:px-6 md:px-12">
-					<Text.light>Text Light</Text.light>
-					<Text>Text Normal</Text>
+					<Text.light className="mb-2">Text Light</Text.light>
+					<Text className="mb-2">Text Normal</Text>
 					<Text.medium>Text Medium</Text.medium>
 					<Text.bold>Text Bold</Text.bold>
 					<Text.extrabold>Text Extra Bold</Text.extrabold>
 					<Code code={
 						`import Text from "@components/Text";
 
-<Text.light>Text Light</Text.light>
-<Text>Text Normal</Text>
+<Text.light className="mb-2">Text Light</Text.light>
+<Text className="mb-2">Text Normal</Text>
 <Text.medium>Text Medium</Text.medium>
 <Text.bold>Text Bold</Text.bold>
 <Text.extrabold>Text Extra Bold</Text.extrabold>`
