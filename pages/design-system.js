@@ -18,7 +18,7 @@ import BadgeOutline from "@components/BadgeOutline";
 import BadgePills from "@components/BadgePills";
 import BadgeOutlinePills from "@components/BadgeOutlinePills";
 import Skeletons from "@components/Skeletons";
-import { MoonIcon, SunIcon } from "@heroicons/react/outline";
+import { DownloadIcon, InformationCircleIcon, MoonIcon, PlusCircleIcon, SunIcon } from "@heroicons/react/outline";
 import Section from "@components/Section";
 
 export default function Third() {
@@ -39,12 +39,33 @@ export default function Third() {
 
 			<main className="container mx-auto dark:bg-neutral-900 my-3 py-1">
 				<section className="my-10 mx-5">
-					<Heading.h3>Dark Mode</Heading.h3>
-					<div
-						onClick={() => setDarkMode(!darkMode)}
-						className="transition-all cursor pointer w-12 h-7 dark:bg-blue-500 bg-neutral-300 rounded-full relative"
-					>
-						<div className="h-5 w-5 bg-white rounded-full absolute top-1 transition-all dark:left-6 left-1"></div>
+					<Heading.h3>Dark Mode Switch</Heading.h3>
+					<div className="flex gap-3 flex-wrap">
+						<div
+							onClick={() => setDarkMode(!darkMode)}
+							className="transition-all cursor pointer w-12 h-7 dark:bg-blue-500 bg-neutral-300 rounded-full relative"
+						>
+							<div className="h-5 w-5 bg-white rounded-full absolute top-1 transition-all duration-300 dark:left-6 left-1"></div>
+						</div>
+						<button onClick={() => setDarkMode(!darkMode)} className="relative flex items-center py-0.5 px-1 bg-blue-500 rounded-full h-7">
+							<span className="absolute w-5 h-5 rounded-full bg-white dark:left-[1.7rem] left-1 transition-all duration-300"></span>
+							<span aria-hidden={true}>☀️</span>
+							<span aria-hidden={true}>🌙</span>
+						</button>
+						<button onClick={() => setDarkMode(!darkMode)} className={`${darkMode ? "bg-gray-800" : "bg-gray-200"} relative flex gap-1 items-center px-1 py-0.5 rounded-full h-7`}>
+							<span className="absolute w-5 h-5 rounded-full bg-blue-500 dark:left-[1.6rem] left-1.5 transition-all duration-300"></span>
+							<span aria-hidden={true}><SunIcon className={`${darkMode ? "text-white bg-white" : ""}h-5 w-5`} /></span>
+							<span aria-hidden={true}><MoonIcon className="h-5 w-5" /></span>
+						</button>
+						{darkMode ?
+							<button onClick={() => setDarkMode(!darkMode)} className="w-8 h-8 p-1 transition-all ease-in duration-300 bg-neutral-800 hover:bg-neutral-700 text-white rounded-full">
+								<SunIcon />
+							</button>
+							:
+							<button onClick={() => setDarkMode(!darkMode)} className="w-8 h-8 p-1 transition-all ease-in duration-300 bg-gray-100 hover:bg-gray-200 rounded-full">
+								<MoonIcon />
+							</button>
+						}
 					</div>
 				</section>
 				<section className="my-10 mx-5 fixed bottom-3 md:bottom-1/3 right-3 md:right-10 z-10">
@@ -57,14 +78,7 @@ export default function Third() {
 						<button onClick={() => setDarkMode(!darkMode)} className="w-8 h-8 p-1 transition-all ease-in duration-300 bg-gray-100 hover:bg-gray-200 rounded-full">
 							<MoonIcon />
 						</button>
-						
 					}
-					{/* <div
-						onClick={() => setDarkMode(!darkMode)}
-						className="transition-all cursor pointer w-12 h-7 dark:bg-blue-500 bg-neutral-300 rounded-full relative"
-					>
-						<div className="h-5 w-5 bg-white rounded-full absolute top-1 transition-all dark:left-6 left-1"></div>
-					</div> */}
 				</section>
 				<section className="my-10 mx-5">
 					<Heading.h3>Heading</Heading.h3>
@@ -107,7 +121,7 @@ export default function Third() {
 				<section className="my-10 mx-5">
 					<Heading.h3>Button</Heading.h3>
 					<div className="flex items-center flex-wrap gap-2">
-						<Button>Default</Button>
+						<Button className="flex gap-1 items-center"><PlusCircleIcon className="h-5 w-5" />Default</Button>
 						<Button.green>Green</Button.green>
 						<Button.yellow>Yellow</Button.yellow>
 						<Button.orange>Orange</Button.orange>
@@ -118,7 +132,7 @@ export default function Third() {
 					<Code code={
 						`import Button from "@components/Button";
 
-<Button>Default</Button>
+<Button className="flex gap-1 items-center"><PlusCircleIcon className="h-5 w-5" />Default</Button>
 <Button.green>Green</Button.green>
 <Button.yellow>Yellow</Button.yellow>
 <Button.orange>Orange</Button.orange>
@@ -131,7 +145,7 @@ export default function Third() {
 				<section className="my-10 mx-5">
 					<Heading.h3>Button Outline</Heading.h3>
 					<div className="flex items-center flex-wrap gap-2">
-						<ButtonOutline>Default</ButtonOutline>
+						<ButtonOutline className="flex gap-1 items-center"><DownloadIcon className="h-5 w-5"/>Default</ButtonOutline>
 						<ButtonOutline.green>Green</ButtonOutline.green>
 						<ButtonOutline.yellow>Yellow</ButtonOutline.yellow>
 						<ButtonOutline.orange>Orange</ButtonOutline.orange>
@@ -142,7 +156,7 @@ export default function Third() {
 					<Code code={
 						`import ButtonOutline from "@components/ButtonOutline";
 
-<ButtonOutline>Default</ButtonOutline>
+<ButtonOutline className="flex gap-1 items-center"><DownloadIcon className="h-5 w-5"/>Default</ButtonOutline>
 <ButtonOutline.green>Green</ButtonOutline.green>
 <ButtonOutline.yellow>Yellow</ButtonOutline.yellow>
 <ButtonOutline.orange>Orange</ButtonOutline.orange>
@@ -155,7 +169,7 @@ export default function Third() {
 				<section className="my-10 mx-5">
 					<Heading.h3>Button Pills</Heading.h3>
 					<div className="flex items-center flex-wrap gap-2">
-						<ButtonPills>Default</ButtonPills>
+						<ButtonPills className="flex gap-1 items-center"><DownloadIcon className="h-5 w-5"/>Default</ButtonPills>
 						<ButtonPills.green>Green</ButtonPills.green>
 						<ButtonPills.yellow>Yellow</ButtonPills.yellow>
 						<ButtonPills.orange>Orange</ButtonPills.orange>
@@ -166,7 +180,7 @@ export default function Third() {
 					<Code code={
 						`import ButtonPills from "@components/ButtonPills";
 
-<ButtonPills>Default</ButtonPills>
+<ButtonPills className="flex gap-1 items-center"><DownloadIcon className="h-5 w-5"/>Default</ButtonPills>
 <ButtonPills.green>Green</ButtonPills.green>
 <ButtonPills.yellow>Yellow</ButtonPills.yellow>
 <ButtonPills.orange>Orange</ButtonPills.orange>
@@ -179,7 +193,7 @@ export default function Third() {
 				<section className="my-10 mx-5">
 					<Heading.h3>Button Outline Pills</Heading.h3>
 					<div className="flex items-center flex-wrap gap-2">
-						<ButtonOutlinePills>Default</ButtonOutlinePills>
+						<ButtonOutlinePills className="flex gap-1 items-center"><DownloadIcon className="h-5 w-5" />Default</ButtonOutlinePills>
 						<ButtonOutlinePills.green>Green</ButtonOutlinePills.green>
 						<ButtonOutlinePills.yellow>Yellow</ButtonOutlinePills.yellow>
 						<ButtonOutlinePills.orange>Orange</ButtonOutlinePills.orange>
@@ -190,7 +204,7 @@ export default function Third() {
 					<Code code={
 						`import ButtonOutlinePills from "@components/ButtonOutlinePills";
 
-<ButtonOutlinePills>Default</ButtonOutlinePills>
+<ButtonOutlinePills className="flex gap-1 items-center"><DownloadIcon className="h-5 w-5" />Default</ButtonOutlinePills>
 <ButtonOutlinePills.green>Green</ButtonOutlinePills.green>
 <ButtonOutlinePills.yellow>Yellow</ButtonOutlinePills.yellow>
 <ButtonOutlinePills.red>Red</ButtonOutlinePills.red>
@@ -201,7 +215,7 @@ export default function Third() {
 				<section className="my-10 mx-5">
 					<Heading.h3>Badge</Heading.h3>
 					<div className="flex items-center flex-wrap gap-2">
-						<Badge>Default</Badge>
+						<Badge className="flex gap-1 items-center"><DownloadIcon className="h-4 w-4" />Default</Badge>
 						<Badge.green>Green</Badge.green>
 						<Badge.red isLarge>Red</Badge.red>
 						<Badge.yellow isLarge>Yellow</Badge.yellow>
@@ -212,7 +226,7 @@ export default function Third() {
 					<Code code={
 						`import Badge from "@components/Badge";
 
-<Badge>Default</Badge>
+<Badge className="flex gap-1 items-center"><DownloadIcon className="h-4 w-4" />Default</Badge>
 <Badge.green>Green</Badge.green>
 <Badge.red isLarge>Red</Badge.red>
 <Badge.yellow isLarge>Yellow</Badge.yellow>
@@ -225,7 +239,7 @@ export default function Third() {
 				<section className="my-10 mx-5">
 					<Heading.h3>Badge Outline</Heading.h3>
 					<div className="flex items-center flex-wrap gap-2">
-						<BadgeOutline>Default</BadgeOutline>
+						<BadgeOutline className="flex gap-1 items-center"><DownloadIcon className="h-4 w-4" />Default</BadgeOutline>
 						<BadgeOutline.green>Green</BadgeOutline.green>
 						<BadgeOutline.red isLarge>Red</BadgeOutline.red>
 						<BadgeOutline.yellow isLarge>Yellow</BadgeOutline.yellow>
@@ -236,7 +250,7 @@ export default function Third() {
 					<Code code={
 						`import BadgeOutline from "@components/BadgeOutline";
 
-<BadgeOutline>Default</BadgeOutline>
+<BadgeOutline className="flex gap-1 items-center"><DownloadIcon className="h-4 w-4" />Default</BadgeOutline>
 <BadgeOutline.green>Green</BadgeOutline.green>
 <BadgeOutline.red isLarge>Red</BadgeOutline.red>
 <BadgeOutline.yellow isLarge>Yellow</BadgeOutline.yellow>
@@ -249,7 +263,7 @@ export default function Third() {
 				<section className="my-10 mx-5">
 					<Heading.h3>Badge Pills</Heading.h3>
 					<div className="flex items-center flex-wrap gap-2">
-						<BadgePills>Default</BadgePills>
+						<BadgePills className="flex gap-1 items-center"><DownloadIcon className="h-4 w-4" />Default</BadgePills>
 						<BadgePills.green>Green</BadgePills.green>
 						<BadgePills.red isLarge>Red</BadgePills.red>
 						<BadgePills.yellow isLarge>Yellow</BadgePills.yellow>
@@ -260,7 +274,7 @@ export default function Third() {
 					<Code code={
 						`import BadgePills from "@components/BadgePills";
 
-<BadgePills>Default</BadgePills>
+<BadgePills className="flex gap-1 items-center"><DownloadIcon className="h-4 w-4" />Default</BadgePills>
 <BadgePills.green>Green</BadgePills.green>
 <BadgePills.red isLarge>Red</BadgePills.red>
 <BadgePills.yellow isLarge>Yellow</BadgePills.yellow>
@@ -273,7 +287,7 @@ export default function Third() {
 				<section className="my-10 mx-5">
 					<Heading.h3>Badge Outline Pills</Heading.h3>
 					<div className="flex items-center flex-wrap gap-2">
-						<BadgeOutlinePills>Default</BadgeOutlinePills>
+						<BadgeOutlinePills className="flex gap-1 items-center"><DownloadIcon className="h-4 w-4" />Default</BadgeOutlinePills>
 						<BadgeOutlinePills.green>Green</BadgeOutlinePills.green>
 						<BadgeOutlinePills.red isLarge>Red</BadgeOutlinePills.red>
 						<BadgeOutlinePills.yellow isLarge>Yellow</BadgeOutlinePills.yellow>
@@ -284,7 +298,7 @@ export default function Third() {
 					<Code code={
 						`import BadgeOutlinePills from "@components/BadgeOutlinePills";
 
-<BadgeOutlinePills>Default</BadgeOutlinePills>
+<BadgeOutlinePills className="flex gap-1 items-center"><DownloadIcon className="h-4 w-4" />Default</BadgeOutlinePills>
 <BadgeOutlinePills.green>Green</BadgeOutlinePills.green>
 <BadgeOutlinePills.red isLarge>Red</BadgeOutlinePills.red>
 <BadgeOutlinePills.yellow isLarge>Yellow</BadgeOutlinePills.yellow>
@@ -296,9 +310,9 @@ export default function Third() {
 				</section>
 				<section className="my-10 mx-5">
 					<Heading.h3>Alert</Heading.h3>
-					<Alert>Default</Alert>
+					<Alert className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5"/>Default</Alert>
 					<Alert.green>Green</Alert.green>
-					<Alert.red isLarge>Red</Alert.red>
+					<Alert.red className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5" />Red <span className="font-normal">Danger</span></Alert.red>
 					<Alert.yellow isLarge>Yellow</Alert.yellow>
 					<Alert.orange>Orange</Alert.orange>
 					<Alert.purple>Purple</Alert.purple>
@@ -306,9 +320,9 @@ export default function Third() {
 					<Code code={
 						`import Alert from "@components/Alert";
 
-<Alert>Default</Alert>
+<Alert className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5"/>Default</Alert>
 <Alert.green>Green</Alert.green>
-<Alert.red isLarge>Red</Alert.red>
+<Alert.red className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5" />Red <span className="font-normal">Danger</span></Alert.red>
 <Alert.yellow isLarge>Yellow</Alert.yellow>
 <Alert.orange>Orange</Alert.orange>
 <Alert.purple>Purple</Alert.purple>
@@ -318,9 +332,9 @@ export default function Third() {
 				</section>
 				<section className="my-10 mx-5">
 					<Heading.h3>Alert</Heading.h3>
-					<AlertOutline>Default</AlertOutline>
+					<AlertOutline className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5" />Default</AlertOutline>
 					<AlertOutline.green>Green</AlertOutline.green>
-					<AlertOutline.red isLarge>Red</AlertOutline.red>
+					<AlertOutline.red className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5" />Red <span className="font-normal">Danger</span></AlertOutline.red>
 					<AlertOutline.yellow isLarge>Yellow</AlertOutline.yellow>
 					<AlertOutline.orange>Orange</AlertOutline.orange>
 					<AlertOutline.purple>Purple</AlertOutline.purple>
@@ -328,9 +342,9 @@ export default function Third() {
 					<Code code={
 						`import AlertOutline from "@components/AlertOutline";
 
-<AlertOutline>Default</AlertOutline>
+<AlertOutline className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5" />Default</AlertOutline>
 <AlertOutline.green>Green</AlertOutline.green>
-<AlertOutline.red isLarge>Red</AlertOutline.red>
+<AlertOutline.red className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5" />Red <span className="font-normal">Danger</span></AlertOutline.red>
 <AlertOutline.yellow isLarge>Yellow</AlertOutline.yellow>
 <AlertOutline.orange>Orange</AlertOutline.orange>
 <AlertOutline.purple>Purple</AlertOutline.purple>
@@ -342,13 +356,15 @@ export default function Third() {
 					<Heading.h3>Skeletons</Heading.h3>
 					<Skeletons className="!h-32 w-full" />
 					<Skeletons className="max-w-[12rem]" />
-					<Skeletons className="max-w-[24rem]" />
+					<Skeletons className="max-w-[24rem] !rounded-full" />
+					<Skeletons className="!w-24 !h-24 !rounded-full" />
 					<Code code={
 						`import Skeletons from "@components/Skeletons";
 
 <Skeletons className="!h-32 w-full" />
 <Skeletons className="max-w-[12rem]" />
-<Skeletons className="max-w-[24rem]" />`
+<Skeletons className="max-w-[24rem] !rounded-full" />
+<Skeletons className="!w-24 !h-24 !rounded-full" />`
 					}>
 					</Code>
 				</section>
