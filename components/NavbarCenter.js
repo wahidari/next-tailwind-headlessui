@@ -38,10 +38,10 @@ export default function Navbar() {
                     <Popover className="relative">
                       {({ open }) => (
                         <>
-                          <Popover.Button className="flex space-x-2 items-center px-2 py-1 rounded-md text-base font-medium text-gray-500 hover:text-gray-800 transition-colors duration-200 hover:bg-gray-100">
+                          <Popover.Button className="group flex space-x-2 items-center px-2 py-1 rounded-md text-base font-medium text-gray-500 hover:text-gray-800 transition-colors duration-200 hover:bg-gray-100">
                             <span>More</span>
                             <ChevronDownIcon
-                              className={`${open ? 'transform rotate-180 transition-transform duration-300' : 'transition-transform duration-300'} h-4 w-4 text-gray-500 hover:text-gray-800`}
+                              className={`${open ? 'transform rotate-180 transition-transform duration-300' : 'transition-transform duration-300'} h-4 w-4`}
                             />
                           </Popover.Button>
                           <Transition
