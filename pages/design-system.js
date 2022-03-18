@@ -314,8 +314,8 @@ export default function Third() {
 				</section>
 				<section className="my-10 mx-5">
 					<Heading.h3>Loading</Heading.h3>
-					<Loading className="max-w-[12rem] h-[10rem]" />
-					<Loading className="max-w-[24rem]" />
+					<Loading className="!h-32 w-full" />
+					<Loading className="max-w-[12rem]" />
 					<Loading className="max-w-[24rem]" />
 					<Code code={
 						`import Loading from "@components/Loading";
