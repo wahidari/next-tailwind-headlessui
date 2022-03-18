@@ -45,7 +45,7 @@ export default function Third() {
 						<div className="h-5 w-5 bg-white rounded-full absolute top-1 transition-all dark:left-6 left-1"></div>
 					</div>
 				</section>
-				<section className="my-10 mx-5 fixed bottom-1/2 right-3">
+				<section className="my-10 mx-5 fixed bottom-3 md:bottom-1/3 right-3 md:right-10 z-10">
 					<Heading.h3>Dark Mode</Heading.h3>
 					<div
 						onClick={() => setDarkMode(!darkMode)}
@@ -56,7 +56,7 @@ export default function Third() {
 				</section>
 				<section className="my-10 mx-5">
 					<Heading.h3>Button</Heading.h3>
-					<div className="flex gap-x-2">
+					<div className="flex items-center flex-wrap gap-2">
 						<Button>Default</Button>
 						<Button.green>Green</Button.green>
 						<Button.yellow>Yellow</Button.yellow>
@@ -76,7 +76,7 @@ export default function Third() {
 				</section>
 				<section className="my-10 mx-5">
 					<Heading.h3>Button Outline</Heading.h3>
-					<div className="flex gap-x-2">
+					<div className="flex items-center flex-wrap gap-2">
 						<ButtonOutline>Default</ButtonOutline>
 						<ButtonOutline.green>Green</ButtonOutline.green>
 						<ButtonOutline.yellow>Yellow</ButtonOutline.yellow>
@@ -96,7 +96,7 @@ export default function Third() {
 				</section>
 				<section className="my-10 mx-5">
 					<Heading.h3>Button Pills</Heading.h3>
-					<div className="flex gap-x-2">
+					<div className="flex items-center flex-wrap gap-2">
 						<ButtonPills>Default</ButtonPills>
 						<ButtonPills.green>Green</ButtonPills.green>
 						<ButtonPills.yellow>Yellow</ButtonPills.yellow>
@@ -116,7 +116,7 @@ export default function Third() {
 				</section>
 				<section className="my-10 mx-5">
 					<Heading.h3>Button Outline Pills</Heading.h3>
-					<div className="flex gap-x-2">
+					<div className="flex items-center flex-wrap gap-2">
 						<ButtonOutlinePills>Default</ButtonOutlinePills>
 						<ButtonOutlinePills.green>Green</ButtonOutlinePills.green>
 						<ButtonOutlinePills.yellow>Yellow</ButtonOutlinePills.yellow>
@@ -174,13 +174,15 @@ export default function Third() {
 				</section>
 				<section className="my-10 mx-5">
 					<Heading.h3>Badge</Heading.h3>
-					<Badge>Default</Badge>
-					<Badge.green>Green</Badge.green>
-					<Badge.red isLarge>Red</Badge.red>
-					<Badge.yellow isLarge>Yellow</Badge.yellow>
-					<Badge.orange>Orange</Badge.orange>
-					<Badge.purple>Purple</Badge.purple>
-					<Badge.dark>Dark</Badge.dark>
+					<div className="flex items-center flex-wrap gap-2">
+						<Badge>Default</Badge>
+						<Badge.green>Green</Badge.green>
+						<Badge.red isLarge>Red</Badge.red>
+						<Badge.yellow isLarge>Yellow</Badge.yellow>
+						<Badge.orange>Orange</Badge.orange>
+						<Badge.purple>Purple</Badge.purple>
+						<Badge.dark>Dark</Badge.dark>
+					</div>
 					<Code code={
 						`import Badge from "@components/Badge";
 
@@ -196,13 +198,15 @@ export default function Third() {
 				</section>
 				<section className="my-10 mx-5">
 					<Heading.h3>Badge Outline</Heading.h3>
-					<BadgeOutline>Default</BadgeOutline>
-					<BadgeOutline.green>Green</BadgeOutline.green>
-					<BadgeOutline.red isLarge>Red</BadgeOutline.red>
-					<BadgeOutline.yellow isLarge>Yellow</BadgeOutline.yellow>
-					<BadgeOutline.orange>Orange</BadgeOutline.orange>
-					<BadgeOutline.purple>Purple</BadgeOutline.purple>
-					<BadgeOutline.dark>Dark</BadgeOutline.dark>
+					<div className="flex items-center flex-wrap gap-2">
+						<BadgeOutline>Default</BadgeOutline>
+						<BadgeOutline.green>Green</BadgeOutline.green>
+						<BadgeOutline.red isLarge>Red</BadgeOutline.red>
+						<BadgeOutline.yellow isLarge>Yellow</BadgeOutline.yellow>
+						<BadgeOutline.orange>Orange</BadgeOutline.orange>
+						<BadgeOutline.purple>Purple</BadgeOutline.purple>
+						<BadgeOutline.dark>Dark</BadgeOutline.dark>
+					</div>
 					<Code code={
 						`import BadgeOutline from "@components/BadgeOutline";
 
@@ -218,13 +222,15 @@ export default function Third() {
 				</section>
 				<section className="my-10 mx-5">
 					<Heading.h3>Badge Pills</Heading.h3>
-					<BadgePills>Default</BadgePills>
-					<BadgePills.green>Green</BadgePills.green>
-					<BadgePills.red isLarge>Red</BadgePills.red>
-					<BadgePills.yellow isLarge>Yellow</BadgePills.yellow>
-					<BadgePills.orange>Orange</BadgePills.orange>
-					<BadgePills.purple>Purple</BadgePills.purple>
-					<BadgePills.dark>Dark</BadgePills.dark>
+					<div className="flex items-center flex-wrap gap-2">
+						<BadgePills>Default</BadgePills>
+						<BadgePills.green>Green</BadgePills.green>
+						<BadgePills.red isLarge>Red</BadgePills.red>
+						<BadgePills.yellow isLarge>Yellow</BadgePills.yellow>
+						<BadgePills.orange>Orange</BadgePills.orange>
+						<BadgePills.purple>Purple</BadgePills.purple>
+						<BadgePills.dark>Dark</BadgePills.dark>
+					</div>
 					<Code code={
 						`import BadgePills from "@components/BadgePills";
 
@@ -240,13 +246,15 @@ export default function Third() {
 				</section>
 				<section className="my-10 mx-5">
 					<Heading.h3>Badge Outline Pills</Heading.h3>
-					<BadgeOutlinePills>Default</BadgeOutlinePills>
-					<BadgeOutlinePills.green>Green</BadgeOutlinePills.green>
-					<BadgeOutlinePills.red isLarge>Red</BadgeOutlinePills.red>
-					<BadgeOutlinePills.yellow isLarge>Yellow</BadgeOutlinePills.yellow>
-					<BadgeOutlinePills.orange>Orange</BadgeOutlinePills.orange>
-					<BadgeOutlinePills.purple>Purple</BadgeOutlinePills.purple>
-					<BadgeOutlinePills.dark>Dark</BadgeOutlinePills.dark>
+					<div className="flex items-center flex-wrap gap-2">
+						<BadgeOutlinePills>Default</BadgeOutlinePills>
+						<BadgeOutlinePills.green>Green</BadgeOutlinePills.green>
+						<BadgeOutlinePills.red isLarge>Red</BadgeOutlinePills.red>
+						<BadgeOutlinePills.yellow isLarge>Yellow</BadgeOutlinePills.yellow>
+						<BadgeOutlinePills.orange>Orange</BadgeOutlinePills.orange>
+						<BadgeOutlinePills.purple>Purple</BadgeOutlinePills.purple>
+						<BadgeOutlinePills.dark>Dark</BadgeOutlinePills.dark>
+					</div>
 					<Code code={
 						`import BadgeOutlinePills from "@components/BadgeOutlinePills";
 
