@@ -1,15 +1,23 @@
+import { useContext } from "react";
+import { GlobalContext } from "@utils/GlobalContext";
+import Head from "next/head";
 import Button from "@components/Button";
 import ButtonOutline from "@components/ButtonOutline";
 import ButtonPills from "@components/ButtonPills";
 import ButtonOutlinePills from "@components/ButtonOutlinePills";
 import Heading from "@components/Heading";
-import Head from "next/head";
 import Footer from "@components/Footer"
 import Navbar from "@components/Navbar";
-import { useContext } from "react";
-import { GlobalContext } from "@utils/GlobalContext";
 import Text from "@components/Text";
 import Code from "@components/Code";
+import Alert from "@components/Alert";
+import AlertOutline from "@components/AlertOutline";
+import Badge from "@components/Badge";
+import BadgeOutline from "@components/BadgeOutline";
+import BadgePills from "@components/BadgePills";
+import BadgeOutlinePills from "@components/BadgeOutlinePills";
+import Loading from "@components/Loading";
+import Section from "@components/Section";
 
 export default function Third() {
 	const { darkMode, setDarkMode } = useContext(GlobalContext);
@@ -37,6 +45,15 @@ export default function Third() {
 						<div className="h-5 w-5 bg-white rounded-full absolute top-1 transition-all dark:left-6 left-1"></div>
 					</div>
 				</section>
+				<section className="my-10 mx-5 fixed bottom-1/2 right-3">
+					<Heading.h3>Dark Mode</Heading.h3>
+					<div
+						onClick={() => setDarkMode(!darkMode)}
+						className="transition-all cursor pointer w-12 h-7 dark:bg-blue-500 bg-neutral-300 rounded-full relative"
+					>
+						<div className="h-5 w-5 bg-white rounded-full absolute top-1 transition-all dark:left-6 left-1"></div>
+					</div>
+				</section>
 				<section className="my-10 mx-5">
 					<Heading.h3>Button</Heading.h3>
 					<div className="flex gap-x-2">
@@ -47,7 +64,7 @@ export default function Third() {
 						<Button.dark>Dark</Button.dark>
 					</div>
 					<Code code={
-`import Button from "@components/Button";
+						`import Button from "@components/Button";
 
 <Button>Default</Button>
 <Button.green>Green</Button.green>
@@ -67,7 +84,7 @@ export default function Third() {
 						<ButtonOutline.dark>Dark</ButtonOutline.dark>
 					</div>
 					<Code code={
-`import ButtonOutline from "@components/ButtonOutline";
+						`import ButtonOutline from "@components/ButtonOutline";
 
 <ButtonOutline>Default</ButtonOutline>
 <ButtonOutline.green>Green</ButtonOutline.green>
@@ -87,7 +104,7 @@ export default function Third() {
 						<ButtonPills.dark>Dark</ButtonPills.dark>
 					</div>
 					<Code code={
-`import ButtonPills from "@components/ButtonPills";
+						`import ButtonPills from "@components/ButtonPills";
 
 <ButtonPills>Default</ButtonPills>
 <ButtonPills.green>Green</ButtonPills.green>
@@ -107,7 +124,7 @@ export default function Third() {
 						<ButtonOutlinePills.dark>Dark</ButtonOutlinePills.dark>
 					</div>
 					<Code code={
-`import ButtonOutlinePills from "@components/ButtonOutlinePills";
+						`import ButtonOutlinePills from "@components/ButtonOutlinePills";
 
 <ButtonOutlinePills>Default</ButtonOutlinePills>
 <ButtonOutlinePills.green>Green</ButtonOutlinePills.green>
@@ -126,7 +143,7 @@ export default function Third() {
 					<Heading.h5>Heading 5</Heading.h5>
 					<Heading.h6>Heading 6</Heading.h6>
 					<Code code={
-`import Heading from "@components/Heading";
+						`import Heading from "@components/Heading";
 
 <Heading>Heading Default</Heading>
 <Heading.h2>Heading 2</Heading.h2>
@@ -145,13 +162,159 @@ export default function Third() {
 					<Text.bold>Text Bold</Text.bold>
 					<Text.extrabold>Text Extra Bold</Text.extrabold>
 					<Code code={
-`import Text from "@components/Text";
+						`import Text from "@components/Text";
 
 <Text.light>Text Light</Text.light>
 <Text>Text Normal</Text>
 <Text.medium>Text Medium</Text.medium>
 <Text.bold>Text Bold</Text.bold>
 <Text.extrabold>Text Extra Bold</Text.extrabold>`
+					}>
+					</Code>
+				</section>
+				<section className="my-10 mx-5">
+					<Heading.h3>Badge</Heading.h3>
+					<Badge>Default</Badge>
+					<Badge.green>Green</Badge.green>
+					<Badge.red isLarge>Red</Badge.red>
+					<Badge.yellow isLarge>Yellow</Badge.yellow>
+					<Badge.orange>Orange</Badge.orange>
+					<Badge.purple>Purple</Badge.purple>
+					<Badge.dark>Dark</Badge.dark>
+					<Code code={
+						`import Badge from "@components/Badge";
+
+<Badge>Default</Badge>
+<Badge.green>Green</Badge.green>
+<Badge.red isLarge>Red</Badge.red>
+<Badge.yellow isLarge>Yellow</Badge.yellow>
+<Badge.orange>Orange</Badge.orange>
+<Badge.purple>Purple</Badge.purple>
+<Badge.dark>Dark</Badge.dark>`
+					}>
+					</Code>
+				</section>
+				<section className="my-10 mx-5">
+					<Heading.h3>Badge Outline</Heading.h3>
+					<BadgeOutline>Default</BadgeOutline>
+					<BadgeOutline.green>Green</BadgeOutline.green>
+					<BadgeOutline.red isLarge>Red</BadgeOutline.red>
+					<BadgeOutline.yellow isLarge>Yellow</BadgeOutline.yellow>
+					<BadgeOutline.orange>Orange</BadgeOutline.orange>
+					<BadgeOutline.purple>Purple</BadgeOutline.purple>
+					<BadgeOutline.dark>Dark</BadgeOutline.dark>
+					<Code code={
+						`import BadgeOutline from "@components/BadgeOutline";
+
+<BadgeOutline>Default</BadgeOutline>
+<BadgeOutline.green>Green</BadgeOutline.green>
+<BadgeOutline.red isLarge>Red</BadgeOutline.red>
+<BadgeOutline.yellow isLarge>Yellow</BadgeOutline.yellow>
+<BadgeOutline.orange>Orange</BadgeOutline.orange>
+<BadgeOutline.purple>Purple</BadgeOutline.purple>
+<BadgeOutline.dark>Dark</BadgeOutline.dark>`
+					}>
+					</Code>
+				</section>
+				<section className="my-10 mx-5">
+					<Heading.h3>Badge Pills</Heading.h3>
+					<BadgePills>Default</BadgePills>
+					<BadgePills.green>Green</BadgePills.green>
+					<BadgePills.red isLarge>Red</BadgePills.red>
+					<BadgePills.yellow isLarge>Yellow</BadgePills.yellow>
+					<BadgePills.orange>Orange</BadgePills.orange>
+					<BadgePills.purple>Purple</BadgePills.purple>
+					<BadgePills.dark>Dark</BadgePills.dark>
+					<Code code={
+						`import BadgePills from "@components/BadgePills";
+
+<BadgePills>Default</BadgePills>
+<BadgePills.green>Green</BadgePills.green>
+<BadgePills.red isLarge>Red</BadgePills.red>
+<BadgePills.yellow isLarge>Yellow</BadgePills.yellow>
+<BadgePills.orange>Orange</BadgePills.orange>
+<BadgePills.purple>Purple</BadgePills.purple>
+<BadgePills.dark>Dark</BadgePills.dark>`
+					}>
+					</Code>
+				</section>
+				<section className="my-10 mx-5">
+					<Heading.h3>Badge Outline Pills</Heading.h3>
+					<BadgeOutlinePills>Default</BadgeOutlinePills>
+					<BadgeOutlinePills.green>Green</BadgeOutlinePills.green>
+					<BadgeOutlinePills.red isLarge>Red</BadgeOutlinePills.red>
+					<BadgeOutlinePills.yellow isLarge>Yellow</BadgeOutlinePills.yellow>
+					<BadgeOutlinePills.orange>Orange</BadgeOutlinePills.orange>
+					<BadgeOutlinePills.purple>Purple</BadgeOutlinePills.purple>
+					<BadgeOutlinePills.dark>Dark</BadgeOutlinePills.dark>
+					<Code code={
+						`import BadgeOutlinePills from "@components/BadgeOutlinePills";
+
+<BadgeOutlinePills>Default</BadgeOutlinePills>
+<BadgeOutlinePills.green>Green</BadgeOutlinePills.green>
+<BadgeOutlinePills.red isLarge>Red</BadgeOutlinePills.red>
+<BadgeOutlinePills.yellow isLarge>Yellow</BadgeOutlinePills.yellow>
+<BadgeOutlinePills.orange>Orange</BadgeOutlinePills.orange>
+<BadgeOutlinePills.purple>Purple</BadgeOutlinePills.purple>
+<BadgeOutlinePills.dark>Dark</BadgeOutlinePills.dark>`
+					}>
+					</Code>
+				</section>
+				<section className="my-10 mx-5">
+					<Heading.h3>Alert</Heading.h3>
+					<Alert>Default</Alert>
+					<Alert.green>Green</Alert.green>
+					<Alert.red isLarge>Red</Alert.red>
+					<Alert.yellow isLarge>Yellow</Alert.yellow>
+					<Alert.orange>Orange</Alert.orange>
+					<Alert.purple>Purple</Alert.purple>
+					<Alert.dark>Dark</Alert.dark>
+					<Code code={
+						`import Alert from "@components/Alert";
+
+<Alert>Default</Alert>
+<Alert.green>Green</Alert.green>
+<Alert.red isLarge>Red</Alert.red>
+<Alert.yellow isLarge>Yellow</Alert.yellow>
+<Alert.orange>Orange</Alert.orange>
+<Alert.purple>Purple</Alert.purple>
+<Alert.dark>Dark</Alert.dark>`
+					}>
+					</Code>
+				</section>
+				<section className="my-10 mx-5">
+					<Heading.h3>Alert</Heading.h3>
+					<AlertOutline>Default</AlertOutline>
+					<AlertOutline.green>Green</AlertOutline.green>
+					<AlertOutline.red isLarge>Red</AlertOutline.red>
+					<AlertOutline.yellow isLarge>Yellow</AlertOutline.yellow>
+					<AlertOutline.orange>Orange</AlertOutline.orange>
+					<AlertOutline.purple>Purple</AlertOutline.purple>
+					<AlertOutline.dark>Dark</AlertOutline.dark>
+					<Code code={
+						`import AlertOutline from "@components/AlertOutline";
+
+<AlertOutline>Default</AlertOutline>
+<AlertOutline.green>Green</AlertOutline.green>
+<AlertOutline.red isLarge>Red</AlertOutline.red>
+<AlertOutline.yellow isLarge>Yellow</AlertOutline.yellow>
+<AlertOutline.orange>Orange</AlertOutline.orange>
+<AlertOutline.purple>Purple</AlertOutline.purple>
+<AlertOutline.dark>Dark</AlertOutline.dark>`
+					}>
+					</Code>
+				</section>
+				<section className="my-10 mx-5">
+					<Heading.h3>Loading</Heading.h3>
+					<Loading className="max-w-[12rem] h-[10rem]" />
+					<Loading className="max-w-[24rem]" />
+					<Loading className="max-w-[24rem]" />
+					<Code code={
+						`import Loading from "@components/Loading";
+
+<Loading className="max-w-[12rem] h-[10rem]" />
+<Loading className="max-w-[24rem]" />
+<Loading className="max-w-[24rem]" />`
 					}>
 					</Code>
 				</section>

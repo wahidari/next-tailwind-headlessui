@@ -6,7 +6,6 @@ import NavbarLeft from "@components/NavbarLeft";
 import NavbarCenter from "@components/NavbarCenter";
 import NavbarFromRight from "@components/NavbarFromRight";
 import NavbarFromLeft from "@components/NavbarFromLeft";
-import Menu from "@components/Menu";
 
 export default function Nav() {
     return (
