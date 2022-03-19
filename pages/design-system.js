@@ -1,11 +1,9 @@
-import { Fragment, useContext } from "react";
 import Head from "next/head";
+import { useContext } from "react";
 import { GlobalContext } from "@utils/GlobalContext";
-import { Transition } from '@headlessui/react'
+import { DownloadIcon, InformationCircleIcon, MoonIcon, PlusCircleIcon, SunIcon } from "@heroicons/react/outline";
 import Button from "@components/Button";
 import ButtonOutline from "@components/ButtonOutline";
-import ButtonPills from "@components/ButtonPills";
-import ButtonOutlinePills from "@components/ButtonOutlinePills";
 import Heading from "@components/Heading";
 import Footer from "@components/Footer"
 import Navbar from "@components/Navbar";
@@ -15,12 +13,12 @@ import Alert from "@components/Alert";
 import AlertOutline from "@components/AlertOutline";
 import Badge from "@components/Badge";
 import BadgeOutline from "@components/BadgeOutline";
-import BadgePills from "@components/BadgePills";
-import BadgeOutlinePills from "@components/BadgeOutlinePills";
 import Skeletons from "@components/Skeletons";
-import { DownloadIcon, InformationCircleIcon, MoonIcon, PlusCircleIcon, SunIcon } from "@heroicons/react/outline";
 import Section from "@components/Section";
 import Container from "@components/Container";
+import BackToTop from "@components/BackToTop";
+import LinkButton from "@components/LinkButton";
+import LinkButtonOutline from "@components/LinkButtonOutline";
 
 export default function Third() {
 	const { darkMode, setDarkMode } = useContext(GlobalContext);
@@ -70,7 +68,7 @@ export default function Third() {
 					</div>
 				</Section>
 
-				<div className="!py-2 px-2 rounded my-10 mx-4 bg-opacity-20 dark:bg-opacity-40 bg-gray-100 dark:bg-neutral-800 backdrop-filter backdrop-blur fixed bottom-3 md:bottom-1/3 right-3 md:right-10 z-40">
+				<div className="!py-2 px-2 rounded mx-4 bg-opacity-20 dark:bg-opacity-40 bg-gray-100 dark:bg-neutral-800 backdrop-filter backdrop-blur fixed bottom-20 md:bottom-2/4 right-3 md:right-10 z-40">
 					{darkMode ?
 						<button onClick={() => setDarkMode(!darkMode)} className="w-8 h-8 p-1 transition-all ease-in duration-300 bg-neutral-800 hover:bg-neutral-700 text-white rounded-full">
 							<SunIcon />
@@ -81,6 +79,8 @@ export default function Third() {
 						</button>
 					}
 				</div>
+
+				<BackToTop/>
 
 				<Section id="section" name="Section" className="px-2 sm:px-6 md:px-12">
 					<Section className="!py-0">
@@ -106,6 +106,12 @@ export default function Third() {
 					<Container>
 						<Text>Container Default</Text>
 					</Container>
+					<Container large>
+						<Text>Container large</Text>
+					</Container>
+					<Container medium>
+						<Text>Container Medium</Text>
+					</Container>
 					<Container small>
 						<Text>Container Small</Text>
 					</Container>
@@ -114,6 +120,12 @@ export default function Third() {
 
 <Container>
 	<Text>Container Default</Text>
+</Container>
+<Container large>
+	<Text>Container large</Text>
+</Container>
+<Container medium>
+	<Text>Container Medium</Text>
 </Container>
 <Container small>
 	<Text>Container Small</Text>
@@ -166,9 +178,9 @@ export default function Third() {
 						<Button.green>Green</Button.green>
 						<Button.yellow>Yellow</Button.yellow>
 						<Button.orange>Orange</Button.orange>
-						<Button.red>Red</Button.red>
-						<Button.purple>Purple</Button.purple>
-						<Button.dark>Dark</Button.dark>
+						<Button.red pills>Red</Button.red>
+						<Button.purple pills>Purple</Button.purple>
+						<Button.dark pills>Dark</Button.dark>
 					</div>
 					<Code code={
 						`import Button from "@components/Button";
@@ -177,9 +189,9 @@ export default function Third() {
 <Button.green>Green</Button.green>
 <Button.yellow>Yellow</Button.yellow>
 <Button.orange>Orange</Button.orange>
-<Button.red>Red</Button.red>
-<Button.purple>Purple</Button.purple>
-<Button.dark>Dark</Button.dark>`
+<Button.red pills>Red</Button.red>
+<Button.purple pills>Purple</Button.purple>
+<Button.dark pills>Dark</Button.dark>`
 					}>
 					</Code>
 				</Section>
@@ -190,9 +202,9 @@ export default function Third() {
 						<ButtonOutline.green>Green</ButtonOutline.green>
 						<ButtonOutline.yellow>Yellow</ButtonOutline.yellow>
 						<ButtonOutline.orange>Orange</ButtonOutline.orange>
-						<ButtonOutline.red>Red</ButtonOutline.red>
-						<ButtonOutline.purple>Purple</ButtonOutline.purple>
-						<ButtonOutline.dark>Dark</ButtonOutline.dark>
+						<ButtonOutline.red pills>Red</ButtonOutline.red>
+						<ButtonOutline.purple pills>Purple</ButtonOutline.purple>
+						<ButtonOutline.dark pills>Dark</ButtonOutline.dark>
 					</div>
 					<Code code={
 						`import ButtonOutline from "@components/ButtonOutline";
@@ -201,57 +213,57 @@ export default function Third() {
 <ButtonOutline.green>Green</ButtonOutline.green>
 <ButtonOutline.yellow>Yellow</ButtonOutline.yellow>
 <ButtonOutline.orange>Orange</ButtonOutline.orange>
-<ButtonOutline.red>Red</ButtonOutline.red>
-<ButtonOutline.purple>Purple</ButtonOutline.purple>
-<ButtonOutline.dark>Dark</ButtonOutline.dark>`
+<ButtonOutline.red pills>Red</ButtonOutline.red>
+<ButtonOutline.purple pills>Purple</ButtonOutline.purple>
+<ButtonOutline.dark pills>Dark</ButtonOutline.dark>`
 					}>
 					</Code>
 				</Section>
 
-				<Section id="button-pills" name="Button Pills" className="px-2 sm:px-6 md:px-12">
+				<Section id="link-button" name="Link Button" className="px-2 sm:px-6 md:px-12">
 					<div className="flex items-center flex-wrap gap-2">
-						<ButtonPills className="flex gap-1 items-center"><DownloadIcon className="h-5 w-5" />Default</ButtonPills>
-						<ButtonPills.green>Green</ButtonPills.green>
-						<ButtonPills.yellow>Yellow</ButtonPills.yellow>
-						<ButtonPills.orange>Orange</ButtonPills.orange>
-						<ButtonPills.red>Red</ButtonPills.red>
-						<ButtonPills.purple>Purple</ButtonPills.purple>
-						<ButtonPills.dark>Dark</ButtonPills.dark>
+						<LinkButton href="#" className="flex gap-1 items-center"><DownloadIcon className="h-5 w-5" />Default</LinkButton>
+						<LinkButton.green href="#">Green</LinkButton.green>
+						<LinkButton.yellow href="#">Yellow</LinkButton.yellow>
+						<LinkButton.orange href="#">Orange</LinkButton.orange>
+						<LinkButton.red href="#" pills>Red</LinkButton.red>
+						<LinkButton.purple href="#" pills>Purple</LinkButton.purple>
+						<LinkButton.dark href="#" pills>Dark</LinkButton.dark>
 					</div>
 					<Code code={
-						`import ButtonPills from "@components/ButtonPills";
+						`import LinkButton from "@components/LinkButton";
 
-<ButtonPills className="flex gap-1 items-center"><DownloadIcon className="h-5 w-5"/>Default</ButtonPills>
-<ButtonPills.green>Green</ButtonPills.green>
-<ButtonPills.yellow>Yellow</ButtonPills.yellow>
-<ButtonPills.orange>Orange</ButtonPills.orange>
-<ButtonPills.red>Red</ButtonPills.red>
-<ButtonPills.purple>Purple</ButtonPills.purple>
-<ButtonPills.dark>Dark</ButtonPills.dark>`
+<LinkButton href="#" className="flex gap-1 items-center"><DownloadIcon className="h-5 w-5" />Default</LinkButton>
+<LinkButton.green href="#">Green</LinkButton.green>
+<LinkButton.yellow href="#">Yellow</LinkButton.yellow>
+<LinkButton.orange href="#">Orange</LinkButton.orange>
+<LinkButton.red href="#" pills>Red</LinkButton.red>
+<LinkButton.purple href="#" pills>Purple</LinkButton.purple>
+<LinkButton.dark href="#" pills>Dark</LinkButton.dark>`
 					}>
 					</Code>
 				</Section>
 
-				<Section id="button-outline-pills" name="Button Outline Pills" className="px-2 sm:px-6 md:px-12">
+				<Section id="link-button-outline" name="Link Button Outline" className="px-2 sm:px-6 md:px-12">
 					<div className="flex items-center flex-wrap gap-2">
-						<ButtonOutlinePills className="flex gap-1 items-center"><DownloadIcon className="h-5 w-5" />Default</ButtonOutlinePills>
-						<ButtonOutlinePills.green>Green</ButtonOutlinePills.green>
-						<ButtonOutlinePills.yellow>Yellow</ButtonOutlinePills.yellow>
-						<ButtonOutlinePills.orange>Orange</ButtonOutlinePills.orange>
-						<ButtonOutlinePills.red>Red</ButtonOutlinePills.red>
-						<ButtonOutlinePills.purple>Purple</ButtonOutlinePills.purple>
-						<ButtonOutlinePills.dark>Dark</ButtonOutlinePills.dark>
+						<LinkButtonOutline href="#" className="flex gap-1 items-center"><DownloadIcon className="h-5 w-5" />Default</LinkButtonOutline>
+						<LinkButtonOutline.green href="#">Green</LinkButtonOutline.green>
+						<LinkButtonOutline.yellow href="#">Yellow</LinkButtonOutline.yellow>
+						<LinkButtonOutline.orange href="#">Orange</LinkButtonOutline.orange>
+						<LinkButtonOutline.red href="#" pills>Red</LinkButtonOutline.red>
+						<LinkButtonOutline.purple href="#" pills>Purple</LinkButtonOutline.purple>
+						<LinkButtonOutline.dark href="#" pills>Dark</LinkButtonOutline.dark>
 					</div>
 					<Code code={
-						`import ButtonOutlinePills from "@components/ButtonOutlinePills";
+						`import LinkButtonOutline from "@components/LinkButtonOutline";
 
-<ButtonOutlinePills className="flex gap-1 items-center"><DownloadIcon className="h-5 w-5" />Default</ButtonOutlinePills>
-<ButtonOutlinePills.green>Green</ButtonOutlinePills.green>
-<ButtonOutlinePills.yellow>Yellow</ButtonOutlinePills.yellow>
-<ButtonOutlinePills.orange>Orange</ButtonOutlinePills.orange>
-<ButtonOutlinePills.red>Red</ButtonOutlinePills.red>
-<ButtonOutlinePills.purple>Purple</ButtonOutlinePills.purple>
-<ButtonOutlinePills.dark>Dark</ButtonOutlinePills.dark>`
+<LinkButtonOutline href="#" className="flex gap-1 items-center"><DownloadIcon className="h-5 w-5" />Default</LinkButtonOutline>
+<LinkButtonOutline.green href="#">Green</LinkButtonOutline.green>
+<LinkButtonOutline.yellow href="#">Yellow</LinkButtonOutline.yellow>
+<LinkButtonOutline.orange href="#">Orange</LinkButtonOutline.orange>
+<LinkButtonOutline.red href="#" pills>Red</LinkButtonOutline.red>
+<LinkButtonOutline.purple href="#" pills>Purple</LinkButtonOutline.purple>
+<LinkButtonOutline.dark href="#" pills>Dark</LinkButtonOutline.dark>`
 					}>
 					</Code>
 				</Section>
@@ -262,9 +274,9 @@ export default function Third() {
 						<Badge.green>Green</Badge.green>
 						<Badge.red isLarge>Red</Badge.red>
 						<Badge.yellow isLarge>Yellow</Badge.yellow>
-						<Badge.orange>Orange</Badge.orange>
-						<Badge.purple>Purple</Badge.purple>
-						<Badge.dark>Dark</Badge.dark>
+						<Badge.orange pills>Orange</Badge.orange>
+						<Badge.purple pills>Purple</Badge.purple>
+						<Badge.dark pills>Dark</Badge.dark>
 					</div>
 					<Code code={
 						`import Badge from "@components/Badge";
@@ -273,9 +285,9 @@ export default function Third() {
 <Badge.green>Green</Badge.green>
 <Badge.red isLarge>Red</Badge.red>
 <Badge.yellow isLarge>Yellow</Badge.yellow>
-<Badge.orange>Orange</Badge.orange>
-<Badge.purple>Purple</Badge.purple>
-<Badge.dark>Dark</Badge.dark>`
+<Badge.orange pills>Orange</Badge.orange>
+<Badge.purple pills>Purple</Badge.purple>
+<Badge.dark pills>Dark</Badge.dark>`
 					}>
 					</Code>
 				</Section>
@@ -286,9 +298,9 @@ export default function Third() {
 						<BadgeOutline.green>Green</BadgeOutline.green>
 						<BadgeOutline.red isLarge>Red</BadgeOutline.red>
 						<BadgeOutline.yellow isLarge>Yellow</BadgeOutline.yellow>
-						<BadgeOutline.orange>Orange</BadgeOutline.orange>
-						<BadgeOutline.purple>Purple</BadgeOutline.purple>
-						<BadgeOutline.dark>Dark</BadgeOutline.dark>
+						<BadgeOutline.orange pills>Orange</BadgeOutline.orange>
+						<BadgeOutline.purple pills>Purple</BadgeOutline.purple>
+						<BadgeOutline.dark pills>Dark</BadgeOutline.dark>
 					</div>
 					<Code code={
 						`import BadgeOutline from "@components/BadgeOutline";
@@ -297,57 +309,9 @@ export default function Third() {
 <BadgeOutline.green>Green</BadgeOutline.green>
 <BadgeOutline.red isLarge>Red</BadgeOutline.red>
 <BadgeOutline.yellow isLarge>Yellow</BadgeOutline.yellow>
-<BadgeOutline.orange>Orange</BadgeOutline.orange>
-<BadgeOutline.purple>Purple</BadgeOutline.purple>
-<BadgeOutline.dark>Dark</BadgeOutline.dark>`
-					}>
-					</Code>
-				</Section>
-
-				<Section id="badge-pills" name="Badge Pills" className="px-2 sm:px-6 md:px-12">
-					<div className="flex items-center flex-wrap gap-2">
-						<BadgePills className="flex gap-1 items-center"><DownloadIcon className="h-4 w-4" />Default</BadgePills>
-						<BadgePills.green>Green</BadgePills.green>
-						<BadgePills.red isLarge>Red</BadgePills.red>
-						<BadgePills.yellow isLarge>Yellow</BadgePills.yellow>
-						<BadgePills.orange>Orange</BadgePills.orange>
-						<BadgePills.purple>Purple</BadgePills.purple>
-						<BadgePills.dark>Dark</BadgePills.dark>
-					</div>
-					<Code code={
-						`import BadgePills from "@components/BadgePills";
-
-<BadgePills className="flex gap-1 items-center"><DownloadIcon className="h-4 w-4" />Default</BadgePills>
-<BadgePills.green>Green</BadgePills.green>
-<BadgePills.red isLarge>Red</BadgePills.red>
-<BadgePills.yellow isLarge>Yellow</BadgePills.yellow>
-<BadgePills.orange>Orange</BadgePills.orange>
-<BadgePills.purple>Purple</BadgePills.purple>
-<BadgePills.dark>Dark</BadgePills.dark>`
-					}>
-					</Code>
-				</Section>
-
-				<Section id="badge-outline-pills" name="Badge Outline Pills" className="px-2 sm:px-6 md:px-12">
-					<div className="flex items-center flex-wrap gap-2">
-						<BadgeOutlinePills className="flex gap-1 items-center"><DownloadIcon className="h-4 w-4" />Default</BadgeOutlinePills>
-						<BadgeOutlinePills.green>Green</BadgeOutlinePills.green>
-						<BadgeOutlinePills.red isLarge>Red</BadgeOutlinePills.red>
-						<BadgeOutlinePills.yellow isLarge>Yellow</BadgeOutlinePills.yellow>
-						<BadgeOutlinePills.orange>Orange</BadgeOutlinePills.orange>
-						<BadgeOutlinePills.purple>Purple</BadgeOutlinePills.purple>
-						<BadgeOutlinePills.dark>Dark</BadgeOutlinePills.dark>
-					</div>
-					<Code code={
-						`import BadgeOutlinePills from "@components/BadgeOutlinePills";
-
-<BadgeOutlinePills className="flex gap-1 items-center"><DownloadIcon className="h-4 w-4" />Default</BadgeOutlinePills>
-<BadgeOutlinePills.green>Green</BadgeOutlinePills.green>
-<BadgeOutlinePills.red isLarge>Red</BadgeOutlinePills.red>
-<BadgeOutlinePills.yellow isLarge>Yellow</BadgeOutlinePills.yellow>
-<BadgeOutlinePills.orange>Orange</BadgeOutlinePills.orange>
-<BadgeOutlinePills.purple>Purple</BadgeOutlinePills.purple>
-<BadgeOutlinePills.dark>Dark</BadgeOutlinePills.dark>`
+<BadgeOutline.orange pills>Orange</BadgeOutline.orange>
+<BadgeOutline.purple pills>Purple</BadgeOutline.purple>
+<BadgeOutline.dark pills>Dark</BadgeOutline.dark>`
 					}>
 					</Code>
 				</Section>
@@ -357,9 +321,9 @@ export default function Third() {
 					<Alert.green>Green</Alert.green>
 					<Alert.red className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5" />Red <span className="font-normal">Danger</span></Alert.red>
 					<Alert.yellow isLarge>Yellow</Alert.yellow>
-					<Alert.orange>Orange</Alert.orange>
-					<Alert.purple>Purple</Alert.purple>
-					<Alert.dark>Dark</Alert.dark>
+					<Alert.orange pills>Orange</Alert.orange>
+					<Alert.purple pills>Purple</Alert.purple>
+					<Alert.dark pills>Dark</Alert.dark>
 					<Code code={
 						`import Alert from "@components/Alert";
 
@@ -367,9 +331,9 @@ export default function Third() {
 <Alert.green>Green</Alert.green>
 <Alert.red className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5" />Red <span className="font-normal">Danger</span></Alert.red>
 <Alert.yellow isLarge>Yellow</Alert.yellow>
-<Alert.orange>Orange</Alert.orange>
-<Alert.purple>Purple</Alert.purple>
-<Alert.dark>Dark</Alert.dark>`
+<Alert.orange pills>Orange</Alert.orange>
+<Alert.purple pills>Purple</Alert.purple>
+<Alert.dark pills>Dark</Alert.dark>`
 					}>
 					</Code>
 				</Section>
@@ -379,9 +343,9 @@ export default function Third() {
 					<AlertOutline.green>Green</AlertOutline.green>
 					<AlertOutline.red className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5" />Red <span className="font-normal">Danger</span></AlertOutline.red>
 					<AlertOutline.yellow isLarge>Yellow</AlertOutline.yellow>
-					<AlertOutline.orange>Orange</AlertOutline.orange>
-					<AlertOutline.purple>Purple</AlertOutline.purple>
-					<AlertOutline.dark>Dark</AlertOutline.dark>
+					<AlertOutline.orange pills>Orange</AlertOutline.orange>
+					<AlertOutline.purple pills>Purple</AlertOutline.purple>
+					<AlertOutline.dark pills>Dark</AlertOutline.dark>
 					<Code code={
 						`import AlertOutline from "@components/AlertOutline";
 
@@ -389,9 +353,9 @@ export default function Third() {
 <AlertOutline.green>Green</AlertOutline.green>
 <AlertOutline.red className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5" />Red <span className="font-normal">Danger</span></AlertOutline.red>
 <AlertOutline.yellow isLarge>Yellow</AlertOutline.yellow>
-<AlertOutline.orange>Orange</AlertOutline.orange>
-<AlertOutline.purple>Purple</AlertOutline.purple>
-<AlertOutline.dark>Dark</AlertOutline.dark>`
+<AlertOutline.orange pills>Orange</AlertOutline.orange>
+<AlertOutline.purple pills>Purple</AlertOutline.purple>
+<AlertOutline.dark pills>Dark</AlertOutline.dark>`
 					}>
 					</Code>
 				</Section>
