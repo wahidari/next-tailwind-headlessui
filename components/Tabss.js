@@ -25,7 +25,7 @@ export default function Tabss({ tabs, contents }) {
 				</Tab.List>
 				<Tab.Panels>
 					{contents.map(item => (
-						<Tab.Panel key={item} className='p-4 dark:text-white border dark:border-gray-700 rounded rounded-l-none -mt-[0.06rem]'>
+						<Tab.Panel key={item} className='p-4 dark:text-white border dark:border-gray-700 rounded rounded-tl-none rounded-tr-none sm:rounded-tr -mt-[0.06rem]'>
 							{item}
 						</Tab.Panel>
 					))}
