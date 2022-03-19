@@ -1,9 +1,10 @@
-export default function Alert({ className, children, isLarge }) {
+export default function Alert({ className, children, pills, isLarge }) {
   return (
     <div className={`
       ${className ? className + " " : ""} 
       ${isLarge ? "text-sm" : "text-xs"} 
-      p-3 mb-2 rounded-lg text-blue-600 bg-blue-100`}
+      ${pills ? "rounded-full" : "rounded-lg"}
+      p-3 mb-2 text-blue-600 bg-blue-100`}
       role="alert"
     >
       {children}
@@ -11,12 +12,13 @@ export default function Alert({ className, children, isLarge }) {
   )
 }
 
-Alert.green = ({ className, children, isLarge }) => {
+Alert.green = ({ className, children, pills, isLarge }) => {
   return (
     <div className={`
       ${className ? className + " " : ""} 
       ${isLarge ? "text-sm" : "text-xs"} 
-      p-3 mb-2 rounded-lg text-green-600 bg-green-100`}
+      ${pills ? "rounded-full" : "rounded-lg"}
+      p-3 mb-2 text-green-600 bg-green-100`}
       role="alert"
     >
       {children}
@@ -24,12 +26,13 @@ Alert.green = ({ className, children, isLarge }) => {
   )
 }
 
-Alert.yellow = ({ className, children, isLarge }) => {
+Alert.yellow = ({ className, children, pills, isLarge }) => {
   return (
     <div className={`
       ${className ? className + " " : ""} 
       ${isLarge ? "text-sm" : "text-xs"} 
-      p-3 mb-2 rounded-lg text-yellow-600 bg-yellow-100`}
+      ${pills ? "rounded-full" : "rounded-lg"}
+      p-3 mb-2 text-yellow-600 bg-yellow-100`}
       role="alert"
     >
       {children}
@@ -37,12 +40,13 @@ Alert.yellow = ({ className, children, isLarge }) => {
   )
 }
 
-Alert.red = ({ className, children, isLarge }) => {
+Alert.red = ({ className, children, pills, isLarge }) => {
   return (
     <div className={`
       ${className ? className + " " : ""} 
       ${isLarge ? "text-sm" : "text-xs"} 
-      p-3 mb-2 rounded-lg text-red-600 bg-red-100`}
+      ${pills ? "rounded-full" : "rounded-lg"}
+      p-3 mb-2 text-red-600 bg-red-100`}
       role="alert"
     >
       {children}
@@ -50,12 +54,13 @@ Alert.red = ({ className, children, isLarge }) => {
   )
 }
 
-Alert.orange = ({ className, children, isLarge }) => {
+Alert.orange = ({ className, children, pills, isLarge }) => {
   return (
     <div className={`
       ${className ? className + " " : ""} 
       ${isLarge ? "text-sm" : "text-xs"} 
-      p-3 mb-2 rounded-lg text-orange-600 bg-orange-100`}
+      ${pills ? "rounded-full" : "rounded-lg"}
+      p-3 mb-2 text-orange-600 bg-orange-100`}
       role="alert"
     >
       {children}
@@ -63,12 +68,13 @@ Alert.orange = ({ className, children, isLarge }) => {
   )
 }
 
-Alert.purple = ({ className, children, isLarge }) => {
+Alert.purple = ({ className, children, pills, isLarge }) => {
   return (
     <div className={`
       ${className ? className + " " : ""} 
       ${isLarge ? "text-sm" : "text-xs"} 
-      p-3 mb-2 rounded-lg text-violet-600 bg-violet-100`}
+      ${pills ? "rounded-full" : "rounded-lg"}
+      p-3 mb-2 text-violet-600 bg-violet-100`}
       role="alert"
     >
       {children}
@@ -76,12 +82,13 @@ Alert.purple = ({ className, children, isLarge }) => {
   )
 }
 
-Alert.dark = ({ className, children, isLarge }) => {
+Alert.dark = ({ className, children, pills, isLarge }) => {
   return (
     <div className={`
       ${className ? className + " " : ""} 
       ${isLarge ? "text-sm" : "text-xs"} 
-      p-3 mb-2 rounded-lg text-gray-600 bg-gray-100`}
+      ${pills ? "rounded-full" : "rounded-lg"}
+      p-3 mb-2 text-gray-600 bg-gray-100`}
       role="alert"
     >
       {children}
