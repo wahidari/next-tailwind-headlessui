@@ -127,7 +127,7 @@ export default function Third() {
 							<Tab.Panel className='rounded-xl p-3 dark:text-white'>
 								<p className="leading-relaxed text-base">Taxidermy bushwick celiac master cleanse microdosing seitan. Fashion axe four dollar toast truffaut, direct trade kombucha brunch williamsburg keffiyeh gastropub tousled squid meh taiyaki drinking vinegar tacos.</p>
 								<div className="flex md:mt-4 mt-6">
-									<button className="inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-indigo-600 rounded">Button</button>
+									<button className="inline-flex text-white bg-blue-500 border-0 py-1 px-4 focus:outline-none hover:bg-blue-600 rounded">Button</button>
 								</div>
 							</Tab.Panel>
 							<Tab.Panel className='rounded-xl p-3 dark:text-white'>
