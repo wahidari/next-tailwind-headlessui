@@ -19,6 +19,13 @@ import Container from "@components/Container";
 import BackToTop from "@components/BackToTop";
 import LinkButton from "@components/LinkButton";
 import LinkButtonOutline from "@components/LinkButtonOutline";
+import Accordion from "@components/Accordion";
+import Tabs from "@components/Tabs";
+import { Tab } from '@headlessui/react'
+
+function classNames(...classes) {
+	return classes.filter(Boolean).join(' ')
+}
 
 export default function Third() {
 	const { darkMode, setDarkMode } = useContext(GlobalContext);
@@ -80,7 +87,168 @@ export default function Third() {
 					}
 				</div>
 
-				<BackToTop/>
+				<BackToTop />
+
+				<Section id="simple-tab" name="Simple Tab" className="px-2 sm:px-6 md:px-12">
+					<Tabs
+						tabs={["Tab A", "Tab B"]}
+						contents={["Content A", "Content B"]}
+					>
+					</Tabs>
+				</Section>
+
+				<Section id="tab" name="Tab" className="px-2 sm:px-6 md:px-12">
+					<Tab.Group>
+						<Tab.List className="w-full max-w-sm flex p-1 space-x-1 bg-gray-100 dark:bg-neutral-800 rounded-xl font-medium">
+							<Tab className={({ selected }) =>
+								classNames(
+									'w-full py-2 text-base font-medium text-blue-500 rounded-xl',
+									selected ? 'bg-blue-500	!text-white' : 'text-blue-500 hover:bg-gray-200 dark:hover:bg-neutral-700 hover:text-blue-600 dark:hover:text-blue-600'
+								)
+							}
+							> Tab A </Tab>
+							<Tab className={({ selected }) =>
+								classNames(
+									'w-full py-2 text-base font-medium text-blue-500 rounded-xl',
+									selected ? 'bg-blue-500	!text-white' : 'text-blue-500 hover:bg-gray-200 dark:hover:bg-neutral-700 hover:text-blue-600 dark:hover:text-blue-600'
+								)
+							}
+							> Tab B </Tab>
+						</Tab.List>
+						<Tab.Panels className="mt-2 max-w-lg">
+							<Tab.Panel className='rounded-xl p-3 dark:text-white'>
+								<p className="leading-relaxed text-base">Taxidermy bushwick celiac master cleanse microdosing seitan. Fashion axe four dollar toast truffaut, direct trade kombucha brunch williamsburg keffiyeh gastropub tousled squid meh taiyaki drinking vinegar tacos.</p>
+								<div className="flex md:mt-4 mt-6">
+									<button className="inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-indigo-600 rounded">Button</button>
+								</div>
+							</Tab.Panel>
+							<Tab.Panel className='rounded-xl p-3 dark:text-white'>
+								<div className="flex flex-wrap text-center">
+									<div className="p-4 w-1/2">
+										<h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900 dark:text-white">2.7K</h2>
+										<p className="leading-relaxed">Users</p>
+									</div>
+									<div className="p-4 w-1/2">
+										<h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900 dark:text-white">1.8K</h2>
+										<p className="leading-relaxed">Subscribes</p>
+									</div>
+								</div>
+							</Tab.Panel>
+						</Tab.Panels>
+					</Tab.Group>
+				</Section>
+
+				<Section id="tab-style-a" name="Tab Style A" className="px-2 sm:px-6 md:px-12">
+					<Tab.Group>
+						<Tab.List className="flex font-medium whitespace-nowrap border-b border-gray-200 dark:border-neutral-700">
+							<div>
+								<Tab className={({ selected }) =>
+									classNames(
+										'w-full mr-4 py-2 text-base font-medium -mb-[0.06rem] transition-all duration-300',
+										'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200',
+										'border-b-2 border-transparent hover:border-gray-400 dark:hover:border-gray-600',
+										selected ? '!text-blue-500 border-b-2 !border-blue-500' : ''
+									)
+								}
+								>
+									Tab A
+								</Tab>
+								<Tab className={({ selected }) =>
+									classNames(
+										'w-full mr-4 py-2 text-base font-medium -mb-[0.06rem] transition-all duration-300',
+										'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200',
+										'border-b-2 border-transparent hover:border-gray-400 dark:hover:border-gray-600',
+										selected ? '!text-blue-500 border-b-2 !border-blue-500' : ''
+									)
+								}
+								>
+									Tab B
+								</Tab>
+							</div>
+						</Tab.List>
+						<Tab.Panels className="mt-2">
+							<Tab.Panel className='rounded-xl p-3 dark:text-white'>
+								<Skeletons className="max-w-[12rem]" />
+							</Tab.Panel>
+							<Tab.Panel className='rounded-xl p-3 dark:text-white'>
+								<Skeletons className="max-w-[24rem] !rounded-full" />
+							</Tab.Panel>
+						</Tab.Panels>
+					</Tab.Group>
+				</Section>
+
+				<Section id="tab-style-b" name="Tab Style B" className="px-2 sm:px-6 md:px-12">
+					<Tab.Group>
+						<Tab.List className="flex font-medium whitespace-nowrap border-b border-gray-200 dark:border-neutral-700">
+							<div className="flex gap-x-6">
+								<Tab className={({ selected }) =>
+									classNames(
+										'w-full py-2 text-sm font-medium -mb-[0.06rem] transition-all duration-300',
+										'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200',
+										'border-b-2 border-transparent hover:border-gray-500 dark:hover:border-gray-400',
+										selected ? '!text-blue-500 border-b-2 !border-blue-500' : ''
+									)
+								}
+								>
+									Tab A
+								</Tab>
+								<Tab className={({ selected }) =>
+									classNames(
+										'w-full py-2 text-sm font-medium -mb-[0.06rem] transition-all duration-300',
+										'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200',
+										'border-b-2 border-transparent hover:border-gray-500 dark:hover:border-gray-400',
+										selected ? '!text-blue-500 border-b-2 !border-blue-500' : ''
+									)
+								}
+								>
+									Tab Title B
+								</Tab>
+								<Tab className={({ selected }) =>
+									classNames(
+										'w-full py-2 text-sm font-medium -mb-[0.06rem] transition-all duration-300',
+										'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200',
+										'border-b-2 border-transparent hover:border-gray-500 dark:hover:border-gray-400',
+										selected ? '!text-blue-500 border-b-2 !border-blue-500' : ''
+									)
+								}
+								>
+									Tab Title C
+								</Tab>
+							</div>
+						</Tab.List>
+						<Tab.Panels className="mt-2">
+							<Tab.Panel className='rounded-xl py-3 dark:text-white'>
+								<Skeletons className="max-w-[16rem] !rounded-full" />
+							</Tab.Panel>
+							<Tab.Panel className='rounded-xl py-3 dark:text-white'>
+								<Skeletons className="max-w-2xl !rounded-full" />
+							</Tab.Panel>
+							<Tab.Panel className='rounded-xl py-3 dark:text-white'>
+								<Skeletons className="!rounded-full" />
+							</Tab.Panel>
+						</Tab.Panels>
+					</Tab.Group>
+				</Section>
+
+				<Section id="accordion" name="Accordion" className="px-2 sm:px-6 md:px-12">
+					<Accordion title="Accordion Title" className="max-w-xl my-2 !text-base">
+						<Text>Accordion Body</Text>
+					</Accordion>
+					<Accordion title="Accordion Title" className="max-w-xl my-2">
+						<Text className="text-sm">Accordion Body</Text>
+					</Accordion>
+					<Code code={
+						`import Accordion from "@components/Accordion";
+
+<Accordion title="Accordion Title" className="max-w-xl my-2 !text-base">
+	<Text>Accordion Body</Text>
+</Accordion>
+<Accordion title="Accordion Title" className="max-w-xl my-2">
+	<Text className="text-sm">Accordion Body</Text>
+</Accordion>`
+					}>
+					</Code>
+				</Section>
 
 				<Section id="section" name="Section" className="px-2 sm:px-6 md:px-12">
 					<Section className="!py-0">
