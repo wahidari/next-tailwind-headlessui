@@ -104,7 +104,7 @@ LinkButton.dark = ({ className, href, pills, children, ...rest }) => {
 				className={`
 				${className ? className + " " : ""}
 				${pills ? "rounded-full" : "rounded"}
-				text-sm transition-all px-3 py-1.5 font-medium text-gray-500 hover:text-white border border-gray-500 hover:bg-gray-600`}
+				text-sm transition-all px-3 py-1.5 font-medium text-gray-500 hover:text-white border border-gray-500 hover:bg-gray-600 dark:text-gray-300`}
 			>
 				{children}
 			</a>

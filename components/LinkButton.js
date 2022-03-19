@@ -16,6 +16,22 @@ export default function LinkButton({ className, href, pills, children, ...rest }
 	);
 }
 
+LinkButton.secondary = ({ className, href, pills, children, ...rest }) => {
+	return (
+		<Link href={href}>
+			<a
+				{...rest}
+				className={`
+				${className ? className + " " : ""}
+				${pills ? "rounded-full" : "rounded"}
+				text-sm transition-all px-3 py-1.5 font-medium bg-gray-50 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-800 text-neutral-800 dark:text-neutral-300 hover:bg-gray-100 dark:hover:bg-neutral-900`}
+			>
+				{children}
+			</a>
+		</Link>
+	);
+}
+
 LinkButton.green = ({ className, href, pills, children, ...rest }) => {
 	return (
 		<Link href={href}>
@@ -36,7 +52,7 @@ LinkButton.yellow = ({ className, href, pills, children, ...rest }) => {
 	return (
 		<Link href={href}>
 			<a
-				{...rest}
+				{...rest} 
 				className={`
 				${className ? className + " " : ""}
 				${pills ? "rounded-full" : "rounded"}

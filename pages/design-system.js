@@ -175,6 +175,7 @@ export default function Third() {
 				<Section id="button" name="Button" className="px-2 sm:px-6 md:px-12">
 					<div className="flex items-center flex-wrap gap-2">
 						<Button className="flex gap-1 items-center"><PlusCircleIcon className="h-5 w-5" />Default</Button>
+						<Button.secondary>Secondary</Button.secondary>
 						<Button.green>Green</Button.green>
 						<Button.yellow>Yellow</Button.yellow>
 						<Button.orange>Orange</Button.orange>
@@ -186,6 +187,7 @@ export default function Third() {
 						`import Button from "@components/Button";
 
 <Button className="flex gap-1 items-center"><PlusCircleIcon className="h-5 w-5" />Default</Button>
+<Button.secondary>Secondary</Button.secondary>
 <Button.green>Green</Button.green>
 <Button.yellow>Yellow</Button.yellow>
 <Button.orange>Orange</Button.orange>
@@ -223,6 +225,7 @@ export default function Third() {
 				<Section id="link-button" name="Link Button" className="px-2 sm:px-6 md:px-12">
 					<div className="flex items-center flex-wrap gap-2">
 						<LinkButton href="#" className="flex gap-1 items-center"><DownloadIcon className="h-5 w-5" />Default</LinkButton>
+						<LinkButton.secondary href="#">Secondary</LinkButton.secondary>
 						<LinkButton.green href="#">Green</LinkButton.green>
 						<LinkButton.yellow href="#">Yellow</LinkButton.yellow>
 						<LinkButton.orange href="#">Orange</LinkButton.orange>
@@ -234,6 +237,7 @@ export default function Third() {
 						`import LinkButton from "@components/LinkButton";
 
 <LinkButton href="#" className="flex gap-1 items-center"><DownloadIcon className="h-5 w-5" />Default</LinkButton>
+<LinkButton.secondary href="#">Secondary</LinkButton.secondary>
 <LinkButton.green href="#">Green</LinkButton.green>
 <LinkButton.yellow href="#">Yellow</LinkButton.yellow>
 <LinkButton.orange href="#">Orange</LinkButton.orange>

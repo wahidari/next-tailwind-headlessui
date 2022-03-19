@@ -17,6 +17,25 @@ export default function Button({ className, type, value, onClick, disabled, pill
 	);
 }
 
+Button.secondary = ({ className, type, value, onClick, disabled, pills, children, ...rest }) => {
+	return (
+		<button
+			{...rest}
+			type={type}
+			onClick={onClick}
+			value={value}
+			className={`
+				text-sm text-neutral-800 dark:text-neutral-300 transition-all outline-none px-3 py-1.5 font-medium bg-gray-50 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-800
+				${className ? className + " " : ""}
+				${pills ? "rounded-full" : "rounded"}
+				${disabled ? "cursor-not-allowed" : "hover:bg-gray-100 dark:hover:bg-neutral-900"} 
+				`}
+		>
+			{children}
+		</button>
+	);
+}
+
 Button.green = ({ className, type, value, onClick, disabled, pills, children, ...rest }) => {
 	return (
 		<button
