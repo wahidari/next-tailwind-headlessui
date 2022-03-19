@@ -1,81 +1,88 @@
-export default function BadgeOutline({ className, isLarge, children }) {
+export default function BadgeOutline({ className, isLarge, pills, children }) {
   return (
     <span className={`
       ${className ? className + " " : ""} 
-      ${isLarge ? "text-sm" : "text-xs"} 
-      font-medium px-2 py-1 rounded text-blue-500 border border-blue-500`}
+      ${isLarge ? "text-sm" : "text-xs"}
+      ${pills ? "rounded-full" : "rounded"} 
+      font-medium px-2 py-1 text-blue-500 border border-blue-500`}
     >
       {children}
     </span>
   )
 }
 
-BadgeOutline.green = ({ className, isLarge, children }) => {
+BadgeOutline.green = ({ className, isLarge, pills, children }) => {
   return (
     <span className={`
       ${className ? className + " " : ""} 
-      ${isLarge ? "text-sm" : "text-xs"} 
-      font-medium px-2 py-1 rounded text-green-500 border border-green-500`}
+      ${isLarge ? "text-sm" : "text-xs"}
+      ${pills ? "rounded-full" : "rounded"} 
+      font-medium px-2 py-1 text-green-500 border border-green-500`}
     >
       {children}
     </span>
   )
 }
 
-BadgeOutline.red = ({ className, isLarge, children }) => {
+BadgeOutline.red = ({ className, isLarge, pills, children }) => {
   return (
     <span className={`
       ${className ? className + " " : ""} 
-      ${isLarge ? "text-sm" : "text-xs"} 
-      font-medium px-2 py-1 rounded text-red-500 border border-red-500`}
+      ${isLarge ? "text-sm" : "text-xs"}
+      ${pills ? "rounded-full" : "rounded"} 
+      font-medium px-2 py-1 text-red-500 border border-red-500`}
     >
       {children}
     </span>
   )
 }
 
-BadgeOutline.yellow = ({ className, isLarge, children }) => {
+BadgeOutline.yellow = ({ className, isLarge, pills, children }) => {
   return (
     <span className={`
       ${className ? className + " " : ""} 
-      ${isLarge ? "text-sm" : "text-xs"} 
-      font-medium px-2 py-1 rounded text-yellow-500 border border-yellow-500`}
+      ${isLarge ? "text-sm" : "text-xs"}
+      ${pills ? "rounded-full" : "rounded"} 
+      font-medium px-2 py-1 text-yellow-500 border border-yellow-500`}
     >
       {children}
     </span>
   )
 }
 
-BadgeOutline.orange = ({ className, isLarge, children }) => {
+BadgeOutline.orange = ({ className, isLarge, pills, children }) => {
   return (
     <span className={`
       ${className ? className + " " : ""} 
-      ${isLarge ? "text-sm" : "text-xs"} 
-      font-medium px-2 py-1 rounded text-orange-500 border border-orange-500`}
+      ${isLarge ? "text-sm" : "text-xs"}
+      ${pills ? "rounded-full" : "rounded"} 
+      font-medium px-2 py-1 text-orange-500 border border-orange-500`}
     >
       {children}
     </span>
   )
 }
 
-BadgeOutline.purple = ({ className, isLarge, children }) => {
+BadgeOutline.purple = ({ className, isLarge, pills, children }) => {
   return (
     <span className={`
       ${className ? className + " " : ""} 
-      ${isLarge ? "text-sm" : "text-xs"} 
-      font-medium px-2 py-1 rounded text-violet-500 border border-violet-500`}
+      ${isLarge ? "text-sm" : "text-xs"}
+      ${pills ? "rounded-full" : "rounded"} 
+      font-medium px-2 py-1 text-violet-500 border border-violet-500`}
     >
       {children}
     </span>
   )
 }
 
-BadgeOutline.dark = ({ className, isLarge, children }) => {
+BadgeOutline.dark = ({ className, isLarge, pills, children }) => {
   return (
     <span className={`
       ${className ? className + " " : ""} 
-      ${isLarge ? "text-sm" : "text-xs"} 
-      font-medium px-2 py-1 rounded text-gray-500 dark:text-gray-300 border border-gray-500`}
+      ${isLarge ? "text-sm" : "text-xs"}
+      ${pills ? "rounded-full" : "rounded"} 
+      font-medium px-2 py-1 text-gray-500 dark:text-gray-300 border border-gray-500`}
     >
       {children}
     </span>
