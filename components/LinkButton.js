@@ -36,7 +36,7 @@ LinkButton.yellow = ({ className, href, pills, children, ...rest }) => {
 	return (
 		<Link href={href}>
 			<a
-				{...rest} 
+				{...rest}
 				className={`
 				${className ? className + " " : ""}
 				${pills ? "rounded-full" : "rounded"}

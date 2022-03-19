@@ -7,7 +7,6 @@ export default function Heading({ className, children, ...rest }) {
       {children}
     </h1>
   );
-
 }
 
 Heading.h2 = ({ className, children, ...rest }) => {
