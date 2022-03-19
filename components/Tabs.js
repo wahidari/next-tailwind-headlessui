@@ -13,8 +13,9 @@ export default function Tabs({ tabs, contents }) {
 						<Tab key={item}
 							className={({ selected }) =>
 								classNames(
-									'w-full py-2 text-base font-medium text-blue-500 rounded-xl',
-									selected ? 'bg-blue-500	!text-white' : 'text-blue-500 hover:bg-gray-200 dark:hover:bg-neutral-700 hover:text-blue-600 dark:hover:text-blue-600'
+									'w-full py-2 text-base font-medium text-blue-500 rounded-xl transition-all duration-300',
+									selected ? 'bg-blue-500	!text-white' : 
+									'text-blue-500 hover:bg-gray-200 dark:hover:bg-neutral-700 hover:text-blue-600 dark:hover:text-blue-600'
 								)
 							}
 						>

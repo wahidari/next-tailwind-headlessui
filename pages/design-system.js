@@ -22,6 +22,7 @@ import LinkButtonOutline from "@components/LinkButtonOutline";
 import Accordion from "@components/Accordion";
 import Tabs from "@components/Tabs";
 import { Tab } from '@headlessui/react'
+import Tabss from "@components/Tabss";
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ')
@@ -95,6 +96,11 @@ export default function Third() {
 						contents={["Content A", "Content B"]}
 					>
 					</Tabs>
+					<Tabss
+						tabs={["Tab A", "Tab B"]}
+						contents={["Content A", "Content B"]}
+					>
+					</Tabss>
 				</Section>
 
 				<Section id="tab" name="Tab" className="px-2 sm:px-6 md:px-12">
@@ -102,15 +108,17 @@ export default function Third() {
 						<Tab.List className="w-full max-w-sm flex p-1 space-x-1 bg-gray-100 dark:bg-neutral-800 rounded-xl font-medium">
 							<Tab className={({ selected }) =>
 								classNames(
-									'w-full py-2 text-base font-medium text-blue-500 rounded-xl',
-									selected ? 'bg-blue-500	!text-white' : 'text-blue-500 hover:bg-gray-200 dark:hover:bg-neutral-700 hover:text-blue-600 dark:hover:text-blue-600'
+									'w-full py-2 text-base font-medium text-blue-500 rounded-xl transition-all duration-300',
+									selected ? 'bg-blue-500	!text-white' : 
+									'text-blue-500 hover:bg-gray-200 dark:hover:bg-neutral-700 hover:text-blue-600 dark:hover:text-blue-600'
 								)
 							}
 							> Tab A </Tab>
 							<Tab className={({ selected }) =>
 								classNames(
-									'w-full py-2 text-base font-medium text-blue-500 rounded-xl',
-									selected ? 'bg-blue-500	!text-white' : 'text-blue-500 hover:bg-gray-200 dark:hover:bg-neutral-700 hover:text-blue-600 dark:hover:text-blue-600'
+									'w-full py-2 text-base font-medium text-blue-500 rounded-xl transition-all duration-300',
+									selected ? 'bg-blue-500	!text-white' : 
+									'text-blue-500 hover:bg-gray-200 dark:hover:bg-neutral-700 hover:text-blue-600 dark:hover:text-blue-600'
 								)
 							}
 							> Tab B </Tab>
