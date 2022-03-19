@@ -1,4 +1,4 @@
-export default function ButtonOutline({ className, type, value, onClick, disabled, children, ...rest }) {
+export default function ButtonOutline({ className, type, value, onClick, disabled, pills, children, ...rest }) {
 	return (
 		<button
 			{...rest}
@@ -6,8 +6,9 @@ export default function ButtonOutline({ className, type, value, onClick, disable
 			onClick={onClick}
 			value={value}
 			className={`
-				text-sm text-blue-500 transition-all outline-none px-3 py-1.5 rounded font-medium border border-blue-500 
+				text-sm text-blue-500 transition-all outline-none px-3 py-1.5 font-medium border border-blue-500 
 				${className ? className + " " : ""}
+				${pills ? "rounded-full" : "rounded"}
 				${disabled ? "cursor-not-allowed" : "hover:text-white hover:bg-blue-500"} 
 				`}
 		>
@@ -16,7 +17,7 @@ export default function ButtonOutline({ className, type, value, onClick, disable
 	);
 }
 
-ButtonOutline.green = ({ className, type, value, onClick, disabled, children, ...rest }) => {
+ButtonOutline.green = ({ className, type, value, onClick, disabled, pills, children, ...rest }) => {
 	return (
 		<button
 			{...rest}
@@ -24,8 +25,9 @@ ButtonOutline.green = ({ className, type, value, onClick, disabled, children, ..
 			onClick={onClick}
 			value={value}
 			className={`
-				text-sm text-emerald-500 transition-all outline-none px-3 py-1.5 rounded font-medium border border-emerald-500
+				text-sm text-emerald-500 transition-all outline-none px-3 py-1.5 font-medium border border-emerald-500
 				${className ? className + " " : ""}
+				${pills ? "rounded-full" : "rounded"}
 				${disabled ? "cursor-not-allowed" : "hover:text-white hover:bg-emerald-500"} 
 				`}
 		>
@@ -34,7 +36,7 @@ ButtonOutline.green = ({ className, type, value, onClick, disabled, children, ..
 	);
 }
 
-ButtonOutline.yellow = ({ className, type, value, onClick, disabled, children, ...rest }) => {
+ButtonOutline.yellow = ({ className, type, value, onClick, disabled, pills, children, ...rest }) => {
 	return (
 		<button
 			{...rest}
@@ -42,8 +44,9 @@ ButtonOutline.yellow = ({ className, type, value, onClick, disabled, children, .
 			onClick={onClick}
 			value={value}
 			className={`
-				text-sm text-amber-500 transition-all outline-none px-3 py-1.5 rounded font-medium border border-amber-500
+				text-sm text-amber-500 transition-all outline-none px-3 py-1.5 font-medium border border-amber-500
 				${className ? className + " " : ""}
+				${pills ? "rounded-full" : "rounded"}
 				${disabled ? "cursor-not-allowed" : "hover:text-white hover:bg-amber-500"} 
 				`}
 		>
@@ -52,7 +55,7 @@ ButtonOutline.yellow = ({ className, type, value, onClick, disabled, children, .
 	);
 }
 
-ButtonOutline.orange = ({ className, type, value, onClick, disabled, children, ...rest }) => {
+ButtonOutline.orange = ({ className, type, value, onClick, disabled, pills, children, ...rest }) => {
 	return (
 		<button
 			{...rest}
@@ -60,8 +63,9 @@ ButtonOutline.orange = ({ className, type, value, onClick, disabled, children, .
 			onClick={onClick}
 			value={value}
 			className={`
-				text-sm text-orange-500 transition-all outline-none px-3 py-1.5 rounded font-medium border border-orange-500
+				text-sm text-orange-500 transition-all outline-none px-3 py-1.5 font-medium border border-orange-500
 				${className ? className + " " : ""}
+				${pills ? "rounded-full" : "rounded"}
 				${disabled ? "cursor-not-allowed" : "hover:text-white hover:bg-orange-500"} 
 				`}
 		>
@@ -70,7 +74,7 @@ ButtonOutline.orange = ({ className, type, value, onClick, disabled, children, .
 	);
 }
 
-ButtonOutline.red = ({ className, type, value, onClick, disabled, children, ...rest }) => {
+ButtonOutline.red = ({ className, type, value, onClick, disabled, pills, children, ...rest }) => {
 	return (
 		<button
 			{...rest}
@@ -78,8 +82,9 @@ ButtonOutline.red = ({ className, type, value, onClick, disabled, children, ...r
 			onClick={onClick}
 			value={value}
 			className={`
-				text-sm text-red-500 transition-all outline-none px-3 py-1.5 rounded font-medium border border-red-500
+				text-sm text-red-500 transition-all outline-none px-3 py-1.5 font-medium border border-red-500
 				${className ? className + " " : ""}
+				${pills ? "rounded-full" : "rounded"}
 				${disabled ? "cursor-not-allowed" : "hover:text-white hover:bg-red-500"} 
 				`}
 		>
@@ -88,7 +93,7 @@ ButtonOutline.red = ({ className, type, value, onClick, disabled, children, ...r
 	);
 }
 
-ButtonOutline.purple = ({ className, type, value, onClick, disabled, children, ...rest }) => {
+ButtonOutline.purple = ({ className, type, value, onClick, disabled, pills, children, ...rest }) => {
 	return (
 		<button
 			{...rest}
@@ -96,8 +101,9 @@ ButtonOutline.purple = ({ className, type, value, onClick, disabled, children, .
 			onClick={onClick}
 			value={value}
 			className={`
-				text-sm text-violet-500 transition-all outline-none px-3 py-1.5 rounded font-medium border border-violet-500
+				text-sm text-violet-500 transition-all outline-none px-3 py-1.5 font-medium border border-violet-500
 				${className ? className + " " : ""}
+				${pills ? "rounded-full" : "rounded"}
 				${disabled ? "cursor-not-allowed" : "hover:text-white hover:bg-violet-500"} 
 				`}
 		>
@@ -106,7 +112,7 @@ ButtonOutline.purple = ({ className, type, value, onClick, disabled, children, .
 	);
 }
 
-ButtonOutline.dark = ({ className, type, value, onClick, disabled, children, ...rest }) => {
+ButtonOutline.dark = ({ className, type, value, onClick, disabled, pills, children, ...rest }) => {
 	return (
 		<button
 			{...rest}
@@ -114,8 +120,9 @@ ButtonOutline.dark = ({ className, type, value, onClick, disabled, children, ...
 			onClick={onClick}
 			value={value}
 			className={`
-				text-sm text-gray-500 dark:text-gray-300 transition-all outline-none px-3 py-1.5 rounded font-medium border border-gray-500
+				text-sm text-gray-500 dark:text-gray-300 transition-all outline-none px-3 py-1.5 font-medium border border-gray-500
 				${className ? className + " " : ""}
+				${pills ? "rounded-full" : "rounded"}
 				${disabled ? "cursor-not-allowed" : "hover:text-white hover:bg-gray-500"} 
 				`}
 		>

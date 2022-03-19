@@ -1,4 +1,4 @@
-export default function Button({ className, type, value, onClick, disabled, children, ...rest }) {
+export default function Button({ className, type, value, onClick, disabled, pills, children, ...rest }) {
 	return (
 		<button
 			{...rest}
@@ -6,8 +6,9 @@ export default function Button({ className, type, value, onClick, disabled, chil
 			onClick={onClick}
 			value={value}
 			className={`
-				text-sm text-white transition-all outline-none px-3 py-1.5 rounded font-medium bg-blue-500 
+				text-sm text-white transition-all outline-none px-3 py-1.5 font-medium bg-blue-500 
 				${className ? className + " " : ""}
+				${pills ? "rounded-full" : "rounded"}
 				${disabled ? "cursor-not-allowed" : "hover:bg-blue-600"} 
 				`}
 		>
@@ -16,7 +17,7 @@ export default function Button({ className, type, value, onClick, disabled, chil
 	);
 }
 
-Button.green = ({ className, type, value, onClick, disabled, children, ...rest }) => {
+Button.green = ({ className, type, value, onClick, disabled, pills, children, ...rest }) => {
 	return (
 		<button
 			{...rest}
@@ -24,8 +25,9 @@ Button.green = ({ className, type, value, onClick, disabled, children, ...rest }
 			onClick={onClick}
 			value={value}
 			className={`
-				text-sm text-white transition-all outline-none px-3 py-1.5 rounded font-medium bg-emerald-500
+				text-sm text-white transition-all outline-none px-3 py-1.5 font-medium bg-emerald-500
 				${className ? className + " " : ""}
+				${pills ? "rounded-full" : "rounded"}
 				${disabled ? "cursor-not-allowed" : "hover:bg-emerald-600"} 
 				`}
 		>
@@ -34,7 +36,7 @@ Button.green = ({ className, type, value, onClick, disabled, children, ...rest }
 	);
 }
 
-Button.yellow = ({ className, type, value, onClick, disabled, children, ...rest }) => {
+Button.yellow = ({ className, type, value, onClick, disabled, pills, children, ...rest }) => {
 	return (
 		<button
 			{...rest}
@@ -42,8 +44,9 @@ Button.yellow = ({ className, type, value, onClick, disabled, children, ...rest 
 			onClick={onClick}
 			value={value}
 			className={`
-				text-sm text-white transition-all outline-none px-3 py-1.5 rounded font-medium bg-amber-500
+				text-sm text-white transition-all outline-none px-3 py-1.5 font-medium bg-amber-500
 				${className ? className + " " : ""}
+				${pills ? "rounded-full" : "rounded"}
 				${disabled ? "cursor-not-allowed" : "hover:bg-amber-600"} 
 				`}
 		>
@@ -52,7 +55,7 @@ Button.yellow = ({ className, type, value, onClick, disabled, children, ...rest 
 	);
 }
 
-Button.orange = ({ className, type, value, onClick, disabled, children, ...rest }) => {
+Button.orange = ({ className, type, value, onClick, disabled, pills, children, ...rest }) => {
 	return (
 		<button
 			{...rest}
@@ -60,8 +63,9 @@ Button.orange = ({ className, type, value, onClick, disabled, children, ...rest 
 			onClick={onClick}
 			value={value}
 			className={`
-				text-sm text-white transition-all outline-none px-3 py-1.5 rounded font-medium bg-orange-500
+				text-sm text-white transition-all outline-none px-3 py-1.5 font-medium bg-orange-500
 				${className ? className + " " : ""}
+				${pills ? "rounded-full" : "rounded"}
 				${disabled ? "cursor-not-allowed" : "hover:bg-orange-600"} 
 				`}
 		>
@@ -70,7 +74,7 @@ Button.orange = ({ className, type, value, onClick, disabled, children, ...rest 
 	);
 }
 
-Button.red = ({ className, type, value, onClick, disabled, children, ...rest }) => {
+Button.red = ({ className, type, value, onClick, disabled, pills, children, ...rest }) => {
 	return (
 		<button
 			{...rest}
@@ -78,8 +82,9 @@ Button.red = ({ className, type, value, onClick, disabled, children, ...rest }) 
 			onClick={onClick}
 			value={value}
 			className={`
-				text-sm text-white transition-all outline-none px-3 py-1.5 rounded font-medium bg-red-500
+				text-sm text-white transition-all outline-none px-3 py-1.5 font-medium bg-red-500
 				${className ? className + " " : ""}
+				${pills ? "rounded-full" : "rounded"}
 				${disabled ? "cursor-not-allowed" : "hover:bg-red-600"} 
 				`}
 		>
@@ -88,7 +93,7 @@ Button.red = ({ className, type, value, onClick, disabled, children, ...rest }) 
 	);
 }
 
-Button.purple = ({ className, type, value, onClick, disabled, children, ...rest }) => {
+Button.purple = ({ className, type, value, onClick, disabled, pills, children, ...rest }) => {
 	return (
 		<button
 			{...rest}
@@ -96,8 +101,9 @@ Button.purple = ({ className, type, value, onClick, disabled, children, ...rest 
 			onClick={onClick}
 			value={value}
 			className={`
-				text-sm text-white transition-all outline-none px-3 py-1.5 rounded font-medium bg-violet-500
+				text-sm text-white transition-all outline-none px-3 py-1.5 font-medium bg-violet-500
 				${className ? className + " " : ""}
+				${pills ? "rounded-full" : "rounded"}
 				${disabled ? "cursor-not-allowed" : "hover:bg-violet-600"} 
 				`}
 		>
@@ -106,7 +112,7 @@ Button.purple = ({ className, type, value, onClick, disabled, children, ...rest 
 	);
 }
 
-Button.dark = ({ className, type, value, onClick, disabled, children, ...rest }) => {
+Button.dark = ({ className, type, value, onClick, disabled, pills, children, ...rest }) => {
 	return (
 		<button
 			{...rest}
@@ -114,8 +120,9 @@ Button.dark = ({ className, type, value, onClick, disabled, children, ...rest })
 			onClick={onClick}
 			value={value}
 			className={`
-				text-sm text-white transition-all outline-none px-3 py-1.5 rounded font-medium bg-gray-500
+				text-sm text-white transition-all outline-none px-3 py-1.5 font-medium bg-gray-500
 				${className ? className + " " : ""}
+				${pills ? "rounded-full" : "rounded"}
 				${disabled ? "cursor-not-allowed" : "hover:bg-gray-600"} 
 				`}
 		>
