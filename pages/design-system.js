@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { GlobalContext } from "@utils/GlobalContext";
 import { DownloadIcon, InformationCircleIcon, MoonIcon, PlusCircleIcon, SunIcon } from "@heroicons/react/outline";
 import Button from "@components/Button";
@@ -26,6 +26,7 @@ import Tabss from "@components/Tabss";
 import TabsVertical from "@components/TabsVertical";
 import TabsVerticall from "@components/TabsVerticall";
 import Layout from "@components/Layout";
+import MyModal from "@components/MyModal";
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ')
@@ -33,6 +34,23 @@ function classNames(...classes) {
 
 export default function Third() {
 	const { darkMode, setDarkMode } = useContext(GlobalContext);
+	let [openModal, setOpenModal] = useState(false)
+	let [openDangerModal, setOpenDangerModal] = useState(false)
+
+	let [openModalWithData, setOpenModalWithData] = useState(false)
+	let [modalData, setModalData] = useState();
+
+	// handle modal submitted 
+	function handleSubmitModal() {
+		setOpenModalWithData(false);
+		alert(`Submit Delete ${modalData}`)
+	}
+
+	// handle modal opened
+	function handleShowModal(data) {
+		setModalData(data)
+		setOpenModalWithData(true)
+	}
 
 	return (
 		<div>
@@ -80,7 +98,7 @@ export default function Third() {
 						</div>
 					</Section>
 
-					<div className="!py-2 px-2 rounded mx-4 bg-opacity-20 dark:bg-opacity-40 bg-gray-100 dark:bg-neutral-800 backdrop-filter backdrop-blur fixed bottom-20 md:bottom-2/4 right-3 md:right-10 z-40">
+					<div className="!py-2 px-2 rounded mx-4 bg-opacity-20 dark:bg-opacity-40 bg-gray-100 dark:bg-neutral-800 backdrop-filter backdrop-blur fixed bottom-20 right-3 md:right-10 z-10">
 						{darkMode ?
 							<button onClick={() => setDarkMode(!darkMode)} aria-label="Change Theme" className="w-8 h-8 p-1 transition-all ease-in duration-300 bg-neutral-800 hover:bg-neutral-700 text-white rounded-full">
 								<SunIcon />
@@ -93,6 +111,39 @@ export default function Third() {
 					</div>
 
 					<BackToTop />
+
+					<Section id="modal" name="Modal">
+						<MyModal
+							modalTitle="Modal Title"
+							isOpenModal={openModal}
+							onCloseModal={() => setOpenModal(false)}
+							onConfirmModal={() => setOpenModal(false)}
+						>
+							<Text className="pb-2">Modal Body</Text>
+						</MyModal>
+						<Button className="mt-2" onClick={() => setOpenModal(true)}>Open Modal</Button>
+						<br />
+						<MyModal
+							modalTitle="Modal Title Danger"
+							isOpenModal={openDangerModal}
+							danger
+							onCloseModal={() => setOpenDangerModal(false)}
+							onConfirmModal={() => setOpenDangerModal(false)}
+						>
+							<Text className="pb-2">Modal Body Danger</Text>
+						</MyModal>
+						<Button.red className="mt-2" onClick={() => setOpenDangerModal(true)}>Open Danger Modal</Button.red>
+						<br />
+						<MyModal
+							modalTitle="Modal Title With Data"
+							isOpenModal={openModalWithData}
+							onCloseModal={() => setOpenModalWithData(false)}
+							onConfirmModal={handleSubmitModal}
+						>
+							<Text className="pb-2">Modal Body With {modalData}</Text>
+						</MyModal>
+						<Button className="mt-2" onClick={() => handleShowModal("Data 2")}>Open Modal With Data</Button>
+					</Section>
 
 					<Section id="simple-tab" name="Simple Tab">
 						<Tabs
