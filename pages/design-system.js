@@ -27,6 +27,7 @@ import TabsVertical from "@components/TabsVertical";
 import TabsVerticall from "@components/TabsVerticall";
 import Layout from "@components/Layout";
 import MyModal from "@components/MyModal";
+import Progress from "@components/Progress";
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ')
@@ -66,7 +67,7 @@ export default function Third() {
 			<Navbar />
 
 			<Layout>
-				<main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+				<main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pb-16">
 
 					<Section id="dark-mode" name="Dark Mode">
 						<div className="flex gap-3 flex-wrap">
@@ -148,7 +149,7 @@ export default function Third() {
 					<Section id="simple-tab" name="Simple Tab">
 						<Tabs
 							tabs={["Tab A", "Tab B"]}
-							contents={["Content A", "Content B"]}
+							contents={["Content A", "Content B Content B Content B Content B Content B"]}
 						>
 						</Tabs>
 						<TabsVerticall
@@ -158,7 +159,7 @@ export default function Third() {
 						</TabsVerticall>
 						<Tabss
 							tabs={["Tab A", "Tab B"]}
-							contents={["Content A", "Content B"]}
+							contents={["Content A", "Content B Content B Content B Content B"]}
 						>
 						</Tabss>
 						<TabsVertical
@@ -617,6 +618,29 @@ export default function Third() {
 <Skeletons className="max-w-[12rem]" />
 <Skeletons className="max-w-[24rem] !rounded-full" />
 <Skeletons className="!w-24 !h-24 !rounded-full" />`
+						}>
+						</Code>
+					</Section>
+
+					<Section id="progress" name="Progress Bar">
+						<Progress percent={20} />
+						<br />
+						<Progress height="h-1.5" percent={40} />
+						<br />
+						<Progress height="h-3" percent={60} />
+						<br />
+						<Progress.percentage percent={80} />
+						<br/>
+						<Code code={
+							`import Progress from "@components/Progress";
+
+<Progress percent={20} />
+<br />
+<Progress height="h-1.5" percent={40} />
+<br />
+<Progress height="h-3" percent={60} />
+<br />
+<Progress.percentage percent={80} />`
 						}>
 						</Code>
 					</Section>
