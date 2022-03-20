@@ -58,22 +58,22 @@ export default function Third() {
 							>
 								<div className="h-5 w-5 bg-white rounded-full absolute top-1 transition-all duration-300 dark:left-6 left-1"></div>
 							</div>
-							<button onClick={() => setDarkMode(!darkMode)} className="relative flex items-center py-0.5 px-1 bg-blue-500 rounded-full h-7">
+							<button onClick={() => setDarkMode(!darkMode)} aria-label="Change Theme" className="relative flex items-center py-0.5 px-1 bg-blue-500 rounded-full h-7">
 								<span className="absolute w-5 h-5 rounded-full bg-white dark:left-[1.7rem] left-1 transition-all duration-300"></span>
 								<span aria-hidden={true}>☀️</span>
 								<span aria-hidden={true}>🌙</span>
 							</button>
-							<button onClick={() => setDarkMode(!darkMode)} className={`${darkMode ? "bg-gray-800" : "bg-gray-200"} relative flex gap-1 items-center px-1 py-0.5 rounded-full h-7`}>
+							<button onClick={() => setDarkMode(!darkMode)} aria-label="Change Theme" className={`${darkMode ? "bg-gray-800" : "bg-gray-200"} relative flex gap-1 items-center px-1 py-0.5 rounded-full h-7`}>
 								<span className="absolute w-5 h-5 rounded-full bg-blue-500 dark:left-[1.6rem] left-1.5 transition-all duration-300"></span>
 								<span aria-hidden={true}><SunIcon className={`${darkMode ? "text-white bg-white" : ""}h-5 w-5`} /></span>
 								<span aria-hidden={true}><MoonIcon className="h-5 w-5" /></span>
 							</button>
 							{darkMode ?
-								<button onClick={() => setDarkMode(!darkMode)} className="w-8 h-8 p-1 transition-all ease-in duration-300 bg-neutral-800 hover:bg-neutral-700 text-white rounded-full">
+								<button onClick={() => setDarkMode(!darkMode)} aria-label="Change Theme" className="w-8 h-8 p-1 transition-all ease-in duration-300 bg-neutral-800 hover:bg-neutral-700 text-white rounded-full">
 									<SunIcon />
 								</button>
 								:
-								<button onClick={() => setDarkMode(!darkMode)} className="w-8 h-8 p-1 transition-all ease-in duration-300 bg-gray-100 hover:bg-gray-200 rounded-full">
+								<button onClick={() => setDarkMode(!darkMode)} aria-label="Change Theme" className="w-8 h-8 p-1 transition-all ease-in duration-300 bg-gray-100 hover:bg-gray-200 rounded-full">
 									<MoonIcon className="transform rotate-45" />
 								</button>
 							}
@@ -82,11 +82,11 @@ export default function Third() {
 
 					<div className="!py-2 px-2 rounded mx-4 bg-opacity-20 dark:bg-opacity-40 bg-gray-100 dark:bg-neutral-800 backdrop-filter backdrop-blur fixed bottom-20 md:bottom-2/4 right-3 md:right-10 z-40">
 						{darkMode ?
-							<button onClick={() => setDarkMode(!darkMode)} className="w-8 h-8 p-1 transition-all ease-in duration-300 bg-neutral-800 hover:bg-neutral-700 text-white rounded-full">
+							<button onClick={() => setDarkMode(!darkMode)} aria-label="Change Theme" className="w-8 h-8 p-1 transition-all ease-in duration-300 bg-neutral-800 hover:bg-neutral-700 text-white rounded-full">
 								<SunIcon />
 							</button>
 							:
-							<button onClick={() => setDarkMode(!darkMode)} className="w-8 h-8 p-1 transition-all ease-in duration-300 bg-gray-100 hover:bg-gray-200 rounded-full">
+							<button onClick={() => setDarkMode(!darkMode)} aria-label="Change Theme" className="w-8 h-8 p-1 transition-all ease-in duration-300 bg-gray-100 hover:bg-gray-200 rounded-full">
 								<MoonIcon />
 							</button>
 						}
