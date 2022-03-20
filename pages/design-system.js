@@ -262,12 +262,12 @@ export default function Third() {
 						<Code code={
 							`import Accordion from "@components/Accordion";
 
-	<Accordion title="Accordion Title" className="max-w-xl my-2 !text-base">
-		<Text>Accordion Body</Text>
-	</Accordion>
-	<Accordion title="Accordion Title" className="max-w-xl my-2">
-		<Text className="text-sm">Accordion Body</Text>
-	</Accordion>`
+<Accordion title="Accordion Title" className="max-w-xl my-2 !text-base">
+	<Text>Accordion Body</Text>
+</Accordion>
+<Accordion title="Accordion Title" className="max-w-xl my-2">
+	<Text className="text-sm">Accordion Body</Text>
+</Accordion>`
 						}>
 						</Code>
 					</Section>
@@ -282,12 +282,12 @@ export default function Third() {
 						<Code code={
 							`import Section from "@components/Section";
 
-	<Section className="!py-0">
-		<Text>Section Content no Title</Text>
-	</Section>
-	<Section id="sectiontitle" name="Section With Title" className="!py-0">
-		<Text>Section Content</Text>
-	</Section>`
+<Section className="!py-0">
+	<Text>Section Content no Title</Text>
+</Section>
+<Section id="sectiontitle" name="Section With Title" className="!py-0">
+	<Text>Section Content</Text>
+</Section>`
 						}>
 						</Code>
 					</Section>
@@ -308,18 +308,18 @@ export default function Third() {
 						<Code code={
 							`import Container from "@components/Container";
 
-	<Container>
-		<Text>Container Default</Text>
-	</Container>
-	<Container large>
-		<Text>Container large</Text>
-	</Container>
-	<Container medium>
-		<Text>Container Medium</Text>
-	</Container>
-	<Container small>
-		<Text>Container Small</Text>
-	</Container>`
+<Container>
+	<Text>Container Default</Text>
+</Container>
+<Container large>
+	<Text>Container large</Text>
+</Container>
+<Container medium>
+	<Text>Container Medium</Text>
+</Container>
+<Container small>
+	<Text>Container Small</Text>
+</Container>`
 						}>
 						</Code>
 					</Section>
@@ -334,12 +334,12 @@ export default function Third() {
 						<Code code={
 							`import Heading from "@components/Heading";
 
-	<Heading>Heading Default</Heading>
-	<Heading.h2>Heading 2</Heading.h2>
-	<Heading.h3>Heading 3</Heading.h3>
-	<Heading.h4>Heading 4</Heading.h4>
-	<Heading.h5>Heading 5</Heading.h5>
-	<Heading.h6>Heading 6</Heading.h6>`
+<Heading>Heading Default</Heading>
+<Heading.h2>Heading 2</Heading.h2>
+<Heading.h3>Heading 3</Heading.h3>
+<Heading.h4>Heading 4</Heading.h4>
+<Heading.h5>Heading 5</Heading.h5>
+<Heading.h6>Heading 6</Heading.h6>`
 						}>
 						</Code>
 					</Section>
@@ -353,11 +353,11 @@ export default function Third() {
 						<Code code={
 							`import Text from "@components/Text";
 
-	<Text.light className="mb-2">Text Light</Text.light>
-	<Text className="mb-2">Text Normal</Text>
-	<Text.medium>Text Medium</Text.medium>
-	<Text.bold>Text Bold</Text.bold>
-	<Text.extrabold>Text Extra Bold</Text.extrabold>`
+<Text.light className="mb-2">Text Light</Text.light>
+<Text className="mb-2">Text Normal</Text>
+<Text.medium>Text Medium</Text.medium>
+<Text.bold>Text Bold</Text.bold>
+<Text.extrabold>Text Extra Bold</Text.extrabold>`
 						}>
 						</Code>
 					</Section>
@@ -376,14 +376,14 @@ export default function Third() {
 						<Code code={
 							`import Button from "@components/Button";
 
-	<Button className="flex gap-1 items-center"><PlusCircleIcon className="h-5 w-5" />Default</Button>
-	<Button.secondary>Secondary</Button.secondary>
-	<Button.green>Green</Button.green>
-	<Button.yellow>Yellow</Button.yellow>
-	<Button.orange>Orange</Button.orange>
-	<Button.red pills>Red</Button.red>
-	<Button.purple pills>Purple</Button.purple>
-	<Button.dark pills>Dark</Button.dark>`
+<Button className="flex gap-1 items-center"><PlusCircleIcon className="h-5 w-5" />Default</Button>
+<Button.secondary>Secondary</Button.secondary>
+<Button.green>Green</Button.green>
+<Button.yellow>Yellow</Button.yellow>
+<Button.orange>Orange</Button.orange>
+<Button.red pills>Red</Button.red>
+<Button.purple pills>Purple</Button.purple>
+<Button.dark pills>Dark</Button.dark>`
 						}>
 						</Code>
 					</Section>
@@ -401,13 +401,13 @@ export default function Third() {
 						<Code code={
 							`import ButtonOutline from "@components/ButtonOutline";
 
-	<ButtonOutline className="flex gap-1 items-center"><DownloadIcon className="h-5 w-5"/>Default</ButtonOutline>
-	<ButtonOutline.green>Green</ButtonOutline.green>
-	<ButtonOutline.yellow>Yellow</ButtonOutline.yellow>
-	<ButtonOutline.orange>Orange</ButtonOutline.orange>
-	<ButtonOutline.red pills>Red</ButtonOutline.red>
-	<ButtonOutline.purple pills>Purple</ButtonOutline.purple>
-	<ButtonOutline.dark pills>Dark</ButtonOutline.dark>`
+<ButtonOutline className="flex gap-1 items-center"><DownloadIcon className="h-5 w-5"/>Default</ButtonOutline>
+<ButtonOutline.green>Green</ButtonOutline.green>
+<ButtonOutline.yellow>Yellow</ButtonOutline.yellow>
+<ButtonOutline.orange>Orange</ButtonOutline.orange>
+<ButtonOutline.red pills>Red</ButtonOutline.red>
+<ButtonOutline.purple pills>Purple</ButtonOutline.purple>
+<ButtonOutline.dark pills>Dark</ButtonOutline.dark>`
 						}>
 						</Code>
 					</Section>
@@ -426,14 +426,14 @@ export default function Third() {
 						<Code code={
 							`import LinkButton from "@components/LinkButton";
 
-	<LinkButton href="#" className="flex gap-1 items-center"><DownloadIcon className="h-5 w-5" />Default</LinkButton>
-	<LinkButton.secondary href="#">Secondary</LinkButton.secondary>
-	<LinkButton.green href="#">Green</LinkButton.green>
-	<LinkButton.yellow href="#">Yellow</LinkButton.yellow>
-	<LinkButton.orange href="#">Orange</LinkButton.orange>
-	<LinkButton.red href="#" pills>Red</LinkButton.red>
-	<LinkButton.purple href="#" pills>Purple</LinkButton.purple>
-	<LinkButton.dark href="#" pills>Dark</LinkButton.dark>`
+<LinkButton href="#" className="flex gap-1 items-center"><DownloadIcon className="h-5 w-5" />Default</LinkButton>
+<LinkButton.secondary href="#">Secondary</LinkButton.secondary>
+<LinkButton.green href="#">Green</LinkButton.green>
+<LinkButton.yellow href="#">Yellow</LinkButton.yellow>
+<LinkButton.orange href="#">Orange</LinkButton.orange>
+<LinkButton.red href="#" pills>Red</LinkButton.red>
+<LinkButton.purple href="#" pills>Purple</LinkButton.purple>
+<LinkButton.dark href="#" pills>Dark</LinkButton.dark>`
 						}>
 						</Code>
 					</Section>
@@ -451,13 +451,13 @@ export default function Third() {
 						<Code code={
 							`import LinkButtonOutline from "@components/LinkButtonOutline";
 
-	<LinkButtonOutline href="#" className="flex gap-1 items-center"><DownloadIcon className="h-5 w-5" />Default</LinkButtonOutline>
-	<LinkButtonOutline.green href="#">Green</LinkButtonOutline.green>
-	<LinkButtonOutline.yellow href="#">Yellow</LinkButtonOutline.yellow>
-	<LinkButtonOutline.orange href="#">Orange</LinkButtonOutline.orange>
-	<LinkButtonOutline.red href="#" pills>Red</LinkButtonOutline.red>
-	<LinkButtonOutline.purple href="#" pills>Purple</LinkButtonOutline.purple>
-	<LinkButtonOutline.dark href="#" pills>Dark</LinkButtonOutline.dark>`
+<LinkButtonOutline href="#" className="flex gap-1 items-center"><DownloadIcon className="h-5 w-5" />Default</LinkButtonOutline>
+<LinkButtonOutline.green href="#">Green</LinkButtonOutline.green>
+<LinkButtonOutline.yellow href="#">Yellow</LinkButtonOutline.yellow>
+<LinkButtonOutline.orange href="#">Orange</LinkButtonOutline.orange>
+<LinkButtonOutline.red href="#" pills>Red</LinkButtonOutline.red>
+<LinkButtonOutline.purple href="#" pills>Purple</LinkButtonOutline.purple>
+<LinkButtonOutline.dark href="#" pills>Dark</LinkButtonOutline.dark>`
 						}>
 						</Code>
 					</Section>
@@ -475,13 +475,13 @@ export default function Third() {
 						<Code code={
 							`import Badge from "@components/Badge";
 
-	<Badge className="flex gap-1 items-center"><DownloadIcon className="h-4 w-4" />Default</Badge>
-	<Badge.green>Green</Badge.green>
-	<Badge.red isLarge>Red</Badge.red>
-	<Badge.yellow isLarge>Yellow</Badge.yellow>
-	<Badge.orange pills>Orange</Badge.orange>
-	<Badge.purple pills>Purple</Badge.purple>
-	<Badge.dark pills>Dark</Badge.dark>`
+<Badge className="flex gap-1 items-center"><DownloadIcon className="h-4 w-4" />Default</Badge>
+<Badge.green>Green</Badge.green>
+<Badge.red isLarge>Red</Badge.red>
+<Badge.yellow isLarge>Yellow</Badge.yellow>
+<Badge.orange pills>Orange</Badge.orange>
+<Badge.purple pills>Purple</Badge.purple>
+<Badge.dark pills>Dark</Badge.dark>`
 						}>
 						</Code>
 					</Section>
@@ -499,13 +499,13 @@ export default function Third() {
 						<Code code={
 							`import BadgeOutline from "@components/BadgeOutline";
 
-	<BadgeOutline className="flex gap-1 items-center"><DownloadIcon className="h-4 w-4" />Default</BadgeOutline>
-	<BadgeOutline.green>Green</BadgeOutline.green>
-	<BadgeOutline.red isLarge>Red</BadgeOutline.red>
-	<BadgeOutline.yellow isLarge>Yellow</BadgeOutline.yellow>
-	<BadgeOutline.orange pills>Orange</BadgeOutline.orange>
-	<BadgeOutline.purple pills>Purple</BadgeOutline.purple>
-	<BadgeOutline.dark pills>Dark</BadgeOutline.dark>`
+<BadgeOutline className="flex gap-1 items-center"><DownloadIcon className="h-4 w-4" />Default</BadgeOutline>
+<BadgeOutline.green>Green</BadgeOutline.green>
+<BadgeOutline.red isLarge>Red</BadgeOutline.red>
+<BadgeOutline.yellow isLarge>Yellow</BadgeOutline.yellow>
+<BadgeOutline.orange pills>Orange</BadgeOutline.orange>
+<BadgeOutline.purple pills>Purple</BadgeOutline.purple>
+<BadgeOutline.dark pills>Dark</BadgeOutline.dark>`
 						}>
 						</Code>
 					</Section>
@@ -521,13 +521,13 @@ export default function Third() {
 						<Code code={
 							`import Alert from "@components/Alert";
 
-	<Alert className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5"/>Default</Alert>
-	<Alert.green>Green</Alert.green>
-	<Alert.red className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5" />Red <span className="font-normal">Danger</span></Alert.red>
-	<Alert.yellow isLarge>Yellow</Alert.yellow>
-	<Alert.orange pills>Orange</Alert.orange>
-	<Alert.purple pills>Purple</Alert.purple>
-	<Alert.dark pills>Dark</Alert.dark>`
+<Alert className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5"/>Default</Alert>
+<Alert.green>Green</Alert.green>
+<Alert.red className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5" />Red <span className="font-normal">Danger</span></Alert.red>
+<Alert.yellow isLarge>Yellow</Alert.yellow>
+<Alert.orange pills>Orange</Alert.orange>
+<Alert.purple pills>Purple</Alert.purple>
+<Alert.dark pills>Dark</Alert.dark>`
 						}>
 						</Code>
 					</Section>
@@ -543,13 +543,13 @@ export default function Third() {
 						<Code code={
 							`import AlertOutline from "@components/AlertOutline";
 
-	<AlertOutline className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5" />Default</AlertOutline>
-	<AlertOutline.green>Green</AlertOutline.green>
-	<AlertOutline.red className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5" />Red <span className="font-normal">Danger</span></AlertOutline.red>
-	<AlertOutline.yellow isLarge>Yellow</AlertOutline.yellow>
-	<AlertOutline.orange pills>Orange</AlertOutline.orange>
-	<AlertOutline.purple pills>Purple</AlertOutline.purple>
-	<AlertOutline.dark pills>Dark</AlertOutline.dark>`
+<AlertOutline className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5" />Default</AlertOutline>
+<AlertOutline.green>Green</AlertOutline.green>
+<AlertOutline.red className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5" />Red <span className="font-normal">Danger</span></AlertOutline.red>
+<AlertOutline.yellow isLarge>Yellow</AlertOutline.yellow>
+<AlertOutline.orange pills>Orange</AlertOutline.orange>
+<AlertOutline.purple pills>Purple</AlertOutline.purple>
+<AlertOutline.dark pills>Dark</AlertOutline.dark>`
 						}>
 						</Code>
 					</Section>
@@ -562,10 +562,10 @@ export default function Third() {
 						<Code code={
 							`import Skeletons from "@components/Skeletons";
 
-	<Skeletons className="!h-32 w-full" />
-	<Skeletons className="max-w-[12rem]" />
-	<Skeletons className="max-w-[24rem] !rounded-full" />
-	<Skeletons className="!w-24 !h-24 !rounded-full" />`
+<Skeletons className="!h-32 w-full" />
+<Skeletons className="max-w-[12rem]" />
+<Skeletons className="max-w-[24rem] !rounded-full" />
+<Skeletons className="!w-24 !h-24 !rounded-full" />`
 						}>
 						</Code>
 					</Section>
