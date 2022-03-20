@@ -15,9 +15,9 @@ export default function Fourth() {
 			</Head>
 			<Navbar />
 
-			<main className="container mx-auto">
+			<main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
 				<section className="text-gray-600 body-font">
-					<div className="container px-5 py-24 mx-auto">
+					<div className="py-24 mx-auto">
 						<div className="flex flex-col text-center w-full mb-20">
 							<h1 className="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">
 								Pricing

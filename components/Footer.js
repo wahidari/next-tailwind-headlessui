@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Footer() {
 	return (
 		<footer className="text-gray-600 body-font">
-			<div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+			<div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-10 pb-4 flex items-center sm:flex-row flex-col">
 				<Link href="/">
 					<a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
 						<svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10" viewBox="0 0 1000 1000" fill="none">

@@ -15,9 +15,9 @@ export default function Second() {
 			</Head>
 			<Navbar />
 
-			<main className="container mx-auto">
+			<main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
 				<section className="text-gray-600 body-font">
-					<div className="container px-5 py-24 mx-auto">
+					<div className=" py-24 mx-auto">
 						<div className="text-center mb-20">
 							<h1 className="sm:text-4xl text-4xl font-medium title-font text-gray-900 mb-4">
 								Raw Denim Heirloom Man Braid

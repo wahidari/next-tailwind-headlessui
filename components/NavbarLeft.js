@@ -9,7 +9,7 @@ export default function Navbar() {
     <div>
       <Popover as="nav" className="shadow">
         <>
-          <div className="container mx-auto px-5">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
             <div className="flex items-center justify-between md:justify-start h-16">
               {/* web logo  */}
               <div className="flex-shrink-0">
