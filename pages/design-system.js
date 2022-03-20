@@ -23,6 +23,8 @@ import Accordion from "@components/Accordion";
 import Tabs from "@components/Tabs";
 import { Tab } from '@headlessui/react'
 import Tabss from "@components/Tabss";
+import TabsVertical from "@components/TabsVertical";
+import TabsVerticall from "@components/TabsVerticall";
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ')
@@ -96,11 +98,21 @@ export default function Third() {
 						contents={["Content A", "Content B"]}
 					>
 					</Tabs>
+					<TabsVerticall
+						tabs={["Tab A Vertical", "Tab B Vertical"]}
+						contents={["Taxidermy bushwick celiac master cleanse microdosing seitan. Fashion axe four dollar toast truffaut, direct trade kombucha brunch williamsburg keffiyeh gastropub tousled squid meh taiyaki drinking vinegar tacos. Taxidermy bushwick celiac master cleanse microdosing seitan. Fashion axe four dollar toast truffaut, direct trade kombucha brunch williamsburg keffiyeh gastropub tousled squid meh taiyaki drinking vinegar tacos.", "Content B Taxidermy bushwick celiac master cleanse microdosing seitan. Fashion axe four dollar toast truffaut, direct trade kombucha brunch williamsburg keffiyeh gastropub tousled squid meh taiyaki drinking vinegar tacos. direct trade kombucha brunch williamsburg keffiyeh gastropub tousled squid meh taiyaki drinking vinegar tacos."]}
+					>
+					</TabsVerticall>
 					<Tabss
 						tabs={["Tab A", "Tab B"]}
 						contents={["Content A", "Content B"]}
 					>
 					</Tabss>
+					<TabsVertical
+						tabs={["Tab A Vertical", "Tab B Vertical"]}
+						contents={["Taxidermy bushwick celiac master cleanse microdosing seitan. Fashion axe four dollar toast truffaut, direct trade kombucha brunch williamsburg keffiyeh gastropub tousled squid meh taiyaki drinking vinegar tacos. Taxidermy bushwick celiac master cleanse microdosing seitan. Fashion axe four dollar toast truffaut, direct trade kombucha brunch williamsburg keffiyeh gastropub tousled squid meh taiyaki drinking vinegar tacos.", "Content B Taxidermy bushwick celiac master cleanse microdosing seitan. Fashion axe four dollar toast truffaut, direct trade kombucha brunch williamsburg keffiyeh gastropub tousled squid meh taiyaki drinking vinegar tacos. direct trade kombucha brunch williamsburg keffiyeh gastropub tousled squid meh taiyaki drinking vinegar tacos."]}
+					>
+					</TabsVertical>
 				</Section>
 
 				<Section id="tab" name="Tab" className="px-2 sm:px-6 md:px-12">
