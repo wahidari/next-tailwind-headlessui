@@ -56,7 +56,7 @@ export default function Fourth() {
 											Free
 										</td>
 										<td className="w-10 text-center">
-											<input name="plan" type="radio" />
+											<input name="plan" title="checkbox" type="radio" />
 										</td>
 									</tr>
 									<tr>
@@ -73,7 +73,7 @@ export default function Fourth() {
 											$24
 										</td>
 										<td className="border-t-2 border-gray-200 w-10 text-center">
-											<input name="plan" type="radio" />
+											<input name="plan" title="checkbox" type="radio" />
 										</td>
 									</tr>
 									<tr>
@@ -90,7 +90,7 @@ export default function Fourth() {
 											$50
 										</td>
 										<td className="border-t-2 border-gray-200 w-10 text-center">
-											<input name="plan" type="radio" />
+											<input name="plan" title="checkbox" type="radio" />
 										</td>
 									</tr>
 									<tr>
@@ -107,7 +107,7 @@ export default function Fourth() {
 											$72
 										</td>
 										<td className="border-t-2 border-b-2 border-gray-200 w-10 text-center">
-											<input name="plan" type="radio" />
+											<input name="plan" title="checkbox" type="radio" />
 										</td>
 									</tr>
 								</tbody>
