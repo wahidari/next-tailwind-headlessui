@@ -28,6 +28,7 @@ import TabsVerticall from "@components/TabsVerticall";
 import Layout from "@components/Layout";
 import MyModal from "@components/MyModal";
 import Progress from "@components/Progress";
+import Avatar from "@components/Avatar";
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ')
@@ -112,6 +113,75 @@ export default function Third() {
 					</div>
 
 					<BackToTop />
+
+					<Section id="avatar" name="Avatar">
+						<div className="flex flex-wrap gap-4">
+							<div>
+								<div className="flex -space-x-1 flex-wrap mb-4">
+									<Avatar
+										src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+										alt="Image Alt"
+									/>
+									<Avatar
+										src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+										alt="Image Alt"
+									/>
+								</div>
+								<div className="flex flex-wrap mb-4 gap-x-2">
+									<Avatar
+										src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+										alt="Image Alt"
+									/>
+									<Avatar
+										src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+										alt="Image Alt"
+									/>
+								</div>
+								<div className="flex flex-wrap mb-4 gap-x-2">
+									<Avatar className="h-10 w-10"
+										src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+										alt="Image Alt"
+									/>
+									<Avatar className="!h-12 !w-12"
+										src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+										alt="Image Alt"
+									/>
+								</div>
+							</div>
+							<div>
+								<div className="flex -space-x-1 flex-wrap mb-4">
+									<Avatar className="rounded-lg"
+										src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+										alt="Image Alt"
+									/>
+									<Avatar className="rounded-lg"
+										src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+										alt="Image Alt"
+									/>
+								</div>
+								<div className="flex gap-2 flex-wrap mb-4">
+									<Avatar className="rounded-lg"
+										src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+										alt="Image Alt"
+									/>
+									<Avatar className="rounded-lg"
+										src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+										alt="Image Alt"
+									/>
+								</div>
+								<div className="flex gap-2 flex-wrap">
+									<Avatar className="h-10 w-10 rounded-lg"
+										src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+										alt="Image Alt"
+									/>
+									<Avatar className="!h-12 !w-12 rounded-lg"
+										src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+										alt="Image Alt"
+									/>
+								</div>
+							</div>
+						</div>
+					</Section>
 
 					<Section id="modal" name="Modal">
 						<MyModal
@@ -630,7 +700,7 @@ export default function Third() {
 						<Progress height="h-3" percent={60} />
 						<br />
 						<Progress.percentage percent={80} />
-						<br/>
+						<br />
 						<Code code={
 							`import Progress from "@components/Progress";
 
