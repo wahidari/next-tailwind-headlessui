@@ -1,6 +1,8 @@
 export default function Layout({ children }) {
   return (
-    <div className="dark:bg-neutral-900 min-h-screen w-screen">
+    // if using custom scrollbar 
+    // <div className="dark:bg-neutral-900 min-h-screen w-screen">
+    <div className="dark:bg-neutral-900 min-h-screen">
       {children}
     </div>
   );
