@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useContext, useState } from "react";
 import { GlobalContext } from "@utils/GlobalContext";
 import { DownloadIcon, InformationCircleIcon, MoonIcon, PlusCircleIcon, SunIcon } from "@heroicons/react/outline";
+import { Tab } from '@headlessui/react'
 import Button from "@components/Button";
 import ButtonOutline from "@components/ButtonOutline";
 import Heading from "@components/Heading";
@@ -21,7 +22,6 @@ import LinkButton from "@components/LinkButton";
 import LinkButtonOutline from "@components/LinkButtonOutline";
 import Accordion from "@components/Accordion";
 import Tabs from "@components/Tabs";
-import { Tab } from '@headlessui/react'
 import Tabss from "@components/Tabss";
 import TabsVertical from "@components/TabsVertical";
 import TabsVerticall from "@components/TabsVerticall";
@@ -29,6 +29,8 @@ import Layout from "@components/Layout";
 import MyModal from "@components/MyModal";
 import Progress from "@components/Progress";
 import Avatar from "@components/Avatar";
+import TextArea from "@components/TextArea";
+import Input from "@components/Input";
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ')
@@ -114,73 +116,188 @@ export default function Third() {
 
 					<BackToTop />
 
+					<Section id="input" name="Input">
+						<Input
+							id="inputnolabel"
+							name="inputnolabel"
+							placeholder="Input No Label"
+						/>
+						<Input
+							label="Input With Label"
+							id="inputwithlabel"
+							name="inputwithlabel"
+							placeholder="Input With Label"
+						/>
+						<Input.disabled
+							id="inputdisablednolabel"
+							name="inputdisablednolabel"
+							value="Input Disabled No Label"
+						/>
+						<Input.disabled
+							label="Input Disabled With Label"
+							id="inputdisabledwithlabel"
+							name="inputdisabledwithlabel"
+							value="Input Disabled With Label"
+						/>
+						<Code code={
+							`import Input from "@components/Input";
+
+<Input
+	id="inputnolabel"
+	name="inputnolabel"
+	placeholder="Input No Label"
+/>
+<Input
+	label="Input With Label"
+	id="inputwithlabel"
+	name="inputwithlabel"
+	placeholder="Input With Label"
+/>
+<Input.disabled
+	id="inputdisablednolabel"
+	name="inputdisablednolabel"
+	value="Input Disabled No Label"
+/>
+<Input.disabled
+	label="Input Disabled With Label"
+	id="inputdisabledwithlabel"
+	name="inputdisabledwithlabel"
+	value="Input Disabled With Label"
+/>`
+						}>
+						</Code>
+					</Section>
+
+					<Section id="textarea" name="Text Area">
+						<TextArea
+							id="textareanolabel"
+							name="textareanolabel"
+							height={2}
+							placeholder="Text Area No Label"
+						/>
+						<TextArea
+							label="Text Area with Label"
+							id="textareawithlabel"
+							name="textareawithlabel"
+							height={2}
+							placeholder="Text Area With Label"
+						/>
+						<TextArea.disabled
+							id="textareadisabled"
+							name="textareadisabled"
+							height={2}
+							value="Text Area Disabled No Label"
+						/>
+						<TextArea.disabled
+							label="Text Area Disabled with Label"
+							id="textareawithlabeldisabled"
+							name="textareawithlabeldisabled"
+							height={2}
+							value="Text Area Disabled with Label"
+						/>
+						<Code code={
+							`import TextArea from "@components/TextArea";
+
+<TextArea
+	id="textareanolabel"
+	name="textareanolabel"
+	height={2}
+	placeholder="Text Area No Label"
+/>
+<TextArea
+	label="Text Area with Label"
+	id="textareawithlabel"
+	name="textareawithlabel"
+	height={2}
+	placeholder="Text Area With Label"
+/>
+<TextArea.disabled
+	id="textareadisabled"
+	name="textareadisabled"
+	height={2}
+	value="Text Area Disabled No Label"
+/>
+<TextArea.disabled
+	label="Text Area Disabled with Label"
+	id="textareawithlabeldisabled"
+	name="textareawithlabeldisabled"
+	height={2}
+	value="Text Area Disabled with Label"
+/>`
+						}>
+						</Code>
+					</Section>
+
 					<Section id="avatar" name="Avatar">
-						<div className="flex flex-wrap gap-4">
-							<div>
-								<div className="flex -space-x-1 flex-wrap mb-4">
-									<Avatar
-										src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-										alt="Image Alt"
-									/>
-									<Avatar
-										src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-										alt="Image Alt"
-									/>
-								</div>
-								<div className="flex flex-wrap mb-4 gap-x-2">
-									<Avatar
-										src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-										alt="Image Alt"
-									/>
-									<Avatar
-										src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-										alt="Image Alt"
-									/>
-								</div>
-								<div className="flex flex-wrap mb-4 gap-x-2">
-									<Avatar className="h-10 w-10"
-										src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-										alt="Image Alt"
-									/>
-									<Avatar className="!h-12 !w-12"
-										src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-										alt="Image Alt"
-									/>
-								</div>
-							</div>
-							<div>
-								<div className="flex -space-x-1 flex-wrap mb-4">
-									<Avatar className="rounded-lg"
-										src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-										alt="Image Alt"
-									/>
-									<Avatar className="rounded-lg"
-										src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-										alt="Image Alt"
-									/>
-								</div>
-								<div className="flex gap-2 flex-wrap mb-4">
-									<Avatar className="rounded-lg"
-										src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-										alt="Image Alt"
-									/>
-									<Avatar className="rounded-lg"
-										src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-										alt="Image Alt"
-									/>
-								</div>
-								<div className="flex gap-2 flex-wrap">
-									<Avatar className="h-10 w-10 rounded-lg"
-										src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-										alt="Image Alt"
-									/>
-									<Avatar className="!h-12 !w-12 rounded-lg"
-										src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-										alt="Image Alt"
-									/>
-								</div>
-							</div>
+						<div className="flex -space-x-1 flex-wrap mb-4">
+							<Avatar
+								className="border-red-500"
+								src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+								alt="Image Alt"
+							/>
+							<Avatar className="rounded-lg border-emerald-500"
+								src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+								alt="Image Alt"
+							/>
 						</div>
+						<div className="flex flex-wrap mb-4 gap-x-2">
+							<Avatar
+								className="border-orange-500"
+								src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+								alt="Image Alt"
+							/>
+							<Avatar
+								src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+								alt="Image Alt"
+							/>
+						</div>
+						<div className="flex flex-wrap mb-4 gap-x-2">
+							<Avatar className="h-10 w-10 border-purple-600"
+								src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+								alt="Image Alt"
+							/>
+							<Avatar className="!h-12 !w-12 rounded-lg"
+								src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+								alt="Image Alt"
+							/>
+						</div>
+						<Code code={
+							`import Avatar from "@components/Avatar";
+
+<div className="flex -space-x-1 flex-wrap mb-4">
+	<Avatar
+		className="border-red-500"
+		src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+		alt="Image Alt"
+	/>
+	<Avatar className="rounded-lg border-emerald-500"
+		src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+		alt="Image Alt"
+	/>
+</div>
+<div className="flex flex-wrap mb-4 gap-x-2">
+	<Avatar
+		className="border-orange-500"
+		src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+		alt="Image Alt"
+	/>
+	<Avatar
+		src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+		alt="Image Alt"
+	/>
+</div>
+<div className="flex flex-wrap mb-4 gap-x-2">
+	<Avatar className="h-10 w-10 border-purple-600"
+		src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+		alt="Image Alt"
+	/>
+	<Avatar className="!h-12 !w-12 rounded-lg"
+		src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+		alt="Image Alt"
+	/>
+</div>`
+						}>
+						</Code>
 					</Section>
 
 					<Section id="modal" name="Modal">
