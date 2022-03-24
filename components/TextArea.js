@@ -2,7 +2,7 @@ export default function TextArea({ label, className, id, name, placeholder, valu
   return (
     <div className="mb-4">
       {label &&
-        <label htmlFor={name} className="block font-medium text-sm text-gray-800 dark:text-white">
+        <label htmlFor={name} className="block font-medium text-sm dark:text-white">
           {label}
         </label>
       }
@@ -29,7 +29,7 @@ TextArea.disabled = ({ label, className, id, name, placeholder, value, onChange,
   return (
     <div className="mb-4">
       {label &&
-        <label htmlFor={name} className="block font-medium text-sm text-gray-500 dark:text-neutral-300">
+        <label htmlFor={name} className="block font-medium text-sm dark:text-white">
           {label}
         </label>
       }

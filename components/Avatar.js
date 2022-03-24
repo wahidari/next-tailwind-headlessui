@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-export default function Avatar({ className, src, alt, border }) {
+export default function Avatar({ className, src, alt }) {
   return (
     <div className={`
       ${className ? className + " " : ""}

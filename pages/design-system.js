@@ -231,18 +231,18 @@ export default function Third() {
 					<Section id="avatar" name="Avatar">
 						<div className="flex -space-x-1 flex-wrap mb-4">
 							<Avatar
-								className="border-red-500"
+								className="!border-red-500"
 								src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
 								alt="Image Alt"
 							/>
-							<Avatar className="rounded-lg border-emerald-500"
+							<Avatar className="rounded-lg !border-emerald-500"
 								src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
 								alt="Image Alt"
 							/>
 						</div>
 						<div className="flex flex-wrap mb-4 gap-x-2">
 							<Avatar
-								className="border-orange-500"
+								className="!border-orange-500"
 								src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
 								alt="Image Alt"
 							/>
@@ -252,7 +252,7 @@ export default function Third() {
 							/>
 						</div>
 						<div className="flex flex-wrap mb-4 gap-x-2">
-							<Avatar className="h-10 w-10 border-purple-600"
+							<Avatar className="h-10 w-10 !border-purple-600"
 								src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
 								alt="Image Alt"
 							/>
@@ -266,18 +266,18 @@ export default function Third() {
 
 <div className="flex -space-x-1 flex-wrap mb-4">
 	<Avatar
-		className="border-red-500"
+		className="!border-red-500"
 		src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
 		alt="Image Alt"
 	/>
-	<Avatar className="rounded-lg border-emerald-500"
+	<Avatar className="rounded-lg !border-emerald-500"
 		src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
 		alt="Image Alt"
 	/>
 </div>
 <div className="flex flex-wrap mb-4 gap-x-2">
 	<Avatar
-		className="border-orange-500"
+		className="!border-orange-500"
 		src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
 		alt="Image Alt"
 	/>
@@ -287,7 +287,7 @@ export default function Third() {
 	/>
 </div>
 <div className="flex flex-wrap mb-4 gap-x-2">
-	<Avatar className="h-10 w-10 border-purple-600"
+	<Avatar className="h-10 w-10 !border-purple-600"
 		src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
 		alt="Image Alt"
 	/>
