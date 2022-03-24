@@ -31,6 +31,7 @@ import Progress from "@components/Progress";
 import Avatar from "@components/Avatar";
 import TextArea from "@components/TextArea";
 import Input from "@components/Input";
+import InputLabel from "@components/InputLabel";
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ')
@@ -115,6 +116,42 @@ export default function Third() {
 					</div>
 
 					<BackToTop />
+
+					<Section id="inputlabel" name="Input Label">
+						<InputLabel
+							label="Input Label Left"
+							id="inputlabelleft"
+							name="inputlabelleft"
+							placeholder="Input Label Left"
+							labelLeft="https://"
+						/>
+						<InputLabel
+							label="Input Label Right"
+							id="inputlabelright"
+							name="inputlabelright"
+							placeholder="Input Label Right"
+							labelRight=".com"
+						/>
+						<Code code={
+							`import InputLabel from "@components/InputLabel";
+
+<InputLabel
+	label="Input Label Left"
+	id="inputlabelleft"
+	name="inputlabelleft"
+	placeholder="Input Label Left"
+	labelLeft="https://"
+/>
+<InputLabel
+	label="Input Label Right"
+	id="inputlabelright"
+	name="inputlabelright"
+	placeholder="Input Label Right"
+	labelRight=".com"
+/>`
+						}>
+						</Code>
+					</Section>
 
 					<Section id="input" name="Input">
 						<Input
