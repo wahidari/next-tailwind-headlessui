@@ -10,5 +10,8 @@ module.exports = {
   variants: {
     scrollbar: ["dark", "rounded"],
   },
-  plugins: [require("tailwind-scrollbar")],
+  plugins: [
+    require("tailwind-scrollbar"), 
+    require("@tailwindcss/forms")
+  ],
 }
