@@ -2,7 +2,7 @@ export default function Input({ id, className, label, type, name, placeholder, v
   return (
     <div className="mb-4">
       {label &&
-        <label htmlFor={name} className="block font-medium text-sm dark:text-white">
+        <label htmlFor={name} className="block font-medium text-sm text-neutral-800 dark:text-gray-200">
           {label}
         </label>
       }
@@ -30,7 +30,7 @@ Input.disabled = ({ id, className, label, type, name, placeholder, value, onChan
   return (
     <div className="mb-4">
       {label &&
-        <label htmlFor={name} className="text-sm font-medium block dark:text-white">
+        <label htmlFor={name} className="text-sm font-medium block text-neutral-800 dark:text-gray-200">
           {label}
         </label>
       }
