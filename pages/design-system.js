@@ -1,8 +1,8 @@
 import Head from "next/head";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { GlobalContext } from "@utils/GlobalContext";
-import { DownloadIcon, InformationCircleIcon, MoonIcon, PlusCircleIcon, SunIcon } from "@heroicons/react/outline";
-import { Tab } from '@headlessui/react'
+import { DownloadIcon, InformationCircleIcon, MinusSmIcon, MoonIcon, PlusCircleIcon, PlusSmIcon, SunIcon } from "@heroicons/react/outline";
+import { Disclosure, Tab } from '@headlessui/react'
 import Button from "@components/Button";
 import ButtonOutline from "@components/ButtonOutline";
 import Heading from "@components/Heading";
@@ -32,6 +32,8 @@ import Avatar from "@components/Avatar";
 import TextArea from "@components/TextArea";
 import Input from "@components/Input";
 import InputLabel from "@components/InputLabel";
+import Select from "@components/Select";
+import Checkbox from "@components/Checkbox";
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ')
@@ -39,23 +41,56 @@ function classNames(...classes) {
 
 export default function Third() {
 	const { darkMode, setDarkMode } = useContext(GlobalContext);
+
 	let [openModal, setOpenModal] = useState(false)
+
 	let [openDangerModal, setOpenDangerModal] = useState(false)
 
 	let [openModalWithData, setOpenModalWithData] = useState(false)
 	let [modalData, setModalData] = useState();
-
 	// handle modal submitted 
 	function handleSubmitModal() {
 		setOpenModalWithData(false);
 		alert(`Submit Delete ${modalData}`)
 	}
-
 	// handle modal opened
 	function handleShowModal(data) {
 		setModalData(data)
 		setOpenModalWithData(true)
 	}
+
+	let [selectedColor, setSelectedColor] = useState("blue")
+	function handleSelectColor(e) {
+		setSelectedColor(e.target.value);
+	};
+
+	let [input, setInput] = useState()
+	function handleInputChange(e) {
+		setInput(e.target.value);
+	};
+
+	let [textArea, setTextArea] = useState()
+	function handleTextAreaChange(e) {
+		setTextArea(e.target.value);
+	};
+
+	let [checkedColor, setCheckedColor] = useState([])
+	function handleCheckboxChange(e) {
+		e.persist();
+		if (e.target.checked) {
+			setCheckedColor(oldArray => [...oldArray, e.target.name]);
+		} else {
+			setCheckedColor(oldArray => oldArray.filter(item => item !== e.target.name));
+		}
+	};
+
+	useEffect(() => {
+		console.log("Select : ", selectedColor)
+		console.log("Input : ", input)
+		console.log("Textarea : ", textArea)
+		console.log("Textarea : ", checkedColor)
+	}, [selectedColor, input, textArea, checkedColor])
+
 
 	return (
 		<div>
@@ -72,6 +107,101 @@ export default function Third() {
 
 			<Layout>
 				<main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pb-16">
+
+					<Section id="checkbox" name="Checkbox">
+						<Checkbox
+							label="Red"
+							name="red"
+							value="red"
+							onChange={handleCheckboxChange}
+						/>
+						<Checkbox
+							label="Blue"
+							name="blue"
+							value="blue"
+							onChange={handleCheckboxChange}
+						/>
+						<Disclosure as="div">
+							{({ open }) => (
+								<>
+									<h3 className="flow-root">
+										<Disclosure.Button className="py-3 px-2 bg-gray-100 dark:bg-neutral-800 hover:bg-gray-200 dark:hover:bg-neutral-700 w-full flex items-center justify-between group text-gray-600 dark:text-neutral-300 transition-all duration-200 rounded">
+											<span className="font-medium">Color</span>
+											<span className="ml-6 flex items-center">
+												{open ? (
+													<MinusSmIcon className="h-5 w-5" aria-hidden="true" />
+												) : (
+													<PlusSmIcon className="h-5 w-5" aria-hidden="true" />
+												)}
+											</span>
+										</Disclosure.Button>
+									</h3>
+									<Disclosure.Panel className="pt-2 px-2">
+										<div className="space-y-2">
+											<Checkbox
+												label="Red"
+												id="red"
+												name="red"
+												value="red"
+											/>
+											<Checkbox
+												label="Blue"
+												id="blue"
+												name="blue"
+												value="blue"
+											/>
+										</div>
+									</Disclosure.Panel>
+								</>
+							)}
+						</Disclosure>
+						<Code code={
+							`import Select from "@components/Select";
+
+<Select
+	label="Select Color"
+	id="color"
+	name="color"
+	value={selectedColor ?? "Choose Color"}
+	onChange={handleSelectColor}
+>
+	<Select.option value="red">Red</Select.option>
+	<Select.option value="blue">Blue</Select.option>
+	<Select.option value="green">Green</Select.option>
+</Select>`
+						}>
+						</Code>
+					</Section>
+
+					<Section id="inputlabel" name="Input Label">
+						<Select
+							label="Select Color"
+							id="color"
+							name="color"
+							value={selectedColor ?? "Choose Color"}
+							onChange={handleSelectColor}
+						>
+							<Select.option value="red">Red</Select.option>
+							<Select.option value="blue">Blue</Select.option>
+							<Select.option value="green">Green</Select.option>
+						</Select>
+						<Code code={
+							`import Select from "@components/Select";
+
+<Select
+	label="Select Color"
+	id="color"
+	name="color"
+	value={selectedColor ?? "Choose Color"}
+	onChange={handleSelectColor}
+>
+	<Select.option value="red">Red</Select.option>
+	<Select.option value="blue">Blue</Select.option>
+	<Select.option value="green">Green</Select.option>
+</Select>`
+						}>
+						</Code>
+					</Section>
 
 					<Section id="dark-mode" name="Dark Mode">
 						<div className="flex gap-3 flex-wrap">
@@ -124,6 +254,7 @@ export default function Third() {
 							name="inputlabelleft"
 							placeholder="Input Label Left"
 							labelLeft="https://"
+							onChange={handleInputChange}
 						/>
 						<InputLabel
 							label="Input Label Right"
@@ -211,6 +342,7 @@ export default function Third() {
 							name="textareanolabel"
 							height={2}
 							placeholder="Text Area No Label"
+							onChange={handleTextAreaChange}
 						/>
 						<TextArea
 							label="Text Area with Label"

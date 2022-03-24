@@ -23,7 +23,7 @@ export default function InputLabel({ id, className, label, type, name, placehold
           className={`
             ${className ? className + " " : ""} 
             ${labelLeft ? "rounded-r-md" : "rounded-l-md"}
-            text-sm transition-all duration-300 w-full px-3 py-[0.6rem] 
+            text-sm transition-all duration-300 w-full px-3 py-[0.6rem] z-10
             dark:text-white bg-white dark:bg-neutral-900  
             border border-gray-300 dark:border-neutral-700 
             focus:ring-1 focus:ring-blue-500 focus:border-blue-500 outline-none
