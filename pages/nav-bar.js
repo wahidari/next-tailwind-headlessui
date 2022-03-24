@@ -63,9 +63,121 @@ export default function Nav() {
 			<br />
 			<NavbarFromLeft />
 
+			<div className="col-span-6 sm:col-span-3">
+				<label htmlFor="country" className="block text-sm font-medium text-gray-700">
+					Country
+				</label>
+				<select
+					id="country"
+					name="country"
+					autoComplete="country-name"
+					className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+				>
+					<option>United States</option>
+					<option>Canada</option>
+					<option>Mexico</option>
+				</select>
+			</div>
+
+			<fieldset>
+				<legend className="text-base font-medium text-gray-900">By Email</legend>
+				<div className="mt-4 space-y-4">
+					<div className="flex items-start">
+						<div className="flex items-center h-5">
+							<input
+								id="comments"
+								name="comments"
+								type="checkbox"
+								className="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded"
+							/>
+						</div>
+						<div className="ml-3 text-sm">
+							<label htmlFor="comments" className="font-medium text-gray-700">
+								Comments
+							</label>
+							<p className="text-gray-500">Get notified when someones posts a comment on a posting.</p>
+						</div>
+					</div>
+					<div className="flex items-start">
+						<div className="flex items-center h-5">
+							<input
+								id="candidates"
+								name="candidates"
+								type="checkbox"
+								className="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded"
+							/>
+						</div>
+						<div className="ml-3 text-sm">
+							<label htmlFor="candidates" className="font-medium text-gray-700">
+								Candidates
+							</label>
+							<p className="text-gray-500">Get notified when a candidate applies for a job.</p>
+						</div>
+					</div>
+					<div className="flex items-start">
+						<div className="flex items-center h-5">
+							<input
+								id="offers"
+								name="offers"
+								type="checkbox"
+								className="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded"
+							/>
+						</div>
+						<div className="ml-3 text-sm">
+							<label htmlFor="offers" className="font-medium text-gray-700">
+								Offers
+							</label>
+							<p className="text-gray-500">Get notified when a candidate accepts or rejects an offer.</p>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<div>
+					<legend className="text-base font-medium text-gray-900">Push Notifications</legend>
+					<p className="text-sm text-gray-500">These are delivered via SMS to your mobile phone.</p>
+				</div>
+				<div className="mt-4 space-y-4">
+					<div className="flex items-center">
+						<input
+							id="push-everything"
+							name="push-notifications"
+							type="radio"
+							className="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300"
+						/>
+						<label htmlFor="push-everything" className="ml-3 block text-sm font-medium text-gray-700">
+							Everything
+						</label>
+					</div>
+					<div className="flex items-center">
+						<input
+							id="push-email"
+							name="push-notifications"
+							type="radio"
+							className="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300"
+						/>
+						<label htmlFor="push-email" className="ml-3 block text-sm font-medium text-gray-700">
+							Same as email
+						</label>
+					</div>
+					<div className="flex items-center">
+						<input
+							id="push-nothing"
+							name="push-notifications"
+							type="radio"
+							className="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300"
+						/>
+						<label htmlFor="push-nothing" className="ml-3 block text-sm font-medium text-gray-700">
+							No push notifications
+						</label>
+					</div>
+				</div>
+			</fieldset>
+
 			<Menu as="div" className="relative inline-block text-left ml-64 mt-10">
 				<div>
-					<Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
+					<Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500">
 						Options
 						<ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
 					</Menu.Button>
@@ -117,7 +229,7 @@ export default function Nav() {
 
 			<button
 				type="button"
-				className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+				className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
 				onClick={() => setOpen(true)}
 				ref={cancelButtonRef}
 			>
@@ -180,7 +292,7 @@ export default function Nav() {
 									</button>
 									<button
 										type="button"
-										className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+										className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
 										onClick={() => setOpen(false)}
 										ref={cancelButtonRef}
 									>
@@ -237,7 +349,7 @@ export default function Nav() {
 									size.inStock
 										? 'bg-white shadow-sm text-gray-900 cursor-pointer'
 										: 'bg-gray-50 text-gray-200 cursor-not-allowed',
-									active ? 'ring-2 ring-indigo-500' : '',
+									active ? 'ring-2 ring-blue-500' : '',
 									'group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1'
 								)
 							}
@@ -249,7 +361,7 @@ export default function Nav() {
 										<div
 											className={classNames(
 												active ? 'border' : 'border-2',
-												checked ? 'border-indigo-500' : 'border-transparent',
+												checked ? 'border-blue-500' : 'border-transparent',
 												'absolute -inset-px rounded-md pointer-events-none'
 											)}
 											aria-hidden="true"
