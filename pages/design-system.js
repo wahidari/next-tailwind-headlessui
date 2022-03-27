@@ -43,12 +43,12 @@ function classNames(...classes) {
 export default function Third() {
 	const { darkMode, setDarkMode } = useContext(GlobalContext);
 
-	let [openModal, setOpenModal] = useState(false)
+	const [openModal, setOpenModal] = useState(false)
 
-	let [openDangerModal, setOpenDangerModal] = useState(false)
+	const [openDangerModal, setOpenDangerModal] = useState(false)
 
-	let [openModalWithData, setOpenModalWithData] = useState(false)
-	let [modalData, setModalData] = useState();
+	const [openModalWithData, setOpenModalWithData] = useState(false)
+	const [modalData, setModalData] = useState();
 	// handle modal submitted 
 	function handleSubmitModal() {
 		setOpenModalWithData(false);
@@ -60,7 +60,7 @@ export default function Third() {
 		setOpenModalWithData(true)
 	}
 
-	let [selectedColor, setSelectedColor] = useState("blue")
+	const [selectedColor, setSelectedColor] = useState("blue")
 	function handleSelectColor(e) {
 		setSelectedColor(e.target.value);
 	};
@@ -70,32 +70,32 @@ export default function Third() {
 		setRadioColor(e.target.value)
 	}
 
-	let [checkedRadioColor, setCheckedRadioColor] = useState("blue");
+	const [checkedRadioColor, setCheckedRadioColor] = useState("purple");
 	function handleCheckedRadioChange(e) {
 		setCheckedRadioColor(e.target.value)
 	}
 
-	let [selectedColorWithId, setSelectedColorWithId] = useState(3)
+	const [selectedColorWithId, setSelectedColorWithId] = useState(3)
 	function handleSelectColorWithId(e) {
 		setSelectedColorWithId(e.target.value)
 	};
 
-	let [inputLabelLeft, setInputLabelLeft] = useState()
+	const [inputLabelLeft, setInputLabelLeft] = useState()
 	function handleInputLabelLeftChange(e) {
 		setInputLabelLeft(e.target.value);
 	};
 
-	let [input, setInput] = useState()
+	const [input, setInput] = useState()
 	function handleInputChange(e) {
 		setInput(e.target.value);
 	};
 
-	let [textArea, setTextArea] = useState()
+	const [textArea, setTextArea] = useState()
 	function handleTextAreaChange(e) {
 		setTextArea(e.target.value);
 	};
 
-	let [uncheckedColor, setUncheckedColor] = useState([])
+	const [uncheckedColor, setUncheckedColor] = useState([])
 	function handleUncheckedCheckboxChange(e) {
 		e.persist();
 		if (e.target.checked) {
@@ -105,7 +105,7 @@ export default function Third() {
 		}
 	};
 
-	let [checkedColor, setCheckedColor] = useState(["red", "blue"])
+	const [checkedColor, setCheckedColor] = useState(["red", "blue"])
 	function handleCheckedCheckboxChange(e) {
 		e.persist();
 		if (e.target.checked) {
@@ -151,18 +151,18 @@ export default function Third() {
 
 						<Text className="mb-4 font-medium">Checked Radio</Text>
 						<Radio
-							label="Red"
-							name="red"
-							value="red"
+							label="Green"
+							name="green"
+							value="green"
 							onChange={handleCheckedRadioChange}
-							checked={checkedRadioColor == "red"}
+							checked={checkedRadioColor == "green"}
 						/>
 						<Radio
-							label="Blue"
-							name="blue"
-							value="blue"
+							label="Purple"
+							name="purple"
+							value="purple"
 							onChange={handleCheckedRadioChange}
-							checked={checkedRadioColor == "blue"}
+							checked={checkedRadioColor == "purple"}
 						/>
 						<Text className="mb-4 text-sm font-medium !text-red-500">Checked Radio : {checkedRadioColor ? checkedRadioColor : ""}</Text>
 					</Section>
