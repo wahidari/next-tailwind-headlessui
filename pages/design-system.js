@@ -34,6 +34,7 @@ import Input from "@components/Input";
 import InputLabel from "@components/InputLabel";
 import Select from "@components/Select";
 import Checkbox from "@components/Checkbox";
+import Radio from "@components/Radio";
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ')
@@ -64,6 +65,26 @@ export default function Third() {
 		setSelectedColor(e.target.value);
 	};
 
+	const [radioColor, setRadioColor] = useState();
+	function handleRadioChange(e) {
+		setRadioColor(e.target.value)
+	}
+
+	let [checkedRadioColor, setCheckedRadioColor] = useState("blue");
+	function handleCheckedRadioChange(e) {
+		setCheckedRadioColor(e.target.value)
+	}
+
+	let [selectedColorWithId, setSelectedColorWithId] = useState(3)
+	function handleSelectColorWithId(e) {
+		setSelectedColorWithId(e.target.value)
+	};
+
+	let [inputLabelLeft, setInputLabelLeft] = useState()
+	function handleInputLabelLeftChange(e) {
+		setInputLabelLeft(e.target.value);
+	};
+
 	let [input, setInput] = useState()
 	function handleInputChange(e) {
 		setInput(e.target.value);
@@ -74,8 +95,18 @@ export default function Third() {
 		setTextArea(e.target.value);
 	};
 
-	let [checkedColor, setCheckedColor] = useState([])
-	function handleCheckboxChange(e) {
+	let [uncheckedColor, setUncheckedColor] = useState([])
+	function handleUncheckedCheckboxChange(e) {
+		e.persist();
+		if (e.target.checked) {
+			setUncheckedColor(oldArray => [...oldArray, e.target.name]);
+		} else {
+			setUncheckedColor(oldArray => oldArray.filter(item => item !== e.target.name));
+		}
+	};
+
+	let [checkedColor, setCheckedColor] = useState(["red", "blue"])
+	function handleCheckedCheckboxChange(e) {
 		e.persist();
 		if (e.target.checked) {
 			setCheckedColor(oldArray => [...oldArray, e.target.name]);
@@ -83,14 +114,6 @@ export default function Third() {
 			setCheckedColor(oldArray => oldArray.filter(item => item !== e.target.name));
 		}
 	};
-
-	useEffect(() => {
-		console.log("Select : ", selectedColor)
-		console.log("Input : ", input)
-		console.log("Textarea : ", textArea)
-		console.log("Textarea : ", checkedColor)
-	}, [selectedColor, input, textArea, checkedColor])
-
 
 	return (
 		<div>
@@ -108,99 +131,129 @@ export default function Third() {
 			<Layout>
 				<main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pb-16">
 
+					<Section id="radio" name="Radio">
+						<Text className="mb-4 font-medium">Unchecked Radio</Text>
+						<Radio
+							label="Red"
+							name="red"
+							value="red"
+							onChange={handleRadioChange}
+							checked={radioColor == "red"}
+						/>
+						<Radio
+							label="Blue"
+							name="blue"
+							value="blue"
+							onChange={handleRadioChange}
+							checked={radioColor == "blue"}
+						/>
+						<Text className="mb-4 text-sm font-medium !text-red-500">Radio : {radioColor ? radioColor : ""}</Text>
+
+						<Text className="mb-4 font-medium">Checked Radio</Text>
+						<Radio
+							label="Red"
+							name="red"
+							value="red"
+							onChange={handleCheckedRadioChange}
+							checked={checkedRadioColor == "red"}
+						/>
+						<Radio
+							label="Blue"
+							name="blue"
+							value="blue"
+							onChange={handleCheckedRadioChange}
+							checked={checkedRadioColor == "blue"}
+						/>
+						<Text className="mb-4 text-sm font-medium !text-red-500">Checked Radio : {checkedRadioColor ? checkedRadioColor : ""}</Text>
+					</Section>
+
 					<Section id="checkbox" name="Checkbox">
+						<Text className="mb-4 font-medium">Unchecked Checkbox</Text>
 						<Checkbox
 							label="Red"
 							name="red"
 							value="red"
-							onChange={handleCheckboxChange}
+							onChange={handleUncheckedCheckboxChange}
 						/>
 						<Checkbox
 							label="Blue"
 							name="blue"
 							value="blue"
-							onChange={handleCheckboxChange}
+							onChange={handleUncheckedCheckboxChange}
 						/>
-						<Disclosure as="div">
-							{({ open }) => (
-								<>
-									<h3 className="flow-root">
-										<Disclosure.Button className="py-3 px-2 bg-gray-100 dark:bg-neutral-800 hover:bg-gray-200 dark:hover:bg-neutral-700 w-full flex items-center justify-between group text-gray-600 dark:text-neutral-300 transition-all duration-200 rounded">
-											<span className="font-medium">Color</span>
-											<span className="ml-6 flex items-center">
-												{open ? (
-													<MinusSmIcon className="h-5 w-5" aria-hidden="true" />
-												) : (
-													<PlusSmIcon className="h-5 w-5" aria-hidden="true" />
-												)}
-											</span>
-										</Disclosure.Button>
-									</h3>
-									<Disclosure.Panel className="pt-2 px-2">
-										<div className="space-y-2">
-											<Checkbox
-												label="Red"
-												id="red"
-												name="red"
-												value="red"
-											/>
-											<Checkbox
-												label="Blue"
-												id="blue"
-												name="blue"
-												value="blue"
-											/>
-										</div>
-									</Disclosure.Panel>
-								</>
-							)}
-						</Disclosure>
-						<Code code={
-							`import Select from "@components/Select";
+						<Checkbox
+							label="Green"
+							name="green"
+							value="green"
+							onChange={handleUncheckedCheckboxChange}
+						/>
+						<Text className="mb-4 text-sm font-medium !text-red-500">
+							Selected : {" "}
+							{uncheckedColor ?
+								uncheckedColor.map(item =>
+									<span key={item}>{item}, </span>
+								)
+								: ""}
+						</Text>
 
-<Select
-	label="Select Color"
-	id="color"
-	name="color"
-	value={selectedColor ?? "Choose Color"}
-	onChange={handleSelectColor}
->
-	<Select.option value="red">Red</Select.option>
-	<Select.option value="blue">Blue</Select.option>
-	<Select.option value="green">Green</Select.option>
-</Select>`
-						}>
-						</Code>
+						<Text className="mb-4 font-medium">Checked Checkbox</Text>
+						<Checkbox
+							label="Red"
+							name="red"
+							value="red"
+							onChange={handleCheckedCheckboxChange}
+							checked={checkedColor.includes("red")}
+						/>
+						<Checkbox
+							label="Blue"
+							name="blue"
+							value="blue"
+							onChange={handleCheckedCheckboxChange}
+							checked={checkedColor.includes("blue")}
+						/>
+						<Checkbox
+							label="Green"
+							name="green"
+							value="green"
+							onChange={handleCheckedCheckboxChange}
+							checked={checkedColor.includes("green")}
+						/>
+						<Text className="mb-4 text-sm font-medium !text-red-500">
+							Selected : {" "}
+							{checkedColor ?
+								checkedColor.map(item =>
+									<span key={item}>{item}, </span>
+								)
+								: ""}
+						</Text>
 					</Section>
 
-					<Section id="inputlabel" name="Input Label">
+					<Section id="nativeselect" name="Native Select">
 						<Select
 							label="Select Color"
 							id="color"
 							name="color"
-							value={selectedColor ?? "Choose Color"}
+							value={selectedColor ? selectedColor : "Choose Color"}
 							onChange={handleSelectColor}
 						>
 							<Select.option value="red">Red</Select.option>
 							<Select.option value="blue">Blue</Select.option>
 							<Select.option value="green">Green</Select.option>
 						</Select>
-						<Code code={
-							`import Select from "@components/Select";
+						<Text className="mb-4 text-sm font-medium !text-red-500"> Selected : {selectedColor ? selectedColor : ""} </Text>
 
-<Select
-	label="Select Color"
-	id="color"
-	name="color"
-	value={selectedColor ?? "Choose Color"}
-	onChange={handleSelectColor}
->
-	<Select.option value="red">Red</Select.option>
-	<Select.option value="blue">Blue</Select.option>
-	<Select.option value="green">Green</Select.option>
-</Select>`
-						}>
-						</Code>
+						<Select
+							label="Select Color With Id"
+							id="colorwithid"
+							name="colorwithid"
+							value={selectedColorWithId ? selectedColorWithId : "Choose Color With Id"}
+							onChange={handleSelectColorWithId}
+						>
+							<Select.option value="1">Red</Select.option>
+							<Select.option value="2">Blue</Select.option>
+							<Select.option value="3">Green</Select.option>
+						</Select>
+						<Text className="mb-4 text-sm font-medium !text-red-500"> Selected with id : {selectedColorWithId ? selectedColorWithId : ""} </Text>
 					</Section>
 
 					<Section id="dark-mode" name="Dark Mode">
@@ -254,8 +307,9 @@ export default function Third() {
 							name="inputlabelleft"
 							placeholder="Input Label Left"
 							labelLeft="https://"
-							onChange={handleInputChange}
+							onChange={handleInputLabelLeftChange}
 						/>
+						<Text className="mb-4 text-sm font-medium !text-red-500"> Input Label Left : {inputLabelLeft ? inputLabelLeft : ""} </Text>
 						<InputLabel
 							label="Input Label Right"
 							id="inputlabelright"
@@ -289,7 +343,9 @@ export default function Third() {
 							id="inputnolabel"
 							name="inputnolabel"
 							placeholder="Input No Label"
+							onChange={handleInputChange}
 						/>
+						<Text className="mb-4 text-sm font-medium !text-red-500"> Input  : {input ? input : ""} </Text>
 						<Input
 							label="Input With Label"
 							id="inputwithlabel"
@@ -344,6 +400,7 @@ export default function Third() {
 							placeholder="Text Area No Label"
 							onChange={handleTextAreaChange}
 						/>
+						<Text className="mb-4 text-sm font-medium !text-red-500"> Text Area : {textArea ? textArea : ""} </Text>
 						<TextArea
 							label="Text Area with Label"
 							id="textareawithlabel"

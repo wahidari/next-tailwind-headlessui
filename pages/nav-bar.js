@@ -11,6 +11,7 @@ import { ChevronDownIcon } from '@heroicons/react/solid'
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, RadioGroup } from '@headlessui/react'
 import { CheckIcon, ExclamationIcon, MinusSmIcon, PlusSmIcon, SelectorIcon } from '@heroicons/react/outline'
+import Checkbox from "@components/Checkbox";
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ')
@@ -155,47 +156,41 @@ export default function Nav() {
 				</div>
 			</div>
 
-			<fieldset>
-				<div>
-					<legend className="text-base font-medium text-gray-900">Push Notifications</legend>
-					<p className="text-sm text-gray-500">These are delivered via SMS to your mobile phone.</p>
-				</div>
-				<div className="mt-4 space-y-4">
-					<div className="flex items-center">
-						<input
-							id="push-everything"
-							name="push-notifications"
-							type="radio"
-							className="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300"
-						/>
-						<label htmlFor="push-everything" className="ml-3 block text-sm font-medium text-gray-700">
-							Everything
-						</label>
-					</div>
-					<div className="flex items-center">
-						<input
-							id="push-email"
-							name="push-notifications"
-							type="radio"
-							className="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300"
-						/>
-						<label htmlFor="push-email" className="ml-3 block text-sm font-medium text-gray-700">
-							Same as email
-						</label>
-					</div>
-					<div className="flex items-center">
-						<input
-							id="push-nothing"
-							name="push-notifications"
-							type="radio"
-							className="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300"
-						/>
-						<label htmlFor="push-nothing" className="ml-3 block text-sm font-medium text-gray-700">
-							No push notifications
-						</label>
-					</div>
-				</div>
-			</fieldset>
+
+			<Disclosure as="div">
+				{({ open }) => (
+					<>
+						<h3 className="flow-root">
+							<Disclosure.Button className="py-3 px-2 bg-gray-100 dark:bg-neutral-800 hover:bg-gray-200 dark:hover:bg-neutral-700 w-full flex items-center justify-between group text-gray-600 dark:text-neutral-300 transition-all duration-200 rounded">
+								<span className="font-medium">Color</span>
+								<span className="ml-6 flex items-center">
+									{open ? (
+										<MinusSmIcon className="h-5 w-5" aria-hidden="true" />
+									) : (
+										<PlusSmIcon className="h-5 w-5" aria-hidden="true" />
+									)}
+								</span>
+							</Disclosure.Button>
+						</h3>
+						<Disclosure.Panel className="pt-2 px-2">
+							<div className="space-y-2">
+								<Checkbox
+									label="Red"
+									id="red"
+									name="red"
+									value="red"
+								/>
+								<Checkbox
+									label="Blue"
+									id="blue"
+									name="blue"
+									value="blue"
+								/>
+							</div>
+						</Disclosure.Panel>
+					</>
+				)}
+			</Disclosure>
 
 			<RadioGroup value={selectedColor} onChange={setSelectedColor} className="mt-4">
 				<RadioGroup.Label className="sr-only">Choose a color</RadioGroup.Label>
