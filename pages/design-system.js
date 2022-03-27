@@ -105,7 +105,7 @@ export default function Third() {
 		}
 	};
 
-	const [checkedColor, setCheckedColor] = useState(["red", "blue"])
+	const [checkedColor, setCheckedColor] = useState(["yellow", "pink"])
 	function handleCheckedCheckboxChange(e) {
 		e.persist();
 		if (e.target.checked) {
@@ -131,7 +131,7 @@ export default function Third() {
 			<Layout>
 				<main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pb-16">
 
-					<Section id="radio" name="Radio">
+					<Section id="radio" name="Native Radio">
 						<Text className="mb-4 font-medium">Unchecked Radio</Text>
 						<Radio
 							label="Red"
@@ -164,10 +164,10 @@ export default function Third() {
 							onChange={handleCheckedRadioChange}
 							checked={checkedRadioColor == "purple"}
 						/>
-						<Text className="mb-4 text-sm font-medium !text-red-500">Checked Radio : {checkedRadioColor ? checkedRadioColor : ""}</Text>
+						<Text className="mb-4 text-sm font-medium !text-red-500">Initial Radio : {checkedRadioColor ? checkedRadioColor : ""}</Text>
 					</Section>
 
-					<Section id="checkbox" name="Checkbox">
+					<Section id="checkbox" name="Native Checkbox">
 						<Text className="mb-4 font-medium">Unchecked Checkbox</Text>
 						<Checkbox
 							label="Red"
@@ -188,7 +188,7 @@ export default function Third() {
 							onChange={handleUncheckedCheckboxChange}
 						/>
 						<Text className="mb-4 text-sm font-medium !text-red-500">
-							Selected : {" "}
+							Checkbox : {" "}
 							{uncheckedColor ?
 								uncheckedColor.map(item =>
 									<span key={item}>{item}, </span>
@@ -198,28 +198,28 @@ export default function Third() {
 
 						<Text className="mb-4 font-medium">Checked Checkbox</Text>
 						<Checkbox
-							label="Red"
-							name="red"
-							value="red"
+							label="Yellow"
+							name="yellow"
+							value="yellow"
 							onChange={handleCheckedCheckboxChange}
-							checked={checkedColor.includes("red")}
+							checked={checkedColor.includes("yellow")}
 						/>
 						<Checkbox
-							label="Blue"
-							name="blue"
-							value="blue"
+							label="Purple"
+							name="purple"
+							value="purple"
 							onChange={handleCheckedCheckboxChange}
-							checked={checkedColor.includes("blue")}
+							checked={checkedColor.includes("purple")}
 						/>
 						<Checkbox
-							label="Green"
-							name="green"
-							value="green"
+							label="Pink"
+							name="pink"
+							value="pink"
 							onChange={handleCheckedCheckboxChange}
-							checked={checkedColor.includes("green")}
+							checked={checkedColor.includes("pink")}
 						/>
 						<Text className="mb-4 text-sm font-medium !text-red-500">
-							Selected : {" "}
+							Initial Checkbox : {" "}
 							{checkedColor ?
 								checkedColor.map(item =>
 									<span key={item}>{item}, </span>
@@ -249,11 +249,11 @@ export default function Third() {
 							value={selectedColorWithId ? selectedColorWithId : "Choose Color With Id"}
 							onChange={handleSelectColorWithId}
 						>
-							<Select.option value="1">Red</Select.option>
-							<Select.option value="2">Blue</Select.option>
-							<Select.option value="3">Green</Select.option>
+							<Select.option value="1">Purple</Select.option>
+							<Select.option value="2">Yellow</Select.option>
+							<Select.option value="3">Pink</Select.option>
 						</Select>
-						<Text className="mb-4 text-sm font-medium !text-red-500"> Selected with id : {selectedColorWithId ? selectedColorWithId : ""} </Text>
+						<Text className="mb-4 text-sm font-medium !text-red-500">Initial Selected : {selectedColorWithId ? selectedColorWithId : ""} </Text>
 					</Section>
 
 					<Section id="dark-mode" name="Dark Mode">
