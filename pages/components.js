@@ -106,7 +106,7 @@ export default function Third() {
 				<main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pb-16">
 
 					<Section id="components" name="Components TOC">
-						<div className="grid sm:grid-cols-3">
+						<div className="grid sm:grid-cols-2 md:grid-cols-3">
 							<div>
 								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
 									<Link href="#dark-mode">Dark Mode</Link>
