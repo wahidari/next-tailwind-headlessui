@@ -29,22 +29,22 @@ export default function Navbar() {
                 {/* Nav Link  */}
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">
-                    <ActiveLink activeClassName="bg-gray-800 !text-white" href="/">
-                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">First</a>
+                    <ActiveLink activeClassName="bg-gray-100" href="/">
+                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">First</a>
                     </ActiveLink>
-                    <ActiveLink activeClassName="bg-gray-800 !text-white" href="/design-system">
-                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">Components</a>
+                    <ActiveLink activeClassName="bg-gray-100" href="/components">
+                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Components</a>
                     </ActiveLink>
-                    <ActiveLink activeClassName="bg-gray-800 !text-white" href="/headless">
-                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">Headless</a>
+                    <ActiveLink activeClassName="bg-gray-100" href="/headless">
+                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Headless</a>
                     </ActiveLink>
-                    <ActiveLink activeClassName="bg-gray-800 !text-white" href="/second">
-                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">Second</a>
+                    <ActiveLink activeClassName="bg-gray-100" href="/second">
+                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Second</a>
                     </ActiveLink>
                     <Popover className="relative">
                       {({ open }) => (
                         <>
-                          <Popover.Button className="group flex space-x-2 items-center px-2 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-800 transition-colors duration-200">
+                          <Popover.Button className="group flex space-x-2 items-center px-2 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">
                             <span>More</span>
                             <ChevronDownIcon
                               className={`${open ? 'transform rotate-180 transition-transform duration-300' : 'transition-transform duration-300'} h-4 w-4`}
@@ -60,19 +60,19 @@ export default function Navbar() {
                             leaveTo="opacity-0 scale-95"
                           >
                             <Popover.Panel className="absolute bg-white shadow space-y-1 top-12 px-2 py-2 rounded w-40">
-                              <ActiveLink activeClassName="bg-gray-800 !text-white" href="/third">
-                                <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">Third</a>
+                              <ActiveLink activeClassName="bg-gray-100" href="/third">
+                                <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Third</a>
                               </ActiveLink>
-                              <ActiveLink activeClassName="bg-gray-800 !text-white" href="/fourth">
-                                <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">Fourth</a>
+                              <ActiveLink activeClassName="bg-gray-100" href="/fourth">
+                                <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Fourth</a>
                               </ActiveLink>
                             </Popover.Panel>
                           </Transition>
                         </>
                       )}
                     </Popover>
-                    <ActiveLink activeClassName="bg-gray-800 !text-white" href="/nav-bar">
-                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">Navbar</a>
+                    <ActiveLink activeClassName="bg-gray-100" href="/nav-bar">
+                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Navbar</a>
                     </ActiveLink>
                   </div>
                 </div>
@@ -98,23 +98,23 @@ export default function Navbar() {
             {/* Mobile menu panel */}
             <Disclosure.Panel className="md:hidden">
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <ActiveLink activeClassName="bg-gray-800 !text-white" href="/">
-                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">First</a>
+                <ActiveLink activeClassName="bg-gray-100" href="/">
+                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">First</a>
                 </ActiveLink>
-                <ActiveLink activeClassName="bg-gray-800 !text-white" href="/design-system">
-                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">Components</a>
+                <ActiveLink activeClassName="bg-gray-100" href="/components">
+                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Components</a>
                 </ActiveLink>
-                <ActiveLink activeClassName="bg-gray-800 !text-white" href="/headless">
-                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">Headless</a>
+                <ActiveLink activeClassName="bg-gray-100" href="/headless">
+                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Headless</a>
                 </ActiveLink>
-                <ActiveLink activeClassName="bg-gray-800 !text-white" href="/second">
-                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">Second</a>
+                <ActiveLink activeClassName="bg-gray-100" href="/second">
+                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Second</a>
                 </ActiveLink>
 
                 <Menu>
                   {({ open }) => (
                     <>
-                      <Menu.Button className="border-b-1 w-full px-3 py-2 rounded-md text-base font-medium text-gray-600">
+                      <Menu.Button className="border-b-1 w-full px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">
                         <div className="flex justify-between items-center">
                           <span>More</span>
                           <ChevronRightIcon
@@ -125,21 +125,21 @@ export default function Navbar() {
                       </Menu.Button>
                       <Menu.Items className="space-y-1 px-3">
                         <Menu.Item>
-                          <ActiveLink activeClassName="bg-gray-800 !text-white" href="/third">
-                            <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">Third</a>
+                          <ActiveLink activeClassName="bg-gray-100" href="/third">
+                            <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Third</a>
                           </ActiveLink>
                         </Menu.Item>
                         <Menu.Item>
-                          <ActiveLink activeClassName="bg-gray-800 !text-white" href="/fourth">
-                            <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">Fourth</a>
+                          <ActiveLink activeClassName="bg-gray-100" href="/fourth">
+                            <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Fourth</a>
                           </ActiveLink>
                         </Menu.Item>
                       </Menu.Items>
                     </>
                   )}
                 </Menu>
-                <ActiveLink activeClassName="bg-gray-800 !text-white" href="/nav-bar">
-                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-700 hover:text-white">Navbar</a>
+                <ActiveLink activeClassName="bg-gray-100" href="/nav-bar">
+                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Navbar</a>
                 </ActiveLink>
               </div>
             </Disclosure.Panel>
