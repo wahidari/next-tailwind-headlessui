@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useContext, useState} from "react";
+import { useContext, useState } from "react";
 import { GlobalContext } from "@utils/GlobalContext";
 import { DownloadIcon, InformationCircleIcon, MinusSmIcon, MoonIcon, PlusCircleIcon, SunIcon } from "@heroicons/react/outline";
 import Button from "@components/Button";
@@ -32,20 +32,20 @@ import Radio from "@components/Radio";
 export default function Third() {
 	const { darkMode, setDarkMode } = useContext(GlobalContext);
 
-	const [selectedColor, setSelectedColor] = useState("blue")
-	function handleSelectColor(e) {
-		setSelectedColor(e.target.value);
-	};
-
 	const [radioColor, setRadioColor] = useState();
 	function handleRadioChange(e) {
 		setRadioColor(e.target.value)
 	}
-
+	
 	const [checkedRadioColor, setCheckedRadioColor] = useState("purple");
 	function handleCheckedRadioChange(e) {
 		setCheckedRadioColor(e.target.value)
 	}
+
+	const [selectedColor, setSelectedColor] = useState("blue")
+	function handleSelectColor(e) {
+		setSelectedColor(e.target.value);
+	};
 
 	const [selectedColorWithId, setSelectedColorWithId] = useState(3)
 	function handleSelectColorWithId(e) {
@@ -71,9 +71,9 @@ export default function Third() {
 	function handleUncheckedCheckboxChange(e) {
 		e.persist();
 		if (e.target.checked) {
-			setUncheckedColor(oldArray => [...oldArray, e.target.name]);
+			setUncheckedColor([...uncheckedColor, e.target.value]);
 		} else {
-			setUncheckedColor(oldArray => oldArray.filter(item => item !== e.target.name));
+			setUncheckedColor(uncheckedColor.filter(item => item !== e.target.value));
 		}
 	};
 
@@ -81,9 +81,9 @@ export default function Third() {
 	function handleCheckedCheckboxChange(e) {
 		e.persist();
 		if (e.target.checked) {
-			setCheckedColor(oldArray => [...oldArray, e.target.name]);
+			setCheckedColor([...checkedColor, e.target.value]);
 		} else {
-			setCheckedColor(oldArray => oldArray.filter(item => item !== e.target.name));
+			setCheckedColor(checkedColor.filter(item => item !== e.target.value));
 		}
 	};
 
@@ -102,8 +102,6 @@ export default function Third() {
 
 			<Layout>
 				<main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pb-16">
-
-
 
 					<Section id="dark-mode" name="Dark Mode">
 						<div className="flex gap-3 flex-wrap">
@@ -147,6 +145,8 @@ export default function Third() {
 						}
 					</div>
 
+					<BackToTop />
+
 					<Section id="radio" name="Native Radio">
 						<Text className="mb-4 font-medium">Unchecked Radio</Text>
 						<Radio
@@ -181,6 +181,56 @@ export default function Third() {
 							checked={checkedRadioColor == "purple"}
 						/>
 						<Text className="mb-4 text-sm font-medium !text-red-500">Initial Radio : {checkedRadioColor ? checkedRadioColor : ""}</Text>
+						<Code code={
+							`import { useState } from "react"; 
+import Radio from "@components/Radio";
+import Text from "@components/Text";
+
+const [radioColor, setRadioColor] = useState();
+function handleRadioChange(e) {
+	setRadioColor(e.target.value)
+}
+
+const [checkedRadioColor, setCheckedRadioColor] = useState("purple");
+function handleCheckedRadioChange(e) {
+	setCheckedRadioColor(e.target.value)
+}
+
+<Text className="mb-4 font-medium">Unchecked Radio</Text>
+<Radio
+	label="Red"
+	name="red"
+	value="red"
+	onChange={handleRadioChange}
+	checked={radioColor == "red"}
+/>
+<Radio
+	label="Blue"
+	name="blue"
+	value="blue"
+	onChange={handleRadioChange}
+	checked={radioColor == "blue"}
+/>
+<Text className="mb-4 text-sm font-medium !text-red-500">Radio : {radioColor ? radioColor : ""}</Text>
+
+<Text className="mb-4 font-medium">Checked Radio</Text>
+<Radio
+	label="Green"
+	name="green"
+	value="green"
+	onChange={handleCheckedRadioChange}
+	checked={checkedRadioColor == "green"}
+/>
+<Radio
+	label="Purple"
+	name="purple"
+	value="purple"
+	onChange={handleCheckedRadioChange}
+	checked={checkedRadioColor == "purple"}
+/>
+<Text className="mb-4 text-sm font-medium !text-red-500">Initial Radio : {checkedRadioColor ? checkedRadioColor : ""}</Text>`
+						}>
+						</Code>
 					</Section>
 
 					<Section id="checkbox" name="Native Checkbox">
@@ -242,6 +292,91 @@ export default function Third() {
 								)
 								: ""}
 						</Text>
+						<Code code={
+							`import { useState } from "react"; 
+import Checkbox from "@components/Checkbox";
+import Text from "@components/Text";
+
+const [uncheckedColor, setUncheckedColor] = useState([])
+function handleUncheckedCheckboxChange(e) {
+	e.persist();
+	if (e.target.checked) {
+		setUncheckedColor([...uncheckedColor, e.target.value]);
+	} else {
+		setUncheckedColor(uncheckedColor.filter(item => item !== e.target.value));
+	}
+};
+
+const [checkedColor, setCheckedColor] = useState(["yellow", "pink"])
+function handleCheckedCheckboxChange(e) {
+	e.persist();
+	if (e.target.checked) {
+		setCheckedColor([...checkedColor, e.target.value]);
+	} else {
+		setCheckedColor(checkedColor.filter(item => item !== e.target.value));
+	}
+};
+
+<Text className="mb-4 font-medium">Unchecked Checkbox</Text>
+<Checkbox
+	label="Red"
+	name="red"
+	value="red"
+	onChange={handleUncheckedCheckboxChange}
+/>
+<Checkbox
+	label="Blue"
+	name="blue"
+	value="blue"
+	onChange={handleUncheckedCheckboxChange}
+/>
+<Checkbox
+	label="Green"
+	name="green"
+	value="green"
+	onChange={handleUncheckedCheckboxChange}
+/>
+<Text className="mb-4 text-sm font-medium !text-red-500">
+	Checkbox : {" "}
+	{uncheckedColor ?
+		uncheckedColor.map(item =>
+			<span key={item}>{item}, </span>
+		)
+		: ""}
+</Text>
+
+<Text className="mb-4 font-medium">Checked Checkbox</Text>
+<Checkbox
+	label="Yellow"
+	name="yellow"
+	value="yellow"
+	onChange={handleCheckedCheckboxChange}
+	checked={checkedColor.includes("yellow")}
+/>
+<Checkbox
+	label="Purple"
+	name="purple"
+	value="purple"
+	onChange={handleCheckedCheckboxChange}
+	checked={checkedColor.includes("purple")}
+/>
+<Checkbox
+	label="Pink"
+	name="pink"
+	value="pink"
+	onChange={handleCheckedCheckboxChange}
+	checked={checkedColor.includes("pink")}
+/>
+<Text className="mb-4 text-sm font-medium !text-red-500">
+	Initial Checkbox : {" "}
+	{checkedColor ?
+		checkedColor.map(item =>
+			<span key={item}>{item}, </span>
+		)
+		: ""}
+</Text>`
+						}>
+						</Code>
 					</Section>
 
 					<Section id="nativeselect" name="Native Select">
@@ -270,9 +405,49 @@ export default function Third() {
 							<Select.option value="3">Pink</Select.option>
 						</Select>
 						<Text className="mb-4 text-sm font-medium !text-red-500">Initial Selected : {selectedColorWithId ? selectedColorWithId : ""} </Text>
-					</Section>
+						<Code code={
+							`import { useState } from "react"; 
+import Select from "@components/Select";
+import Text from "@components/Text";
 
-					<BackToTop />
+const [selectedColor, setSelectedColor] = useState("blue")
+function handleSelectColor(e) {
+	setSelectedColor(e.target.value);
+};
+
+const [selectedColorWithId, setSelectedColorWithId] = useState(3)
+function handleSelectColorWithId(e) {
+	setSelectedColorWithId(e.target.value)
+};
+
+<Select
+	label="Select Color"
+	id="color"
+	name="color"
+	value={selectedColor ? selectedColor : "Choose Color"}
+	onChange={handleSelectColor}
+>
+	<Select.option value="red">Red</Select.option>
+	<Select.option value="blue">Blue</Select.option>
+	<Select.option value="green">Green</Select.option>
+</Select>
+<Text className="mb-4 text-sm font-medium !text-red-500"> Selected : {selectedColor ? selectedColor : ""} </Text>
+
+<Select
+	label="Select Color With Id"
+	id="colorwithid"
+	name="colorwithid"
+	value={selectedColorWithId ? selectedColorWithId : "Choose Color With Id"}
+	onChange={handleSelectColorWithId}
+>
+	<Select.option value="1">Purple</Select.option>
+	<Select.option value="2">Yellow</Select.option>
+	<Select.option value="3">Pink</Select.option>
+</Select>
+<Text className="mb-4 text-sm font-medium !text-red-500">Initial Selected : {selectedColorWithId ? selectedColorWithId : ""} </Text>`
+						}>
+						</Code>
+					</Section>
 
 					<Section id="inputlabel" name="Input Label">
 						<InputLabel
@@ -284,6 +459,28 @@ export default function Third() {
 							onChange={handleInputLabelLeftChange}
 						/>
 						<Text className="mb-4 text-sm font-medium !text-red-500"> Input Label Left : {inputLabelLeft ? inputLabelLeft : ""} </Text>
+						<Code code={
+							`import { useState } from "react"; 
+import Text from "@components/Text";
+import InputLabel from "@components/InputLabel";
+
+const [inputLabelLeft, setInputLabelLeft] = useState()
+function handleInputLabelLeftChange(e) {
+	setInputLabelLeft(e.target.value);
+};
+
+<InputLabel
+	label="Input Label Left"
+	id="inputlabelleft"
+	name="inputlabelleft"
+	placeholder="Input Label Left"
+	labelLeft="https://"
+	onChange={handleInputLabelLeftChange}
+/>
+<Text className="mb-4 text-sm font-medium !text-red-500"> Input Label Left : {inputLabelLeft ? inputLabelLeft : ""} </Text>`
+						}>
+						</Code>
+						<br/>
 						<InputLabel
 							label="Input Label Right"
 							id="inputlabelright"
@@ -294,13 +491,6 @@ export default function Third() {
 						<Code code={
 							`import InputLabel from "@components/InputLabel";
 
-<InputLabel
-	label="Input Label Left"
-	id="inputlabelleft"
-	name="inputlabelleft"
-	placeholder="Input Label Left"
-	labelLeft="https://"
-/>
 <InputLabel
 	label="Input Label Right"
 	id="inputlabelright"
@@ -314,17 +504,38 @@ export default function Third() {
 
 					<Section id="input" name="Input">
 						<Input
-							id="inputnolabel"
-							name="inputnolabel"
-							placeholder="Input No Label"
-							onChange={handleInputChange}
-						/>
-						<Text className="mb-4 text-sm font-medium !text-red-500"> Input  : {input ? input : ""} </Text>
-						<Input
 							label="Input With Label"
 							id="inputwithlabel"
 							name="inputwithlabel"
 							placeholder="Input With Label"
+							onChange={handleInputChange}
+						/>
+						<Text className="mb-4 text-sm font-medium !text-red-500"> Input  : {input ? input : ""} </Text>
+						<Code code={
+							`import { useState } from "react"; 
+import Input from "@components/Input";
+import Text from "@components/Text";
+
+const [input, setInput] = useState()
+function handleInputChange(e) {
+	setInput(e.target.value);
+};
+
+<Input
+	label="Input With Label"
+	id="inputwithlabel"
+	name="inputwithlabel"
+	placeholder="Input With Label"
+	onChange={handleInputChange}
+/>
+<Text className="mb-4 text-sm font-medium !text-red-500"> Input  : {input ? input : ""} </Text>`
+						}>
+						</Code>
+						<Input
+							id="inputnolabel"
+							name="inputnolabel"
+							placeholder="Input No Label"
+							className="mt-6"
 						/>
 						<Input.disabled
 							id="inputdisablednolabel"
@@ -344,12 +555,7 @@ export default function Third() {
 	id="inputnolabel"
 	name="inputnolabel"
 	placeholder="Input No Label"
-/>
-<Input
-	label="Input With Label"
-	id="inputwithlabel"
-	name="inputwithlabel"
-	placeholder="Input With Label"
+	className="mt-6"
 />
 <Input.disabled
 	id="inputdisablednolabel"
@@ -368,25 +574,41 @@ export default function Third() {
 
 					<Section id="textarea" name="Text Area">
 						<TextArea
-							id="textareanolabel"
-							name="textareanolabel"
-							height={2}
-							placeholder="Text Area No Label"
-							onChange={handleTextAreaChange}
-						/>
-						<Text className="mb-4 text-sm font-medium !text-red-500"> Text Area : {textArea ? textArea : ""} </Text>
-						<TextArea
 							label="Text Area with Label"
 							id="textareawithlabel"
 							name="textareawithlabel"
 							height={2}
 							placeholder="Text Area With Label"
+							onChange={handleTextAreaChange}
 						/>
-						<TextArea.disabled
-							id="textareadisabled"
-							name="textareadisabled"
+						<Text className="mb-4 text-sm font-medium !text-red-500"> Text Area : {textArea ? textArea : ""} </Text>
+						<Code code={
+							`import { useState } from "react"; 
+import TextArea from "@components/TextArea";
+import Text from "@components/Text";
+
+const [textArea, setTextArea] = useState()
+function handleTextAreaChange(e) {
+	setTextArea(e.target.value);
+};
+
+<TextArea
+	label="Text Area with Label"
+	id="textareawithlabel"
+	name="textareawithlabel"
+	height={2}
+	placeholder="Text Area With Label"
+	onChange={handleTextAreaChange}
+/>
+<Text className="mb-4 text-sm font-medium !text-red-500"> Text Area : {textArea ? textArea : ""} </Text>`
+						}>
+						</Code>
+						<TextArea
+							id="textareanolabel"
+							name="textareanolabel"
 							height={2}
-							value="Text Area Disabled No Label"
+							placeholder="Text Area No Label"
+							className="mt-6"
 						/>
 						<TextArea.disabled
 							label="Text Area Disabled with Label"
@@ -394,6 +616,12 @@ export default function Third() {
 							name="textareawithlabeldisabled"
 							height={2}
 							value="Text Area Disabled with Label"
+						/>
+						<TextArea.disabled
+							id="textareadisabled"
+							name="textareadisabled"
+							height={2}
+							value="Text Area Disabled No Label"
 						/>
 						<Code code={
 							`import TextArea from "@components/TextArea";
@@ -403,13 +631,7 @@ export default function Third() {
 	name="textareanolabel"
 	height={2}
 	placeholder="Text Area No Label"
-/>
-<TextArea
-	label="Text Area with Label"
-	id="textareawithlabel"
-	name="textareawithlabel"
-	height={2}
-	placeholder="Text Area With Label"
+	className="mt-6"
 />
 <TextArea.disabled
 	id="textareadisabled"
@@ -695,7 +917,7 @@ export default function Third() {
 							<Badge className="flex gap-1 items-center"><DownloadIcon className="h-4 w-4" />Default</Badge>
 							<Badge.green>Green</Badge.green>
 							<Badge.red isLarge>Red</Badge.red>
-							<Badge.yellow isLarge>Yellow</Badge.yellow>
+							<Badge.yellow isLarge pills>Yellow</Badge.yellow>
 							<Badge.orange pills>Orange</Badge.orange>
 							<Badge.purple pills>Purple</Badge.purple>
 							<Badge.dark pills>Dark</Badge.dark>
@@ -706,7 +928,7 @@ export default function Third() {
 <Badge className="flex gap-1 items-center"><DownloadIcon className="h-4 w-4" />Default</Badge>
 <Badge.green>Green</Badge.green>
 <Badge.red isLarge>Red</Badge.red>
-<Badge.yellow isLarge>Yellow</Badge.yellow>
+<Badge.yellow isLarge pills>Yellow</Badge.yellow>
 <Badge.orange pills>Orange</Badge.orange>
 <Badge.purple pills>Purple</Badge.purple>
 <Badge.dark pills>Dark</Badge.dark>`
@@ -719,7 +941,7 @@ export default function Third() {
 							<BadgeOutline className="flex gap-1 items-center"><DownloadIcon className="h-4 w-4" />Default</BadgeOutline>
 							<BadgeOutline.green>Green</BadgeOutline.green>
 							<BadgeOutline.red isLarge>Red</BadgeOutline.red>
-							<BadgeOutline.yellow isLarge>Yellow</BadgeOutline.yellow>
+							<BadgeOutline.yellow isLarge pills>Yellow</BadgeOutline.yellow>
 							<BadgeOutline.orange pills>Orange</BadgeOutline.orange>
 							<BadgeOutline.purple pills>Purple</BadgeOutline.purple>
 							<BadgeOutline.dark pills>Dark</BadgeOutline.dark>
@@ -730,7 +952,7 @@ export default function Third() {
 <BadgeOutline className="flex gap-1 items-center"><DownloadIcon className="h-4 w-4" />Default</BadgeOutline>
 <BadgeOutline.green>Green</BadgeOutline.green>
 <BadgeOutline.red isLarge>Red</BadgeOutline.red>
-<BadgeOutline.yellow isLarge>Yellow</BadgeOutline.yellow>
+<BadgeOutline.yellow isLarge pills>Yellow</BadgeOutline.yellow>
 <BadgeOutline.orange pills>Orange</BadgeOutline.orange>
 <BadgeOutline.purple pills>Purple</BadgeOutline.purple>
 <BadgeOutline.dark pills>Dark</BadgeOutline.dark>`
