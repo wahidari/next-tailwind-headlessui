@@ -28,6 +28,8 @@ import InputLabel from "@components/InputLabel";
 import Select from "@components/Select";
 import Checkbox from "@components/Checkbox";
 import Radio from "@components/Radio";
+import Link from "next/link";
+import Spinner from "@components/Spinner";
 
 export default function Third() {
 	const { darkMode, setDarkMode } = useContext(GlobalContext);
@@ -36,7 +38,7 @@ export default function Third() {
 	function handleRadioChange(e) {
 		setRadioColor(e.target.value)
 	}
-	
+
 	const [checkedRadioColor, setCheckedRadioColor] = useState("purple");
 	function handleCheckedRadioChange(e) {
 		setCheckedRadioColor(e.target.value)
@@ -102,6 +104,86 @@ export default function Third() {
 
 			<Layout>
 				<main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pb-16">
+
+					<Section id="components" name="Components TOC">
+						<div className="grid sm:grid-cols-3">
+							<div>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#dark-mode">Dark Mode</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#radio">Native Radio</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#checkbox">Native Checkbox</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#native-select">Native Select</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#input-label">Input Label</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#input">Input</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#text-area">Text Area</Link>
+								</span>
+							</div>
+							<div>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#avatar">Avatar</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#spinner">Spinner</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#section">Section</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#container">Container</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#heading">Heading</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#text">Text</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#button">Button</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#button-outline">Button Outline</Link>
+								</span>
+							</div>
+							<div>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#link-button">Link Button</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#link-button-outline">Link Button Outline</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#badge">Badge</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#badge-outline">Badge Outline</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#alert">Alert</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#alert-outline">Alert Outline</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#skeletons">Skeletons</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#progress">Progress</Link>
+								</span>
+							</div>
+						</div>
+					</Section>
 
 					<Section id="dark-mode" name="Dark Mode">
 						<div className="flex gap-3 flex-wrap">
@@ -379,7 +461,7 @@ function handleCheckedCheckboxChange(e) {
 						</Code>
 					</Section>
 
-					<Section id="nativeselect" name="Native Select">
+					<Section id="native-select" name="Native Select">
 						<Select
 							label="Select Color"
 							id="color"
@@ -449,7 +531,7 @@ function handleSelectColorWithId(e) {
 						</Code>
 					</Section>
 
-					<Section id="inputlabel" name="Input Label">
+					<Section id="input-label" name="Input Label">
 						<InputLabel
 							label="Input Label Left"
 							id="inputlabelleft"
@@ -480,7 +562,7 @@ function handleInputLabelLeftChange(e) {
 <Text className="mb-4 text-sm font-medium !text-red-500"> Input Label Left : {inputLabelLeft ? inputLabelLeft : ""} </Text>`
 						}>
 						</Code>
-						<br/>
+						<br />
 						<InputLabel
 							label="Input Label Right"
 							id="inputlabelright"
@@ -572,7 +654,7 @@ function handleInputChange(e) {
 						</Code>
 					</Section>
 
-					<Section id="textarea" name="Text Area">
+					<Section id="text-area" name="Text Area">
 						<TextArea
 							label="Text Area with Label"
 							id="textareawithlabel"
@@ -718,6 +800,28 @@ function handleTextAreaChange(e) {
 		alt="Image Alt"
 	/>
 </div>`
+						}>
+						</Code>
+					</Section>
+
+					<Section id="spinner" name="Spinner">
+						<Spinner></Spinner>
+						<Spinner.green></Spinner.green>
+						<Spinner.red small></Spinner.red>
+						<Spinner.yellow small></Spinner.yellow>
+						<Spinner.orange large></Spinner.orange>
+						<Spinner.purple large></Spinner.purple>
+						<Spinner.dark></Spinner.dark>
+						<Code code={
+							`import Spinner from "@components/Spinner"; 
+							
+<Spinner></Spinner>
+<Spinner.green></Spinner.green>
+<Spinner.red small></Spinner.red>
+<Spinner.yellow small></Spinner.yellow>
+<Spinner.orange large></Spinner.orange>
+<Spinner.purple large></Spinner.purple>
+<Spinner.dark></Spinner.dark>`
 						}>
 						</Code>
 					</Section>
