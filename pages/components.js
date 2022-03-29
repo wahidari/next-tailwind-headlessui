@@ -1,7 +1,8 @@
 import Head from "next/head";
-import { useContext, useState } from "react";
+import Link from "next/link";
+import { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "@utils/GlobalContext";
-import { DownloadIcon, InformationCircleIcon, MinusSmIcon, MoonIcon, PlusCircleIcon, SunIcon } from "@heroicons/react/outline";
+import { DownloadIcon, InformationCircleIcon, MoonIcon, PlusCircleIcon, SunIcon, DocumentTextIcon, PhotographIcon, TrashIcon } from "@heroicons/react/outline";
 import Button from "@components/Button";
 import ButtonOutline from "@components/ButtonOutline";
 import Heading from "@components/Heading";
@@ -28,8 +29,10 @@ import InputLabel from "@components/InputLabel";
 import Select from "@components/Select";
 import Checkbox from "@components/Checkbox";
 import Radio from "@components/Radio";
-import Link from "next/link";
 import Spinner from "@components/Spinner";
+import FileInput from "@components/FileInput";
+import Image from "next/image";
+import FileInputLarge from "@components/FileInputLarge";
 
 export default function Third() {
 	const { darkMode, setDarkMode } = useContext(GlobalContext);
@@ -89,6 +92,40 @@ export default function Third() {
 		}
 	};
 
+	const [file, setFile] = useState()
+	function handleFileChange(e) {
+		setFile(e.target.files[0])
+	}
+
+	const [filee, setFilee] = useState()
+	function handleFileChangee(e) {
+		setFilee(e.target.files[0])
+	}
+
+	const [image, setImage] = useState()
+	const [imageURL, setImageURL] = useState()
+	function handleImageChange(e) {
+		setImage(e.target.files[0])
+		setImageURL(URL.createObjectURL(e.target.files[0]))
+	}
+
+	const [images, setImages] = useState([])
+	const [imagesURL, setImagesURL] = useState([])
+	function handleMultipleImageChange(e) {
+		setImages([...e.target.files])
+	}
+
+	useEffect(() => {
+		const newImageURLs = []
+		images.forEach(image => newImageURLs.push(URL.createObjectURL(image)));
+		setImagesURL(newImageURLs)
+	}, [images])
+
+	function deleteImage(id) {
+		const filtered = images.filter((item, index) => index !== id);
+		setImages(filtered);
+	}
+
 	return (
 		<div>
 			<Head>
@@ -128,6 +165,15 @@ export default function Third() {
 								</span>
 								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
 									<Link href="#text-area">Text Area</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#input-file">Input File</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#input-image">Input Image</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#input-image-multiple">Input Image Multiple</Link>
 								</span>
 							</div>
 							<div>
@@ -732,6 +778,200 @@ function handleTextAreaChange(e) {
 						</Code>
 					</Section>
 
+					<Section id="input-file" name="Input File">
+						<FileInput
+							label="File Docx"
+							accept=".docx"
+							name="file_docx"
+							inputLabel="Select file (.docx)"
+							value={file ? file.name : ''}
+							onChange={handleFileChange}
+							icon={<DocumentTextIcon className="w-6 h-6 text-gray-400 mr-1" strokeWidth="1" />}
+						/>
+						<FileInputLarge
+							label="File PDF"
+							accept=".pdf"
+							name="file_pdf"
+							inputLabel="Select file (.pdf)"
+							value={filee ? filee.name : ''}
+							onChange={handleFileChangee}
+							icon={<DocumentTextIcon className="w-8 h-8 text-gray-400" strokeWidth="1" />}
+						/>
+						<Code code={
+							`import { useState } from "react"; 
+import FileInput from "@components/FileInput";
+import FileInputLarge from "@components/FileInputLarge";
+
+const [file, setFile] = useState()
+function handleFileChange(e) {
+	setFile(e.target.files[0])
+}
+
+const [filee, setFilee] = useState()
+function handleFileChangee(e) {
+	setFilee(e.target.files[0])
+}
+
+<FileInput
+	label="File Docx"
+	accept=".docx"
+	name="file_docx"
+	inputLabel="Select file (.docx)"
+	value={file ? file.name : ''}
+	onChange={handleFileChange}
+	icon={<DocumentTextIcon className="w-6 h-6 text-gray-400 mr-1" strokeWidth="1" />}
+/>
+<FileInputLarge
+	label="File PDF"
+	accept=".pdf"
+	name="file_pdf"
+	inputLabel="Select file (.pdf)"
+	value={filee ? filee.name : ''}
+	onChange={handleFileChangee}
+	icon={<DocumentTextIcon className="w-8 h-8 text-gray-400" strokeWidth="1" />}
+/>`
+						}>
+						</Code>
+					</Section>
+
+					<Section id="input-image" name="Input Image">
+						<FileInput
+							label="File Image"
+							accept=".png, .jpg, .jpeg"
+							name="file_image"
+							inputLabel="Select image (.png, .jpg, .jpeg)"
+							onChange={handleImageChange}
+							icon={<PhotographIcon className="w-6 h-6 text-gray-400 mr-1" strokeWidth="1" />}
+						/>
+						{imageURL ?
+							<div className="relative w-48 h-36 mb-4">
+								<Image
+									alt="image"
+									src={imageURL}
+									layout="fill"
+									className="rounded-lg"
+								/>
+							</div>
+							:
+							""
+						}
+						<Code code={
+							`import { useState } from "react"; 
+import FileInput from "@components/FileInput";
+
+const [image, setImage] = useState()
+const [imageURL, setImageURL] = useState()
+function handleImageChange(e) {
+	setImage(e.target.files[0])
+	setImageURL(URL.createObjectURL(e.target.files[0]))
+}
+
+<FileInput
+	label="File Image"
+	accept=".png, .jpg, .jpeg"
+	name="file_image"
+	inputLabel="Select image (.png, .jpg, .jpeg)"
+	onChange={handleImageChange}
+	icon={<PhotographIcon className="w-6 h-6 text-gray-400 mr-1" strokeWidth="1" />}
+/>
+{imageURL ? 
+	<div className="relative w-48 h-36 mb-4">
+		<Image
+			alt="image"
+			src={imageURL}
+			layout="fill"
+			className="rounded-lg"
+		/>
+	</div>
+	:
+	""
+}`
+						}>
+						</Code>
+					</Section>
+
+					<Section id="input-image-multiple" name="Input Image Multiple">
+						<FileInput
+							label="File Image Multiple"
+							accept=".png, .jpg, .jpeg"
+							name="file_image"
+							inputLabel="Select multiple image (.png, .jpg, .jpeg)"
+							onChange={handleMultipleImageChange}
+							icon={<PhotographIcon className="w-6 h-6 text-gray-400 mr-1" strokeWidth="1" />}
+							multiple
+						/>
+						{imagesURL ?
+							<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+								{imagesURL.map((image, id) =>
+									<div key={id} className="relative h-36 md:h-40 w-full">
+										<Image
+											src={image}
+											alt="image"
+											layout="fill"
+											className="rounded-lg"
+										/>
+										<button onClick={() => deleteImage(id)} className="absolute top-0 right-0 m-1 text-red-500 hover:text-red-600 bg-black bg-opacity-30 backdrop-blur-lg p-1.5 rounded-full transition-all duration-200">
+											<TrashIcon className="w-4 h-4" />
+										</button>
+									</div>
+								)}
+							</div>
+							:
+							""
+						}
+						<Code code={
+							`import { useState, useEffect } from "react"; 
+import FileInput from "@components/FileInput";
+
+const [images, setImages] = useState([])
+const [imagesURL, setImagesURL] = useState([])
+function handleMultipleImageChange(e) {
+	setImages([...e.target.files])
+}
+
+useEffect(() => {
+	const newImageURLs = []
+	images.forEach(image => newImageURLs.push(URL.createObjectURL(image)));
+	setImagesURL(newImageURLs)
+}, [images])
+
+function deleteImage(id) {
+	const filtered = images.filter((item, index) => index !== id);
+	setImages(filtered);
+}
+
+<FileInput
+	label="File Image Multiple"
+	accept=".png, .jpg, .jpeg"
+	name="file_image"
+	inputLabel="Select image (.png, .jpg, .jpeg)"
+	onChange={handleMultipleImageChange}
+	icon={<PhotographIcon className="w-6 h-6 text-gray-400 mr-1" strokeWidth="1" />}
+	multiple
+/>
+{imagesURL ?
+	<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+		{imagesURL.map((image, id) =>
+			<div key={id} className="relative h-36 md:h-40 w-full">
+				<Image
+					src={image}
+					alt="image"
+					layout="fill"
+					className="rounded-lg"
+				/>
+				<button onClick={() => deleteImage(id)} className="absolute top-0 right-0 m-1 text-red-500 hover:text-red-600 bg-black bg-opacity-30 backdrop-blur-lg p-1.5 rounded-full transition-all duration-200">
+					<TrashIcon className="w-4 h-4" />
+				</button>
+			</div>
+		)}
+	</div>
+	:
+	""
+}`
+						}>
+						</Code>
+					</Section>
+
 					<Section id="avatar" name="Avatar">
 						<div className="flex -space-x-1 flex-wrap mb-4">
 							<Avatar
@@ -1020,8 +1260,8 @@ function handleTextAreaChange(e) {
 						<div className="flex items-center flex-wrap gap-2">
 							<Badge className="flex gap-1 items-center"><DownloadIcon className="h-4 w-4" />Default</Badge>
 							<Badge.green>Green</Badge.green>
-							<Badge.red isLarge>Red</Badge.red>
-							<Badge.yellow isLarge pills>Yellow</Badge.yellow>
+							<Badge.red large>Red</Badge.red>
+							<Badge.yellow large pills>Yellow</Badge.yellow>
 							<Badge.orange pills>Orange</Badge.orange>
 							<Badge.purple pills>Purple</Badge.purple>
 							<Badge.dark pills>Dark</Badge.dark>
@@ -1031,8 +1271,8 @@ function handleTextAreaChange(e) {
 
 <Badge className="flex gap-1 items-center"><DownloadIcon className="h-4 w-4" />Default</Badge>
 <Badge.green>Green</Badge.green>
-<Badge.red isLarge>Red</Badge.red>
-<Badge.yellow isLarge pills>Yellow</Badge.yellow>
+<Badge.red large>Red</Badge.red>
+<Badge.yellow large pills>Yellow</Badge.yellow>
 <Badge.orange pills>Orange</Badge.orange>
 <Badge.purple pills>Purple</Badge.purple>
 <Badge.dark pills>Dark</Badge.dark>`
@@ -1044,8 +1284,8 @@ function handleTextAreaChange(e) {
 						<div className="flex items-center flex-wrap gap-2">
 							<BadgeOutline className="flex gap-1 items-center"><DownloadIcon className="h-4 w-4" />Default</BadgeOutline>
 							<BadgeOutline.green>Green</BadgeOutline.green>
-							<BadgeOutline.red isLarge>Red</BadgeOutline.red>
-							<BadgeOutline.yellow isLarge pills>Yellow</BadgeOutline.yellow>
+							<BadgeOutline.red large>Red</BadgeOutline.red>
+							<BadgeOutline.yellow large pills>Yellow</BadgeOutline.yellow>
 							<BadgeOutline.orange pills>Orange</BadgeOutline.orange>
 							<BadgeOutline.purple pills>Purple</BadgeOutline.purple>
 							<BadgeOutline.dark pills>Dark</BadgeOutline.dark>
@@ -1055,8 +1295,8 @@ function handleTextAreaChange(e) {
 
 <BadgeOutline className="flex gap-1 items-center"><DownloadIcon className="h-4 w-4" />Default</BadgeOutline>
 <BadgeOutline.green>Green</BadgeOutline.green>
-<BadgeOutline.red isLarge>Red</BadgeOutline.red>
-<BadgeOutline.yellow isLarge pills>Yellow</BadgeOutline.yellow>
+<BadgeOutline.red large>Red</BadgeOutline.red>
+<BadgeOutline.yellow large pills>Yellow</BadgeOutline.yellow>
 <BadgeOutline.orange pills>Orange</BadgeOutline.orange>
 <BadgeOutline.purple pills>Purple</BadgeOutline.purple>
 <BadgeOutline.dark pills>Dark</BadgeOutline.dark>`
@@ -1065,20 +1305,20 @@ function handleTextAreaChange(e) {
 					</Section>
 
 					<Section id="alert" name="Alert">
-						<Alert className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5" />Default</Alert>
+						<Alert className="flex gap-1 items-center font-medium" large><InformationCircleIcon className="h-5 w-5" />Default</Alert>
 						<Alert.green>Green</Alert.green>
-						<Alert.red className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5" />Red <span className="font-normal">Danger</span></Alert.red>
-						<Alert.yellow isLarge>Yellow</Alert.yellow>
+						<Alert.red className="flex gap-1 items-center font-medium" large><InformationCircleIcon className="h-5 w-5" />Red <span className="font-normal">Danger</span></Alert.red>
+						<Alert.yellow large>Yellow</Alert.yellow>
 						<Alert.orange pills>Orange</Alert.orange>
 						<Alert.purple pills>Purple</Alert.purple>
 						<Alert.dark pills>Dark</Alert.dark>
 						<Code code={
 							`import Alert from "@components/Alert";
 
-<Alert className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5"/>Default</Alert>
+<Alert className="flex gap-1 items-center font-medium" large><InformationCircleIcon className="h-5 w-5"/>Default</Alert>
 <Alert.green>Green</Alert.green>
-<Alert.red className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5" />Red <span className="font-normal">Danger</span></Alert.red>
-<Alert.yellow isLarge>Yellow</Alert.yellow>
+<Alert.red className="flex gap-1 items-center font-medium" large><InformationCircleIcon className="h-5 w-5" />Red <span className="font-normal">Danger</span></Alert.red>
+<Alert.yellow large>Yellow</Alert.yellow>
 <Alert.orange pills>Orange</Alert.orange>
 <Alert.purple pills>Purple</Alert.purple>
 <Alert.dark pills>Dark</Alert.dark>`
@@ -1087,20 +1327,20 @@ function handleTextAreaChange(e) {
 					</Section>
 
 					<Section id="alert-outline" name="Alert Outline">
-						<AlertOutline className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5" />Default</AlertOutline>
+						<AlertOutline className="flex gap-1 items-center font-medium" large><InformationCircleIcon className="h-5 w-5" />Default</AlertOutline>
 						<AlertOutline.green>Green</AlertOutline.green>
-						<AlertOutline.red className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5" />Red <span className="font-normal">Danger</span></AlertOutline.red>
-						<AlertOutline.yellow isLarge>Yellow</AlertOutline.yellow>
+						<AlertOutline.red className="flex gap-1 items-center font-medium" large><InformationCircleIcon className="h-5 w-5" />Red <span className="font-normal">Danger</span></AlertOutline.red>
+						<AlertOutline.yellow large>Yellow</AlertOutline.yellow>
 						<AlertOutline.orange pills>Orange</AlertOutline.orange>
 						<AlertOutline.purple pills>Purple</AlertOutline.purple>
 						<AlertOutline.dark pills>Dark</AlertOutline.dark>
 						<Code code={
 							`import AlertOutline from "@components/AlertOutline";
 
-<AlertOutline className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5" />Default</AlertOutline>
+<AlertOutline className="flex gap-1 items-center font-medium" large><InformationCircleIcon className="h-5 w-5" />Default</AlertOutline>
 <AlertOutline.green>Green</AlertOutline.green>
-<AlertOutline.red className="flex gap-1 items-center font-medium" isLarge><InformationCircleIcon className="h-5 w-5" />Red <span className="font-normal">Danger</span></AlertOutline.red>
-<AlertOutline.yellow isLarge>Yellow</AlertOutline.yellow>
+<AlertOutline.red className="flex gap-1 items-center font-medium" large><InformationCircleIcon className="h-5 w-5" />Red <span className="font-normal">Danger</span></AlertOutline.red>
+<AlertOutline.yellow large>Yellow</AlertOutline.yellow>
 <AlertOutline.orange pills>Orange</AlertOutline.orange>
 <AlertOutline.purple pills>Purple</AlertOutline.purple>
 <AlertOutline.dark pills>Dark</AlertOutline.dark>`
