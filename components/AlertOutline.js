@@ -1,8 +1,8 @@
-export default function AlertOutline({ className, children, pills, isLarge }) {
+export default function AlertOutline({ className, children, pills, large }) {
   return (
     <div className={`
       ${className ? className + " " : ""} 
-      ${isLarge ? "text-sm" : "text-xs"} 
+      ${large ? "text-sm" : "text-xs"} 
       ${pills ? "rounded-full" : "rounded-lg"}
       p-3 mb-2 text-blue-600 border border-blue-500`}
     >
@@ -11,11 +11,11 @@ export default function AlertOutline({ className, children, pills, isLarge }) {
   )
 }
 
-AlertOutline.green = ({ className, children, pills, isLarge }) => {
+AlertOutline.green = ({ className, children, pills, large }) => {
   return (
     <div className={`
       ${className ? className + " " : ""} 
-      ${isLarge ? "text-sm" : "text-xs"} 
+      ${large ? "text-sm" : "text-xs"} 
       ${pills ? "rounded-full" : "rounded-lg"}
       p-3 mb-2 text-green-600 border border-green-500`}
     >
@@ -24,11 +24,11 @@ AlertOutline.green = ({ className, children, pills, isLarge }) => {
   )
 }
 
-AlertOutline.yellow = ({ className, children, pills, isLarge }) => {
+AlertOutline.yellow = ({ className, children, pills, large }) => {
   return (
     <div className={`
       ${className ? className + " " : ""} 
-      ${isLarge ? "text-sm" : "text-xs"} 
+      ${large ? "text-sm" : "text-xs"} 
       ${pills ? "rounded-full" : "rounded-lg"}
       p-3 mb-2 text-yellow-600 border border-yellow-500`}
     >
@@ -37,11 +37,11 @@ AlertOutline.yellow = ({ className, children, pills, isLarge }) => {
   )
 }
 
-AlertOutline.red = ({ className, children, pills, isLarge }) => {
+AlertOutline.red = ({ className, children, pills, large }) => {
   return (
     <div className={`
       ${className ? className + " " : ""} 
-      ${isLarge ? "text-sm" : "text-xs"} 
+      ${large ? "text-sm" : "text-xs"} 
       ${pills ? "rounded-full" : "rounded-lg"}
       p-3 mb-2 text-red-600 border border-red-500`}
     >
@@ -50,11 +50,11 @@ AlertOutline.red = ({ className, children, pills, isLarge }) => {
   )
 }
 
-AlertOutline.orange = ({ className, children, pills, isLarge }) => {
+AlertOutline.orange = ({ className, children, pills, large }) => {
   return (
     <div className={`
       ${className ? className + " " : ""} 
-      ${isLarge ? "text-sm" : "text-xs"} 
+      ${large ? "text-sm" : "text-xs"} 
       ${pills ? "rounded-full" : "rounded-lg"}
       p-3 mb-2 text-orange-600 border border-orange-500`}
     >
@@ -63,11 +63,11 @@ AlertOutline.orange = ({ className, children, pills, isLarge }) => {
   )
 }
 
-AlertOutline.purple = ({ className, children, pills, isLarge }) => {
+AlertOutline.purple = ({ className, children, pills, large }) => {
   return (
     <div className={`
       ${className ? className + " " : ""} 
-      ${isLarge ? "text-sm" : "text-xs"} 
+      ${large ? "text-sm" : "text-xs"} 
       ${pills ? "rounded-full" : "rounded-lg"}
       p-3 mb-2 text-violet-600 border border-violet-500`}
     >
@@ -76,11 +76,11 @@ AlertOutline.purple = ({ className, children, pills, isLarge }) => {
   )
 }
 
-AlertOutline.dark = ({ className, children, pills, isLarge }) => {
+AlertOutline.dark = ({ className, children, pills, large }) => {
   return (
     <div className={`
       ${className ? className + " " : ""} 
-      ${isLarge ? "text-sm" : "text-xs"} 
+      ${large ? "text-sm" : "text-xs"} 
       ${pills ? "rounded-full" : "rounded-lg"}
       p-3 mb-2 text-gray-600 dark:text-gray-300 border border-gray-500`}
     >
