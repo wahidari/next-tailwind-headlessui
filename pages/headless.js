@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useContext, useState } from "react";
+import { useContext, useState, useRef, Fragment } from "react";
 import { GlobalContext } from "@utils/GlobalContext";
 import { MoonIcon, SunIcon } from "@heroicons/react/outline";
 import { Tab } from '@headlessui/react'
@@ -18,12 +18,52 @@ import TabsVertical from "@components/TabsVertical";
 import TabsVerticall from "@components/TabsVerticall";
 import Layout from "@components/Layout";
 import MyModal from "@components/MyModal";
+import { Disclosure, Listbox, Menu, Transition } from '@headlessui/react'
+import { ChevronDownIcon } from '@heroicons/react/solid'
+import { Dialog, RadioGroup } from '@headlessui/react'
+import { CheckIcon, ExclamationIcon, MinusSmIcon, PlusSmIcon, SelectorIcon } from '@heroicons/react/outline'
+import Checkbox from "@components/Checkbox";
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ')
 }
 
+const product = {
+	colors: [
+		{ name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
+		{ name: 'Gray', class: 'bg-gray-200', selectedClass: 'ring-gray-400' },
+		{ name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
+	],
+	sizes: [
+		{ name: 'XXS', inStock: true },
+		{ name: 'XS', inStock: true },
+		{ name: 'S', inStock: true },
+		{ name: 'M', inStock: true },
+		{ name: 'L', inStock: true },
+		{ name: 'XL', inStock: true },
+		{ name: 'XXL', inStock: true },
+		{ name: 'XXXL', inStock: false },
+	],
+}
+
+const people = [
+	{ name: 'Wade Cooper' },
+	{ name: 'Arlene Mccoy' },
+	{ name: 'Devon Webb' },
+	{ name: 'Tom Cook' },
+	{ name: 'Tanya Fox' },
+	{ name: 'Hellen Schmidt' },
+]
+
 export default function Third() {
+	const [open, setOpen] = useState(false)
+
+	const cancelButtonRef = useRef(null)
+
+	const [selectedColor, setSelectedColor] = useState(product.colors[0])
+	const [selectedSize, setSelectedSize] = useState(product.sizes[2])
+
+	const [selected, setSelected] = useState(people[0])
 	const { darkMode, setDarkMode } = useContext(GlobalContext);
 
 	const [openModal, setOpenModal] = useState(false)
@@ -58,6 +98,287 @@ export default function Third() {
 
 			<Layout>
 				<main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pb-16">
+
+					<Section id="listbox" name="Listbox">
+						<Listbox value={selected} onChange={setSelected}>
+							<div className="relative mt-1">
+								<Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
+									<span className="block truncate">{selected.name}</span>
+									<span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+										<SelectorIcon
+											className="w-5 h-5 text-gray-400"
+											aria-hidden="true"
+										/>
+									</span>
+								</Listbox.Button>
+								<Transition
+									as={Fragment}
+									leave="transition ease-in duration-100"
+									leaveFrom="opacity-100"
+									leaveTo="opacity-0"
+								>
+									<Listbox.Options className="z-10 absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+										{people.map((person, personIdx) => (
+											<Listbox.Option
+												key={personIdx}
+												className={({ active }) =>
+													`cursor-pointer select-none relative py-2 pl-10 pr-4 ${active ? 'text-amber-900 bg-amber-100' : 'text-gray-900'
+													}`
+												}
+												value={person}
+											>
+												{({ selected }) => (
+													<>
+														<span
+															className={`block truncate ${selected ? 'font-medium' : 'font-normal'
+																}`}
+														>
+															{person.name}
+														</span>
+														{selected ? (
+															<span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
+																<CheckIcon className="w-5 h-5" aria-hidden="true" />
+															</span>
+														) : null}
+													</>
+												)}
+											</Listbox.Option>
+										))}
+									</Listbox.Options>
+								</Transition>
+							</div>
+						</Listbox>
+					</Section>
+
+					<Section id="disclosure" name="Disclosure">
+						<Disclosure as="div">
+							{({ open }) => (
+								<>
+									<h3 className="flow-root">
+										<Disclosure.Button className="py-3 px-2 bg-gray-100 dark:bg-neutral-800 hover:bg-gray-200 dark:hover:bg-neutral-700 w-full flex items-center justify-between group text-gray-600 dark:text-neutral-300 transition-all duration-200 rounded">
+											<span className="font-medium">Color</span>
+											<span className="ml-6 flex items-center">
+												{open ? (
+													<MinusSmIcon className="h-5 w-5" aria-hidden="true" />
+												) : (
+													<PlusSmIcon className="h-5 w-5" aria-hidden="true" />
+												)}
+											</span>
+										</Disclosure.Button>
+									</h3>
+									<Disclosure.Panel className="pt-2 px-2">
+										<div className="space-y-2">
+											<Checkbox
+												label="Red"
+												id="red"
+												name="red"
+												value="red"
+											/>
+											<Checkbox
+												label="Blue"
+												id="blue"
+												name="blue"
+												value="blue"
+											/>
+										</div>
+									</Disclosure.Panel>
+								</>
+							)}
+						</Disclosure>
+					</Section>
+
+					<Section id="radio-group" name="Radio Group">
+						<RadioGroup value={selectedColor} onChange={setSelectedColor} className="mt-4">
+							<RadioGroup.Label className="sr-only">Choose a color</RadioGroup.Label>
+							<div className="flex items-center space-x-3">
+								{product.colors.map((color) => (
+									<RadioGroup.Option
+										key={color.name}
+										value={color}
+										className={({ active, checked }) =>
+											classNames(
+												color.selectedClass,
+												active && checked ? 'ring ring-offset-1' : '',
+												!active && checked ? 'ring-2' : '',
+												'-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none'
+											)
+										}
+									>
+										<RadioGroup.Label as="p" className="sr-only">
+											{color.name}
+										</RadioGroup.Label>
+										<span
+											aria-hidden="true"
+											className={classNames(
+												color.class,
+												'h-8 w-8 border border-black border-opacity-10 rounded-full'
+											)}
+										/>
+									</RadioGroup.Option>
+								))}
+							</div>
+						</RadioGroup>
+
+						<RadioGroup value={selectedSize} onChange={setSelectedSize} className="mt-4">
+							<RadioGroup.Label className="sr-only">Choose a size</RadioGroup.Label>
+							<div className="grid grid-cols-4 gap-4">
+								{product.sizes.map((size) => (
+									<RadioGroup.Option
+										key={size.name}
+										value={size}
+										disabled={!size.inStock}
+										className={({ active }) =>
+											classNames(
+												size.inStock
+													? 'bg-white shadow-sm text-gray-900 cursor-pointer'
+													: 'bg-gray-50 text-gray-200 cursor-not-allowed',
+												active ? 'ring-2 ring-blue-500' : '',
+												'group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1'
+											)
+										}
+									>
+										{({ active, checked }) => (
+											<>
+												<RadioGroup.Label as="p">{size.name}</RadioGroup.Label>
+												{size.inStock ? (
+													<div
+														className={classNames(
+															active ? 'border' : 'border-2',
+															checked ? 'border-blue-500' : 'border-transparent',
+															'absolute -inset-px rounded-md pointer-events-none'
+														)}
+														aria-hidden="true"
+													/>
+												) : (
+													<div
+														aria-hidden="true"
+														className="absolute -inset-px rounded-md border-2 border-gray-200 pointer-events-none"
+													>
+														<svg
+															className="absolute inset-0 w-full h-full text-gray-200 stroke-2"
+															viewBox="0 0 100 100"
+															preserveAspectRatio="none"
+															stroke="currentColor"
+														>
+															<line x1={0} y1={100} x2={100} y2={0} vectorEffect="non-scaling-stroke" />
+														</svg>
+													</div>
+												)}
+											</>
+										)}
+									</RadioGroup.Option>
+								))}
+							</div>
+						</RadioGroup>
+					</Section>
+
+					<Section id="menu" name="Menu">
+						<Menu as="div" className="relative inline-block text-left ml-32">
+							<div>
+								<Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 transition-all duration-300">
+									Options
+									<ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
+								</Menu.Button>
+							</div>
+							<Transition
+								as={Fragment}
+								enter="transition ease-out duration-100"
+								enterFrom="transform opacity-0 scale-95"
+								enterTo="transform opacity-100 scale-100"
+							>
+								<Menu.Items className="absolute right-0 mt-2 w-32 rounded-md shadow bg-white">
+									<Menu.Item>
+										<a href="#" className="hover:bg-gray-100 text-gray-700 block px-4 py-2 text-sm">
+											Team
+										</a>
+									</Menu.Item>
+									<Menu.Item>
+										<a href="#" className="hover:bg-gray-100 text-gray-700 block px-4 py-2 text-sm">
+											About
+										</a>
+									</Menu.Item>
+								</Menu.Items>
+							</Transition>
+						</Menu>
+					</Section>
+
+					<Section id="menu" name="Menu">
+						<button
+							type="button"
+							className="mt-3 rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100"
+							onClick={() => setOpen(true)}
+						>
+							Open Modal
+						</button>
+						<Transition.Root show={open} as={Fragment}>
+							<Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto" onClose={setOpen}>
+								<div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+									<Transition.Child
+										as={Fragment}
+										enter="ease-out duration-300"
+										enterFrom="opacity-0"
+										enterTo="opacity-100"
+										leave="ease-in duration-200"
+										leaveFrom="opacity-100"
+										leaveTo="opacity-0"
+									>
+										<Dialog.Overlay className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+									</Transition.Child>
+
+									{/* This element is to trick the browser into centering the modal contents. */}
+									<span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">
+										&#8203;
+									</span>
+									<Transition.Child
+										as={Fragment}
+										enter="ease-out duration-300"
+										enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+										enterTo="opacity-100 translate-y-0 sm:scale-100"
+										leave="ease-in duration-200"
+										leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+										leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+									>
+										<div className="relative inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+											<div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+												<div className="sm:flex sm:items-start">
+													<div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+														<ExclamationIcon className="h-6 w-6 text-red-600" aria-hidden="true" />
+													</div>
+													<div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+														<Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
+															Deactivate account
+														</Dialog.Title>
+														<div className="mt-2">
+															<p className="text-sm text-gray-500">
+																Are you sure you want to deactivate your account? All of your data will be permanently removed.
+																This action cannot be undone.
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+												<button
+													type="button"
+													className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
+													onClick={() => setOpen(false)}
+												>
+													Deactivate
+												</button>
+												<button
+													type="button"
+													className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+													onClick={() => setOpen(false)}
+												>
+													Cancel
+												</button>
+											</div>
+										</div>
+									</Transition.Child>
+								</div>
+							</Dialog>
+						</Transition.Root>
+					</Section>
 
 					<Section id="dark-mode" name="Dark Mode">
 						<div className="flex gap-3 flex-wrap">
