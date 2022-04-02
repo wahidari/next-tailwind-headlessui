@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useContext, useState, useRef, Fragment } from "react";
+import { useContext, useState, useRef, Fragment, useEffect } from "react";
 import { GlobalContext } from "@utils/GlobalContext";
 import { MoonIcon, SunIcon } from "@heroicons/react/outline";
 import { Tab } from '@headlessui/react'
@@ -47,12 +47,12 @@ const product = {
 }
 
 const people = [
-	{ name: 'Wade Cooper' },
-	{ name: 'Arlene Mccoy' },
-	{ name: 'Devon Webb' },
-	{ name: 'Tom Cook' },
-	{ name: 'Tanya Fox' },
-	{ name: 'Hellen Schmidt' },
+	{ id: 1, name: 'Wade Cooper' },
+	{ id: 2, name: 'Arlene Mccoy' },
+	{ id: 3, name: 'Devon Webb' },
+	{ id: 4, name: 'Tom Cook' },
+	{ id: 5, name: 'Tanya Fox' },
+	{ id: 6, name: 'Hellen Schmidt' }
 ]
 
 export default function Third() {
@@ -63,7 +63,6 @@ export default function Third() {
 	const [selectedColor, setSelectedColor] = useState(product.colors[0])
 	const [selectedSize, setSelectedSize] = useState(product.sizes[2])
 
-	const [selected, setSelected] = useState(people[0])
 	const { darkMode, setDarkMode } = useContext(GlobalContext);
 
 	const [openModal, setOpenModal] = useState(false)
@@ -83,6 +82,15 @@ export default function Third() {
 		setOpenModalWithData(true)
 	}
 
+	const [selected, setSelected] = useState()
+	function handleSelectChange(e) {
+		setSelected(e)
+	}
+
+	useEffect(() => {
+		console.log(selected)
+	}, [selected])
+
 	return (
 		<div>
 			<Head>
@@ -100,53 +108,66 @@ export default function Third() {
 				<main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pb-16">
 
 					<Section id="listbox" name="Listbox">
-						<Listbox value={selected} onChange={setSelected}>
+						<Listbox value={selected} onChange={handleSelectChange}>
 							<div className="relative mt-1">
-								<Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
-									<span className="block truncate">{selected.name}</span>
-									<span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-										<SelectorIcon
-											className="w-5 h-5 text-gray-400"
-											aria-hidden="true"
-										/>
+								<Listbox.Button className="relative w-full py-2 px-3 text-left bg-white dark:bg-neutral-900 dark:text-gray-200 border border-gray-200 dark:border-neutral-700 hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all duration-200 rounded cursor-pointer text-sm">
+									<span className="block truncate">{selected ? selected.name : "Choose Select"}</span>
+									<span className="absolute inset-y-0 right-0 flex items-center pr-2">
+										<SelectorIcon className="w-5 h-5 text-gray-500 dark:text-gray-200" aria-hidden="true" />
 									</span>
 								</Listbox.Button>
-								<Transition
-									as={Fragment}
-									leave="transition ease-in duration-100"
-									leaveFrom="opacity-100"
-									leaveTo="opacity-0"
-								>
-									<Listbox.Options className="z-10 absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-										{people.map((person, personIdx) => (
+								<Listbox.Options className="z-10 absolute w-full py-1 mt-1 overflow-auto bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-700 rounded shadow-lg max-h-48 text-sm">
+									{people.map((person, index) => (
+										<Listbox.Option
+											key={index}
+											className={({ active }) =>
+												`cursor-pointer py-2 px-3 text-neutral-700 hover:text-blue-500 dark:hover:text-blue-500 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-neutral-800 
+												${active ? 'text-blue-600 dark:text-blue-500 bg-gray-100 dark:bg-neutral-800' : ' '}
+												`
+											}
+											value={person}
+										>
+											{({ selected }) => (
+												<span className={`block truncate ${selected ? 'font-semibold text-blue-500' : ' '}`}>
+													{person.name}
+												</span>
+											)}
+										</Listbox.Option>
+									))}
+								</Listbox.Options>
+							</div>
+						</Listbox>
+
+						<Listbox value={selected} onChange={handleSelectChange}>
+							{({ open }) => (
+								<div className="relative mt-4">
+									<Listbox.Button className="relative w-full py-2 px-3 text-left bg-white dark:bg-neutral-900 dark:text-gray-200 border border-gray-200 dark:border-neutral-700 hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all duration-200 rounded cursor-pointer text-sm">
+										<span className="block truncate">{selected ? selected.name : "Choose Select"}</span>
+										<span className="absolute inset-y-0 right-0 flex items-center pr-2">
+											<ChevronDownIcon className={`${open ? 'transform rotate-180 duration-300' : 'transform rotate-0 duration-200'} w-5 h-5 text-gray-500 dark:text-gray-200`} aria-hidden="true" />
+										</span>
+									</Listbox.Button>
+									<Listbox.Options className="z-10 absolute w-full py-1 mt-1 overflow-auto bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-700 rounded shadow-lg max-h-48 text-sm scrollbar scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-200 dark:scrollbar-thumb-neutral-700">
+										{people.map((person, index) => (
 											<Listbox.Option
-												key={personIdx}
+												key={index}
 												className={({ active }) =>
-													`cursor-pointer select-none relative py-2 pl-10 pr-4 ${active ? 'text-amber-900 bg-amber-100' : 'text-gray-900'
-													}`
+													`cursor-pointer py-2 px-3 text-neutral-700 hover:text-blue-500 dark:hover:text-blue-500 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-neutral-800 
+												${active ? 'text-blue-600 dark:text-blue-500 bg-gray-100 dark:bg-neutral-800' : ' '}
+												`
 												}
 												value={person}
 											>
 												{({ selected }) => (
-													<>
-														<span
-															className={`block truncate ${selected ? 'font-medium' : 'font-normal'
-																}`}
-														>
-															{person.name}
-														</span>
-														{selected ? (
-															<span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
-																<CheckIcon className="w-5 h-5" aria-hidden="true" />
-															</span>
-														) : null}
-													</>
+													<span className={`block truncate ${selected ? 'font-semibold text-blue-500' : ' '}`}>
+														{person.name}
+													</span>
 												)}
 											</Listbox.Option>
 										))}
 									</Listbox.Options>
-								</Transition>
-							</div>
+								</div>
+							)}
 						</Listbox>
 					</Section>
 
