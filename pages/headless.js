@@ -132,7 +132,7 @@ export default function Third() {
 
 			<Layout>
 				<main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pb-16">
-					
+
 					<Section id="selectbox" name="SelectBox">
 						<SelectBox
 							label="Select Color"
@@ -141,7 +141,7 @@ export default function Third() {
 							options={colorBox}>
 						</SelectBox>
 						<Text className="my-3 !text-sm font-medium !text-red-500"> Selected : {selectedBox ? selectedBox.name : ""} </Text>
-						
+
 						<SelectBoxCustom
 							label="Select Color"
 							value={selectedBoxId}
@@ -339,110 +339,64 @@ export default function Third() {
 
 					<Section id="menu" name="Menu">
 						<Menu as="div" className="relative inline-block text-left ml-32">
-							<div>
-								<Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 transition-all duration-300">
-									Options
-									<ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
-								</Menu.Button>
-							</div>
+
+							<Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 dark:border-neutral-700 shadow-sm px-4 py-2 bg-white dark:bg-neutral-900 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all duration-300">
+								Options
+								<ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
+							</Menu.Button>
 							<Transition
 								as={Fragment}
 								enter="transition ease-out duration-100"
 								enterFrom="transform opacity-0 scale-95"
 								enterTo="transform opacity-100 scale-100"
 							>
-								<Menu.Items className="absolute right-0 mt-2 w-32 rounded-md shadow bg-white">
+								<Menu.Items className="absolute right-0 mt-2 w-32 rounded-md shadow bg-white dark:bg-neutral-900">
 									<Menu.Item>
-										<a href="#" className="hover:bg-gray-100 text-gray-700 block px-4 py-2 text-sm">
+										<a href="#" className="hover:bg-gray-100 dark:hover:bg-neutral-800 text-gray-700 dark:text-gray-200 block px-4 py-2 text-sm">
 											Team
 										</a>
 									</Menu.Item>
 									<Menu.Item>
-										<a href="#" className="hover:bg-gray-100 text-gray-700 block px-4 py-2 text-sm">
+										<a href="#" className="hover:bg-gray-100 dark:hover:bg-neutral-800 text-gray-700 dark:text-gray-200 block px-4 py-2 text-sm">
 											About
 										</a>
 									</Menu.Item>
 								</Menu.Items>
 							</Transition>
 						</Menu>
-					</Section>
 
-					<Section id="menu" name="Menu">
-						<button
-							type="button"
-							className="mt-3 rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100"
-							onClick={() => setOpen(true)}
-						>
-							Open Modal
-						</button>
-						<Transition.Root show={open} as={Fragment}>
-							<Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto" onClose={setOpen}>
-								<div className="pt-4 px-4 text-center sm:block sm:p-0">
-									<Transition.Child
+						<Menu as="div" className="relative inline-block text-left ml-32">
+							{({ open }) => (
+								<>
+									<Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 dark:border-neutral-700 shadow-sm px-4 py-2 bg-white dark:bg-neutral-900 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all duration-300">
+										Options
+										<ChevronDownIcon className={
+											`-mr-1 ml-2 w-5 h-5 text-gray-500 dark:text-gray-200 
+               				${open ? 'transform rotate-180 duration-300' : 'transform rotate-0 duration-200'}`} aria-hidden="true"
+										/>
+									</Menu.Button>
+									<Transition
 										as={Fragment}
-										enter="ease-out duration-300"
-										enterFrom="opacity-0"
-										enterTo="opacity-100"
-										leave="ease-in duration-200"
-										leaveFrom="opacity-100"
-										leaveTo="opacity-0"
+										enter="transition ease-out duration-100"
+										enterFrom="transform opacity-0 scale-95"
+										enterTo="transform opacity-100 scale-100"
 									>
-										<Dialog.Overlay className="fixed inset-0 bg-black opacity-30 transition-opacity" />
-									</Transition.Child>
-
-									{/* This element is to trick the browser into centering the modal contents. */}
-									<span className="inline-block h-screen align-middle" aria-hidden="true">
-										&#8203;
-									</span>
-									<Transition.Child
-										as={Fragment}
-										enter="ease-out duration-300"
-										enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-										enterTo="opacity-100 translate-y-0 sm:scale-100"
-										leave="ease-in duration-200"
-										leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-										leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-									>
-										<div className="relative inline-block align-middle bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full">
-											<div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-												<div className="sm:flex sm:items-start">
-													<div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
-														<ExclamationIcon className="h-6 w-6 text-red-600" aria-hidden="true" />
-													</div>
-													<div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-														<Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
-															Deactivate account
-														</Dialog.Title>
-														<div className="mt-2">
-															<p className="text-sm text-gray-500">
-																Are you sure you want to deactivate your account? All of your data will be permanently removed.
-																This action cannot be undone.
-															</p>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-												<button
-													type="button"
-													className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 font-medium text-white hover:bg-red-700 sm:ml-3 sm:w-auto text-sm"
-													onClick={() => setOpen(false)}
-												>
-													Deactivate
-												</button>
-												<button
-													type="button"
-													className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white font-medium text-gray-700 hover:bg-gray-50 sm:mt-0 sm:ml-3 sm:w-auto text-sm"
-													onClick={() => setOpen(false)}
-												>
-													Cancel
-												</button>
-											</div>
-										</div>
-									</Transition.Child>
-								</div>
-							</Dialog>
-						</Transition.Root>
+										<Menu.Items className="absolute left-0 mt-2 w-32 rounded-md shadow bg-white dark:bg-neutral-900">
+											<Menu.Item>
+												<a href="#" className="hover:bg-gray-100 dark:hover:bg-neutral-800 text-gray-700 dark:text-gray-200 block px-4 py-2 text-sm">
+													Team
+												</a>
+											</Menu.Item>
+											<Menu.Item>
+												<a href="#" className="hover:bg-gray-100 dark:hover:bg-neutral-800 text-gray-700 dark:text-gray-200 block px-4 py-2 text-sm">
+													About
+												</a>
+											</Menu.Item>
+										</Menu.Items>
+									</Transition>
+								</>
+							)}
+						</Menu>
 					</Section>
 
 					<Section id="dark-mode" name="Dark Mode">
@@ -490,6 +444,80 @@ export default function Third() {
 					<BackToTop />
 
 					<Section id="modal" name="Modal">
+						<button
+							type="button"
+							className="mt-3 block rounded-md border border-gray-300 dark:border-neutral-700 shadow-sm px-4 py-2 bg-white dark:bg-neutral-900 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-neutral-800"
+							onClick={() => setOpen(true)}
+						>
+							Open Modal
+						</button>
+						<Transition.Root show={open} as={Fragment}>
+							<Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto" onClose={setOpen}>
+								<div className="pt-4 px-4 text-center sm:block sm:p-0">
+									<Transition.Child
+										as={Fragment}
+										enter="ease-out duration-300"
+										enterFrom="opacity-0"
+										enterTo="opacity-100"
+										leave="ease-in duration-200"
+										leaveFrom="opacity-100"
+										leaveTo="opacity-0"
+									>
+										<Dialog.Overlay className="fixed inset-0 bg-black opacity-30 transition-opacity" />
+									</Transition.Child>
+
+									{/* This element is to trick the browser into centering the modal contents. */}
+									<span className="inline-block h-screen align-middle" aria-hidden="true">
+										&#8203;
+									</span>
+									<Transition.Child
+										as={Fragment}
+										enter="ease-out duration-300"
+										enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+										enterTo="opacity-100 translate-y-0 sm:scale-100"
+										leave="ease-in duration-200"
+										leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+										leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+									>
+										<div className="relative inline-block align-middle bg-white dark:bg-neutral-900 rounded-lg text-left overflow-hidden shadow-xl transform transition-all max-w-lg">
+											<div className="sm:flex p-5">
+												<div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100">
+													<ExclamationIcon className="h-6 w-6 text-red-600" aria-hidden="true" />
+												</div>
+												<div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+													<Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-200">
+														Deactivate account
+													</Dialog.Title>
+													<div className="mt-2">
+														<p className="text-sm text-gray-600 dark:text-gray-300">
+															Are you sure you want to deactivate your account? All of your data will be permanently removed.
+															This action cannot be undone.
+														</p>
+													</div>
+												</div>
+											</div>
+											<div className="bg-white dark:bg-neutral-900 px-5 pb-5 sm:flex sm:flex-row-reverse">
+												<button
+													type="button"
+													className="sm:ml-3 sm:w-auto text-sm w-full rounded-md border border-transparent px-4 py-2 bg-red-600 font-medium text-white hover:bg-red-700"
+													onClick={() => setOpen(false)}
+												>
+													Deactivate
+												</button>
+												<button
+													type="button"
+													className="mt-3 sm:mt-0 sm:ml-3 sm:w-auto text-sm w-full rounded-md border border-gray-300 dark:border-neutral-700 px-4 py-2 bg-white dark:bg-neutral-900 font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-neutral-800"
+													onClick={() => setOpen(false)}
+												>
+													Cancel
+												</button>
+											</div>
+										</div>
+									</Transition.Child>
+								</div>
+							</Dialog>
+						</Transition.Root>
+
 						<MyModal
 							modalTitle="Modal Title"
 							isOpenModal={openModal}
