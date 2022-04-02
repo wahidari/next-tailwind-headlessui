@@ -25,6 +25,7 @@ import { CheckIcon, ExclamationIcon, MinusSmIcon, PlusSmIcon, SelectorIcon } fro
 import Checkbox from "@components/Checkbox";
 import SelectBox from "@components/SelectBox";
 import SelectBoxCustom from "@components/SelectBoxCustom";
+import RadioBox from "@components/RadioBox";
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ')
@@ -47,6 +48,13 @@ const product = {
 		{ name: 'XXXL', inStock: false },
 	],
 }
+
+const sizes = [
+	{ name: 'S', inStock: true },
+	{ name: 'M', inStock: true },
+	{ name: 'L', inStock: true },
+	{ name: 'XL', inStock: false },
+]
 
 const people = [
 	{ id: 1, name: 'Wade Cooper' },
@@ -81,7 +89,7 @@ export default function Third() {
 	const cancelButtonRef = useRef(null)
 
 	const [selectedColor, setSelectedColor] = useState(product.colors[0])
-	const [selectedSize, setSelectedSize] = useState(product.sizes[2])
+
 
 	const { darkMode, setDarkMode } = useContext(GlobalContext);
 
@@ -117,6 +125,11 @@ export default function Third() {
 		setSelected(e)
 	}
 
+	const [selectedSize, setSelectedSize] = useState(sizes[2])
+	function handleRadioBoxChange(e) {
+		setSelectedSize(e)
+	}
+
 	return (
 		<div>
 			<Head>
@@ -133,7 +146,71 @@ export default function Third() {
 			<Layout>
 				<main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pb-16">
 
-					<Section id="selectbox" name="SelectBox">
+					<Section id="radio-box" name="Radio Box">
+						<RadioBox
+							label="Radio Box"
+							value={selectedSize}
+							onChange={handleRadioBoxChange}
+							options={sizes}
+						>
+						</RadioBox>
+						<Text className="my-3 !text-sm font-medium !text-red-500"> Selected : {selectedSize ? selectedSize.name : ""} </Text>
+					</Section>
+
+					<Section id="radio-group" name="Radio Group">
+						<RadioGroup value={selectedSize} onChange={setSelectedSize} className="mt-4">
+							<RadioGroup.Label className="sr-only">Choose a size</RadioGroup.Label>
+							<div className="flex items-center space-x-3">
+								{sizes.map((option) => (
+									<RadioGroup.Option
+										key={option.name}
+										value={option}
+										disabled={!option.inStock}
+										className={({ active }) =>
+											classNames(
+												option.inStock ? 'bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-200 cursor-pointer' : 'bg-gray-50 dark:bg-neutral-900 text-gray-300 dark:text-gray-600 cursor-not-allowed focus:ring-0',
+												active ? 'ring-2 ring-blue-500' : '',
+												'group relative border dark:border-neutral-700 rounded-md py-1.5 px-3 flex justify-center text-sm font-medium hover:bg-gray-100 dark:hover:bg-neutral-800 focus:ring-1'
+											)
+										}
+									>
+										{({ active, checked }) => (
+											<>
+												<RadioGroup.Label as="p">{option.name}</RadioGroup.Label>
+												{option.inStock ? (
+													<div
+														className={classNames(
+															active ? 'border' : 'border-2',
+															checked ? 'border-blue-500' : 'border-transparent',
+															'absolute -inset-px rounded-md pointer-events-none'
+														)}
+														aria-hidden="true"
+													/>
+												) : (
+													<div
+														aria-hidden="true"
+														className="absolute -inset-px rounded-md border border-gray-200 dark:border-neutral-700 pointer-events-none"
+													> <svg
+														className="absolute inset-0 w-full h-full text-gray-200 dark:text-gray-600 stroke-1"
+														viewBox="0 0 100 100"
+														preserveAspectRatio="none"
+														stroke="currentColor"
+													>
+															{/* <line x1={100} y1={100} x2={0} y2={0} vectorEffect="non-scaling-stroke" /> */}
+															<line x1={0} y1={100} x2={100} y2={0} vectorEffect="non-scaling-stroke" />
+														</svg>
+													</div>
+												)}
+											</>
+										)}
+									</RadioGroup.Option>
+								))}
+							</div>
+						</RadioGroup>
+						<Text className="my-3 !text-sm font-medium !text-red-500"> Selected : {selectedSize ? selectedSize.name : ""} </Text>
+					</Section>
+
+					<Section id="select-box" name="SelectBox">
 						<SelectBox
 							label="Select Color"
 							value={selectedBox}
@@ -151,7 +228,7 @@ export default function Third() {
 						<Text className="my-3 !text-sm font-medium !text-red-500"> Selected : {selectedBoxId ? selectedBoxId.id + "-" + selectedBoxId.name : ""} </Text>
 					</Section>
 
-					<Section id="listbox" name="Listbox">
+					<Section id="list-box" name="Listbox">
 						<Listbox value={selected} onChange={handleSelectChange}>
 							<div className="relative mt-1">
 								<Listbox.Button className="relative w-full py-2 px-3 text-left bg-white dark:bg-neutral-900 dark:text-gray-200 border border-gray-200 dark:border-neutral-700 hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all duration-200 rounded cursor-pointer text-sm">
@@ -213,6 +290,7 @@ export default function Third() {
 								</div>
 							)}
 						</Listbox>
+						<Text className="my-3 !text-sm font-medium !text-red-500"> Selected : {selected ? selected.name : ""} </Text>
 					</Section>
 
 					<Section id="disclosure" name="Disclosure">
@@ -279,58 +357,6 @@ export default function Third() {
 												'h-8 w-8 border border-black border-opacity-10 rounded-full'
 											)}
 										/>
-									</RadioGroup.Option>
-								))}
-							</div>
-						</RadioGroup>
-
-						<RadioGroup value={selectedSize} onChange={setSelectedSize} className="mt-4">
-							<RadioGroup.Label className="sr-only">Choose a size</RadioGroup.Label>
-							<div className="grid grid-cols-4 gap-4">
-								{product.sizes.map((size) => (
-									<RadioGroup.Option
-										key={size.name}
-										value={size}
-										disabled={!size.inStock}
-										className={({ active }) =>
-											classNames(
-												size.inStock
-													? 'bg-white shadow-sm text-gray-900 cursor-pointer'
-													: 'bg-gray-50 text-gray-200 cursor-not-allowed',
-												active ? 'ring-2 ring-blue-500' : '',
-												'group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1'
-											)
-										}
-									>
-										{({ active, checked }) => (
-											<>
-												<RadioGroup.Label as="p">{size.name}</RadioGroup.Label>
-												{size.inStock ? (
-													<div
-														className={classNames(
-															active ? 'border' : 'border-2',
-															checked ? 'border-blue-500' : 'border-transparent',
-															'absolute -inset-px rounded-md pointer-events-none'
-														)}
-														aria-hidden="true"
-													/>
-												) : (
-													<div
-														aria-hidden="true"
-														className="absolute -inset-px rounded-md border-2 border-gray-200 pointer-events-none"
-													>
-														<svg
-															className="absolute inset-0 w-full h-full text-gray-200 stroke-2"
-															viewBox="0 0 100 100"
-															preserveAspectRatio="none"
-															stroke="currentColor"
-														>
-															<line x1={0} y1={100} x2={100} y2={0} vectorEffect="non-scaling-stroke" />
-														</svg>
-													</div>
-												)}
-											</>
-										)}
 									</RadioGroup.Option>
 								))}
 							</div>
@@ -696,10 +722,10 @@ export default function Third() {
 							</Tab.List>
 							<Tab.Panels className="mt-2">
 								<Tab.Panel className='rounded-xl py-3 dark:text-white'>
-									<Skeletons className="max-w-[16rem] !rounded-full" />
+									<Skeletons className="max-w-[8rem] !rounded-full" />
 								</Tab.Panel>
 								<Tab.Panel className='rounded-xl py-3 dark:text-white'>
-									<Skeletons className="max-w-2xl !rounded-full" />
+									<Skeletons className="max-w-[16rem] !rounded-full" />
 								</Tab.Panel>
 								<Tab.Panel className='rounded-xl py-3 dark:text-white'>
 									<Skeletons className="!rounded-full" />
