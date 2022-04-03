@@ -85,6 +85,9 @@ export default function Third() {
 	function showErrorToast() {
 		pushToast({ message: "Error toast", isError: true });
 	};
+	function closeToast() {
+		dismissToast();
+	};
 	function showAsyncToast() {
 		const toastId = pushToast({
 			message: "Loading Toast",
@@ -162,6 +165,7 @@ export default function Third() {
 							<Button.green onClick={showToast}>Show Toast</Button.green>
 							<Button.red onClick={showErrorToast}>Show Error Toast</Button.red>
 							<Button onClick={showAsyncToast}>Show Async Toast</Button>
+							<Button.secondary onClick={closeToast}>Close Toast</Button.secondary>
 						</div>
 					</Section>
 
