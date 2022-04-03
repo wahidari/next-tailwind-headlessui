@@ -33,27 +33,17 @@ function classNames(...classes) {
 
 const product = {
 	colors: [
-		{ name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
-		{ name: 'Gray', class: 'bg-gray-200', selectedClass: 'ring-gray-400' },
-		{ name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
-	],
-	sizes: [
-		{ name: 'XXS', inStock: true },
-		{ name: 'XS', inStock: true },
-		{ name: 'S', inStock: true },
-		{ name: 'M', inStock: true },
-		{ name: 'L', inStock: true },
-		{ name: 'XL', inStock: true },
-		{ name: 'XXL', inStock: true },
-		{ name: 'XXXL', inStock: false },
-	],
+		{ name: 'Red', class: 'bg-red-500' },
+		{ name: 'Green', class: 'bg-teal-500' },
+		{ name: 'Blue', class: 'bg-blue-500' },
+	]
 }
 
 const sizes = [
-	{ name: 'S', inStock: true },
-	{ name: 'M', inStock: true },
-	{ name: 'L', inStock: true },
-	{ name: 'XL', inStock: false },
+	{ name: 'S', disabled: true },
+	{ name: 'M', disabled: true },
+	{ name: 'L', disabled: true },
+	{ name: 'XL', disabled: false },
 ]
 
 const people = [
@@ -88,7 +78,7 @@ export default function Third() {
 
 	const cancelButtonRef = useRef(null)
 
-	const [selectedColor, setSelectedColor] = useState(product.colors[0])
+	
 
 
 	const { darkMode, setDarkMode } = useContext(GlobalContext);
@@ -130,6 +120,11 @@ export default function Third() {
 		setSelectedSize(e)
 	}
 
+	const [selectedColor, setSelectedColor] = useState(product.colors[0])
+	function handleRadioColorChange(e) {
+		setSelectedColor(e)
+	}
+
 	return (
 		<div>
 			<Head>
@@ -165,10 +160,10 @@ export default function Third() {
 									<RadioGroup.Option
 										key={option.name}
 										value={option}
-										disabled={!option.inStock}
+										disabled={!option.disabled}
 										className={({ active }) =>
 											classNames(
-												option.inStock ? 'bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-200 cursor-pointer' : 'bg-gray-50 dark:bg-neutral-900 text-gray-300 dark:text-gray-600 cursor-not-allowed focus:ring-0',
+												option.disabled ? 'bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-200 cursor-pointer' : 'bg-gray-50 dark:bg-neutral-900 text-gray-300 dark:text-gray-600 cursor-not-allowed focus:ring-0',
 												active ? 'ring-2 ring-blue-500' : '',
 												'group relative border dark:border-neutral-700 rounded-md py-1.5 px-3 flex justify-center text-sm font-medium hover:bg-gray-100 dark:hover:bg-neutral-800 focus:ring-1'
 											)
@@ -177,7 +172,7 @@ export default function Third() {
 										{({ active, checked }) => (
 											<>
 												<RadioGroup.Label as="p">{option.name}</RadioGroup.Label>
-												{option.inStock ? (
+												{option.disabled ? (
 													<div
 														className={classNames(
 															active ? 'border' : 'border-2',
@@ -208,6 +203,31 @@ export default function Third() {
 							</div>
 						</RadioGroup>
 						<Text className="my-3 !text-sm font-medium !text-red-500"> Selected : {selectedSize ? selectedSize.name : ""} </Text>
+
+						<RadioGroup value={selectedColor} onChange={handleRadioColorChange} className="mt-4">
+							<RadioGroup.Label className="sr-only">Choose a color</RadioGroup.Label>
+							<div className="flex items-center space-x-3">
+								{product.colors.map((color) => (
+									<RadioGroup.Option
+										key={color.name}
+										value={color}
+										className={({ active, checked }) =>
+											classNames(
+												active && checked ? 'ring-1 ring-gray-500' : '',
+												!active && checked ? 'ring-1 ring-gray-500' : '',
+												'relative p-0.5 rounded-full flex items-center justify-center cursor-pointer'
+											)
+										}
+									>
+										<RadioGroup.Label as="p" className="sr-only">
+											{color.name}
+										</RadioGroup.Label>
+										<span aria-hidden="true" className={`${color.class} h-7 w-7 rounded-full`}/>
+									</RadioGroup.Option>
+								))}
+							</div>
+						</RadioGroup>
+						<Text className="my-3 !text-sm font-medium !text-red-500"> Selected : {selectedColor ? selectedColor.name : ""} </Text>
 					</Section>
 
 					<Section id="select-box" name="SelectBox">
@@ -330,68 +350,8 @@ export default function Third() {
 						</Disclosure>
 					</Section>
 
-					<Section id="radio-group" name="Radio Group">
-						<RadioGroup value={selectedColor} onChange={setSelectedColor} className="mt-4">
-							<RadioGroup.Label className="sr-only">Choose a color</RadioGroup.Label>
-							<div className="flex items-center space-x-3">
-								{product.colors.map((color) => (
-									<RadioGroup.Option
-										key={color.name}
-										value={color}
-										className={({ active, checked }) =>
-											classNames(
-												color.selectedClass,
-												active && checked ? 'ring ring-offset-1' : '',
-												!active && checked ? 'ring-2' : '',
-												'-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none'
-											)
-										}
-									>
-										<RadioGroup.Label as="p" className="sr-only">
-											{color.name}
-										</RadioGroup.Label>
-										<span
-											aria-hidden="true"
-											className={classNames(
-												color.class,
-												'h-8 w-8 border border-black border-opacity-10 rounded-full'
-											)}
-										/>
-									</RadioGroup.Option>
-								))}
-							</div>
-						</RadioGroup>
-					</Section>
-
 					<Section id="menu" name="Menu">
-						<Menu as="div" className="relative inline-block text-left ml-32">
-
-							<Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 dark:border-neutral-700 shadow-sm px-4 py-2 bg-white dark:bg-neutral-900 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all duration-300">
-								Options
-								<ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
-							</Menu.Button>
-							<Transition
-								as={Fragment}
-								enter="transition ease-out duration-100"
-								enterFrom="transform opacity-0 scale-95"
-								enterTo="transform opacity-100 scale-100"
-							>
-								<Menu.Items className="absolute right-0 mt-2 w-32 rounded-md shadow bg-white dark:bg-neutral-900">
-									<Menu.Item>
-										<a href="#" className="hover:bg-gray-100 dark:hover:bg-neutral-800 text-gray-700 dark:text-gray-200 block px-4 py-2 text-sm">
-											Team
-										</a>
-									</Menu.Item>
-									<Menu.Item>
-										<a href="#" className="hover:bg-gray-100 dark:hover:bg-neutral-800 text-gray-700 dark:text-gray-200 block px-4 py-2 text-sm">
-											About
-										</a>
-									</Menu.Item>
-								</Menu.Items>
-							</Transition>
-						</Menu>
-
-						<Menu as="div" className="relative inline-block text-left ml-32">
+						<Menu as="div" className="relative inline-block text-left mr-4">
 							{({ open }) => (
 								<>
 									<Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 dark:border-neutral-700 shadow-sm px-4 py-2 bg-white dark:bg-neutral-900 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all duration-300">
@@ -423,6 +383,32 @@ export default function Third() {
 								</>
 							)}
 						</Menu>
+
+						<Menu as="div" className="relative inline-block text-left">
+							<Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 dark:border-neutral-700 shadow-sm px-4 py-2 bg-white dark:bg-neutral-900 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all duration-300">
+								Options
+								<ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
+							</Menu.Button>
+							<Transition
+								as={Fragment}
+								enter="transition ease-out duration-100"
+								enterFrom="transform opacity-0 scale-95"
+								enterTo="transform opacity-100 scale-100"
+							>
+								<Menu.Items className="absolute right-0 mt-2 w-32 rounded-md shadow bg-white dark:bg-neutral-900">
+									<Menu.Item>
+										<a href="#" className="hover:bg-gray-100 dark:hover:bg-neutral-800 text-gray-700 dark:text-gray-200 block px-4 py-2 text-sm">
+											Team
+										</a>
+									</Menu.Item>
+									<Menu.Item>
+										<a href="#" className="hover:bg-gray-100 dark:hover:bg-neutral-800 text-gray-700 dark:text-gray-200 block px-4 py-2 text-sm">
+											About
+										</a>
+									</Menu.Item>
+								</Menu.Items>
+							</Transition>
+						</Menu>
 					</Section>
 
 					<Section id="dark-mode" name="Dark Mode">
@@ -433,16 +419,19 @@ export default function Third() {
 							>
 								<div className="h-5 w-5 bg-white rounded-full absolute top-1 transition-all duration-300 dark:left-6 left-1"></div>
 							</div>
+							
 							<button onClick={() => setDarkMode(!darkMode)} aria-label="Change Theme" className="relative flex items-center py-0.5 px-1 bg-blue-500 rounded-full h-7">
 								<span className="absolute w-5 h-5 rounded-full bg-white dark:left-[1.7rem] left-1 transition-all duration-300"></span>
 								<span aria-hidden={true}>☀️</span>
 								<span aria-hidden={true}>🌙</span>
 							</button>
-							<button onClick={() => setDarkMode(!darkMode)} aria-label="Change Theme" className={`${darkMode ? "bg-gray-800" : "bg-gray-200"} relative flex gap-1 items-center px-1 py-0.5 rounded-full h-7`}>
+
+							<button onClick={() => setDarkMode(!darkMode)} aria-label="Change Theme" className={`${darkMode ? "bg-neutral-800" : "bg-gray-200"} relative flex gap-1 items-center px-1 py-0.5 rounded-full h-7`}>
 								<span className="absolute w-5 h-5 rounded-full bg-blue-500 dark:left-[1.6rem] left-1.5 transition-all duration-300"></span>
 								<span aria-hidden={true}><SunIcon className={`${darkMode ? "text-white bg-white" : ""}h-5 w-5`} /></span>
 								<span aria-hidden={true}><MoonIcon className="h-5 w-5" /></span>
 							</button>
+
 							{darkMode ?
 								<button onClick={() => setDarkMode(!darkMode)} aria-label="Change Theme" className="w-8 h-8 p-1 transition-all ease-in duration-300 bg-neutral-800 hover:bg-neutral-700 text-white rounded-full">
 									<SunIcon />

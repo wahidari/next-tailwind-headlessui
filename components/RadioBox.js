@@ -13,10 +13,10 @@ export default function RadioBox({ label, value, onChange, options }) {
           <RadioGroup.Option
             key={option.name}
             value={option}
-            disabled={!option.inStock}
+            disabled={!option.disabled}
             className={({ active }) =>
               classNames(
-                option.inStock ? 'bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-200 cursor-pointer' : 'bg-gray-50 dark:bg-neutral-900 text-gray-300 dark:text-gray-600 cursor-not-allowed focus:ring-0',
+                option.disabled ? 'bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-200 cursor-pointer' : 'bg-gray-50 dark:bg-neutral-900 text-gray-300 dark:text-gray-600 cursor-not-allowed focus:ring-0',
                 active ? 'ring-2 ring-blue-500' : '',
                 'group relative border dark:border-neutral-700 rounded-md py-1.5 px-3 flex justify-center text-sm font-medium hover:bg-gray-100 dark:hover:bg-neutral-800 focus:ring-1'
               )
@@ -25,7 +25,7 @@ export default function RadioBox({ label, value, onChange, options }) {
             {({ active, checked }) => (
               <>
                 <RadioGroup.Label as="p">{option.name}</RadioGroup.Label>
-                {option.inStock ? (
+                {option.disabled ? (
                   <div
                     className={classNames(
                       active ? 'border' : 'border-2',
