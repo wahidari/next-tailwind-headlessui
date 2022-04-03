@@ -21,11 +21,13 @@ import MyModal from "@components/MyModal";
 import { Disclosure, Listbox, Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import { Dialog, RadioGroup } from '@headlessui/react'
-import { CheckIcon, ExclamationIcon, MinusSmIcon, PlusSmIcon, SelectorIcon } from '@heroicons/react/outline'
+import { ExclamationIcon, MinusSmIcon, PlusSmIcon, SelectorIcon } from '@heroicons/react/outline'
 import Checkbox from "@components/Checkbox";
 import SelectBox from "@components/SelectBox";
 import SelectBoxCustom from "@components/SelectBoxCustom";
 import RadioBox from "@components/RadioBox";
+import useToast from "@utils/useToast";
+import toast, { Toaster } from 'react-hot-toast';
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ')
@@ -76,10 +78,22 @@ const colorBoxId = [
 export default function Third() {
 	const [open, setOpen] = useState(false)
 
-	const cancelButtonRef = useRef(null)
-
-	
-
+	const { pushToast, updateToast, dismissToast } = useToast();
+	function showToast() {
+		pushToast({ message: "Toast", isError: false });
+	};
+	function showErrorToast() {
+		pushToast({ message: "Error toast", isError: true });
+	};
+	function showAsyncToast() {
+		const toastId = pushToast({
+			message: "Loading Toast",
+			isLoading: true,
+		});
+		setTimeout(() => {
+			updateToast({ toastId, message: "Done Toast", isError: false });
+		}, 2000);
+	};
 
 	const { darkMode, setDarkMode } = useContext(GlobalContext);
 
@@ -140,6 +154,16 @@ export default function Third() {
 
 			<Layout>
 				<main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pb-16">
+
+					<Section id="toast" name="Toast">
+						{/* for global toast, put Toaster component below in _app.js  */}
+						<Toaster />
+						<div className="flex items-center gap-2">
+							<Button.green onClick={showToast}>Show Toast</Button.green>
+							<Button.red onClick={showErrorToast}>Show Error Toast</Button.red>
+							<Button onClick={showAsyncToast}>Show Async Toast</Button>
+						</div>
+					</Section>
 
 					<Section id="radio-box" name="Radio Box">
 						<RadioBox
@@ -222,7 +246,7 @@ export default function Third() {
 										<RadioGroup.Label as="p" className="sr-only">
 											{color.name}
 										</RadioGroup.Label>
-										<span aria-hidden="true" className={`${color.class} h-7 w-7 rounded-full`}/>
+										<span aria-hidden="true" className={`${color.class} h-7 w-7 rounded-full`} />
 									</RadioGroup.Option>
 								))}
 							</div>
@@ -419,7 +443,7 @@ export default function Third() {
 							>
 								<div className="h-5 w-5 bg-white rounded-full absolute top-1 transition-all duration-300 dark:left-6 left-1"></div>
 							</div>
-							
+
 							<button onClick={() => setDarkMode(!darkMode)} aria-label="Change Theme" className="relative flex items-center py-0.5 px-1 bg-blue-500 rounded-full h-7">
 								<span className="absolute w-5 h-5 rounded-full bg-white dark:left-[1.7rem] left-1 transition-all duration-300"></span>
 								<span aria-hidden={true}>☀️</span>
