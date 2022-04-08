@@ -25,6 +25,7 @@ import SelectBox from "@components/SelectBox";
 import SelectBoxCustom from "@components/SelectBoxCustom";
 import RadioBox from "@components/RadioBox";
 import useToast from "@utils/useToast";
+import SearchBox from "@components/SearchBox";
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ')
@@ -52,6 +53,15 @@ const people = [
 	{ id: 4, nik: "44444", name: 'Tom Cook' },
 	{ id: 5, nik: "55555", name: 'Tanya Fox' },
 	{ id: 6, nik: "66666", name: 'Hellen Schmidt' }
+]
+
+const persons = [
+	{ id: "1", value: 'Wade Cooper' },
+	{ id: "2", value: 'Arlene Mccoy' },
+	{ id: "3", value: 'Devon Webb' },
+	{ id: "4", value: 'Tom Cook' },
+	{ id: "5", value: 'Tanya Fox' },
+	{ id: "6", value: 'Hellen Schmidt' }
 ]
 
 const colorBox = [
@@ -139,11 +149,16 @@ export default function Third() {
 		setSelectedColor(e)
 	}
 
-	const [selectedComboBoxID, setSelectedComboBoxID] = useState()
-	const [filteredOption, setFilteredOption] = useState(people)
-	function handleChangeComboBoxID(e) {
-		setFilteredOption(people.filter((person) => person.nik.includes(e.target.value.toLowerCase())))
+	const [selectedSearchBox, setSelectedSearchBox] = useState()
+	const [filteredOptions, setFilteredOptions] = useState(persons)
+	function handleChangeSearchBox(e) {
+		setFilteredOptions(persons.filter((person) => person.value.toLowerCase().includes(e.target.value.toLowerCase())))
+	}
 
+	const [selectedSearchBoxID, setSelectedSearchBoxID] = useState(persons[0])
+	const [filteredOptionsID, setFilteredOptionsID] = useState(persons)
+	function handleChangeSearchBoxID(e) {
+		setFilteredOptionsID(persons.filter((person) => person.id.includes(parseInt(e.target.value))))
 	}
 
 	const [selectedComboBox, setSelectedComboBox] = useState(people[0])
@@ -152,6 +167,11 @@ export default function Third() {
 		setFilteredPeople(people.filter((person) => person.name.toLowerCase().includes(e.target.value.toLowerCase())))
 	}
 
+	const [selectedComboBoxID, setSelectedComboBoxID] = useState()
+	const [filteredOption, setFilteredOption] = useState(people)
+	function handleChangeComboBoxID(e) {
+		setFilteredOption(people.filter((person) => person.nik.includes(e.target.value)))
+	}
 
 	return (
 		<div>
@@ -168,6 +188,29 @@ export default function Third() {
 
 			<Layout>
 				<main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pb-16">
+
+					<Section id="search-box" name="SearchBox">
+						<SearchBox
+							label="Unselect Search Box"
+							placeholder="Search by Name"
+							value={selectedSearchBox}
+							onChange={setSelectedSearchBox}
+							onChangeInput={handleChangeSearchBox}
+							options={filteredOptions}
+						/>
+						<Text className="my-3 !text-sm font-medium !text-red-500"> Selected : {selectedSearchBox ? selectedSearchBox.value : ""} </Text>
+						
+						<SearchBox
+							label="Selected Search Box ID"
+							placeholder="Search by ID"
+							value={selectedSearchBoxID}
+							onChange={setSelectedSearchBoxID}
+							onChangeInput={handleChangeSearchBoxID}
+							options={filteredOptionsID}
+						/>
+						<Text className="my-3 !text-sm font-medium !text-red-500"> Selected : {selectedSearchBox ? selectedSearchBox.id : ""} </Text>
+
+					</Section>
 
 					<Section id="combo-box" name="ComboBox">
 						<Combobox value={selectedComboBoxID} onChange={setSelectedComboBoxID}>
@@ -265,7 +308,7 @@ export default function Third() {
 												>
 													{({ selected }) => (
 														<span className={`block truncate ${selected ? 'font-medium text-blue-500' : 'font-normal'}`}>
-															{`${option.name}`}
+															{option.name}
 														</span>
 													)}
 												</Combobox.Option>
