@@ -1,8 +1,10 @@
 import Head from "next/head";
-import { useContext, useState, useRef, Fragment, useEffect } from "react";
 import { GlobalContext } from "@utils/GlobalContext";
-import { MoonIcon, SunIcon } from "@heroicons/react/outline";
-import { Tab } from '@headlessui/react'
+import { useContext, useState, useRef, Fragment, useEffect } from "react";
+import { Tab, Disclosure, Listbox, Menu, Transition, Combobox, Dialog, RadioGroup } from '@headlessui/react'
+import { ChevronDownIcon } from '@heroicons/react/solid'
+import { MoonIcon, SunIcon, ExclamationIcon, MinusSmIcon, PlusSmIcon, SelectorIcon, CheckIcon } from '@heroicons/react/outline'
+import toast, { Toaster } from 'react-hot-toast';
 import Button from "@components/Button";
 import Footer from "@components/Footer"
 import Navbar from "@components/Navbar";
@@ -18,16 +20,11 @@ import TabsVertical from "@components/TabsVertical";
 import TabsVerticall from "@components/TabsVerticall";
 import Layout from "@components/Layout";
 import MyModal from "@components/MyModal";
-import { Disclosure, Listbox, Menu, Transition } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/solid'
-import { Dialog, RadioGroup } from '@headlessui/react'
-import { ExclamationIcon, MinusSmIcon, PlusSmIcon, SelectorIcon } from '@heroicons/react/outline'
 import Checkbox from "@components/Checkbox";
 import SelectBox from "@components/SelectBox";
 import SelectBoxCustom from "@components/SelectBoxCustom";
 import RadioBox from "@components/RadioBox";
 import useToast from "@utils/useToast";
-import toast, { Toaster } from 'react-hot-toast';
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ')
@@ -49,12 +46,12 @@ const sizes = [
 ]
 
 const people = [
-	{ id: 1, name: 'Wade Cooper' },
-	{ id: 2, name: 'Arlene Mccoy' },
-	{ id: 3, name: 'Devon Webb' },
-	{ id: 4, name: 'Tom Cook' },
-	{ id: 5, name: 'Tanya Fox' },
-	{ id: 6, name: 'Hellen Schmidt' }
+	{ id: 1, nik: "11111", name: 'Wade Cooper' },
+	{ id: 2, nik: "22222", name: 'Arlene Mccoy' },
+	{ id: 3, nik: "33333", name: 'Devon Webb' },
+	{ id: 4, nik: "44444", name: 'Tom Cook' },
+	{ id: 5, nik: "55555", name: 'Tanya Fox' },
+	{ id: 6, nik: "66666", name: 'Hellen Schmidt' }
 ]
 
 const colorBox = [
@@ -142,6 +139,20 @@ export default function Third() {
 		setSelectedColor(e)
 	}
 
+	const [selectedComboBoxID, setSelectedComboBoxID] = useState()
+	const [filteredOption, setFilteredOption] = useState(people)
+	function handleChangeComboBoxID(e) {
+		setFilteredOption(people.filter((person) => person.nik.includes(e.target.value.toLowerCase())))
+
+	}
+
+	const [selectedComboBox, setSelectedComboBox] = useState(people[0])
+	const [filteredPeople, setFilteredPeople] = useState(people)
+	function handleChangeComboBox(e) {
+		setFilteredPeople(people.filter((person) => person.name.toLowerCase().includes(e.target.value.toLowerCase())))
+	}
+
+
 	return (
 		<div>
 			<Head>
@@ -157,6 +168,198 @@ export default function Third() {
 
 			<Layout>
 				<main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pb-16">
+
+					<Section id="combo-box" name="ComboBox">
+						<Combobox value={selectedComboBoxID} onChange={setSelectedComboBoxID}>
+							<Combobox.Label className="font-medium text-sm dark:text-gray-200">Unselected By Default:</Combobox.Label>
+							<div className="relative mt-2">
+								<div className="relative w-full text-left rounded cursor-default text-sm overflow-hidden border border-gray-200 dark:border-neutral-700 ">
+									<Combobox.Input
+										className="w-full border-none py-2 text-sm text-gray-900 dark:text-gray-200 bg-white dark:bg-neutral-900 hover:bg-gray-100 dark:hover:bg-neutral-800 focus:bg-gray-100 dark:focus:bg-neutral-800 transition-all duration-200"
+										displayValue={(option) => option.nik || ""}
+										placeholder="Search By Id"
+										type="number"
+										onChange={handleChangeComboBoxID}
+									/>
+									<Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
+										<SelectorIcon
+											className="w-5 h-5 text-gray-500 dark:text-gray-200"
+											aria-hidden="true"
+										/>
+									</Combobox.Button>
+								</div>
+								<Transition
+									as={Fragment}
+									leave="transition ease-in duration-100"
+									leaveFrom="opacity-100"
+									leaveTo="opacity-0"
+								>
+									<Combobox.Options className="z-10 absolute w-full py-1 mt-1 overflow-auto text-sm bg-white dark:bg-neutral-900 rounded shadow-lg max-h-48 border border-gray-200 dark:border-neutral-700">
+										{filteredOption.length === 0 ?
+											<div className="cursor-default select-none relative py-2 px-4 text-neutral-700 dark:text-gray-300">
+												Nothing found.
+											</div>
+											:
+											filteredOption.map((option) => (
+												<Combobox.Option
+													key={option.id}
+													className={({ active }) =>
+														`cursor-pointer select-none relative py-2 px-4 text-neutral-700 dark:text-gray-200 hover:text-blue-500
+														${active ? 'text-blue-500 bg-gray-100 dark:bg-neutral-800' : 'text-gray-800 dark:text-gray-200'
+														}`
+													}
+													value={option}
+												>
+													{({ selected }) => (
+														<span className={`block truncate ${selected ? 'font-medium text-blue-500' : 'font-normal'}`}>
+															{`${option.nik} - ${option.name}`}
+														</span>
+													)}
+												</Combobox.Option>
+											)
+											)}
+									</Combobox.Options>
+								</Transition>
+							</div>
+						</Combobox>
+						<Text className="my-3 !text-sm font-medium !text-red-500"> Selected : {selectedComboBoxID ? selectedComboBoxID.nik : ""} </Text>
+
+						<Combobox value={selectedComboBox} onChange={setSelectedComboBox}>
+							<Combobox.Label className="font-medium text-sm dark:text-gray-200">Selected By Default:</Combobox.Label>
+							<div className="relative mt-2">
+								<div className="relative w-full text-left rounded cursor-default text-sm overflow-hidden border border-gray-200 dark:border-neutral-700 ">
+									<Combobox.Input
+										className="w-full border-none py-2 text-sm text-gray-900 dark:text-gray-200 bg-white dark:bg-neutral-900 hover:bg-gray-100 dark:hover:bg-neutral-800 focus:bg-gray-100 dark:focus:bg-neutral-800 transition-all duration-200"
+										displayValue={(option) => option.name || ""}
+										placeholder="Search By Name"
+										onChange={handleChangeComboBox}
+									/>
+									<Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
+										<SelectorIcon
+											className="w-5 h-5 text-gray-500 dark:text-gray-200"
+											aria-hidden="true"
+										/>
+									</Combobox.Button>
+								</div>
+								<Transition
+									as={Fragment}
+									leave="transition ease-in duration-100"
+									leaveFrom="opacity-100"
+									leaveTo="opacity-0"
+								>
+									<Combobox.Options className="z-10 absolute w-full py-1 mt-1 overflow-auto text-sm bg-white dark:bg-neutral-900 rounded shadow-lg max-h-48 border border-gray-200 dark:border-neutral-700">
+										{filteredPeople.length === 0 ?
+											<div className="cursor-default select-none relative py-2 px-4 text-neutral-700 dark:text-gray-300">
+												Nothing found.
+											</div>
+											:
+											filteredPeople.map((option) => (
+												<Combobox.Option
+													key={option.id}
+													className={({ active }) =>
+														`cursor-pointer select-none relative py-2 px-4 text-neutral-700 dark:text-gray-200 hover:text-blue-500
+														${active ? 'text-blue-500 bg-gray-100 dark:bg-neutral-800' : 'text-gray-800 dark:text-gray-200'
+														}`
+													}
+													value={option}
+												>
+													{({ selected }) => (
+														<span className={`block truncate ${selected ? 'font-medium text-blue-500' : 'font-normal'}`}>
+															{`${option.name}`}
+														</span>
+													)}
+												</Combobox.Option>
+											)
+											)}
+									</Combobox.Options>
+								</Transition>
+							</div>
+						</Combobox>
+						<Text className="my-3 !text-sm font-medium !text-red-500"> Selected : {selectedComboBox ? selectedComboBox.name : ""} </Text>
+					</Section>
+
+					<Section id="select-box" name="SelectBox">
+						<SelectBox
+							label="Select Color"
+							value={selectedBox}
+							onChange={handleSelectBoxChange}
+							options={colorBox}>
+						</SelectBox>
+						<Text className="my-3 !text-sm font-medium !text-red-500"> Selected : {selectedBox ? selectedBox.name : ""} </Text>
+
+						<SelectBoxCustom
+							label="Select Color"
+							value={selectedBoxId}
+							onChange={handleSelectBoxIdChange}
+							options={colorBoxId}>
+						</SelectBoxCustom>
+						<Text className="my-3 !text-sm font-medium !text-red-500"> Selected : {selectedBoxId ? selectedBoxId.id + "-" + selectedBoxId.name : ""} </Text>
+					</Section>
+
+					<Section id="list-box" name="Listbox">
+						<Listbox value={selected} onChange={handleSelectChange}>
+							<div className="relative mt-1">
+								<Listbox.Button className="relative w-full py-2 px-3 text-left bg-white dark:bg-neutral-900 dark:text-gray-200 border border-gray-200 dark:border-neutral-700 hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all duration-200 rounded cursor-pointer text-sm">
+									<span className="block truncate">{selected ? selected.name : "Choose Select"}</span>
+									<span className="absolute inset-y-0 right-0 flex items-center pr-2">
+										<SelectorIcon className="w-5 h-5 text-gray-500 dark:text-gray-200" aria-hidden="true" />
+									</span>
+								</Listbox.Button>
+								<Listbox.Options className="z-10 absolute w-full mt-1 overflow-auto bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-700 rounded shadow-lg max-h-48 text-sm">
+									{people.map((person, index) => (
+										<Listbox.Option
+											key={index}
+											className={({ active }) =>
+												`cursor-pointer border-b border-gray-200 dark:border-neutral-700 py-2 px-3 text-neutral-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-500 hover:bg-gray-100 dark:hover:bg-neutral-800 
+												${active ? 'text-blue-600 dark:text-blue-500 bg-gray-100 dark:bg-neutral-800' : ' '}
+												`
+											}
+											value={person}
+										>
+											{({ selected }) => (
+												<span className={`block truncate ${selected ? 'font-semibold text-blue-500' : ' '}`}>
+													{person.name}
+												</span>
+											)}
+										</Listbox.Option>
+									))}
+								</Listbox.Options>
+							</div>
+						</Listbox>
+
+						<Listbox value={selected} onChange={handleSelectChange}>
+							{({ open }) => (
+								<div className="relative mt-4">
+									<Listbox.Button className="relative w-full py-2 px-3 text-left bg-white dark:bg-neutral-900 dark:text-gray-200 border border-gray-200 dark:border-neutral-700 hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all duration-200 rounded cursor-pointer text-sm">
+										<span className="block truncate">{selected ? selected.name : "Choose Select"}</span>
+										<span className="absolute inset-y-0 right-0 flex items-center pr-2">
+											<ChevronDownIcon className={`${open ? 'transform rotate-180 duration-300' : 'transform rotate-0 duration-200'} w-5 h-5 text-gray-500 dark:text-gray-200`} aria-hidden="true" />
+										</span>
+									</Listbox.Button>
+									<Listbox.Options className="z-10 absolute w-full mt-1 overflow-auto bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-700 rounded shadow-lg max-h-48 text-sm scrollbar scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-200 dark:scrollbar-thumb-neutral-700">
+										{people.map((person, index) => (
+											<Listbox.Option
+												key={index}
+												className={({ active }) =>
+													`cursor-pointer border-b border-gray-200 dark:border-neutral-700 py-2 px-3 text-neutral-700 hover:text-blue-500 dark:hover:text-blue-500 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-neutral-800 
+												${active ? 'text-blue-600 dark:text-blue-500 bg-gray-100 dark:bg-neutral-800' : ' '}
+												`
+												}
+												value={person}
+											>
+												{({ selected }) => (
+													<span className={`block truncate ${selected ? 'font-semibold text-blue-500' : ' '}`}>
+														{person.name}
+													</span>
+												)}
+											</Listbox.Option>
+										))}
+									</Listbox.Options>
+								</div>
+							)}
+						</Listbox>
+						<Text className="my-3 !text-sm font-medium !text-red-500"> Selected : {selected ? selected.name : ""} </Text>
+					</Section>
 
 					<Section id="toast" name="Toast">
 						{/* for global toast, put Toaster component below in _app.js  */}
@@ -256,89 +459,6 @@ export default function Third() {
 							</div>
 						</RadioGroup>
 						<Text className="my-3 !text-sm font-medium !text-red-500"> Selected : {selectedColor ? selectedColor.name : ""} </Text>
-					</Section>
-
-					<Section id="select-box" name="SelectBox">
-						<SelectBox
-							label="Select Color"
-							value={selectedBox}
-							onChange={handleSelectBoxChange}
-							options={colorBox}>
-						</SelectBox>
-						<Text className="my-3 !text-sm font-medium !text-red-500"> Selected : {selectedBox ? selectedBox.name : ""} </Text>
-
-						<SelectBoxCustom
-							label="Select Color"
-							value={selectedBoxId}
-							onChange={handleSelectBoxIdChange}
-							options={colorBoxId}>
-						</SelectBoxCustom>
-						<Text className="my-3 !text-sm font-medium !text-red-500"> Selected : {selectedBoxId ? selectedBoxId.id + "-" + selectedBoxId.name : ""} </Text>
-					</Section>
-
-					<Section id="list-box" name="Listbox">
-						<Listbox value={selected} onChange={handleSelectChange}>
-							<div className="relative mt-1">
-								<Listbox.Button className="relative w-full py-2 px-3 text-left bg-white dark:bg-neutral-900 dark:text-gray-200 border border-gray-200 dark:border-neutral-700 hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all duration-200 rounded cursor-pointer text-sm">
-									<span className="block truncate">{selected ? selected.name : "Choose Select"}</span>
-									<span className="absolute inset-y-0 right-0 flex items-center pr-2">
-										<SelectorIcon className="w-5 h-5 text-gray-500 dark:text-gray-200" aria-hidden="true" />
-									</span>
-								</Listbox.Button>
-								<Listbox.Options className="z-10 absolute w-full mt-1 overflow-auto bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-700 rounded shadow-lg max-h-48 text-sm">
-									{people.map((person, index) => (
-										<Listbox.Option
-											key={index}
-											className={({ active }) =>
-												`cursor-pointer border-b border-gray-200 dark:border-neutral-700 py-2 px-3 text-neutral-700 hover:text-blue-500 dark:hover:text-blue-500 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-neutral-800 
-												${active ? 'text-blue-600 dark:text-blue-500 bg-gray-100 dark:bg-neutral-800' : ' '}
-												`
-											}
-											value={person}
-										>
-											{({ selected }) => (
-												<span className={`block truncate ${selected ? 'font-semibold text-blue-500' : ' '}`}>
-													{person.name}
-												</span>
-											)}
-										</Listbox.Option>
-									))}
-								</Listbox.Options>
-							</div>
-						</Listbox>
-
-						<Listbox value={selected} onChange={handleSelectChange}>
-							{({ open }) => (
-								<div className="relative mt-4">
-									<Listbox.Button className="relative w-full py-2 px-3 text-left bg-white dark:bg-neutral-900 dark:text-gray-200 border border-gray-200 dark:border-neutral-700 hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all duration-200 rounded cursor-pointer text-sm">
-										<span className="block truncate">{selected ? selected.name : "Choose Select"}</span>
-										<span className="absolute inset-y-0 right-0 flex items-center pr-2">
-											<ChevronDownIcon className={`${open ? 'transform rotate-180 duration-300' : 'transform rotate-0 duration-200'} w-5 h-5 text-gray-500 dark:text-gray-200`} aria-hidden="true" />
-										</span>
-									</Listbox.Button>
-									<Listbox.Options className="z-10 absolute w-full mt-1 overflow-auto bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-700 rounded shadow-lg max-h-48 text-sm scrollbar scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-200 dark:scrollbar-thumb-neutral-700">
-										{people.map((person, index) => (
-											<Listbox.Option
-												key={index}
-												className={({ active }) =>
-													`cursor-pointer border-b border-gray-200 dark:border-neutral-700 py-2 px-3 text-neutral-700 hover:text-blue-500 dark:hover:text-blue-500 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-neutral-800 
-												${active ? 'text-blue-600 dark:text-blue-500 bg-gray-100 dark:bg-neutral-800' : ' '}
-												`
-												}
-												value={person}
-											>
-												{({ selected }) => (
-													<span className={`block truncate ${selected ? 'font-semibold text-blue-500' : ' '}`}>
-														{person.name}
-													</span>
-												)}
-											</Listbox.Option>
-										))}
-									</Listbox.Options>
-								</div>
-							)}
-						</Listbox>
-						<Text className="my-3 !text-sm font-medium !text-red-500"> Selected : {selected ? selected.name : ""} </Text>
 					</Section>
 
 					<Section id="disclosure" name="Disclosure">
@@ -471,20 +591,6 @@ export default function Third() {
 							}
 						</div>
 					</Section>
-
-					<div className="!py-2 px-2 rounded mx-4 bg-opacity-20 dark:bg-opacity-40 bg-gray-100 dark:bg-neutral-800 backdrop-filter backdrop-blur fixed bottom-20 right-3 md:right-10 z-10">
-						{darkMode ?
-							<button onClick={() => setDarkMode(!darkMode)} aria-label="Change Theme" className="w-8 h-8 p-1 transition-all ease-in duration-300 bg-neutral-800 hover:bg-neutral-700 text-white rounded-full">
-								<SunIcon />
-							</button>
-							:
-							<button onClick={() => setDarkMode(!darkMode)} aria-label="Change Theme" className="w-8 h-8 p-1 transition-all ease-in duration-300 bg-gray-100 hover:bg-gray-200 rounded-full">
-								<MoonIcon />
-							</button>
-						}
-					</div>
-
-					<BackToTop />
 
 					<Section id="modal" name="Modal">
 						<button
@@ -770,6 +876,20 @@ export default function Third() {
 						}>
 						</Code>
 					</Section>
+
+					<div className="!py-2 px-2 rounded mx-4 bg-opacity-20 dark:bg-opacity-40 bg-gray-100 dark:bg-neutral-800 backdrop-filter backdrop-blur fixed bottom-20 right-3 md:right-10 z-10">
+						{darkMode ?
+							<button onClick={() => setDarkMode(!darkMode)} aria-label="Change Theme" className="w-8 h-8 p-1 transition-all ease-in duration-300 bg-neutral-800 hover:bg-neutral-700 text-white rounded-full">
+								<SunIcon />
+							</button>
+							:
+							<button onClick={() => setDarkMode(!darkMode)} aria-label="Change Theme" className="w-8 h-8 p-1 transition-all ease-in duration-300 bg-gray-100 hover:bg-gray-200 rounded-full">
+								<MoonIcon />
+							</button>
+						}
+					</div>
+
+					<BackToTop />
 
 				</main>
 			</Layout>
