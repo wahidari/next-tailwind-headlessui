@@ -199,7 +199,7 @@ export default function Third() {
 							options={filteredOptions}
 						/>
 						<Text className="my-3 !text-sm font-medium !text-red-500"> Selected : {selectedSearchBox ? selectedSearchBox.value : ""} </Text>
-						
+
 						<SearchBox
 							label="Selected Search Box ID"
 							placeholder="Search by ID"
@@ -256,7 +256,7 @@ export default function Third() {
 													{({ selected }) => (
 														<span className={`block truncate ${selected ? 'font-medium text-blue-500' : 'font-normal'}`}>
 															{/* {`${option.nik} - ${option.name}`} */}
-															{`${option.nik}`}
+															{`${option.nik} `}
 														</span>
 													)}
 												</Combobox.Option>
@@ -291,7 +291,7 @@ export default function Third() {
 									leaveFrom="opacity-100"
 									leaveTo="opacity-0"
 								>
-									<Combobox.Options className="z-10 absolute w-full py-1 mt-1 overflow-auto text-sm bg-white dark:bg-neutral-900 rounded shadow-lg max-h-48 border border-gray-200 dark:border-neutral-700">
+									<Combobox.Options className="z-10 absolute w-full py-1 mt-1 overflow-auto text-sm bg-white dark:bg-neutral-900 rounded shadow-lg max-h-48 border border-gray-200 dark:border-neutral-700 scrollbar scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-200 dark:scrollbar-thumb-neutral-700">
 										{filteredPeople.length === 0 ?
 											<div className="cursor-default select-none relative py-2 px-4 text-neutral-700 dark:text-gray-300">
 												Nothing found.
@@ -561,14 +561,18 @@ export default function Third() {
 									>
 										<Menu.Items className="absolute left-0 mt-2 w-32 rounded-md shadow bg-white dark:bg-neutral-900">
 											<Menu.Item>
-												<a href="#" className="hover:bg-gray-100 dark:hover:bg-neutral-800 text-gray-700 dark:text-gray-200 block px-4 py-2 text-sm">
-													Team
-												</a>
+												{({ active }) => (
+													<a href="#" className={`${active ? 'bg-gray-100 dark:bg-neutral-800 dark:text-gray-200' : 'text-gray-900'} hover:bg-gray-100 dark:hover:bg-neutral-800 text-gray-700 dark:text-gray-200 block px-4 py-2 text-sm`}>
+														Team
+													</a>
+												)}
 											</Menu.Item>
 											<Menu.Item>
-												<a href="#" className="hover:bg-gray-100 dark:hover:bg-neutral-800 text-gray-700 dark:text-gray-200 block px-4 py-2 text-sm">
-													About
-												</a>
+												{({ active }) => (
+													<a href="#" className={`${active ? 'bg-gray-100 dark:bg-neutral-800 dark:text-gray-200' : 'text-gray-900'} hover:bg-gray-100 dark:hover:bg-neutral-800 text-gray-700 dark:text-gray-200 block px-4 py-2 text-sm`}>
+														About
+													</a>
+												)}
 											</Menu.Item>
 										</Menu.Items>
 									</Transition>
@@ -589,14 +593,18 @@ export default function Third() {
 							>
 								<Menu.Items className="absolute right-0 mt-2 w-32 rounded-md shadow bg-white dark:bg-neutral-900">
 									<Menu.Item>
-										<a href="#" className="hover:bg-gray-100 dark:hover:bg-neutral-800 text-gray-700 dark:text-gray-200 block px-4 py-2 text-sm">
-											Team
-										</a>
+										{({ active }) => (
+											<a href="#" className={`${active ? 'bg-gray-100 dark:bg-neutral-800 dark:text-gray-200' : 'text-gray-900'} hover:bg-gray-100 dark:hover:bg-neutral-800 text-gray-700 dark:text-gray-200 block px-4 py-2 text-sm`}>
+												Team
+											</a>
+										)}
 									</Menu.Item>
 									<Menu.Item>
-										<a href="#" className="hover:bg-gray-100 dark:hover:bg-neutral-800 text-gray-700 dark:text-gray-200 block px-4 py-2 text-sm">
-											About
-										</a>
+										{({ active }) => (
+											<a href="#" className={`${active ? 'bg-gray-100 dark:bg-neutral-800 dark:text-gray-200' : 'text-gray-900'} hover:bg-gray-100 dark:hover:bg-neutral-800 text-gray-700 dark:text-gray-200 block px-4 py-2 text-sm`}>
+												About
+											</a>
+										)}
 									</Menu.Item>
 								</Menu.Items>
 							</Transition>
