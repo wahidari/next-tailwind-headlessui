@@ -56,12 +56,12 @@ const people = [
 ]
 
 const persons = [
-	{ id: "1", value: 'Wade Cooper' },
-	{ id: "2", value: 'Arlene Mccoy' },
-	{ id: "3", value: 'Devon Webb' },
-	{ id: "4", value: 'Tom Cook' },
-	{ id: "5", value: 'Tanya Fox' },
-	{ id: "6", value: 'Hellen Schmidt' }
+	{ id: "111", value: 'Wade Cooper' },
+	{ id: "222", value: 'Arlene Mccoy' },
+	{ id: "333", value: 'Devon Webb' },
+	{ id: "444", value: 'Tom Cook' },
+	{ id: "555", value: 'Tanya Fox' },
+	{ id: "666", value: 'Hellen Schmidt' }
 ]
 
 const colorBox = [
@@ -158,7 +158,7 @@ export default function Third() {
 	const [selectedSearchBoxID, setSelectedSearchBoxID] = useState(persons[0])
 	const [filteredOptionsID, setFilteredOptionsID] = useState(persons)
 	function handleChangeSearchBoxID(e) {
-		setFilteredOptionsID(persons.filter((person) => person.id.includes(parseInt(e.target.value))))
+		setFilteredOptionsID(persons.filter((person) => person.id.includes(e.target.value)))
 	}
 
 	const [selectedComboBox, setSelectedComboBox] = useState(people[0])
@@ -191,7 +191,7 @@ export default function Third() {
 
 					<Section id="search-box" name="SearchBox">
 						<SearchBox
-							label="Unselect Search Box"
+							label="Unselect Search Box, Search by Name"
 							placeholder="Search by Name"
 							value={selectedSearchBox}
 							onChange={setSelectedSearchBox}
@@ -208,7 +208,7 @@ export default function Third() {
 							onChangeInput={handleChangeSearchBoxID}
 							options={filteredOptionsID}
 						/>
-						<Text className="my-3 !text-sm font-medium !text-red-500"> Selected : {selectedSearchBox ? selectedSearchBox.id : ""} </Text>
+						<Text className="my-3 !text-sm font-medium !text-red-500"> Selected : {selectedSearchBoxID ? selectedSearchBoxID.id : ""} </Text>
 
 					</Section>
 
@@ -255,7 +255,8 @@ export default function Third() {
 												>
 													{({ selected }) => (
 														<span className={`block truncate ${selected ? 'font-medium text-blue-500' : 'font-normal'}`}>
-															{`${option.nik} - ${option.name}`}
+															{/* {`${option.nik} - ${option.name}`} */}
+															{`${option.nik}`}
 														</span>
 													)}
 												</Combobox.Option>

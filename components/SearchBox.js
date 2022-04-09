@@ -10,7 +10,8 @@ export default function SearchBox({ label, value, placeholder, onChange, onChang
         <div className="relative w-full text-left rounded cursor-default text-sm overflow-hidden border border-gray-200 dark:border-neutral-700 ">
           <Combobox.Input
             className="w-full border-none py-2 text-sm text-gray-900 dark:text-gray-200 bg-white dark:bg-neutral-900 hover:bg-gray-100 dark:hover:bg-neutral-800 focus:bg-gray-100 dark:focus:bg-neutral-800 transition-all duration-200"
-            displayValue={(option) => option.id ? `${option.id} - ${option.value}` : `${option.value}` || ""}
+            // displayValue={(option) => option.id ? `${option.id} - ${option.value}` : `${option.value}` || ""}
+            displayValue={(option) => option.value || ""}
             placeholder={placeholder}
             type="number"
             onChange={onChangeInput}
