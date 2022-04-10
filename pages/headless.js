@@ -26,6 +26,7 @@ import SelectBoxCustom from "@components/SelectBoxCustom";
 import RadioBox from "@components/RadioBox";
 import useToast from "@utils/useToast";
 import SearchBox from "@components/SearchBox";
+import Link from "next/link";
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ')
@@ -188,6 +189,65 @@ export default function Third() {
 
 			<Layout>
 				<main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pb-16">
+
+					<Section id="components" name="Headless Components TOC">
+						<div className="grid sm:grid-cols-2 md:grid-cols-3">
+							<div>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#search-box">Search Box</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#combo-box">Combo Box</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#select-box">Select Box</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#list-box">List Box</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#radio-box">Radio Box</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#radio-group">Radio Group</Link>
+								</span>
+							</div>
+							<div>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#disclosure">Disclosure</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#menu">Menu</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#modal">Modal</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#simple-tab">Simple Tab</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#tab">Tab</Link>
+								</span>
+							</div>
+							<div>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#tab-style-a">Tab Style A</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#tab-style-b">Tab Style B</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#accordion">Accordion</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#toast">Toast</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#dark-mode">Dark Mode</Link>
+								</span>
+							</div>
+						</div>
+					</Section>
 
 					<Section id="search-box" name="SearchBox">
 						<SearchBox
