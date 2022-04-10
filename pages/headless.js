@@ -3,7 +3,7 @@ import { GlobalContext } from "@utils/GlobalContext";
 import { useContext, useState, useRef, Fragment, useEffect } from "react";
 import { Tab, Disclosure, Listbox, Menu, Transition, Combobox, Dialog, RadioGroup } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
-import { MoonIcon, SunIcon, ExclamationIcon, MinusSmIcon, PlusSmIcon, SelectorIcon, CheckIcon } from '@heroicons/react/outline'
+import { MoonIcon, SunIcon, ExclamationIcon, MinusSmIcon, PlusSmIcon, SelectorIcon, CheckIcon, ChevronUpIcon } from '@heroicons/react/outline'
 import toast, { Toaster } from 'react-hot-toast';
 import Button from "@components/Button";
 import Footer from "@components/Footer"
@@ -600,6 +600,42 @@ export default function Third() {
 								</>
 							)}
 						</Disclosure>
+
+						<div className="w-full max-w-md p-2 mt-4">
+							<Disclosure>
+								{({ open }) => (
+									<>
+										<Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-blue-600 bg-gray-100 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 rounded-lg transition-all duration-200">
+											<span>What is your refund policy?</span>
+											<ChevronUpIcon
+												className={`${open ? 'transform rotate-180' : ''
+													} w-5 h-5 text-blue-600`}
+											/>
+										</Disclosure.Button>
+										<Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-600 dark:text-gray-300">
+											If you&apos;re unhappy with your purchase for any reason, email us
+											within 90 days and we&apos;ll refund you in full, no questions asked.
+										</Disclosure.Panel>
+									</>
+								)}
+							</Disclosure>
+							<Disclosure as="div" className="mt-2">
+								{({ open }) => (
+									<>
+										<Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-blue-600 bg-gray-100 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 rounded-lg transition-all duration-200">
+											<span>Do you offer technical support?</span>
+											<ChevronUpIcon
+												className={`${open ? 'transform rotate-180' : ''
+													} w-5 h-5 text-blue-600`}
+											/>
+										</Disclosure.Button>
+										<Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-600 dark:text-gray-300">
+											No.
+										</Disclosure.Panel>
+									</>
+								)}
+							</Disclosure>
+						</div>
 					</Section>
 
 					<Section id="menu" name="Menu">
