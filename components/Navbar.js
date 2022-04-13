@@ -3,8 +3,12 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon, ChevronRightIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import ActiveLink from '@components/ActiveLink'
+import { useSession } from "next-auth/react"
 
 export default function Navbar() {
+  // check the session to show or hide login and logout link
+  const { data: session, status } = useSession()
+
   return (
     <div>
       <Disclosure as="nav" className="shadow">
@@ -37,9 +41,6 @@ export default function Navbar() {
                     </ActiveLink>
                     <ActiveLink activeClassName="bg-gray-100" href="/headless">
                       <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Headless</a>
-                    </ActiveLink>
-                    <ActiveLink activeClassName="bg-gray-100" href="/second">
-                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Second</a>
                     </ActiveLink>
                     <Popover className="relative">
                       {({ open }) => (
@@ -74,6 +75,22 @@ export default function Navbar() {
                     <ActiveLink activeClassName="bg-gray-100" href="/nav-bar">
                       <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Navbar</a>
                     </ActiveLink>
+                    {!session &&
+                      <ActiveLink activeClassName="bg-gray-100" href="/signin">
+                        <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">signin</a>
+                      </ActiveLink>
+                    }
+                    {session &&
+                      <ActiveLink activeClassName="bg-gray-100" href="/signout">
+                        <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">signout</a>
+                      </ActiveLink>
+                    }
+                    <ActiveLink activeClassName="bg-gray-100" href="/protected">
+                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Protected</a>
+                    </ActiveLink>
+                    <ActiveLink activeClassName="bg-gray-100" href="/secret">
+                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Secret</a>
+                    </ActiveLink>
                   </div>
                 </div>
                 {/* End Nav Link  */}
@@ -107,9 +124,6 @@ export default function Navbar() {
                 <ActiveLink activeClassName="bg-gray-100" href="/headless">
                   <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Headless</a>
                 </ActiveLink>
-                <ActiveLink activeClassName="bg-gray-100" href="/second">
-                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Second</a>
-                </ActiveLink>
 
                 <Menu>
                   {({ open }) => (
@@ -140,6 +154,22 @@ export default function Navbar() {
                 </Menu>
                 <ActiveLink activeClassName="bg-gray-100" href="/nav-bar">
                   <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Navbar</a>
+                </ActiveLink>
+                {!session && 
+                  <ActiveLink activeClassName="bg-gray-100" href="/signin">
+                    <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">signin</a>
+                  </ActiveLink>
+                }
+                {session &&
+                  <ActiveLink activeClassName="bg-gray-100" href="/signout">
+                    <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">signout</a>
+                  </ActiveLink>
+                }
+                <ActiveLink activeClassName="bg-gray-100" href="/protected">
+                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Protected</a>
+                </ActiveLink>
+                <ActiveLink activeClassName="bg-gray-100" href="/secret">
+                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Secret</a>
                 </ActiveLink>
               </div>
             </Disclosure.Panel>

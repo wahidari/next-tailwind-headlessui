@@ -1,7 +1,9 @@
 module.exports = {
     env: {
         API_ROUTE: "http://127.0.0.1:8000",
-        // "https://virtserver.swaggerhub.com/masdimya/masdimyaproject1/1.0.0",
+        JWT_SECRET: "jwtsecret",
+        NEXTAUTH_URL: "http://localhost:3000",
+        NEXTAUTH_SECRET: "secret" //go to https://generate-secret.now.sh/32
     },
     reactStrictMode: true,
     images: {
