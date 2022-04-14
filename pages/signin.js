@@ -2,7 +2,7 @@ import Head from "next/head";
 import Navbar from "@components/Navbar";
 import InputLabel from "@components/InputLabel";
 import Button from "@components/Button";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { signIn } from 'next-auth/react'
 import { useRouter } from "next/router";
 import { InformationCircleIcon } from "@heroicons/react/outline";
@@ -17,12 +17,12 @@ export default function Signin() {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
-  if (status === "loading") {
-    return ""
-  }
-  if (status === "authenticated") {
-    Router.push("/protected")
-  }
+  // if (status === "loading") {
+  //   return ""
+  // }
+  // if (status === "authenticated") {
+  //   Router.push("/protected")
+  // }
 
   function handleChange(e) {
     if (e.target.name == "username") {

@@ -7,9 +7,9 @@ import { useSession } from "next-auth/react"
 export default function Secret() {
 	const { data: session, status } = useSession()
 	// handle opened multiple tab on same url 
-	if (status === "loading") {
-		return ""
-	}
+	// if (status === "loading") {
+	// 	return ""
+	// }
 	if (status === "unauthenticated") {
 		Router.push("/signin")
 	}
