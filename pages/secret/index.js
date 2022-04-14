@@ -31,6 +31,7 @@ export default function Secret() {
 						<div className="sm:text-4xl font-medium title-font text-gray-900 mb-4">
 							{session ?
 								<>
+									Auth from NextAuth :
 									<p>ID {session.id}</p>
 									<p>Name {session.user.name}</p>
 									<p>Email {session.user.email}</p>

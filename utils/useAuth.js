@@ -10,10 +10,12 @@ export function AuthProvider({ children }) {
   const router = useRouter()
   const protectedRoute = ["dashboard", "protected", "secret"]
   const [userName, setUserName] = useState();
-  // split route by "/". ex : "dashboard/pages" to ["dashboard", "pages"] 
-  // and take only first item ["dashboard"] 
+  /**
+   * split route by "/". ex : "dashboard/pages" to ["dashboard", "pages"] 
+   * then take only first item ["dashboard"] 
+   * if in index page, set to "/"
+   */
   const path = router.pathname.split("/").slice(1, 2)
-  // if in index page, set default route to "/"
   if (path[0] == "") {
     path[0] = "/"
   }
@@ -24,6 +26,10 @@ export function AuthProvider({ children }) {
     } 
   }, [session]);
 
+  /**
+   * if current route in protectedRoute and user not authenticated,
+   * show SignIn Page
+   */
   if (protectedRoute.includes(path[0]) && status === "unauthenticated") {
     return <Signin></Signin>
   } 

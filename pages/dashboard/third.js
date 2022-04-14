@@ -1,8 +1,11 @@
 import Head from "next/head";
 import Footer from "@components/Footer"
 import Navbar from "@components/Navbar";
+import { useContext } from "react";
+import { AuthContext } from "@utils/useAuth";
 
 export default function Third() {
+	const user = useContext(AuthContext);
 	return (
 		<div>
 			<Head>
@@ -19,16 +22,16 @@ export default function Third() {
 				<section className="text-gray-600 body-font">
 					<div className="py-24 mx-auto">
 						<div className="flex flex-col text-center w-full mb-20">
-							<h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
-								Master Cleanse Reliac Heirloom
+							<h1 className="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">
+								Auth from Context : {user.userName}
+							</h1>
+							<h1 className="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">
+								Pricing
 							</h1>
 							<p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-								Whatever cardigan tote bag tumblr hexagon
-								brooklyn asymmetrical gentrify, subway tile poke
-								farm-to-table. Franzen you probably havent
-								heard of them man bun deep jianbing selfies
-								heirloom prism food truck ugh squid celiac
-								humblebrag.
+								Banh mi cornhole echo park skateboard authentic
+								crucifix neutra tilde lyft biodiesel artisan
+								direct trade mumblecore 3 wolf moon twee
 							</p>
 						</div>
 						<div className="flex flex-wrap -m-4 text-center">

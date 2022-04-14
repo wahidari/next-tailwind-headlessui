@@ -1,7 +1,7 @@
 import { GlobalProvider } from "@utils/GlobalContext";
 import { SessionProvider } from "next-auth/react"
-import "@styles/globals.css";
 import { AuthProvider } from "@utils/useAuth";
+import "@styles/globals.css";
 
 function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
 

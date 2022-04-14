@@ -6,7 +6,6 @@ import { AuthContext } from "@utils/useAuth";
 
 export default function Fourth() {
 	const user = useContext(AuthContext);
-	console.log(user.userName)
 	return (
 		<div>
 			<Head>

@@ -30,8 +30,8 @@ export default function Navbar() {
                 </div>
                 {/* web logo  */}
 
-                {/* Nav Link  */}
-                <div className="hidden md:block">
+                {/* Nav Link wide nav */}
+                <div className="hidden lg:block">
                   <div className="ml-10 flex items-baseline space-x-4">
                     <ActiveLink activeClassName="bg-gray-100" href="/">
                       <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">First</a>
@@ -42,11 +42,30 @@ export default function Navbar() {
                     <ActiveLink activeClassName="bg-gray-100" href="/headless">
                       <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Headless</a>
                     </ActiveLink>
+                    <ActiveLink activeClassName="bg-gray-100" href="/nav-bar">
+                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Navbar</a>
+                    </ActiveLink>
+                    {!session &&
+                      <ActiveLink activeClassName="bg-gray-100" href="/signin">
+                        <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Signin</a>
+                      </ActiveLink>
+                    }
+                    {session &&
+                      <ActiveLink activeClassName="bg-gray-100" href="/signout">
+                        <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Signout</a>
+                      </ActiveLink>
+                    }
+                    <ActiveLink activeClassName="bg-gray-100" href="/protected">
+                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Protected</a>
+                    </ActiveLink>
+                    <ActiveLink activeClassName="bg-gray-100" href="/secret">
+                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Secret</a>
+                    </ActiveLink>
                     <Popover className="relative">
                       {({ open }) => (
                         <>
                           <Popover.Button className="group flex space-x-2 items-center px-2 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">
-                            <span>More</span>
+                            <span>Admin</span>
                             <ChevronDownIcon
                               className={`${open ? 'transform rotate-180 transition-transform duration-300' : 'transition-transform duration-300'} h-4 w-4`}
                             />
@@ -72,31 +91,12 @@ export default function Navbar() {
                         </>
                       )}
                     </Popover>
-                    <ActiveLink activeClassName="bg-gray-100" href="/nav-bar">
-                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Navbar</a>
-                    </ActiveLink>
-                    {!session &&
-                      <ActiveLink activeClassName="bg-gray-100" href="/signin">
-                        <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">signin</a>
-                      </ActiveLink>
-                    }
-                    {session &&
-                      <ActiveLink activeClassName="bg-gray-100" href="/signout">
-                        <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">signout</a>
-                      </ActiveLink>
-                    }
-                    <ActiveLink activeClassName="bg-gray-100" href="/protected">
-                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Protected</a>
-                    </ActiveLink>
-                    <ActiveLink activeClassName="bg-gray-100" href="/secret">
-                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Secret</a>
-                    </ActiveLink>
                   </div>
                 </div>
                 {/* End Nav Link  */}
 
                 {/* Mobile menu button */}
-                <div className="-mr-2 flex md:hidden">
+                <div className="-mr-2 flex lg:hidden">
                   <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                     <span className="sr-only">
                       Open main menu
@@ -113,7 +113,7 @@ export default function Navbar() {
             </div>
 
             {/* Mobile menu panel */}
-            <Disclosure.Panel className="md:hidden">
+            <Disclosure.Panel className="lg:hidden">
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <ActiveLink activeClassName="bg-gray-100" href="/">
                   <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">First</a>
@@ -124,13 +124,31 @@ export default function Navbar() {
                 <ActiveLink activeClassName="bg-gray-100" href="/headless">
                   <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Headless</a>
                 </ActiveLink>
-
+                <ActiveLink activeClassName="bg-gray-100" href="/nav-bar">
+                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Navbar</a>
+                </ActiveLink>
+                {!session && 
+                  <ActiveLink activeClassName="bg-gray-100" href="/signin">
+                    <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Signin</a>
+                  </ActiveLink>
+                }
+                {session &&
+                  <ActiveLink activeClassName="bg-gray-100" href="/signout">
+                    <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Signout</a>
+                  </ActiveLink>
+                }
+                <ActiveLink activeClassName="bg-gray-100" href="/protected">
+                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Protected</a>
+                </ActiveLink>
+                <ActiveLink activeClassName="bg-gray-100" href="/secret">
+                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Secret</a>
+                </ActiveLink>
                 <Menu>
                   {({ open }) => (
                     <>
                       <Menu.Button className="border-b-1 w-full px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">
                         <div className="flex justify-between items-center">
-                          <span>More</span>
+                          <span>Admin</span>
                           <ChevronRightIcon
                             className={`${open ? 'transform rotate-90 transition-transform duration-200' : 'transition-transform duration-200'
                               } w-5 h-5`}
@@ -152,25 +170,6 @@ export default function Navbar() {
                     </>
                   )}
                 </Menu>
-                <ActiveLink activeClassName="bg-gray-100" href="/nav-bar">
-                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Navbar</a>
-                </ActiveLink>
-                {!session && 
-                  <ActiveLink activeClassName="bg-gray-100" href="/signin">
-                    <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">signin</a>
-                  </ActiveLink>
-                }
-                {session &&
-                  <ActiveLink activeClassName="bg-gray-100" href="/signout">
-                    <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">signout</a>
-                  </ActiveLink>
-                }
-                <ActiveLink activeClassName="bg-gray-100" href="/protected">
-                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Protected</a>
-                </ActiveLink>
-                <ActiveLink activeClassName="bg-gray-100" href="/secret">
-                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Secret</a>
-                </ActiveLink>
               </div>
             </Disclosure.Panel>
             {/* End Mobile menu panel */}
