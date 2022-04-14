@@ -61,10 +61,10 @@ export default function Navbar() {
                             leaveTo="opacity-0 scale-95"
                           >
                             <Popover.Panel className="absolute bg-white shadow space-y-1 top-12 px-2 py-2 rounded w-40 z-10">
-                              <ActiveLink activeClassName="bg-gray-100" href="/third">
+                              <ActiveLink activeClassName="bg-gray-100" href="/dashboard/third">
                                 <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Third</a>
                               </ActiveLink>
-                              <ActiveLink activeClassName="bg-gray-100" href="/fourth">
+                              <ActiveLink activeClassName="bg-gray-100" href="/dashboard/fourth">
                                 <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Fourth</a>
                               </ActiveLink>
                             </Popover.Panel>
@@ -139,12 +139,12 @@ export default function Navbar() {
                       </Menu.Button>
                       <Menu.Items className="space-y-1 px-3">
                         <Menu.Item>
-                          <ActiveLink activeClassName="bg-gray-100" href="/third">
+                          <ActiveLink activeClassName="bg-gray-100" href="/dashboard/third">
                             <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Third</a>
                           </ActiveLink>
                         </Menu.Item>
                         <Menu.Item>
-                          <ActiveLink activeClassName="bg-gray-100" href="/fourth">
+                          <ActiveLink activeClassName="bg-gray-100" href="/dashboard/fourth">
                             <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Fourth</a>
                           </ActiveLink>
                         </Menu.Item>

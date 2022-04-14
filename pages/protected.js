@@ -1,18 +1,10 @@
 import Head from "next/head";
 import Footer from "@components/Footer"
 import Navbar from "@components/Navbar";
-import Router from "next/router";
 import { useSession } from "next-auth/react"
 
 export default function Protected() {
 	const { data: session, status } = useSession()	
-	// handle opened multiple tab on same url 
-	if (status === "loading") {
-		return ""
-	}
-	if (status === "unauthenticated") {
-		Router.push("/signin")
-	}
 
 	return (
 		<div>
@@ -33,6 +25,7 @@ export default function Protected() {
 							<div className="sm:text-4xl font-medium title-font text-gray-900 mb-4">
 								{session ?
 									<>
+										Auth from NextAuth :
 										<p>ID {session.id}</p>
 										<p>Name {session.user.name}</p>
 										<p>Email {session.user.email}</p>

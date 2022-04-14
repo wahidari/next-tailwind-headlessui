@@ -10,9 +10,9 @@ export default function Secret() {
 	// if (status === "loading") {
 	// 	return ""
 	// }
-	if (status === "unauthenticated") {
-		Router.push("/signin")
-	}
+	// if (status === "unauthenticated") {
+	// 	Router.push("/signin")
+	// }
 	return (
 		<div>
 			<Head>
@@ -27,7 +27,23 @@ export default function Secret() {
 
 			<main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
 				<section className="text-gray-600 body-font">
-					<div className="py-24 mx-auto">
+					<div className="text-center my-20">
+						<div className="sm:text-4xl font-medium title-font text-gray-900 mb-4">
+							{session ?
+								<>
+									<p>ID {session.id}</p>
+									<p>Name {session.user.name}</p>
+									<p>Email {session.user.email}</p>
+								</>
+								:
+								""
+							}
+						</div>
+						<div className="flex mt-6 justify-center">
+							<div className="w-16 h-1 rounded-full bg-gray-800 inline-flex"></div>
+						</div>
+					</div>
+					<div className="pb-24 mx-auto">
 						<div className="flex flex-col text-center w-full mb-20">
 							<h1 className="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">
 								Pricing
