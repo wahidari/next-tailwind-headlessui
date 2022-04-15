@@ -6,6 +6,7 @@ import { AuthContext } from "@utils/useAuth";
 
 export default function Third() {
 	const user = useContext(AuthContext);
+
 	return (
 		<div>
 			<Head>
@@ -23,7 +24,10 @@ export default function Third() {
 					<div className="py-24 mx-auto">
 						<div className="flex flex-col text-center w-full mb-20">
 							<h1 className="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">
-								Auth from Context : {user.userName}
+								Auth from Context :
+								<p>ID : {user.userID}</p>
+								<p>Name : {user.userName}</p>
+								<p>Email : {user.userEmail}</p>
 							</h1>
 							<h1 className="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">
 								Pricing

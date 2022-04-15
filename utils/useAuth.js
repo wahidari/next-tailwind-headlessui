@@ -9,7 +9,9 @@ export function AuthProvider({ children }) {
   const { data: session, status } = useSession()
   const router = useRouter()
   const protectedRoute = ["dashboard", "protected", "secret"]
+  const [userID, setUserID] = useState();
   const [userName, setUserName] = useState();
+  const [userEmail, setUserEmail] = useState();
   /**
    * split route by "/". ex : "dashboard/pages" to ["dashboard", "pages"] 
    * then take only first item ["dashboard"] 
@@ -22,7 +24,13 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     if(session != null) {
-      setUserName(session.user.name)
+      localStorage.setItem("user-id", session.id)
+      localStorage.setItem("user-name", session.user.name)
+      localStorage.setItem("user-email", session.user.email)
+
+      setUserID(localStorage.getItem("user-id"))
+      setUserName(localStorage.getItem("user-name"))
+      setUserEmail(localStorage.getItem("user-email"))
     } 
   }, [session]);
 
@@ -31,11 +39,11 @@ export function AuthProvider({ children }) {
    * show SignIn Page
    */
   if (protectedRoute.includes(path[0]) && status === "unauthenticated") {
-    return <Signin></Signin>
+    return <Signin/>
   } 
 
   return (
-    <AuthContext.Provider value={{ userName, setUserName }}>
+    <AuthContext.Provider value={{ userID, setUserID, userName, setUserName, userEmail, setUserEmail }}>
       {children}
     </AuthContext.Provider>
   );
