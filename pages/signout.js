@@ -1,9 +1,12 @@
 import { signOut } from 'next-auth/react'
+import { useEffect } from 'react';
 
 export default function Signout() {
-  localStorage.removeItem("user-id")
-  localStorage.removeItem("user-name")
-  localStorage.removeItem("user-email")
+  useEffect(() => {
+    localStorage.removeItem("user-id")
+    localStorage.removeItem("user-name")
+    localStorage.removeItem("user-email")
+  }, []);
 
   signOut({ callbackUrl: '/signin' })
 
