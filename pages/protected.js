@@ -23,15 +23,13 @@ export default function Protected() {
 					<div className="py-24 mx-auto">
 						<div className="text-center mb-20">
 							<div className="sm:text-4xl font-medium title-font text-gray-900 mb-4">
-								{session ?
+								{session &&
 									<>
-										Auth from NextAuth :
+										Auth from session NextAuth :
 										<p>ID {session.id}</p>
 										<p>Name {session.user.name}</p>
 										<p>Email {session.user.email}</p>
 									</>
-									:
-									""
 								}
 							</div>
 							<p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">

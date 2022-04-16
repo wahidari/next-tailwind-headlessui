@@ -34,7 +34,7 @@ export default function Navbar() {
                 <div className="hidden lg:block">
                   <div className="ml-10 flex items-baseline space-x-4">
                     <ActiveLink activeClassName="bg-gray-100" href="/">
-                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">First</a>
+                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Home</a>
                     </ActiveLink>
                     <ActiveLink activeClassName="bg-gray-100" href="/components">
                       <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Components</a>
@@ -57,9 +57,6 @@ export default function Navbar() {
                     }
                     <ActiveLink activeClassName="bg-gray-100" href="/protected">
                       <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Protected</a>
-                    </ActiveLink>
-                    <ActiveLink activeClassName="bg-gray-100" href="/secret">
-                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Secret</a>
                     </ActiveLink>
                     <Popover className="relative">
                       {({ open }) => (
@@ -116,7 +113,7 @@ export default function Navbar() {
             <Disclosure.Panel className="lg:hidden">
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <ActiveLink activeClassName="bg-gray-100" href="/">
-                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">First</a>
+                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Home</a>
                 </ActiveLink>
                 <ActiveLink activeClassName="bg-gray-100" href="/components">
                   <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Components</a>
@@ -139,9 +136,6 @@ export default function Navbar() {
                 }
                 <ActiveLink activeClassName="bg-gray-100" href="/protected">
                   <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Protected</a>
-                </ActiveLink>
-                <ActiveLink activeClassName="bg-gray-100" href="/secret">
-                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Secret</a>
                 </ActiveLink>
                 <Menu>
                   {({ open }) => (
