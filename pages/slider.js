@@ -179,7 +179,7 @@ export default function Slider() {
               "slidesPerView": 1,
               "spaceBetween": 24
             },
-            "480": {
+            "mr-360": {
               "slidesPerView": 1,
               "spaceBetween": 24
             },
@@ -374,7 +374,7 @@ export default function Slider() {
         <Swiper className='mb-5 swiper-custom-nav'
           modules={[Autoplay, Navigation, A11y]}
           spaceBetween={24}
-          slidesPerView={2}
+          slidesPerView={3}
           centeredSlides={true}
           autoplay={true}
           navigation={true}
@@ -384,7 +384,7 @@ export default function Slider() {
               "slidesPerView": 1,
               "spaceBetween": 24
             },
-            "480": {
+            "mr-360": {
               "slidesPerView": 1,
               "spaceBetween": 24
             },
@@ -397,13 +397,13 @@ export default function Slider() {
               "spaceBetween": 24
             },
             "1024": {
-              "slidesPerView": 1,
+              "slidesPerView": 2,
               "spaceBetween": 24
             }
           }}
         >
           <SwiperSlide>
-            <div className="bg-purple-500 h-60 text-center flex justify-center items-center mx-8 rounded-lg">
+            <div className="bg-purple-500 h-60 text-center flex justify-center items-center rounded-lg">
               <div>
                 <h1 className="text-white font-medium text-2xl">Text 1</h1>
                 <h2 className="text-white text-lg">Text 1</h2>
@@ -411,7 +411,7 @@ export default function Slider() {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="bg-emerald-500 h-60 text-center flex justify-center items-center mx-8 rounded-lg">
+            <div className="bg-emerald-500 h-60 text-center flex justify-center items-center rounded-lg">
               <div>
                 <h1 className="text-white font-medium text-2xl">Text 2</h1>
                 <h2 className="text-white text-lg">Text 2</h2>
@@ -419,7 +419,7 @@ export default function Slider() {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="bg-orange-500 h-60 text-center flex justify-center items-center mx-8 rounded-lg">
+            <div className="bg-orange-500 h-60 text-center flex justify-center items-center rounded-lg">
               <div>
                 <h1 className="text-white font-medium text-2xl">Text 3</h1>
                 <h2 className="text-white text-lg">Text 3</h2>
@@ -427,7 +427,135 @@ export default function Slider() {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="bg-red-500 h-60 text-center flex justify-center items-center mx-8 rounded-lg">
+            <div className="bg-red-500 h-60 text-center flex justify-center items-center rounded-lg">
+              <div>
+                <h1 className="text-white font-medium text-2xl">Text 4</h1>
+                <h2 className="text-white text-lg">Text 4</h2>
+              </div>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+
+        <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">
+          Default Slider
+        </h1>
+        <div className="flex overflow-x-auto space-x-8 pb-4">
+          <div className="bg-purple-500 h-60 text-center flex justify-center items-center rounded-lg w-2/3 shrink-0">
+            <div>
+              <h1 className="text-white font-medium text-2xl">Text 1</h1>
+              <h2 className="text-white text-lg">Text 1</h2>
+            </div>
+          </div>
+          <div className="bg-emerald-500 h-60 text-center flex justify-center items-center rounded-lg w-2/3 shrink-0">
+            <div>
+              <h1 className="text-white font-medium text-2xl">Text 2</h1>
+              <h2 className="text-white text-lg">Text 2</h2>
+            </div>
+          </div>
+          <div className="bg-orange-500 h-60 text-center flex justify-center items-center rounded-lg w-2/3 shrink-0">
+            <div>
+              <h1 className="text-white font-medium text-2xl">Text 3</h1>
+              <h2 className="text-white text-lg">Text 3</h2>
+            </div>
+          </div>
+          <div className="bg-red-500 h-60 text-center flex justify-center items-center rounded-lg w-2/3 shrink-0">
+            <div>
+              <h1 className="text-white font-medium text-2xl">Text 4</h1>
+              <h2 className="text-white text-lg">Text 4</h2>
+            </div>
+          </div>
+        </div>
+
+        <h1 className="sm:text-3xl text-2xl font-medium title-font my-2 text-gray-900">
+          Default Slider
+        </h1>
+        <div className="flex overflow-x-auto space-x-4 pb-4 scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-200">
+          <div className="bg-purple-500 h-60 text-center flex justify-center items-center rounded-lg w-60 sm:w-[350px] md:w-[400px] lg:w-[470px] shrink-0">
+            <div>
+              <h1 className="text-white font-medium text-2xl">Text 1</h1>
+              <h2 className="text-white text-lg">Text 1</h2>
+            </div>
+          </div>
+          <div className="bg-emerald-500 h-60 text-center flex justify-center items-center rounded-lg w-60 sm:w-[350px] md:w-[400px] lg:w-[470px] shrink-0">
+            <div>
+              <h1 className="text-white font-medium text-2xl">Text 2</h1>
+              <h2 className="text-white text-lg">Text 2</h2>
+            </div>
+          </div>
+          <div className="bg-orange-500 h-60 text-center flex justify-center items-center rounded-lg w-60 sm:w-[350px] md:w-[400px] lg:w-[470px] shrink-0">
+            <div>
+              <h1 className="text-white font-medium text-2xl">Text 3</h1>
+              <h2 className="text-white text-lg">Text 3</h2>
+            </div>
+          </div>
+          <div className="bg-red-500 h-60 text-center flex justify-center items-center rounded-lg w-60 sm:w-[350px] md:w-[400px] lg:w-[470px] shrink-0">
+            <div>
+              <h1 className="text-white font-medium text-2xl">Text 4</h1>
+              <h2 className="text-white text-lg">Text 4</h2>
+            </div>
+          </div>
+        </div>
+
+        <h1 className="sm:text-3xl text-2xl font-medium title-font my-2 text-gray-900">
+          Swiper Item Centered
+        </h1>
+        <Swiper className='mb-5 swiper-custom-nav'
+          // modules={[Autoplay, Navigation, A11y]}
+          spaceBetween={24}
+          slidesPerView={2}
+          // centeredSlides={true}
+          // autoplay={true}
+          // navigation={true}
+          // loop={true}
+          // breakpoints={{
+          //   "320": {
+          //     "slidesPerView": 1,
+          //     "spaceBetween": 24
+          //   },
+          //   "mr-360": {
+          //     "slidesPerView": 1,
+          //     "spaceBetween": 24
+          //   },
+          //   "640": {
+          //     "slidesPerView": 2,
+          //     "spaceBetween": 24
+          //   },
+          //   "768": {
+          //     "slidesPerView": 2,
+          //     "spaceBetween": 24
+          //   },
+          //   "1024": {
+          //     "slidesPerView": 2,
+          //     "spaceBetween": 24
+          //   }
+          // }}
+        >
+          <SwiperSlide className="sm:w-[350px] md:w-[400px] lg:w-[770px] shrink-0">
+            <div className="bg-purple-500 h-60 text-center flex justify-center items-center rounded-lg">
+              <div>
+                <h1 className="text-white font-medium text-2xl">Text 1</h1>
+                <h2 className="text-white text-lg">Text 1</h2>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className="sm:w-[350px] md:w-[400px] lg:w-[770px] shrink-0">
+            <div className="bg-emerald-500 h-60 text-center flex justify-center items-center rounded-lg">
+              <div>
+                <h1 className="text-white font-medium text-2xl">Text 2</h1>
+                <h2 className="text-white text-lg">Text 2</h2>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className="sm:w-[350px] md:w-[400px] lg:w-[770px] shrink-0">
+            <div className="bg-orange-500 h-60 text-center flex justify-center items-center rounded-lg">
+              <div>
+                <h1 className="text-white font-medium text-2xl">Text 3</h1>
+                <h2 className="text-white text-lg">Text 3</h2>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className="sm:w-[350px] md:w-[400px] lg:w-[770px] shrink-0">
+            <div className="bg-red-500 h-60 text-center flex justify-center items-center rounded-lg">
               <div>
                 <h1 className="text-white font-medium text-2xl">Text 4</h1>
                 <h2 className="text-white text-lg">Text 4</h2>
