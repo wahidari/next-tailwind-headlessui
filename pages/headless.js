@@ -27,6 +27,16 @@ import RadioBox from "@components/RadioBox";
 import useToast from "@utils/useToast";
 import SearchBox from "@components/SearchBox";
 import Link from "next/link";
+import Select from 'react-select'
+
+const reactSelectOptions = [
+	{ value: 'red', label: 'Red' },
+	{ value: 'blue', label: 'Blue' },
+	{ value: 'green', label: 'Green' },
+	{ value: 'yellow', label: 'Yellow' },
+	{ value: 'purple', label: 'Purple' },
+	{ value: 'orange', label: 'Orange' }
+]
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ')
@@ -175,7 +185,7 @@ export default function Third() {
 	}
 
 	return (
-		<div>
+		<>
 			<Head>
 				<title>Headless</title>
 				<meta
@@ -194,6 +204,9 @@ export default function Third() {
 						<div className="grid sm:grid-cols-2 md:grid-cols-3">
 							<div>
 								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+									<Link href="#react-multi-select-search">React Multi Select Search</Link>
+								</span>
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
 									<Link href="#search-box">Search Box</Link>
 								</span>
 								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
@@ -208,11 +221,11 @@ export default function Third() {
 								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
 									<Link href="#radio-box">Radio Box</Link>
 								</span>
+							</div>
+							<div>
 								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
 									<Link href="#radio-group">Radio Group</Link>
 								</span>
-							</div>
-							<div>
 								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
 									<Link href="#disclosure">Disclosure</Link>
 								</span>
@@ -247,6 +260,25 @@ export default function Third() {
 								</span>
 							</div>
 						</div>
+					</Section>
+
+					<Section id="react-multi-select-search" name="React Multi Select Search">
+						<Select
+							options={reactSelectOptions}
+							defaultValue={[reactSelectOptions[2], reactSelectOptions[3]]}
+							isMulti
+							placeholder="Multi select.."
+							name="reactselect"
+							className="rounded-lg"
+							classNamePrefix="react-select"
+							theme={(theme) => ({
+								...theme,
+								colors: {
+									...theme.colors,
+									primary25: `#3b82f6`
+								},
+							})}
+						/>
 					</Section>
 
 					<Section id="search-box" name="SearchBox">
@@ -1044,6 +1076,6 @@ export default function Third() {
 
 			<Footer />
 
-		</div>
+		</>
 	);
 }

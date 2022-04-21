@@ -71,3 +71,60 @@ body {
 	background-color: #000000d3 !important;
 	transition: background-color 0.2s ease-in;
 }
+
+html[class="dark"] { 
+	--bg-react-select-control: #171717;
+	--bg-react-select-option-hover: #262626;
+	--text-react-select-option: white;
+	--react-select-indicator: #d1d5db;
+	--react-select-border: #404040;
+}
+
+html { 
+	--bg-react-select-control: white;
+	--bg-react-select-option-hover: #f3f4f6;
+	--text-react-select-option: #171717;
+	--react-select-indicator: #737373;
+	--react-select-border: #e5e7eb;
+}
+
+.react-select__input:focus {
+	box-shadow: none !important;
+	color: var(--text-react-select-option) !important;
+}
+
+.react-select__control {
+	background-color: var(--bg-react-select-control) !important;
+	border-color: var(--react-select-border) !important ;
+	cursor: pointer !important;
+}
+
+.react-select__multi-value {
+	background-color: #3b82f6 !important;
+	border-radius: 4px !important;
+	margin-right: 4px !important;
+	color: white !important;
+}
+
+.react-select__multi-value__label {
+	color: white !important;
+}
+
+.react-select__indicator {
+	color: var(--react-select-indicator) !important;
+}
+
+.react-select__menu {
+	background-color: var(--bg-react-select-control) !important;
+	cursor: pointer !important;
+	color: var(--text-react-select-option);
+}
+
+.react-select__option:hover{
+	background-color: var(--bg-react-select-option-hover) !important;
+	cursor: pointer !important;
+}
+
+/* .react-select__option{
+	background-color: var(--bg-react-select-option-hover) !important;
+} */
