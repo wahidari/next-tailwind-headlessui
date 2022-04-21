@@ -28,8 +28,9 @@ import useToast from "@utils/useToast";
 import SearchBox from "@components/SearchBox";
 import Link from "next/link";
 import Select from 'react-select'
+import InputLabel from "@components/InputLabel";
 
-const reactSelectOptions = [
+const reactMultiSelectOptions = [
 	{ value: 'red', label: 'Red' },
 	{ value: 'blue', label: 'Blue' },
 	{ value: 'green', label: 'Green' },
@@ -184,6 +185,16 @@ export default function Third() {
 		setFilteredOption(people.filter((person) => person.nik.includes(e.target.value)))
 	}
 
+	const [multiSelect, setMultiSelect] = useState([reactMultiSelectOptions[0], reactMultiSelectOptions[1] ])
+	function handleMultiSelectChange(e) {
+		setMultiSelect(e)
+	}
+
+	const [unselectMultiSelect, setUnselectMultiSelect] = useState()
+	function handleUnselectMultiSelectChange(e) {
+		setUnselectMultiSelect(e)
+	}
+
 	return (
 		<>
 			<Head>
@@ -263,10 +274,14 @@ export default function Third() {
 					</Section>
 
 					<Section id="react-multi-select-search" name="React Multi Select Search">
+						<label htmlFor="reactselect" className="block font-medium text-sm text-neutral-800 dark:text-gray-200 mt-4 mb-2">
+							Unselected Multi Select
+						</label>
 						<Select
-							options={reactSelectOptions}
-							defaultValue={[reactSelectOptions[2], reactSelectOptions[3]]}
+							options={reactMultiSelectOptions}
 							isMulti
+							value={unselectMultiSelect}
+							onChange={handleUnselectMultiSelectChange}
 							placeholder="Multi select.."
 							name="reactselect"
 							className="rounded-lg"
@@ -279,6 +294,44 @@ export default function Third() {
 								},
 							})}
 						/>
+						<Text className="mt-2 !text-sm font-medium !text-red-500">
+							Multi Select : {" "}
+							{unselectMultiSelect ?
+								unselectMultiSelect.map((item, index) =>
+									<span key={index}>{item.value}, </span>
+								)
+								: ""}
+						</Text>
+
+						<label htmlFor="reactselect" className="block font-medium text-sm text-neutral-800 dark:text-gray-200 mt-4 mb-2">
+							Selected Multi Select
+						</label>
+						<Select
+							options={reactMultiSelectOptions}
+							value={multiSelect}
+							isMulti
+							placeholder="Multi select.."
+							name="reactselect"
+							className="rounded-lg"
+							onChange={handleMultiSelectChange}
+							classNamePrefix="react-select"
+							theme={(theme) => ({
+								...theme,
+								colors: {
+									...theme.colors,
+									primary25: `#3b82f6`
+								},
+							})}
+						/>
+
+						<Text className="mt-2 !text-sm font-medium !text-red-500">
+							Multi Select : {" "}
+							{multiSelect ?
+								multiSelect.map((item, index) =>
+									<span key={index}>{item.value}, </span>
+								)
+								: ""}
+						</Text>
 					</Section>
 
 					<Section id="search-box" name="SearchBox">
