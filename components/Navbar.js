@@ -42,6 +42,9 @@ export default function Navbar() {
                     <ActiveLink activeClassName="bg-gray-100" href="/headless">
                       <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Headless</a>
                     </ActiveLink>
+                    <ActiveLink activeClassName="bg-gray-100" href="/learn">
+                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Learn</a>
+                    </ActiveLink>
                     <ActiveLink activeClassName="bg-gray-100" href="/nav-bar">
                       <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Navbar</a>
                     </ActiveLink>
@@ -123,6 +126,9 @@ export default function Navbar() {
                 </ActiveLink>
                 <ActiveLink activeClassName="bg-gray-100" href="/headless">
                   <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Headless</a>
+                </ActiveLink>
+                <ActiveLink activeClassName="bg-gray-100" href="/learn">
+                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Learn</a>
                 </ActiveLink>
                 <ActiveLink activeClassName="bg-gray-100" href="/nav-bar">
                   <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Navbar</a>

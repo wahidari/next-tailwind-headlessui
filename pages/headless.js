@@ -28,7 +28,6 @@ import useToast from "@utils/useToast";
 import SearchBox from "@components/SearchBox";
 import Link from "next/link";
 import Select from 'react-select'
-import InputLabel from "@components/InputLabel";
 
 const reactMultiSelectOptions = [
 	{ value: 'red', label: 'Red' },
