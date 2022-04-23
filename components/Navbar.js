@@ -48,9 +48,42 @@ export default function Navbar() {
                     <ActiveLink activeClassName="bg-gray-100" href="/nav-bar">
                       <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Navbar</a>
                     </ActiveLink>
-                    <ActiveLink activeClassName="bg-gray-100" href="/slider">
-                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Slider</a>
-                    </ActiveLink>
+                    <Popover className="relative">
+                      {({ open }) => (
+                        <>
+                          <Popover.Button className="group flex space-x-2 items-center px-2 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">
+                            <span>Slider</span>
+                            <ChevronDownIcon
+                              className={`${open ? 'transform rotate-180 transition-transform duration-300' : 'transition-transform duration-300'} h-4 w-4`}
+                            />
+                          </Popover.Button>
+                          <Transition
+                            as={Fragment}
+                            enter="duration-200 ease-out"
+                            enterFrom="opacity-0 scale-95"
+                            enterTo="opacity-100 scale-100"
+                            leave="duration-100 ease-in"
+                            leaveFrom="opacity-100 scale-100"
+                            leaveTo="opacity-0 scale-95"
+                          >
+                            <Popover.Panel className="absolute bg-white shadow space-y-1 top-12 px-2 py-2 rounded w-40 z-10">
+                              <ActiveLink activeClassName="bg-gray-100" href="/slider">
+                                <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Slider</a>
+                              </ActiveLink>
+                              <ActiveLink activeClassName="bg-gray-100" href="/slider-swiper">
+                                <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Swiper.js</a>
+                              </ActiveLink>
+                              <ActiveLink activeClassName="bg-gray-100" href="/slider-react-slick">
+                                <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">React Slick</a>
+                              </ActiveLink>
+                              <ActiveLink activeClassName="bg-gray-100" href="/slider-splide">
+                                <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Splide.js</a>
+                              </ActiveLink>
+                            </Popover.Panel>
+                          </Transition>
+                        </>
+                      )}
+                    </Popover>
                     {!session &&
                       <ActiveLink activeClassName="bg-gray-100" href="/signin">
                         <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Signin</a>
@@ -133,9 +166,43 @@ export default function Navbar() {
                 <ActiveLink activeClassName="bg-gray-100" href="/nav-bar">
                   <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Navbar</a>
                 </ActiveLink>
-                <ActiveLink activeClassName="bg-gray-100" href="/slider">
-                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Slider</a>
-                </ActiveLink>
+                <Menu>
+                  {({ open }) => (
+                    <>
+                      <Menu.Button className="border-b-1 w-full px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">
+                        <div className="flex justify-between items-center">
+                          <span>Slider</span>
+                          <ChevronRightIcon
+                            className={`${open ? 'transform rotate-90 transition-transform duration-200' : 'transition-transform duration-200'
+                              } w-5 h-5`}
+                          />
+                        </div>
+                      </Menu.Button>
+                      <Menu.Items className="space-y-1 px-3">
+                        <Menu.Item>
+                          <ActiveLink activeClassName="bg-gray-100" href="/slider">
+                            <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Slider</a>
+                          </ActiveLink>
+                        </Menu.Item>
+                        <Menu.Item>
+                          <ActiveLink activeClassName="bg-gray-100" href="/slider-swiper">
+                            <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Swiper.js</a>
+                          </ActiveLink>
+                        </Menu.Item>
+                        <Menu.Item>
+                          <ActiveLink activeClassName="bg-gray-100" href="/slider-react-slick">
+                            <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">React Slick</a>
+                          </ActiveLink>
+                        </Menu.Item>
+                        <Menu.Item>
+                          <ActiveLink activeClassName="bg-gray-100" href="/slider-splide">
+                            <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Splide.js</a>
+                          </ActiveLink>
+                        </Menu.Item>
+                      </Menu.Items>
+                    </>
+                  )}
+                </Menu>
                 {!session && 
                   <ActiveLink activeClassName="bg-gray-100" href="/signin">
                     <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Signin</a>
