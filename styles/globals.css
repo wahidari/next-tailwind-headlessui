@@ -74,3 +74,26 @@ html {
 /* .react-select__option{
 	background-color: var(--bg-react-select-option-hover) !important;
 } */
+
+/* REACT SLICK CUSTOM NAV */
+.slick-custom-nav .slick-prev:before, .slick-custom-nav .slick-next:before {
+    content: '' !important;
+}
+
+.react-slick-custom-nav .slick-next::before, .react-slick-custom-nav .slick-prev::before {
+	color: #fff;
+	font-size: 24px;
+	/* opacity: .75; */
+}
+
+.react-slick-custom-nav .slick-next, .react-slick-custom-nav .slick-prev {
+	width: 26px;
+	height: 26px;
+	background: #171717de;
+	padding-top: 3px;
+	border-radius: 50%;
+}
+.react-slick-custom-nav .slick-next:hover, .react-slick-custom-nav .slick-prev:hover {
+	transition-duration: all 0.4s;
+	background: #171717;
+}

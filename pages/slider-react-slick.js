@@ -1,4 +1,4 @@
-import { MoonIcon, SunIcon } from '@heroicons/react/outline';
+import { ArrowLeftIcon, ArrowRightIcon, MoonIcon, SunIcon } from '@heroicons/react/outline';
 import { useContext } from "react";
 import { GlobalContext } from "@utils/GlobalContext";
 import BackToTop from '@components/BackToTop';
@@ -14,9 +14,13 @@ function SampleNextArrow(props) {
   return (
     <div
       className={className}
-      style={{ ...style, display: "block", background: "red" }}
+      // style={{ ...style, display: "block"}}
       onClick={onClick}
-    />
+    >
+      <div className="rounded-full -ml-1 w-6 h-6 flex justify-center items-center cursor-pointer bg-sky-500 hover:bg-sky-600 text-gray-200 hover:text-gray-100 transition-all duration-200">
+        <ArrowRightIcon className="w-4 h-4" />
+      </div>
+    </div>
   );
 }
 
@@ -25,9 +29,13 @@ function SamplePrevArrow(props) {
   return (
     <div
       className={className}
-      style={{ ...style, display: "block", background: "green" }}
+      // style={{ ...style, display: "block"}}
       onClick={onClick}
-    />
+    >
+      <div className="rounded-full ml-1 w-6 h-6 flex justify-center items-center cursor-pointer bg-sky-500 hover:bg-sky-600 text-gray-200 hover:text-gray-100 transition-all duration-200">
+        <ArrowLeftIcon className="w-4 h-4" />
+      </div>
+    </div>
   );
 }
 
@@ -126,6 +134,13 @@ export default function SliderSlick() {
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />
+  };
+
+  const customNav = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1
   };
 
   return (
@@ -341,7 +356,45 @@ export default function SliderSlick() {
           <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 mt-6 text-gray-900 dark:text-white">
             Previous and Next methods
           </h1>
-          <Slider {...arrow}>
+          <Slider {...arrow} className="slick-custom-nav">
+            <div className="px-3">
+              <div className="bg-purple-500 h-60 text-center flex justify-center items-center rounded-lg">
+                <div>
+                  <h1 className="text-white font-medium text-2xl">Text 1</h1>
+                  <h2 className="text-white text-lg">Text 1</h2>
+                </div>
+              </div>
+            </div>
+            <div className="px-3">
+              <div className="bg-emerald-500 h-60 text-center flex justify-center items-center rounded-lg">
+                <div>
+                  <h1 className="text-white font-medium text-2xl">Text 2</h1>
+                  <h2 className="text-white text-lg">Text 2</h2>
+                </div>
+              </div>
+            </div>
+            <div className="px-3">
+              <div className="bg-orange-500 h-60 text-center flex justify-center items-center rounded-lg">
+                <div>
+                  <h1 className="text-white font-medium text-2xl">Text 3</h1>
+                  <h2 className="text-white text-lg">Text 3</h2>
+                </div>
+              </div>
+            </div>
+            <div className="px-3">
+              <div className="bg-red-500 h-60 text-center flex justify-center items-center rounded-lg">
+                <div>
+                  <h1 className="text-white font-medium text-2xl">Text 4</h1>
+                  <h2 className="text-white text-lg">Text 4</h2>
+                </div>
+              </div>
+            </div>
+          </Slider>
+
+          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 mt-6 text-gray-900 dark:text-white">
+            Custom Nav Button
+          </h1>
+          <Slider {...customNav} className="react-slick-custom-nav">
             <div className="px-3">
               <div className="bg-purple-500 h-60 text-center flex justify-center items-center rounded-lg">
                 <div>
