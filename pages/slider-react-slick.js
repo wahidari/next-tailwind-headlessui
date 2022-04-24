@@ -4,9 +4,30 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "red" }}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "green" }}
+      onClick={onClick}
+    />
+  );
+}
+
 export default function SliderSlick() {
   const simple = {
-    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -78,6 +99,26 @@ export default function SliderSlick() {
         }
       }
     ]
+  };
+
+  const autoplay = {
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 5000,
+    // autoplay to start sliding 
+    autoplaySpeed: 1000,
+    cssEase: "linear"
+  };
+
+  const arrow = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />
   };
 
   return (
@@ -217,6 +258,82 @@ export default function SliderSlick() {
           Center Slider
         </h1>
         <Slider {...center}>
+          <div className="px-3">
+            <div className="bg-purple-500 h-60 text-center flex justify-center items-center rounded-lg">
+              <div>
+                <h1 className="text-white font-medium text-2xl">Text 1</h1>
+                <h2 className="text-white text-lg">Text 1</h2>
+              </div>
+            </div>
+          </div>
+          <div className="px-3">
+            <div className="bg-emerald-500 h-60 text-center flex justify-center items-center rounded-lg">
+              <div>
+                <h1 className="text-white font-medium text-2xl">Text 2</h1>
+                <h2 className="text-white text-lg">Text 2</h2>
+              </div>
+            </div>
+          </div>
+          <div className="px-3">
+            <div className="bg-orange-500 h-60 text-center flex justify-center items-center rounded-lg">
+              <div>
+                <h1 className="text-white font-medium text-2xl">Text 3</h1>
+                <h2 className="text-white text-lg">Text 3</h2>
+              </div>
+            </div>
+          </div>
+          <div className="px-3">
+            <div className="bg-red-500 h-60 text-center flex justify-center items-center rounded-lg">
+              <div>
+                <h1 className="text-white font-medium text-2xl">Text 4</h1>
+                <h2 className="text-white text-lg">Text 4</h2>
+              </div>
+            </div>
+          </div>
+        </Slider>
+
+        <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 mt-6 text-gray-900">
+          Auto Play
+        </h1>
+        <Slider {...autoplay}>
+          <div className="px-3">
+            <div className="bg-purple-500 h-60 text-center flex justify-center items-center rounded-lg">
+              <div>
+                <h1 className="text-white font-medium text-2xl">Text 1</h1>
+                <h2 className="text-white text-lg">Text 1</h2>
+              </div>
+            </div>
+          </div>
+          <div className="px-3">
+            <div className="bg-emerald-500 h-60 text-center flex justify-center items-center rounded-lg">
+              <div>
+                <h1 className="text-white font-medium text-2xl">Text 2</h1>
+                <h2 className="text-white text-lg">Text 2</h2>
+              </div>
+            </div>
+          </div>
+          <div className="px-3">
+            <div className="bg-orange-500 h-60 text-center flex justify-center items-center rounded-lg">
+              <div>
+                <h1 className="text-white font-medium text-2xl">Text 3</h1>
+                <h2 className="text-white text-lg">Text 3</h2>
+              </div>
+            </div>
+          </div>
+          <div className="px-3">
+            <div className="bg-red-500 h-60 text-center flex justify-center items-center rounded-lg">
+              <div>
+                <h1 className="text-white font-medium text-2xl">Text 4</h1>
+                <h2 className="text-white text-lg">Text 4</h2>
+              </div>
+            </div>
+          </div>
+        </Slider>
+
+        <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 mt-6 text-gray-900">
+          Previous and Next methods
+        </h1>
+        <Slider {...arrow}>
           <div className="px-3">
             <div className="bg-purple-500 h-60 text-center flex justify-center items-center rounded-lg">
               <div>
