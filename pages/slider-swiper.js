@@ -489,6 +489,63 @@ export default function Slider() {
             </SwiperSlide>
           </Swiper>
 
+          <h1 className="sm:text-3xl text-2xl font-medium title-font my-2 text-gray-900 dark:text-white">
+            Swiper continous play
+          </h1>
+          <Swiper className='mb-5 swiper-continous-play'
+            modules={[Autoplay, A11y]}
+            spaceBetween={16}
+            slidesPerView={3}
+            loop={true}
+            autoplay={{ delay: 0 }}
+            speed={3000}
+            breakpoints={{
+              "320": {
+                "slidesPerView": 1,
+                "spaceBetween": 16
+              },
+              "640": {
+                "slidesPerView": 3,
+                "spaceBetween": 16
+              }
+            }}
+          >
+            <div className="swiper-wrapper">
+              <SwiperSlide className="sm:w-[350px] md:w-[400px] lg:w-[770px] shrink-0">
+                <div className="bg-purple-500 h-60 text-center flex justify-center items-center rounded-lg">
+                  <div>
+                    <h1 className="text-white font-medium text-2xl">Text 1</h1>
+                    <h2 className="text-white text-lg">Text 1</h2>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="sm:w-[350px] md:w-[400px] lg:w-[770px] shrink-0">
+                <div className="bg-emerald-500 h-60 text-center flex justify-center items-center rounded-lg">
+                  <div>
+                    <h1 className="text-white font-medium text-2xl">Text 2</h1>
+                    <h2 className="text-white text-lg">Text 2</h2>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="sm:w-[350px] md:w-[400px] lg:w-[770px] shrink-0">
+                <div className="bg-orange-500 h-60 text-center flex justify-center items-center rounded-lg">
+                  <div>
+                    <h1 className="text-white font-medium text-2xl">Text 3</h1>
+                    <h2 className="text-white text-lg">Text 3</h2>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="sm:w-[350px] md:w-[400px] lg:w-[770px] shrink-0">
+                <div className="bg-red-500 h-60 text-center flex justify-center items-center rounded-lg">
+                  <div>
+                    <h1 className="text-white font-medium text-2xl">Text 4</h1>
+                    <h2 className="text-white text-lg">Text 4</h2>
+                  </div>
+                </div>
+              </SwiperSlide>
+            </div>
+          </Swiper>
+
           <div className="!py-2 px-2 rounded mx-4 bg-opacity-20 dark:bg-opacity-40 bg-gray-100 dark:bg-neutral-800 backdrop-filter backdrop-blur fixed bottom-20 right-3 md:right-10 z-10">
             {darkMode ?
               <button onClick={() => setDarkMode(!darkMode)} aria-label="Change Theme" className="w-8 h-8 p-1 transition-all ease-in duration-300 bg-neutral-800 hover:bg-neutral-700 text-white rounded-full">
