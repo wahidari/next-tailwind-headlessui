@@ -497,8 +497,9 @@ export default function Slider() {
             spaceBetween={16}
             slidesPerView={3}
             loop={true}
+            allowTouchMove={false}
             autoplay={{ delay: 0 }}
-            speed={3000}
+            speed={4000}
             breakpoints={{
               "320": {
                 "slidesPerView": 1,
