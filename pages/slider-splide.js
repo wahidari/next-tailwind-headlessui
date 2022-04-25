@@ -96,7 +96,11 @@ export default function Slider() {
               drag: false,
               // interval: 0,
               // speed: 20000
+              autoScroll: {
+                speed: 5,
+              },
             }}
+            extensions={{AutoScroll}}
           >
             <SplideSlide>
               <div className="bg-purple-500 h-60 text-center flex justify-center items-center rounded-lg">
