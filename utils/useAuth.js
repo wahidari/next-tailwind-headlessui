@@ -8,7 +8,7 @@ export const AuthContext = createContext();
 export function AuthProvider({ children }) {
   const { data: session, status } = useSession()
   const router = useRouter()
-  const protectedRoute = ["dashboard", "protected", "secret"]
+  const protectedRoute = ["admin", "protected", "secret"]
   const [userID, setUserID] = useState();
   const [userName, setUserName] = useState();
   const [userEmail, setUserEmail] = useState();

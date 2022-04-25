@@ -36,18 +36,42 @@ export default function Navbar() {
                     <ActiveLink activeClassName="bg-gray-100" href="/">
                       <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Home</a>
                     </ActiveLink>
-                    <ActiveLink activeClassName="bg-gray-100" href="/components">
-                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Components</a>
-                    </ActiveLink>
-                    <ActiveLink activeClassName="bg-gray-100" href="/headless">
-                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Headless</a>
-                    </ActiveLink>
-                    <ActiveLink activeClassName="bg-gray-100" href="/learn">
-                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Learn</a>
-                    </ActiveLink>
-                    <ActiveLink activeClassName="bg-gray-100" href="/nav-bar">
-                      <a className="px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Navbar</a>
-                    </ActiveLink>
+                    <Popover className="relative">
+                      {({ open }) => (
+                        <>
+                          <Popover.Button className="group flex space-x-2 items-center px-2 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">
+                            <span>Components</span>
+                            <ChevronDownIcon
+                              className={`${open ? 'transform rotate-180 transition-transform duration-300' : 'transition-transform duration-300'} h-4 w-4`}
+                            />
+                          </Popover.Button>
+                          <Transition
+                            as={Fragment}
+                            enter="duration-200 ease-out"
+                            enterFrom="opacity-0 scale-95"
+                            enterTo="opacity-100 scale-100"
+                            leave="duration-100 ease-in"
+                            leaveFrom="opacity-100 scale-100"
+                            leaveTo="opacity-0 scale-95"
+                          >
+                            <Popover.Panel className="absolute bg-white shadow space-y-1 top-12 px-2 py-2 rounded w-40 z-10">
+                              <ActiveLink activeClassName="bg-gray-100" href="/components">
+                                <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Components</a>
+                              </ActiveLink>
+                              <ActiveLink activeClassName="bg-gray-100" href="/headless">
+                                <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Headless</a>
+                              </ActiveLink>
+                              <ActiveLink activeClassName="bg-gray-100" href="/learn">
+                                <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Learn</a>
+                              </ActiveLink>
+                              <ActiveLink activeClassName="bg-gray-100" href="/nav-bar">
+                                <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Navbar</a>
+                              </ActiveLink>
+                            </Popover.Panel>
+                          </Transition>
+                        </>
+                      )}
+                    </Popover>
                     <Popover className="relative">
                       {({ open }) => (
                         <>
@@ -116,10 +140,10 @@ export default function Navbar() {
                             leaveTo="opacity-0 scale-95"
                           >
                             <Popover.Panel className="absolute bg-white shadow space-y-1 top-12 px-2 py-2 rounded w-40 z-10">
-                              <ActiveLink activeClassName="bg-gray-100" href="/dashboard/third">
+                              <ActiveLink activeClassName="bg-gray-100" href="/admin/third">
                                 <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Third</a>
                               </ActiveLink>
-                              <ActiveLink activeClassName="bg-gray-100" href="/dashboard/fourth">
+                              <ActiveLink activeClassName="bg-gray-100" href="/admin/fourth">
                                 <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Fourth</a>
                               </ActiveLink>
                             </Popover.Panel>
@@ -154,18 +178,43 @@ export default function Navbar() {
                 <ActiveLink activeClassName="bg-gray-100" href="/">
                   <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Home</a>
                 </ActiveLink>
-                <ActiveLink activeClassName="bg-gray-100" href="/components">
-                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Components</a>
-                </ActiveLink>
-                <ActiveLink activeClassName="bg-gray-100" href="/headless">
-                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Headless</a>
-                </ActiveLink>
-                <ActiveLink activeClassName="bg-gray-100" href="/learn">
-                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Learn</a>
-                </ActiveLink>
-                <ActiveLink activeClassName="bg-gray-100" href="/nav-bar">
-                  <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Navbar</a>
-                </ActiveLink>
+                <Menu>
+                  {({ open }) => (
+                    <>
+                      <Menu.Button className="border-b-1 w-full px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">
+                        <div className="flex justify-between items-center">
+                          <span>Components</span>
+                          <ChevronRightIcon
+                            className={`${open ? 'transform rotate-90 transition-transform duration-200' : 'transition-transform duration-200'
+                              } w-5 h-5`}
+                          />
+                        </div>
+                      </Menu.Button>
+                      <Menu.Items className="space-y-1 px-3">
+                        <Menu.Item>
+                          <ActiveLink activeClassName="bg-gray-100" href="/components">
+                            <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Components</a>
+                          </ActiveLink>
+                        </Menu.Item>
+                        <Menu.Item>
+                          <ActiveLink activeClassName="bg-gray-100" href="/headless">
+                            <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Headless</a>
+                          </ActiveLink>
+                        </Menu.Item>
+                        <Menu.Item>
+                          <ActiveLink activeClassName="bg-gray-100" href="/learn">
+                            <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Learn</a>
+                          </ActiveLink>
+                        </Menu.Item>
+                        <Menu.Item>
+                          <ActiveLink activeClassName="bg-gray-100" href="/nav-bar">
+                            <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Navbar</a>
+                          </ActiveLink>
+                        </Menu.Item>
+                      </Menu.Items>
+                    </>
+                  )}
+                </Menu>
                 <Menu>
                   {({ open }) => (
                     <>
@@ -230,12 +279,12 @@ export default function Navbar() {
                       </Menu.Button>
                       <Menu.Items className="space-y-1 px-3">
                         <Menu.Item>
-                          <ActiveLink activeClassName="bg-gray-100" href="/dashboard/third">
+                          <ActiveLink activeClassName="bg-gray-100" href="/admin/third">
                             <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Third</a>
                           </ActiveLink>
                         </Menu.Item>
                         <Menu.Item>
-                          <ActiveLink activeClassName="bg-gray-100" href="/dashboard/fourth">
+                          <ActiveLink activeClassName="bg-gray-100" href="/admin/fourth">
                             <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Fourth</a>
                           </ActiveLink>
                         </Menu.Item>
