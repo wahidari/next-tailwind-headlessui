@@ -46,7 +46,7 @@ export default function Slider() {
               autoplay: true,
               rewind: true,
               gap: '1rem',
-              drag: 'free',
+              drag: true,
             }}
           >
             <SplideSlide>
@@ -83,21 +83,21 @@ export default function Slider() {
             </SplideSlide>
           </Splide>
 
+          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 mt-6 text-gray-900 dark:text-white">
+            Splide Auto Scroll
+          </h1>
           <Splide aria-label="My Favorite Images"
             options={{
               type: 'loop',
-              autoplay: true,
-              rewind: true,
+              drag: false,
+              focus: 'center',
               gap: '1rem',
               pagination: false,
               arrows: false,
-              focus: 'center',
-              perPage: 2,
-              drag: false,
-              // interval: 0,
-              // speed: 20000
+              perPage: 3,
               autoScroll: {
-                speed: 5,
+                speed: 2,
+                pauseOnHover: false
               },
             }}
             extensions={{AutoScroll}}
@@ -136,6 +136,9 @@ export default function Slider() {
             </SplideSlide>
           </Splide>
 
+          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 mt-6 text-gray-900 dark:text-white">
+            Splide Custom Nav
+          </h1>
           <Splide aria-label="My Favorite Images"
             options={{
               type: 'loop',
