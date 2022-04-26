@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Heading from "@components/Heading";
+
 export default function Section({ id, name = "", className, children}) {
   return (
     <section id={id} className={`${className ? className + "": ""} pt-10`}>
