@@ -147,20 +147,18 @@ export default function Index() {
                         />
                       </div>
                     </Menu.Button>
-                    <Menu.Items className="px-3">
+                    <Menu.Items className="px-3 gap-y-1 flex flex-col">
                       <Menu.Item>
-                        <ActiveLink activeClassName="bg-gray-100" href="/tes">
-                          <SidebarNavLink>
-                            Dashboard Top
-                          </SidebarNavLink>
+                        <ActiveLink activeClassName="bg-gray-100" href="/dashboard">
+                          <a className="px-2 block py-1 rounded-md text-gray-600 hover:bg-gray-100 cursor-pointer">
+                            1
+                          </a>
                         </ActiveLink>
                       </Menu.Item>
                       <Menu.Item>
-                        <ActiveLink activeClassName="bg-gray-100" href="/tes">
-                          <SidebarNavLink>
-                            Dashboard Top
+                          <SidebarNavLink href="/">
+                            2
                           </SidebarNavLink>
-                        </ActiveLink>
                       </Menu.Item>
                     </Menu.Items>
                   </>
@@ -168,76 +166,40 @@ export default function Index() {
               </Menu>
 
               <ActiveLink activeClassName="bg-gray-100" href="/dashboard">
-                <a className="border-b-1 px-2 block py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">Dashboard Top</a>
+                <a className="px-2 block py-1 rounded-md text-gray-600 hover:bg-gray-100 cursor-pointer">
+                  A
+                </a>
               </ActiveLink>
 
-              <ActiveLink activeClassName="bg-gray-100" href="/tes">
-                <a className="border-b-1 px-2 block py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">Tes</a>
-              </ActiveLink>
+              <SidebarNavLink href="/">
+                B
+              </SidebarNavLink>
+              <SidebarNavLink href="/dashboard">
+                C
+              </SidebarNavLink>
+              <SidebarNavLink href="/">
+                D
+              </SidebarNavLink>
+              <SidebarNavLink href="/dashboard">
+                E
+              </SidebarNavLink>
+              <SidebarNavLink href="/">
+                F
+              </SidebarNavLink>
 
-              <ActiveLink activeClassName="bg-gray-100" href="/tes">
-                <a className="border-b-1 px-2 block py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">Tes</a>
-              </ActiveLink>
+              {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(item => {
+                return (
+                  item % 2 == 0 ?
+                    <SidebarNavLink key={item + 1} href="/dashboard">
+                      Link #{item}
+                    </SidebarNavLink>
+                    :
+                    <SidebarNavLink key={item + 1} href="/">
+                      Link #{item}
+                    </SidebarNavLink>
+                )
+              })}
 
-              <ActiveLink activeClassName="bg-gray-100" href="/dashboard">
-                <a className="border-b-1 px-2 block py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">Dashboard</a>
-              </ActiveLink>
-
-              <ActiveLink activeClassName="bg-gray-100" href="/tes">
-                <a className="border-b-1 px-2 block py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">Tes</a>
-              </ActiveLink>
-
-              <ActiveLink activeClassName="bg-gray-100" href="/tes">
-                <a className="border-b-1 px-2 block py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">Tes</a>
-              </ActiveLink>
-
-              <ActiveLink activeClassName="bg-gray-100" href="/dashboard">
-                <a className="border-b-1 px-2 block py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">Dashboard</a>
-              </ActiveLink>
-
-              <ActiveLink activeClassName="bg-gray-100" href="/tes">
-                <a className="border-b-1 px-2 block py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">Tes</a>
-              </ActiveLink>
-
-              <ActiveLink activeClassName="bg-gray-100" href="/tes">
-                <a className="border-b-1 px-2 block py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">Tes</a>
-              </ActiveLink>
-
-              <ActiveLink activeClassName="bg-gray-100" href="/dashboard">
-                <a className="border-b-1 px-2 block py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">Dashboard</a>
-              </ActiveLink>
-
-              <ActiveLink activeClassName="bg-gray-100" href="/tes">
-                <a className="border-b-1 px-2 block py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">Tes</a>
-              </ActiveLink>
-
-              <ActiveLink activeClassName="bg-gray-100" href="/tes">
-                <a className="border-b-1 px-2 block py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">Tes</a>
-              </ActiveLink>
-
-              <ActiveLink activeClassName="bg-gray-100" href="/dashboard">
-                <a className="border-b-1 px-2 block py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">Dashboard</a>
-              </ActiveLink>
-
-              <ActiveLink activeClassName="bg-gray-100" href="/tes">
-                <a className="border-b-1 px-2 block py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">Tes</a>
-              </ActiveLink>
-
-              <ActiveLink activeClassName="bg-gray-100" href="/tes">
-                <a className="border-b-1 px-2 block py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">Tes</a>
-              </ActiveLink>
-
-              <ActiveLink activeClassName="bg-gray-100" href="/dashboard">
-                <a className="border-b-1 px-2 block py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">Dashboard</a>
-              </ActiveLink>
-
-              <ActiveLink activeClassName="bg-gray-100" href="/tes">
-                <a className="border-b-1 px-2 block py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">Tes</a>
-              </ActiveLink>
-
-              <ActiveLink activeClassName="bg-gray-100" href="/tes">
-                <a className="border-b-1 px-2 block py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">Tes</a>
-              </ActiveLink>
             </div>
           </aside>
 
@@ -250,7 +212,7 @@ export default function Index() {
             </div>
           </main>
         </div>
-      </div>
+      </div >
     </>
   )
 }

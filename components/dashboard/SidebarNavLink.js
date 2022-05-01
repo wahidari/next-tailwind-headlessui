@@ -1,7 +1,12 @@
-export default function SidebarNavLink({ children }) {
+import ActiveLink from "@components/ActiveLink";
+
+export default function SidebarNavLink({ href = "", children }) {
+  console.log(href)
   return (
-    <a className="px-2 block py-1 rounded-md text-gray-600 hover:bg-gray-100 cursor-pointer">
-      {children}
-    </a>
+    <ActiveLink activeClassName="bg-gray-100" href={href}>
+      <a className="px-2 block py-1 rounded-md text-gray-600 hover:bg-gray-100 cursor-pointer">
+        {children}
+      </a>
+    </ActiveLink>
   )
 }
