@@ -169,7 +169,7 @@ export default function Index() {
               <Disclosure>
                 {({ open }) => (
                   <>
-                    <Disclosure.Button className="flex justify-between w-full px-2 py-1 text-sm items-center font-medium text-left hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 rounded transition-all duration-200">
+                    <Disclosure.Button className="flex justify-between w-full px-2 py-1 text-sm items-center font-medium text-left hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 rounded transition-all">
                       <span>Accordion Disclosure</span>
                       <ChevronRightIcon
                         className={`
