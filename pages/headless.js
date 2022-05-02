@@ -213,59 +213,59 @@ export default function Third() {
 					<Section id="components" name="Headless Components TOC">
 						<div className="grid sm:grid-cols-2 md:grid-cols-3">
 							<div>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#react-multi-select-search">React Multi Select Search</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#search-box">Search Box</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#combo-box">Combo Box</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#select-box">Select Box</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#list-box">List Box</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#radio-box">Radio Box</Link>
 								</span>
 							</div>
 							<div>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#radio-group">Radio Group</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#disclosure">Disclosure</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#menu">Menu</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#modal">Modal</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#simple-tab">Simple Tab</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#tab">Tab</Link>
 								</span>
 							</div>
 							<div>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#tab-style-a">Tab Style A</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#tab-style-b">Tab Style B</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#accordion">Accordion</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#toast">Toast</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#dark-mode">Dark Mode</Link>
 								</span>
 							</div>
@@ -362,7 +362,7 @@ export default function Third() {
 							<div className="relative mt-2">
 								<div className="relative w-full text-left rounded cursor-default text-sm overflow-hidden border border-gray-200 dark:border-neutral-700 ">
 									<Combobox.Input
-										className="w-full border-none py-2 text-sm text-gray-900 dark:text-gray-200 bg-white dark:bg-neutral-900 hover:bg-gray-100 dark:hover:bg-neutral-800 focus:bg-gray-100 dark:focus:bg-neutral-800 transition-all duration-200"
+										className="w-full border-none py-2 text-sm text-gray-900 dark:text-gray-200 bg-white dark:bg-neutral-900 hover:bg-gray-100 dark:hover:bg-neutral-800 focus:bg-gray-100 dark:focus:bg-neutral-800 transition-all"
 										displayValue={(option) => option.nik || ""}
 										placeholder="Search By Id"
 										type="number"
@@ -417,7 +417,7 @@ export default function Third() {
 							<div className="relative mt-2">
 								<div className="relative w-full text-left rounded cursor-default text-sm overflow-hidden border border-gray-200 dark:border-neutral-700 ">
 									<Combobox.Input
-										className="w-full border-none py-2 text-sm text-gray-900 dark:text-gray-200 bg-white dark:bg-neutral-900 hover:bg-gray-100 dark:hover:bg-neutral-800 focus:bg-gray-100 dark:focus:bg-neutral-800 transition-all duration-200"
+										className="w-full border-none py-2 text-sm text-gray-900 dark:text-gray-200 bg-white dark:bg-neutral-900 hover:bg-gray-100 dark:hover:bg-neutral-800 focus:bg-gray-100 dark:focus:bg-neutral-800 transition-all"
 										displayValue={(option) => option.name || ""}
 										placeholder="Search By Name"
 										onChange={handleChangeComboBox}
@@ -487,7 +487,7 @@ export default function Third() {
 					<Section id="list-box" name="Listbox">
 						<Listbox value={selected} onChange={handleSelectChange}>
 							<div className="relative mt-1">
-								<Listbox.Button className="relative w-full py-2 px-3 text-left bg-white dark:bg-neutral-900 dark:text-gray-200 border border-gray-200 dark:border-neutral-700 hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all duration-200 rounded cursor-pointer text-sm">
+								<Listbox.Button className="relative w-full py-2 px-3 text-left bg-white dark:bg-neutral-900 dark:text-gray-200 border border-gray-200 dark:border-neutral-700 hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all rounded cursor-pointer text-sm">
 									<span className="block truncate">{selected ? selected.name : "Choose Select"}</span>
 									<span className="absolute inset-y-0 right-0 flex items-center pr-2">
 										<SelectorIcon className="w-5 h-5 text-gray-500 dark:text-gray-200" aria-hidden="true" />
@@ -518,7 +518,7 @@ export default function Third() {
 						<Listbox value={selected} onChange={handleSelectChange}>
 							{({ open }) => (
 								<div className="relative mt-4">
-									<Listbox.Button className="relative w-full py-2 px-3 text-left bg-white dark:bg-neutral-900 dark:text-gray-200 border border-gray-200 dark:border-neutral-700 hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all duration-200 rounded cursor-pointer text-sm">
+									<Listbox.Button className="relative w-full py-2 px-3 text-left bg-white dark:bg-neutral-900 dark:text-gray-200 border border-gray-200 dark:border-neutral-700 hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all rounded cursor-pointer text-sm">
 										<span className="block truncate">{selected ? selected.name : "Choose Select"}</span>
 										<span className="absolute inset-y-0 right-0 flex items-center pr-2">
 											<ChevronDownIcon className={`${open ? 'transform rotate-180 duration-300' : 'transform rotate-0 duration-200'} w-5 h-5 text-gray-500 dark:text-gray-200`} aria-hidden="true" />
@@ -654,7 +654,7 @@ export default function Third() {
 							{({ open }) => (
 								<>
 									<h3 className="flow-root">
-										<Disclosure.Button className="py-3 px-2 bg-gray-100 dark:bg-neutral-800 hover:bg-gray-200 dark:hover:bg-neutral-700 w-full flex items-center justify-between group text-gray-600 dark:text-neutral-300 transition-all duration-200 rounded">
+										<Disclosure.Button className="py-3 px-2 bg-gray-100 dark:bg-neutral-800 hover:bg-gray-200 dark:hover:bg-neutral-700 w-full flex items-center justify-between group text-gray-600 dark:text-neutral-300 transition-all rounded">
 											<span className="font-medium">Color</span>
 											<span className="ml-6 flex items-center">
 												{open ? (
@@ -689,7 +689,7 @@ export default function Third() {
 							<Disclosure>
 								{({ open }) => (
 									<>
-										<Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-blue-600 bg-gray-100 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 rounded-lg transition-all duration-200">
+										<Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-blue-600 bg-gray-100 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 rounded-lg transition-all">
 											<span>What is your refund policy?</span>
 											<ChevronUpIcon
 												className={`${open ? 'transform rotate-180' : ''
@@ -706,7 +706,7 @@ export default function Third() {
 							<Disclosure as="div" className="mt-2">
 								{({ open }) => (
 									<>
-										<Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-blue-600 bg-gray-100 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 rounded-lg transition-all duration-200">
+										<Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-blue-600 bg-gray-100 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 rounded-lg transition-all">
 											<span>Do you offer technical support?</span>
 											<ChevronUpIcon
 												className={`${open ? 'transform rotate-180' : ''
@@ -726,7 +726,7 @@ export default function Third() {
 						<Menu as="div" className="relative inline-block text-left mr-4">
 							{({ open }) => (
 								<>
-									<Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 dark:border-neutral-700 shadow-sm px-4 py-2 bg-white dark:bg-neutral-900 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all duration-300">
+									<Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 dark:border-neutral-700 shadow-sm px-4 py-2 bg-white dark:bg-neutral-900 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all">
 										Options
 										<ChevronDownIcon className={
 											`-mr-1 ml-2 w-5 h-5 text-gray-500 dark:text-gray-200 
@@ -761,7 +761,7 @@ export default function Third() {
 						</Menu>
 
 						<Menu as="div" className="relative inline-block text-left">
-							<Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 dark:border-neutral-700 shadow-sm px-4 py-2 bg-white dark:bg-neutral-900 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all duration-300">
+							<Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 dark:border-neutral-700 shadow-sm px-4 py-2 bg-white dark:bg-neutral-900 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all">
 								Options
 								<ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
 							</Menu.Button>
@@ -797,17 +797,17 @@ export default function Third() {
 								onClick={() => setDarkMode(!darkMode)}
 								className="transition-all cursor-pointer w-12 h-7 dark:bg-blue-500 bg-neutral-200 rounded-full relative"
 							>
-								<div className="h-5 w-5 bg-white rounded-full absolute top-1 transition-all duration-300 dark:left-6 left-1"></div>
+								<div className="h-5 w-5 bg-white rounded-full absolute top-1 transition-all dark:left-6 left-1"></div>
 							</div>
 
 							<button onClick={() => setDarkMode(!darkMode)} aria-label="Change Theme" className="relative flex items-center py-0.5 px-1 bg-blue-500 rounded-full h-7">
-								<span className="absolute w-5 h-5 rounded-full bg-white dark:left-[1.7rem] left-1 transition-all duration-300"></span>
+								<span className="absolute w-5 h-5 rounded-full bg-white dark:left-[1.7rem] left-1 transition-all"></span>
 								<span aria-hidden={true}>☀️</span>
 								<span aria-hidden={true}>🌙</span>
 							</button>
 
 							<button onClick={() => setDarkMode(!darkMode)} aria-label="Change Theme" className={`${darkMode ? "bg-neutral-800" : "bg-gray-200"} relative flex gap-1 items-center px-1 py-0.5 rounded-full h-7`}>
-								<span className="absolute w-5 h-5 rounded-full bg-blue-500 dark:left-[1.6rem] left-1.5 transition-all duration-300"></span>
+								<span className="absolute w-5 h-5 rounded-full bg-blue-500 dark:left-[1.6rem] left-1.5 transition-all"></span>
 								<span aria-hidden={true}><SunIcon className={`${darkMode ? "text-white bg-white" : ""}h-5 w-5`} /></span>
 								<span aria-hidden={true}><MoonIcon className="h-5 w-5" /></span>
 							</button>
@@ -959,7 +959,7 @@ export default function Third() {
 							<Tab.List className="w-full max-w-sm flex p-1 space-x-1 bg-gray-100 dark:bg-neutral-800 rounded-xl font-medium">
 								<Tab className={({ selected }) =>
 									classNames(
-										'w-full py-2 text-base font-medium text-blue-500 rounded-xl transition-all duration-300',
+										'w-full py-2 text-base font-medium text-blue-500 rounded-xl transition-all',
 										selected ? 'bg-blue-500	!text-white' :
 											'text-blue-500 hover:bg-gray-200 dark:hover:bg-neutral-700 hover:text-blue-600 dark:hover:text-blue-600'
 									)
@@ -967,7 +967,7 @@ export default function Third() {
 								> Tab A </Tab>
 								<Tab className={({ selected }) =>
 									classNames(
-										'w-full py-2 text-base font-medium text-blue-500 rounded-xl transition-all duration-300',
+										'w-full py-2 text-base font-medium text-blue-500 rounded-xl transition-all',
 										selected ? 'bg-blue-500	!text-white' :
 											'text-blue-500 hover:bg-gray-200 dark:hover:bg-neutral-700 hover:text-blue-600 dark:hover:text-blue-600'
 									)
@@ -1003,7 +1003,7 @@ export default function Third() {
 								<div>
 									<Tab className={({ selected }) =>
 										classNames(
-											'w-full mr-4 py-2 text-base font-medium -mb-[0.06rem] transition-all duration-300',
+											'w-full mr-4 py-2 text-base font-medium -mb-[0.06rem] transition-all',
 											'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200',
 											'border-b-2 border-transparent hover:border-gray-500 dark:hover:border-gray-400',
 											selected ? '!text-blue-500 border-b-2 !border-blue-500' : ''
@@ -1014,7 +1014,7 @@ export default function Third() {
 									</Tab>
 									<Tab className={({ selected }) =>
 										classNames(
-											'w-full mr-4 py-2 text-base font-medium -mb-[0.06rem] transition-all duration-300',
+											'w-full mr-4 py-2 text-base font-medium -mb-[0.06rem] transition-all',
 											'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200',
 											'border-b-2 border-transparent hover:border-gray-500 dark:hover:border-gray-400',
 											selected ? '!text-blue-500 border-b-2 !border-blue-500' : ''
@@ -1042,7 +1042,7 @@ export default function Third() {
 								<div className="flex gap-x-6">
 									<Tab className={({ selected }) =>
 										classNames(
-											'w-full py-2 text-sm font-medium -mb-[0.06rem] transition-all duration-300',
+											'w-full py-2 text-sm font-medium -mb-[0.06rem] transition-all',
 											'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200',
 											'border-b-2 border-transparent hover:border-gray-500 dark:hover:border-gray-400',
 											selected ? '!text-blue-500 border-b-2 !border-blue-500' : ''
@@ -1053,7 +1053,7 @@ export default function Third() {
 									</Tab>
 									<Tab className={({ selected }) =>
 										classNames(
-											'w-full py-2 text-sm font-medium -mb-[0.06rem] transition-all duration-300',
+											'w-full py-2 text-sm font-medium -mb-[0.06rem] transition-all',
 											'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200',
 											'border-b-2 border-transparent hover:border-gray-500 dark:hover:border-gray-400',
 											selected ? '!text-blue-500 border-b-2 !border-blue-500' : ''
@@ -1064,7 +1064,7 @@ export default function Third() {
 									</Tab>
 									<Tab className={({ selected }) =>
 										classNames(
-											'w-full py-2 text-sm font-medium -mb-[0.06rem] transition-all duration-300',
+											'w-full py-2 text-sm font-medium -mb-[0.06rem] transition-all',
 											'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200',
 											'border-b-2 border-transparent hover:border-gray-500 dark:hover:border-gray-400',
 											selected ? '!text-blue-500 border-b-2 !border-blue-500' : ''

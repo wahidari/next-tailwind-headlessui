@@ -145,86 +145,86 @@ export default function Third() {
 					<Section id="components" name="Components TOC">
 						<div className="grid sm:grid-cols-2 md:grid-cols-3">
 							<div>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#dark-mode">Dark Mode</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#radio">Native Radio</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#checkbox">Native Checkbox</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#native-select">Native Select</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#input-label">Input Label</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#input">Input</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#text-area">Text Area</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#input-file">Input File</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#input-image">Input Image</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#input-image-multiple">Input Image Multiple</Link>
 								</span>
 							</div>
 							<div>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#avatar">Avatar</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#spinner">Spinner</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#section">Section</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#container">Container</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#heading">Heading</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#text">Text</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#button">Button</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#button-outline">Button Outline</Link>
 								</span>
 							</div>
 							<div>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#link-button">Link Button</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#link-button-outline">Link Button Outline</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#badge">Badge</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#badge-outline">Badge Outline</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#alert">Alert</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#alert-outline">Alert Outline</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#skeletons">Skeletons</Link>
 								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all duration-200">
+								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
 									<Link href="#progress">Progress</Link>
 								</span>
 							</div>
@@ -237,17 +237,17 @@ export default function Third() {
 								onClick={() => setDarkMode(!darkMode)}
 								className="transition-all cursor-pointer w-12 h-7 dark:bg-blue-500 bg-neutral-200 rounded-full relative"
 							>
-								<div className="h-5 w-5 bg-white rounded-full absolute top-1 transition-all duration-300 dark:left-6 left-1"></div>
+								<div className="h-5 w-5 bg-white rounded-full absolute top-1 transition-all dark:left-6 left-1"></div>
 							</div>
 
 							<button onClick={() => setDarkMode(!darkMode)} aria-label="Change Theme" className="relative flex items-center py-0.5 px-1 bg-blue-500 rounded-full h-7">
-								<span className="absolute w-5 h-5 rounded-full bg-white dark:left-[1.7rem] left-1 transition-all duration-300"></span>
+								<span className="absolute w-5 h-5 rounded-full bg-white dark:left-[1.7rem] left-1 transition-all"></span>
 								<span aria-hidden={true}>☀️</span>
 								<span aria-hidden={true}>🌙</span>
 							</button>
 
 							<button onClick={() => setDarkMode(!darkMode)} aria-label="Change Theme" className={`${darkMode ? "bg-neutral-800" : "bg-gray-200"} relative flex gap-1 items-center px-1 py-0.5 rounded-full h-7`}>
-								<span className="absolute w-5 h-5 rounded-full bg-blue-500 dark:left-[1.6rem] left-1.5 transition-all duration-300"></span>
+								<span className="absolute w-5 h-5 rounded-full bg-blue-500 dark:left-[1.6rem] left-1.5 transition-all"></span>
 								<span aria-hidden={true}><SunIcon className={`${darkMode ? "text-white bg-white" : ""}h-5 w-5`} /></span>
 								<span aria-hidden={true}><MoonIcon className="h-5 w-5" /></span>
 							</button>
@@ -913,7 +913,7 @@ function handleImageChange(e) {
 											layout="fill"
 											className="rounded-lg"
 										/>
-										<button onClick={() => deleteImage(id)} className="absolute top-0 right-0 m-1 text-red-500 hover:text-red-600 bg-black bg-opacity-30 backdrop-blur-lg p-1.5 rounded-full transition-all duration-200">
+										<button onClick={() => deleteImage(id)} className="absolute top-0 right-0 m-1 text-red-500 hover:text-red-600 bg-black bg-opacity-30 backdrop-blur-lg p-1.5 rounded-full transition-all">
 											<TrashIcon className="w-4 h-4" />
 										</button>
 									</div>
@@ -962,7 +962,7 @@ function deleteImage(id) {
 					layout="fill"
 					className="rounded-lg"
 				/>
-				<button onClick={() => deleteImage(id)} className="absolute top-0 right-0 m-1 text-red-500 hover:text-red-600 bg-black bg-opacity-30 backdrop-blur-lg p-1.5 rounded-full transition-all duration-200">
+				<button onClick={() => deleteImage(id)} className="absolute top-0 right-0 m-1 text-red-500 hover:text-red-600 bg-black bg-opacity-30 backdrop-blur-lg p-1.5 rounded-full transition-all">
 					<TrashIcon className="w-4 h-4" />
 				</button>
 			</div>

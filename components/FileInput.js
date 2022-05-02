@@ -14,7 +14,7 @@ export default function FileInput({ id, accept, icon, className, label, name, va
       <label
         className={`
         ${className ? className + " " : ""}
-        mt-2 flex flex-col w-full transition-all duration-300 rounded-xl cursor-pointer
+        mt-2 flex flex-col w-full transition-all rounded-xl cursor-pointer
         border-2 border-dashed border-gray-300 dark:border-neutral-800 hover:border-blue-500 
         hover:bg-gray-100 dark:hover:bg-neutral-800 `}>
 

@@ -7,7 +7,7 @@ export default function SelectBoxCustom({ label, value, onChange, options }) {
       {({ open }) => (
         <div className="relative mt-4">
           <Listbox.Label className="font-medium text-sm dark:text-gray-200">{label}</Listbox.Label>
-          <Listbox.Button className="relative mt-2 w-full py-2 px-3 text-left bg-white dark:bg-neutral-900 dark:text-gray-200 border border-gray-200 dark:border-neutral-700 hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all duration-200 rounded cursor-pointer text-sm">
+          <Listbox.Button className="relative mt-2 w-full py-2 px-3 text-left bg-white dark:bg-neutral-900 dark:text-gray-200 border border-gray-200 dark:border-neutral-700 hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all rounded cursor-pointer text-sm">
             <span className="block truncate">{value ? value.name : "Choose"}</span>
             <span className="absolute inset-y-0 right-0 flex items-center pr-3">
               <ChevronDownIcon className={

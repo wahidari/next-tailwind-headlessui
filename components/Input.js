@@ -16,7 +16,7 @@ export default function Input({ id, className, label, type, name, placeholder, v
         onChange={onChange}
         className={`
           ${className ? className + " " : ""} 
-          text-sm transition-all duration-300 w-full px-3 py-[0.6rem] rounded-md mt-2
+          text-sm transition-all w-full px-3 py-[0.6rem] rounded-md mt-2
           dark:text-white bg-white dark:bg-neutral-900  
           border border-gray-300 dark:border-neutral-700 
           focus:ring-1 focus:ring-blue-500 focus:border-blue-500 outline-none

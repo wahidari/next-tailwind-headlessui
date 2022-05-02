@@ -13,7 +13,7 @@ export default function TabsVerticall({ tabs, contents }) {
 						<Tab key={item}
 							className={({ selected }) =>
 								classNames(
-									'w-full mb-2 py-2 text-base font-medium text-dark-500 bg-gray-100 dark:bg-neutral-900 rounded transition-all duration-300',
+									'w-full mb-2 py-2 text-base font-medium text-dark-500 bg-gray-100 dark:bg-neutral-900 rounded transition-all',
 									selected ? 'text-white !bg-blue-500' :
 										'text-dark-500 dark:text-gray-200 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 hover:text-blue-600 dark:hover:text-blue-600'
 								)

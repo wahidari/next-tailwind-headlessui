@@ -17,7 +17,7 @@ function SampleNextArrow(props) {
       // style={{ ...style, display: "block"}}
       onClick={onClick}
     >
-      <div className="rounded-full -ml-1 w-6 h-6 flex justify-center items-center cursor-pointer bg-sky-500 hover:bg-sky-600 text-gray-200 hover:text-gray-100 transition-all duration-200">
+      <div className="rounded-full -ml-1 w-6 h-6 flex justify-center items-center cursor-pointer bg-sky-500 hover:bg-sky-600 text-gray-200 hover:text-gray-100 transition-all">
         <ArrowRightIcon className="w-4 h-4" />
       </div>
     </div>
@@ -32,7 +32,7 @@ function SamplePrevArrow(props) {
       // style={{ ...style, display: "block"}}
       onClick={onClick}
     >
-      <div className="rounded-full ml-1 w-6 h-6 flex justify-center items-center cursor-pointer bg-sky-500 hover:bg-sky-600 text-gray-200 hover:text-gray-100 transition-all duration-200">
+      <div className="rounded-full ml-1 w-6 h-6 flex justify-center items-center cursor-pointer bg-sky-500 hover:bg-sky-600 text-gray-200 hover:text-gray-100 transition-all">
         <ArrowLeftIcon className="w-4 h-4" />
       </div>
     </div>

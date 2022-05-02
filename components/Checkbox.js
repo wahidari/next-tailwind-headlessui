@@ -13,7 +13,7 @@ export default function Checkbox({ label, name, value, onChange, defaultChecked,
           ${className ? className + " " : ""}
           h-4 w-4 border-gray-300 dark:border-neutral-700 rounded text-blue-500 focus:ring-blue-500 
           bg-white dark:bg-neutral-900 dark:checked:bg-blue-500
-          transition-all duration-200 cursor-pointer
+          transition-all cursor-pointer
         `}
         />
         <span className="ml-2 text-gray-700 dark:text-neutral-300">{label}</span>
