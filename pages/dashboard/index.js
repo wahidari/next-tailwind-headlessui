@@ -1,7 +1,7 @@
 import LayoutDashboard from "@components/dashboard/LayoutDashboard";
 import { Fragment, useState } from 'react'
-import { Dialog, Transition, Menu, Popover } from '@headlessui/react'
-import { ChevronDownIcon, ChevronRightIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import { Dialog, Transition, Menu, Popover, Disclosure } from '@headlessui/react'
+import { ChevronDownIcon, ChevronRightIcon, ChevronUpIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import Head from "next/head";
 import ActiveLink from "@components/ActiveLink";
 import SidebarNavLink from "@components/dashboard/SidebarNavLink";
@@ -63,7 +63,7 @@ export default function Index() {
                       <div className="absolute top-0 right-0 flex pt-6 mr-6">
                         <button
                           type="button"
-                          className="rounded-md p-1 text-gray-500 hover:text-gray-800 ring-2 ring-gray-500 hover:ring-gray-800"
+                          className="rounded p-1 text-gray-500 hover:text-gray-800 ring-2 ring-gray-500 hover:ring-gray-800"
                           onClick={() => setOpenMobileMenu(false)}
                         >
                           <span className="sr-only">Close panel</span>
@@ -80,17 +80,17 @@ export default function Index() {
                           <div className="absolute inset-0 px-4">
                             <div className="h-full" aria-hidden="true">
                               <ActiveLink activeClassName="bg-gray-100" href="/dashboard">
-                                <a className="border-b-1 px-2 block py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">Dashboard</a>
+                                <a className="border-b-1 px-2 block py-2 rounded text-base font-medium text-gray-600 hover:bg-gray-100">Dashboard</a>
                               </ActiveLink>
                               <hr className="my-1 mx-2" />
                               <ActiveLink activeClassName="bg-gray-100" href="/second">
-                                <a className="border-b-1 px-2 block py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">Second</a>
+                                <a className="border-b-1 px-2 block py-2 rounded text-base font-medium text-gray-600 hover:bg-gray-100">Second</a>
                               </ActiveLink>
                               <hr className="my-1 mx-2" />
                               <Menu>
                                 {({ open }) => (
                                   <>
-                                    <Menu.Button className="border-b-1 px-2 w-full py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">
+                                    <Menu.Button className="border-b-1 px-2 w-full py-2 rounded text-base font-medium text-gray-600 hover:bg-gray-100">
                                       <div className="flex justify-between items-center">
                                         <span>More</span>
                                         <ChevronRightIcon
@@ -102,13 +102,13 @@ export default function Index() {
                                     <Menu.Items className="space-y-1 px-3">
                                       <Menu.Item>
                                         <ActiveLink activeClassName="bg-gray-100" href="/third">
-                                          <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">Third</a>
+                                          <a className="block px-3 py-2 rounded text-base font-medium text-gray-600 hover:bg-gray-100">Third</a>
                                         </ActiveLink>
                                       </Menu.Item>
                                       <hr className="my-1 mx-3" />
                                       <Menu.Item>
                                         <ActiveLink activeClassName="bg-gray-100" href="/fourth">
-                                          <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">Fourth</a>
+                                          <a className="block px-3 py-2 rounded text-base font-medium text-gray-600 hover:bg-gray-100">Fourth</a>
                                         </ActiveLink>
                                       </Menu.Item>
                                     </Menu.Items>
@@ -117,7 +117,7 @@ export default function Index() {
                               </Menu>
                               <hr className="my-1 mx-2" />
                               <ActiveLink activeClassName="bg-gray-100" href="/nav-bar">
-                                <a className="border-b-1 px-2 block py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">Navbar</a>
+                                <a className="border-b-1 px-2 block py-2 rounded text-base font-medium text-gray-600 hover:bg-gray-100">Navbar</a>
                               </ActiveLink>
                             </div>
                           </div>
@@ -138,9 +138,9 @@ export default function Index() {
               <Menu>
                 {({ open }) => (
                   <>
-                    <Menu.Button className="border-b-1 px-2 w-full py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">
+                    <Menu.Button className="border-b-1 px-2 w-full py-1 rounded text-sm font-medium hover:bg-gray-100">
                       <div className="flex justify-between items-center">
-                        <span>Menu</span>
+                        <span>Accordion Menu</span>
                         <ChevronRightIcon
                           className={`${open ? 'transform rotate-90 transition-transform duration-200' : 'transition-transform duration-200'
                             } w-4 h-4`}
@@ -150,23 +150,80 @@ export default function Index() {
                     <Menu.Items className="px-3 gap-y-1 flex flex-col">
                       <Menu.Item>
                         <ActiveLink activeClassName="bg-gray-100" href="/dashboard">
-                          <a className="px-2 block py-1 rounded-md text-gray-600 hover:bg-gray-100 cursor-pointer">
+                          <a className="px-2 block py-1 rounded text-sm font-medium hover:bg-gray-100 cursor-pointer">
                             1
                           </a>
                         </ActiveLink>
                       </Menu.Item>
                       <Menu.Item>
-                          <SidebarNavLink href="/">
-                            2
-                          </SidebarNavLink>
+                        <SidebarNavLink href="/">
+                          2
+                        </SidebarNavLink>
                       </Menu.Item>
                     </Menu.Items>
                   </>
                 )}
               </Menu>
 
+              <Disclosure>
+                {({ open }) => (
+                  <>
+                    <Disclosure.Button className="flex justify-between w-full px-2 py-1 text-sm font-medium text-left hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 rounded transition-all duration-200">
+                      <span>Accordion Disclosure</span>
+                      <ChevronRightIcon
+                        className={`
+                        ${open ? 'transform rotate-90 transition-transform duration-200' : 'transition-transform duration-200'} 
+                        w-4 h-4 
+                        `}
+                      />
+                    </Disclosure.Button>
+                    <Disclosure.Panel className="px-4 text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                      <ActiveLink activeClassName="bg-gray-100" href="/dashboard">
+                        <a className="px-2 block py-1 rounded text-sm font-medium hover:bg-gray-100 cursor-pointer">
+                          A
+                        </a>
+                      </ActiveLink>
+                      <SidebarNavLink href="/">
+                        B
+                      </SidebarNavLink>
+                      <SidebarNavLink href="/dashboard">
+                        C
+                      </SidebarNavLink>
+                    </Disclosure.Panel>
+                  </>
+                )}
+              </Disclosure>
+              <Disclosure>
+                {({ open }) => (
+                  <>
+                    <Disclosure.Button className="flex justify-between w-full px-2 py-1 text-sm font-medium text-left hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 rounded transition-all duration-200">
+                      <span>Accordion Disclosure</span>
+                      <ChevronRightIcon
+                        className={`
+                        ${open ? 'transform rotate-90 transition-transform duration-200' : 'transition-transform duration-200'} 
+                        w-4 h-4 
+                        `}
+                      />
+                    </Disclosure.Button>
+                    <Disclosure.Panel className="px-4 text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                      <ActiveLink activeClassName="bg-gray-100" href="/dashboard">
+                        <a className="px-2 block py-1 rounded text-sm font-medium hover:bg-gray-100 cursor-pointer">
+                          A
+                        </a>
+                      </ActiveLink>
+                      <SidebarNavLink href="/">
+                        B
+                      </SidebarNavLink>
+                      <SidebarNavLink href="/dashboard">
+                        C
+                      </SidebarNavLink>
+                    </Disclosure.Panel>
+                  </>
+                )}
+              </Disclosure>
+
               <ActiveLink activeClassName="bg-gray-100" href="/dashboard">
-                <a className="px-2 block py-1 rounded-md text-gray-600 hover:bg-gray-100 cursor-pointer">
+                <a className="px-2 block py-1 rounded text-sm font-medium hover:bg-gray-100 cursor-pointer">
                   A
                 </a>
               </ActiveLink>

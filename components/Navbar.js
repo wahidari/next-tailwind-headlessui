@@ -254,6 +254,9 @@ export default function Navbar() {
                   </>
                 )}
               </Menu>
+              <ActiveLink activeClassName="bg-gray-100" href="/dashboard">
+                <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Dashboard</a>
+              </ActiveLink>
               {!session &&
                 <ActiveLink activeClassName="bg-gray-100" href="/signin">
                   <a className="border-b-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all duration-200">Signin</a>
