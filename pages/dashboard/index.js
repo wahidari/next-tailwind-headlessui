@@ -5,6 +5,7 @@ import { ChevronDownIcon, ChevronRightIcon, ChevronUpIcon, MenuIcon, XIcon } fro
 import Head from "next/head";
 import ActiveLink from "@components/ActiveLink";
 import SidebarNavLink from "@components/dashboard/SidebarNavLink";
+import SidebarNavAccordion from "@components/dashboard/SidebarNavAccordion";
 
 export default function Index() {
   const [openMobileMenu, setOpenMobileMenu] = useState(false)
@@ -168,7 +169,7 @@ export default function Index() {
               <Disclosure>
                 {({ open }) => (
                   <>
-                    <Disclosure.Button className="flex justify-between w-full px-2 py-1 text-sm font-medium text-left hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 rounded transition-all duration-200">
+                    <Disclosure.Button className="flex justify-between w-full px-2 py-1 text-sm items-center font-medium text-left hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 rounded transition-all duration-200">
                       <span>Accordion Disclosure</span>
                       <ChevronRightIcon
                         className={`
@@ -193,34 +194,20 @@ export default function Index() {
                   </>
                 )}
               </Disclosure>
-              <Disclosure>
-                {({ open }) => (
-                  <>
-                    <Disclosure.Button className="flex justify-between w-full px-2 py-1 text-sm font-medium text-left hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 rounded transition-all duration-200">
-                      <span>Accordion Disclosure</span>
-                      <ChevronRightIcon
-                        className={`
-                        ${open ? 'transform rotate-90 transition-transform duration-200' : 'transition-transform duration-200'} 
-                        w-4 h-4 
-                        `}
-                      />
-                    </Disclosure.Button>
-                    <Disclosure.Panel className="px-4 text-sm text-gray-600 dark:text-gray-300 space-y-1">
-                      <ActiveLink activeClassName="bg-gray-100" href="/dashboard">
-                        <a className="px-2 block py-1 rounded text-sm font-medium hover:bg-gray-100 cursor-pointer">
-                          A
-                        </a>
-                      </ActiveLink>
-                      <SidebarNavLink href="/">
-                        B
-                      </SidebarNavLink>
-                      <SidebarNavLink href="/dashboard">
-                        C
-                      </SidebarNavLink>
-                    </Disclosure.Panel>
-                  </>
-                )}
-              </Disclosure>
+
+              <SidebarNavAccordion name="Nav Accordion Comp">
+                <ActiveLink activeClassName="bg-gray-100" href="/dashboard">
+                  <a className="px-2 block py-1 rounded text-sm font-medium hover:bg-gray-100 cursor-pointer">
+                    A
+                  </a>
+                </ActiveLink>
+                <SidebarNavLink href="/">
+                  B
+                </SidebarNavLink>
+                <SidebarNavLink href="/dashboard">
+                  C
+                </SidebarNavLink>
+              </SidebarNavAccordion>
 
               <ActiveLink activeClassName="bg-gray-100" href="/dashboard">
                 <a className="px-2 block py-1 rounded text-sm font-medium hover:bg-gray-100 cursor-pointer">
