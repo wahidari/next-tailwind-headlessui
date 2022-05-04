@@ -195,7 +195,7 @@ export default function Index() {
                 )}
               </Disclosure>
 
-              <SidebarNavAccordion name="Nav Accordion Comp" routeName="/dashboard">
+              <SidebarNavAccordion name="Dashboard" routeName="/dashboard">
                 <ActiveLink activeClassName="bg-gray-100" href="/dashboard">
                   <a className="px-2 block py-1 rounded text-sm font-medium hover:bg-gray-100 cursor-pointer">
                     A
@@ -209,7 +209,7 @@ export default function Index() {
                 </SidebarNavLink>
               </SidebarNavAccordion>
 
-              <SidebarNavAccordion name="Nav Accordion Comp" routeName="/dashboard/tes">
+              <SidebarNavAccordion name="Tes" routeName="/dashboard/tes">
                 <ActiveLink activeClassName="bg-gray-100" href="/dashboard">
                   <a className="px-2 block py-1 rounded text-sm font-medium hover:bg-gray-100 cursor-pointer">
                     A
