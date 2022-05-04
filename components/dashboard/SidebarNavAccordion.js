@@ -10,14 +10,16 @@ export default function SidebarNavAccordion({ name, routeName, children }) {
 
   useEffect(() => {
     if (router.pathname.includes(routeName)) {
-      console.log("match")
-      console.log(routeName)
-      console.log(router.pathname)
+      console.log("------------------")
+      console.log("ROUTE MATCH")
+      console.log("params : ", routeName)
+      console.log("actual : ", router.pathname)
       setIsOpen(true)
     } else {
-      console.log("not match")
-      console.log(routeName)
-      console.log(router.pathname)
+      console.log("------------------")
+      console.log("ROUTE NOT MATCH")
+      console.log("params : ", routeName)
+      console.log("actual : ", router.pathname)
       setIsOpen(false)
     }
     setCek(true)
