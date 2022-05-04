@@ -195,31 +195,45 @@ export default function Index() {
                 )}
               </Disclosure>
 
-              <SidebarNavAccordion name="Dashboard" routeName="/dashboard">
+              {/* <SidebarNavAccordion name="Dashboard" routeName="/dashboard">
                 <ActiveLink activeClassName="bg-gray-100" href="/dashboard">
                   <a className="px-2 block py-1 rounded text-sm font-medium hover:bg-gray-100 cursor-pointer">
-                    A
+                    Dashboard A
                   </a>
                 </ActiveLink>
-                <SidebarNavLink href="/">
-                  B
+                <SidebarNavLink href="/dashboard/b">
+                  Dashboard B
                 </SidebarNavLink>
-                <SidebarNavLink href="/dashboard">
-                  C
+                <SidebarNavLink href="/dashboard/c">
+                  Dashboard C
+                </SidebarNavLink>
+              </SidebarNavAccordion> */}
+
+              <SidebarNavAccordion name="First" routeName="/dashboard/first">
+                <ActiveLink activeClassName="bg-gray-100" href="/dashboard/first">
+                  <a className="px-2 block py-1 rounded text-sm font-medium hover:bg-gray-100 cursor-pointer">
+                    First A
+                  </a>
+                </ActiveLink>
+                <SidebarNavLink href="/dashboard/first/b">
+                  First B
+                </SidebarNavLink>
+                <SidebarNavLink href="/dashboard/first/c">
+                  First C
                 </SidebarNavLink>
               </SidebarNavAccordion>
 
-              <SidebarNavAccordion name="Tes" routeName="/dashboard/tes">
-                <ActiveLink activeClassName="bg-gray-100" href="/dashboard">
+              <SidebarNavAccordion name="Second" routeName="/dashboard/second">
+                <ActiveLink activeClassName="bg-gray-100" href="/dashboard/second">
                   <a className="px-2 block py-1 rounded text-sm font-medium hover:bg-gray-100 cursor-pointer">
-                    A
+                    Second A
                   </a>
                 </ActiveLink>
-                <SidebarNavLink href="/">
-                  B
+                <SidebarNavLink href="/dashboard/second/b">
+                  Second B
                 </SidebarNavLink>
-                <SidebarNavLink href="/dashboard">
-                  C
+                <SidebarNavLink href="/dashboard/second/c">
+                  Second C
                 </SidebarNavLink>
               </SidebarNavAccordion>
 
@@ -228,33 +242,18 @@ export default function Index() {
                   Dashboard
                 </a>
               </ActiveLink>
-
-              <SidebarNavLink href="/dashboard/tes">
-                Tes
+              <SidebarNavLink href="/dashboard/first">
+                First
               </SidebarNavLink>
-              <SidebarNavLink href="/dashboard">
-                C
-              </SidebarNavLink>
-              <SidebarNavLink href="/">
-                D
-              </SidebarNavLink>
-              <SidebarNavLink href="/dashboard">
-                E
-              </SidebarNavLink>
-              <SidebarNavLink href="/">
-                F
+              <SidebarNavLink href="/dashboard/second">
+                Second
               </SidebarNavLink>
 
-              {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(item => {
+              {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(item => {
                 return (
-                  item % 2 == 0 ?
-                    <SidebarNavLink key={item + 1} href="/dashboard">
-                      Link #{item}
-                    </SidebarNavLink>
-                    :
-                    <SidebarNavLink key={item + 1} href="/">
-                      Link #{item}
-                    </SidebarNavLink>
+                  <SidebarNavLink key={item + 1} href="#">
+                    Link #{item}
+                  </SidebarNavLink>
                 )
               })}
 

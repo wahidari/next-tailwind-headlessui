@@ -251,9 +251,9 @@ export default function Index() {
 
               {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(item => {
                 return (
-                    <SidebarNavLink key={item + 1} href="#">
-                      Link #{item}
-                    </SidebarNavLink>
+                  <SidebarNavLink key={item + 1} href="#">
+                    Link #{item}
+                  </SidebarNavLink>
                 )
               })}
 
