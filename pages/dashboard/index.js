@@ -150,7 +150,7 @@ export default function Index() {
                     </Menu.Button>
                     <Menu.Items className="px-3 gap-y-1 flex flex-col">
                       <Menu.Item>
-                        <ActiveLink activeClassName="bg-gray-100" href="/dashboard">
+                        <ActiveLink activeClassName="bg-gray-100" href="/">
                           <a className="px-2 block py-1 rounded text-sm font-medium hover:bg-gray-100 cursor-pointer">
                             1
                           </a>
@@ -179,7 +179,7 @@ export default function Index() {
                       />
                     </Disclosure.Button>
                     <Disclosure.Panel className="px-4 text-sm text-gray-600 dark:text-gray-300 space-y-1">
-                      <ActiveLink activeClassName="bg-gray-100" href="/dashboard">
+                      <ActiveLink activeClassName="bg-gray-100" href="/">
                         <a className="px-2 block py-1 rounded text-sm font-medium hover:bg-gray-100 cursor-pointer">
                           A
                         </a>
@@ -187,7 +187,7 @@ export default function Index() {
                       <SidebarNavLink href="/">
                         B
                       </SidebarNavLink>
-                      <SidebarNavLink href="/dashboard">
+                      <SidebarNavLink href="/">
                         C
                       </SidebarNavLink>
                     </Disclosure.Panel>
