@@ -210,7 +210,7 @@ export default function Index() {
               </SidebarNavAccordion>
 
               <SidebarNavAccordion name="Nav Accordion Comp" routeName="/dashboard/tes">
-                <ActiveLink activeClassName="bg-gray-100" href="/dashboard/tes">
+                <ActiveLink activeClassName="bg-gray-100" href="/dashboard">
                   <a className="px-2 block py-1 rounded text-sm font-medium hover:bg-gray-100 cursor-pointer">
                     A
                   </a>

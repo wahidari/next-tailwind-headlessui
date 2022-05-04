@@ -1,7 +1,23 @@
 import { Disclosure } from "@headlessui/react";
 import { ChevronRightIcon } from "@heroicons/react/outline";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
-export default function SidebarNavAccordion({ name, children }) {
+export default function SidebarNavAccordion({ name, routeName, children }) {
+  const [isOpen, setIsOpen] = useState(false)
+  const router = useRouter();
+
+  useEffect(() => {
+    if (router.pathname == routeName) {
+      console.log("match")
+      console.log(routeName)
+      console.log(router)
+      setIsOpen(true)
+    } else {
+      console.log("not match")
+      setIsOpen(false)
+    }
+  }, [router.pathname])
 
   return (
     <Disclosure>
@@ -11,11 +27,11 @@ export default function SidebarNavAccordion({ name, children }) {
             <span>{name}</span>
             <ChevronRightIcon
               className={`w-4 h-4
-                ${open ? 'transform rotate-90 transition-transform' : 'transition-transform'} 
-              `}
+                  ${open ? 'transform rotate-90 transition-transform' : 'transition-transform'} 
+                `}
             />
           </Disclosure.Button>
-          <Disclosure.Panel className="px-4 text-sm dark:text-gray-300 space-y-1">
+          <Disclosure.Panel static={isOpen} className="px-4 text-sm dark:text-gray-300 space-y-1">
             {children}
           </Disclosure.Panel>
         </>
