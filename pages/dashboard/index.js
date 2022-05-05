@@ -163,7 +163,7 @@ export default function Index() {
                           />
                         </div>
                       </Menu.Button>
-                      <Menu.Items className="px-3 gap-y-1 flex flex-col">
+                      <Menu.Items className="px-4 gap-y-1 flex flex-col">
                         <Menu.Item>
                           <ActiveLink activeClassName="bg-gray-100" href="/">
                             <a className="px-2 block py-1 rounded text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
