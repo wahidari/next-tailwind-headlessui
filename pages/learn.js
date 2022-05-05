@@ -27,6 +27,51 @@ export default function Learn() {
 			<Layout>
 				<main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pb-16">
 
+					<Section id="gradient-border" name="Gradient Border">
+						<div className="relative inline-flex items-center justify-center p-0.5 mb-4 overflow-hidden text-sm font-medium text-gray-900 rounded-lg bg-gradient-to-br from-purple-600 to-blue-500">
+							<div className="relative px-4 py-2 bg-white dark:bg-neutral-900 rounded-md">
+								<h4 className="text-xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-500">
+									gradient border with long text paragraph from Purple to Blue
+								</h4>
+							</div>
+						</div>
+						<div className="p-0.5 mb-4 overflow-hidden text-sm font-medium text-gray-900 rounded-lg bg-gradient-to-br from-red-600 to-yellow-500">
+							<div className="px-4 py-2 bg-white dark:bg-neutral-900 rounded-md">
+								<h4 className="text-xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-yellow-500">
+									gradient border with long text paragraph from Red to Yellow
+								</h4>
+							</div>
+						</div>
+						<div className="p-0.5 mb-4 inline-flex overflow-hidden text-sm font-medium text-gray-900 rounded-lg bg-gradient-to-br from-pink-600 to-violet-500">
+							<div className="px-4 py-2 bg-white dark:bg-neutral-900 rounded-md">
+								<h4 className="text-xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-pink-600 to-violet-500">
+									gradient border with long text paragraph from Pink to Violet
+								</h4>
+							</div>
+						</div>
+						<div className="border-2 border-white dark:border-neutral-900 border-dashed mb-4 inline-flex overflow-hidden text-sm font-medium text-gray-900 rounded-lg bg-gradient-to-br from-teal-600 to-violet-500">
+							<div className="px-4 py-2 bg-white dark:bg-neutral-900 rounded-md">
+								<h4 className="text-xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-violet-500">
+									gradient border dashed with long text paragraph from Teal to Purple
+								</h4>
+							</div>
+						</div>
+						<div className="border-2 border-white dark:border-neutral-900 border-dotted mb-4 inline-flex overflow-hidden text-sm font-medium text-gray-900 rounded-lg bg-gradient-to-br from-blue-600 to-red-500">
+							<div className="px-4 py-2 bg-white dark:bg-neutral-900 rounded-md">
+								<h4 className="text-xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-red-500">
+									gradient border dotted with long text paragraph from Blue to Red
+								</h4>
+							</div>
+						</div>
+						<div className="border-[6px] p-0.5 border-white dark:border-neutral-900 border-double mb-4 inline-flex overflow-hidden text-sm font-medium text-gray-900 rounded-lg bg-gradient-to-br from-orange-600 to-teal-500">
+							<div className="px-4 py-2 bg-white dark:bg-neutral-900 rounded-md">
+								<h4 className="text-xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-teal-500">
+									gradient border double with long text paragraph from Orange to Teal
+								</h4>
+							</div>
+						</div>
+					</Section>
+
 					<Section id="gradient-text" name="Gradient Text">
 						<h1 className="sm:text-5xl text-3xl font-extrabold mb-4 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-red-600">
 							long text paragraph from Blue to Red
@@ -61,7 +106,7 @@ export default function Learn() {
 						</h1>
 						<h1 className="sm:text-5xl text-3xl font-extrabold mb-4">
 							<span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-red-600">
-								Blue to Red 
+								Blue to Red
 							</span>
 						</h1>
 						<h1 className="sm:text-5xl text-3xl font-extrabold mb-4">
