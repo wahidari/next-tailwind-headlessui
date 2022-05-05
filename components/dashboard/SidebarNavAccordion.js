@@ -10,16 +10,16 @@ export default function SidebarNavAccordion({ name, routeName, children }) {
 
   useEffect(() => {
     if (router.pathname.includes(routeName)) {
-      console.log("------------------")
-      console.log("ROUTE MATCH")
-      console.log("params : ", routeName)
-      console.log("actual : ", router.pathname)
+      // console.log("------------------")
+      // console.log("ROUTE MATCH")
+      // console.log("params : ", routeName)
+      // console.log("actual : ", router.pathname)
       setIsOpen(true)
     } else {
-      console.log("------------------")
-      console.log("ROUTE NOT MATCH")
-      console.log("params : ", routeName)
-      console.log("actual : ", router.pathname)
+      // console.log("------------------")
+      // console.log("ROUTE NOT MATCH")
+      // console.log("params : ", routeName)
+      // console.log("actual : ", router.pathname)
       setIsOpen(false)
     }
     setCek(true)
@@ -30,7 +30,7 @@ export default function SidebarNavAccordion({ name, routeName, children }) {
       <Disclosure defaultOpen={isOpen}>
         {({ open }) => (
           <>
-            <Disclosure.Button className="flex justify-between w-full px-2 py-1 items-center text-sm font-medium text-left hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 rounded transition-all">
+            <Disclosure.Button className="flex justify-between px-2 py-1 items-center text-sm font-medium dark:text-white hover:bg-gray-100 dark:bg-neutral-900 dark:hover:bg-neutral-800 rounded transition-all">
               <span>{name}</span>
               <ChevronRightIcon
                 className={`w-4 h-4
@@ -38,7 +38,7 @@ export default function SidebarNavAccordion({ name, routeName, children }) {
                 `}
               />
             </Disclosure.Button>
-            <Disclosure.Panel className="px-4 text-sm dark:text-gray-300 space-y-1">
+            <Disclosure.Panel className="px-4 text-sm space-y-1">
               {children}
             </Disclosure.Panel>
           </>
