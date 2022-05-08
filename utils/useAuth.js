@@ -6,6 +6,7 @@ import Signin from "@pages/signin";
 export const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
+  
   const { data: session, status } = useSession()
   const router = useRouter()
   const protectedRoute = ["admin", "protected", "secret"]

@@ -4,10 +4,12 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 export default function SidebarNavAccordion({ name, routeName, children }) {
+
   const [isOpen, setIsOpen] = useState(false)
   const [cek, setCek] = useState(false)
   const router = useRouter();
 
+  // set sidebar nav accordion open or close based on route 
   useEffect(() => {
     if (router.pathname.includes(routeName)) {
       // console.log("------------------")

@@ -2,9 +2,12 @@ import { createContext, useEffect, useState } from "react";
 
 export const GlobalContext = createContext();
 
-export const GlobalProvider = ({ children }) => {
-  const [darkMode, setDarkMode] = useState(false);
+export function GlobalProvider({ children }) {
 
+  const [darkMode, setDarkMode] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+  // check dark mode to true if theme in local storage is dark 
   useEffect(() => {
     if (localStorage.getItem("theme") === "dark") {
       setDarkMode(true);
@@ -12,7 +15,9 @@ export const GlobalProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
+    // set theme to local storage based on darkMode value : dark or light
     localStorage.setItem("theme", darkMode ? "dark" : "light");
+    // set html class to "dark" or "light"
     if (darkMode) {
       document.documentElement.classList.add("dark");
     } else {
@@ -21,9 +26,7 @@ export const GlobalProvider = ({ children }) => {
   }, [darkMode]);
 
   return (
-    <GlobalContext.Provider
-      value={{ darkMode, setDarkMode }}
-    >
+    <GlobalContext.Provider value={{ darkMode, setDarkMode, showMobileMenu, setShowMobileMenu }}>
       {children}
     </GlobalContext.Provider>
   );
