@@ -45,7 +45,7 @@ export default function Index() {
           </div>
         </nav>
 
-        <div className="max-w-screen-2xl mx-auto px-2 mt-2 border dark:border-neutral-700 h-full mb-2">
+        <div className="max-w-screen-2xl mx-auto px-2 mt-2 border dark:border-neutral-700 h-full">
           <div className="lg:flex py-2 h-full">
             <Transition.Root show={openMobileMenu} as={Fragment}>
               <Dialog as="aside" className="fixed inset-0 overflow-hidden lg:hidden z-20" onClose={setOpenMobileMenu}>
