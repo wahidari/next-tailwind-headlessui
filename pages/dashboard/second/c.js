@@ -5,12 +5,14 @@ import { Dialog, Transition, Menu } from '@headlessui/react'
 import { ChevronRightIcon, MenuIcon, MoonIcon, SunIcon, XIcon } from '@heroicons/react/outline'
 import Head from "next/head";
 import ActiveLink from "@components/ActiveLink";
-import SidebarMenu from "@components/dashboard/SidebarMenu";
 import Layout from "@components/Layout";
+import SidebarMenu from "@components/dashboard/SidebarMenu";
 
 export default function Index() {
+
   const [openMobileMenu, setOpenMobileMenu] = useState(false)
   const { darkMode, setDarkMode } = useContext(GlobalContext);
+
   return (
     <>
       <Head>
@@ -19,9 +21,6 @@ export default function Index() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* <LayoutDashboard>
-
-      </LayoutDashboard> */}
       <Layout>
 
         <div className="!py-2 px-2 rounded mx-4 bg-opacity-20 dark:bg-opacity-40 bg-gray-100 backdrop-filter backdrop-blur fixed bottom-20 right-3 md:right-10 z-10">
@@ -36,8 +35,8 @@ export default function Index() {
           }
         </div>
 
-        <nav className="bg-white border flex max-w-screen-2xl mx-auto px-2 sticky top-0 z-10">
-          <div className="border px-2 w-full my-2 flex gap-2">
+        <nav className="border dark:border-neutral-700 flex max-w-screen-2xl mx-auto px-2 sticky top-0 z-10">
+          <div className="border dark:border-neutral-700 px-2 w-full my-2 flex gap-2 dark:text-white font-medium">
             <button onClick={() => setOpenMobileMenu(true)} className="block lg:hidden">
               <span className="sr-only">Open panel</span>
               <MenuIcon className="block h-5 w-5" aria-hidden="true" />
@@ -45,7 +44,8 @@ export default function Index() {
             navbar
           </div>
         </nav>
-        <div className="max-w-screen-2xl mx-auto px-2 mt-2 border h-full mb-2">
+
+        <div className="max-w-screen-2xl mx-auto px-2 mt-2 border dark:border-neutral-700 h-full mb-2">
           <div className="lg:flex py-2 h-full">
             <Transition.Root show={openMobileMenu} as={Fragment}>
               <Dialog as="aside" className="fixed inset-0 overflow-hidden lg:hidden z-20" onClose={setOpenMobileMenu}>
@@ -151,7 +151,7 @@ export default function Index() {
 
             <SidebarMenu />
 
-            <main className="px-2 w-full border lg:ml-60">
+            <main className="px-2 w-full border dark:border-neutral-700 lg:ml-60">
               <div className="bg-blue-500 h-96">
               </div>
               <div className="bg-red-500 h-96">
@@ -160,7 +160,8 @@ export default function Index() {
               </div>
             </main>
           </div>
-        </div>
+        </div >
+
       </Layout>
     </>
   )
