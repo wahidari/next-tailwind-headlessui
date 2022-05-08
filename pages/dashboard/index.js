@@ -1,7 +1,7 @@
 import LayoutDashboard from "@components/dashboard/LayoutDashboard";
 import { Fragment, useState, useContext } from 'react'
 import { GlobalContext } from "@utils/GlobalContext";
-import { Dialog, Transition, Menu, Popover, Disclosure } from '@headlessui/react'
+import { Dialog, Transition, Menu, Disclosure } from '@headlessui/react'
 import { ChevronRightIcon, MenuIcon, MoonIcon, SunIcon, XIcon } from '@heroicons/react/outline'
 import Head from "next/head";
 import ActiveLink from "@components/ActiveLink";
