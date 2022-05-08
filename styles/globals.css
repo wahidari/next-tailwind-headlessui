@@ -18,7 +18,7 @@ body {
 	border-radius: 999px;
 }
 
-html[class="dark"] { 
+html[class="dark"] {
 	--bg-react-select-control: #171717;
 	--bg-react-select-option-hover: #262626;
 	--text-react-select-option: white;
@@ -26,7 +26,7 @@ html[class="dark"] {
 	--react-select-border: #404040;
 }
 
-html { 
+html {
 	--bg-react-select-control: white;
 	--bg-react-select-option-hover: #f3f4f6;
 	--text-react-select-option: #171717;
@@ -66,7 +66,7 @@ html {
 	color: var(--text-react-select-option);
 }
 
-.react-select__option:hover{
+.react-select__option:hover {
 	background-color: var(--bg-react-select-option-hover) !important;
 	cursor: pointer !important;
 }
@@ -76,24 +76,71 @@ html {
 } */
 
 /* REACT SLICK CUSTOM NAV */
-.slick-custom-nav .slick-prev:before, .slick-custom-nav .slick-next:before {
-    content: '' !important;
+.slick-custom-nav .slick-prev:before,
+.slick-custom-nav .slick-next:before {
+	content: "" !important;
 }
 
-.react-slick-custom-nav .slick-next::before, .react-slick-custom-nav .slick-prev::before {
+.react-slick-custom-nav .slick-next::before,
+.react-slick-custom-nav .slick-prev::before {
 	color: #fff;
 	font-size: 24px;
 	/* opacity: .75; */
 }
 
-.react-slick-custom-nav .slick-next, .react-slick-custom-nav .slick-prev {
+.react-slick-custom-nav .slick-next,
+.react-slick-custom-nav .slick-prev {
 	width: 26px;
 	height: 26px;
 	background: #171717de;
 	padding-top: 3px;
 	border-radius: 50%;
 }
-.react-slick-custom-nav .slick-next:hover, .react-slick-custom-nav .slick-prev:hover {
+.react-slick-custom-nav .slick-next:hover,
+.react-slick-custom-nav .slick-prev:hover {
 	transition-duration: all 0.4s;
 	background: #171717;
+}
+
+html[class="dark"] {
+	--bg-primary: #171717;
+}
+
+html {
+	--bg-primary: white;
+}
+
+.feature-preview {
+	background: linear-gradient(var(--bg-primary), var(--bg-primary))
+			padding-box,
+		conic-gradient(
+				from -90deg at 56.46% 50%,
+				#fe6459 -16.88deg,
+				#fe6459 6.13deg,
+				#fedd40 56.93deg,
+				#53e7ab 136.22deg,
+				#52dbff 183.77deg,
+				#6967e2 240.4deg,
+				#fe58e3 300.44deg,
+				#fe6459 343.12deg,
+				#fe6459 366.13deg
+			)
+			border-box;
+}
+.feature-preview-b {
+	background: linear-gradient(var(--bg-primary), var(--bg-primary))
+			padding-box,
+		conic-gradient(
+				from -90deg at 56.46% 50%,
+				#00d87e -16.88deg,
+				#008cff 6.13deg,
+				#fe6459 56.93deg,
+				#fe6459 136.22deg,
+				#03f718 183.77deg,
+				#ffd000 240.4deg,
+				#fe58e3 300.44deg,
+				#ff008c 343.12deg,
+				#ff7300 366.13deg
+			)
+			border-box;
 }

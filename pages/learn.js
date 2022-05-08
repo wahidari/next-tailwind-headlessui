@@ -8,9 +8,11 @@ import { GlobalContext } from "@utils/GlobalContext";
 import { useContext } from "react";
 import BackToTop from "@components/BackToTop";
 import Layout from "@components/Layout";
+import { useState } from "react";
 
 export default function Learn() {
 	const { darkMode, setDarkMode } = useContext(GlobalContext);
+	const [open, setOpen] = useState(false)
 	return (
 		<div>
 			<Head>
@@ -26,6 +28,74 @@ export default function Learn() {
 
 			<Layout>
 				<main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pb-16">
+
+					<Section id="nav-icon-menu-animation" name="Nav Icon Menu Animation">
+						<button className="w-8 h-8 border dark:border-neutral-700 relative focus:outline-none mx-2 mb-2" onClick={() => setOpen(!open)}>
+							<span className="sr-only">Open main menu</span>
+							<div className="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+								<span aria-hidden="true" className={`${open ? "rotate-45" : "-translate-y-1.5"} block absolute h-0.5 w-5 bg-slate-900 dark:bg-white transform transition duration-500 ease-in-out`}></span>
+								<span aria-hidden="true" className={`${open ? "opacity-0" : ""} block absolute h-0.5 w-5 bg-slate-900 dark:bg-white transform transition duration-500 ease-in-out`}></span>
+								<span aria-hidden="true" className={`${open ? "-rotate-45" : "translate-y-1.5"} block absolute h-0.5 w-5 bg-slate-900 dark:bg-white transform transition duration-500 ease-in-out`}></span>
+							</div>
+						</button>
+						<button className="w-8 h-8 border dark:border-neutral-700 relative focus:outline-none mx-2 mb-2" onClick={() => setOpen(!open)}>
+							<span className="sr-only">Open main menu</span>
+							<div className="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+								<span aria-hidden="true" className={`${open ? "-rotate-45" : "-translate-y-1.5"} block absolute h-0.5 w-5 bg-slate-900 dark:bg-white transform transition duration-500 ease-in-out`}></span>
+								<span aria-hidden="true" className={`${open ? "opacity-0" : ""} block absolute h-0.5 w-5 bg-slate-900 dark:bg-white transform transition duration-500 ease-in-out`}></span>
+								<span aria-hidden="true" className={`${open ? "rotate-45" : "translate-y-1.5"} block absolute h-0.5 w-5 bg-slate-900 dark:bg-white transform transition duration-500 ease-in-out`}></span>
+							</div>
+						</button>
+						<br/>
+						<button className="w-8 h-8 border dark:border-neutral-700 relative focus:outline-none mx-2 mb-2" onClick={() => setOpen(!open)}>
+							<span className="sr-only">Open main menu</span>
+							<div className="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+								<span aria-hidden="true" className={`${open ? "rotate-45" : "-translate-y-1.5"} block absolute h-0.5 w-5 bg-slate-900 dark:bg-white transform transition duration-500 ease-in-out`}></span>
+								<span aria-hidden="true" className={`${open ? "opacity-0" : ""} block absolute h-0.5 w-4 bg-slate-900 dark:bg-white transform transition duration-500 ease-in-out`}></span>
+								<span aria-hidden="true" className={`${open ? "-rotate-45" : "translate-y-1.5"} block absolute h-0.5 w-5 bg-slate-900 dark:bg-white transform transition duration-500 ease-in-out`}></span>
+							</div>
+						</button>
+						<button className="w-8 h-8 border dark:border-neutral-700 relative focus:outline-none mx-2 mb-2" onClick={() => setOpen(!open)}>
+							<span className="sr-only">Open main menu</span>
+							<div className="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+								<span aria-hidden="true" className={`${open ? "-rotate-45" : "-translate-y-1.5"} block absolute h-0.5 w-5 bg-slate-900 dark:bg-white transform transition duration-500 ease-in-out`}></span>
+								<span aria-hidden="true" className={`${open ? "opacity-0" : ""} block absolute h-0.5 w-4 bg-slate-900 dark:bg-white transform transition duration-500 ease-in-out`}></span>
+								<span aria-hidden="true" className={`${open ? "rotate-45" : "translate-y-1.5"} block absolute h-0.5 w-5 bg-slate-900 dark:bg-white transform transition duration-500 ease-in-out`}></span>
+							</div>
+						</button>
+						<br/>
+						<button className="w-8 h-8 border dark:border-neutral-700 relative focus:outline-none mx-2 mb-2" onClick={() => setOpen(!open)}>
+							<span className="sr-only">Open main menu</span>
+							<div className="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+								<span aria-hidden="true" className={`${open ? "rotate-45" : "-translate-y-1.5"} block absolute h-0.5 w-5 bg-slate-900 dark:bg-white transform transition duration-500 ease-in-out`}></span>
+								<span aria-hidden="true" className={`${open ? "opacity-0" : ""} block absolute h-0.5 w-4 bg-slate-900 dark:bg-white transform transition duration-500 ease-in-out`}></span>
+								<span aria-hidden="true" className={`${open ? "-rotate-45 w-5" : "translate-y-1.5 w-3"} block absolute h-0.5 bg-slate-900 dark:bg-white transform transition duration-500 ease-in-out`}></span>
+							</div>
+						</button>
+						<button className="w-8 h-8 border dark:border-neutral-700 relative focus:outline-none mx-2 mb-2" onClick={() => setOpen(!open)}>
+							<span className="sr-only">Open main menu</span>
+							<div className="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+								<span aria-hidden="true" className={`${open ? "-rotate-45" : "-translate-y-1.5"} block absolute h-0.5 w-5 bg-slate-900 dark:bg-white transform transition duration-500 ease-in-out`}></span>
+								<span aria-hidden="true" className={`${open ? "opacity-0" : ""} block absolute h-0.5 w-4 bg-slate-900 dark:bg-white transform transition duration-500 ease-in-out`}></span>
+								<span aria-hidden="true" className={`${open ? "rotate-45 w-5" : "translate-y-1.5 w-3"} block absolute h-0.5 bg-slate-900 dark:bg-white transform transition duration-500 ease-in-out`}></span>
+							</div>
+						</button>
+					</Section>
+
+					<Section id="gradient-border-colorfull" name="Gradient Border Colorfull">
+						<div className="feature-preview max-w-sm border-2 border-dashed border-white dark:border-neutral-900">
+							<div className="max-w-md mx-auto py-8">
+								<p className="text-3xl text-center dark:text-white">Content</p>
+								<p className="mt-4 text-center lg:text-xs text-purple-500 uppercase font-semibold">Coming soon</p>
+							</div>
+						</div>
+						<div className="feature-preview-b max-w-sm border-2 border-dashed border-white dark:border-neutral-900 mt-3">
+							<div className="max-w-md mx-auto py-8">
+								<p className="text-3xl text-center dark:text-white">Content</p>
+								<p className="mt-4 text-center lg:text-xs text-purple-500 uppercase font-semibold">Coming soon</p>
+							</div>
+						</div>
+					</Section>
 
 					<Section id="gradient-border" name="Gradient Border">
 						<div className="relative inline-flex items-center justify-center p-0.5 mb-4 overflow-hidden text-sm font-medium text-gray-900 rounded-lg bg-gradient-to-br from-purple-600 to-blue-500">
