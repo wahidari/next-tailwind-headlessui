@@ -83,16 +83,30 @@ export default function Learn() {
 					</Section>
 
 					<Section id="gradient-border-colorfull" name="Gradient Border Colorfull">
-						<div className="feature-preview max-w-sm border-2 border-dashed border-white dark:border-neutral-900">
-							<div className="max-w-md mx-auto py-8">
-								<p className="text-3xl text-center dark:text-white">Content</p>
-								<p className="mt-4 text-center lg:text-xs text-purple-500 uppercase font-semibold">Coming soon</p>
+						<div className="grid sm:grid-cols-2 gap-4">
+							<div className="feature-preview border-2 border-dashed border-white dark:border-neutral-900 p-8">
+								<div className="max-w-md mx-auto">
+									<p className="text-3xl text-center dark:text-white">Content</p>
+									<p className="mt-4 text-center lg:text-xs text-purple-500 uppercase font-semibold">Coming soon</p>
+								</div>
 							</div>
-						</div>
-						<div className="feature-preview-b max-w-sm border-2 border-dashed border-white dark:border-neutral-900 mt-3">
-							<div className="max-w-md mx-auto py-8">
-								<p className="text-3xl text-center dark:text-white">Content</p>
-								<p className="mt-4 text-center lg:text-xs text-purple-500 uppercase font-semibold">Coming soon</p>
+							<div className="feature-preview-b border-2 border-dashed border-white dark:border-neutral-900 p-8">
+								<div className="max-w-md mx-auto">
+									<p className="text-3xl text-center dark:text-white">Content</p>
+									<p className="mt-4 text-center lg:text-xs text-purple-500 uppercase font-semibold">Coming soon</p>
+								</div>
+							</div>
+							<div className="feature-preview-c border-2 border-dashed border-white dark:border-neutral-900 p-8">
+								<div className="max-w-md mx-auto">
+									<p className="text-3xl text-center dark:text-white">Content</p>
+									<p className="mt-4 text-center lg:text-xs text-purple-500 uppercase font-semibold">Coming soon</p>
+								</div>
+							</div>
+							<div className="feature-preview-d border-2 border-dashed border-white dark:border-neutral-900 p-8">
+								<div className="max-w-md mx-auto">
+									<p className="text-3xl text-center dark:text-white">Content</p>
+									<p className="mt-4 text-center lg:text-xs text-purple-500 uppercase font-semibold">Coming soon</p>
+								</div>
 							</div>
 						</div>
 					</Section>

@@ -102,6 +102,7 @@ html {
 	background: #171717;
 }
 
+/* Gradient Border Colorfull */
 html[class="dark"] {
 	--bg-primary: #171717;
 }
@@ -112,6 +113,7 @@ html {
 
 .feature-preview {
 	background: linear-gradient(var(--bg-primary), var(--bg-primary))
+	/* background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)) */
 			padding-box,
 		conic-gradient(
 				from -90deg at 56.46% 50%,
@@ -129,18 +131,55 @@ html {
 }
 .feature-preview-b {
 	background: linear-gradient(var(--bg-primary), var(--bg-primary))
+	/* background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)) */
 			padding-box,
 		conic-gradient(
-				from -90deg at 56.46% 50%,
-				#00d87e -16.88deg,
-				#008cff 6.13deg,
-				#fe6459 56.93deg,
-				#fe6459 136.22deg,
-				#03f718 183.77deg,
-				#ffd000 240.4deg,
+				from 0deg at 50% 50%,
+				#fe6459 -16.88deg,
+				#fe6459 6.13deg,
+				#fedd40 56.93deg,
+				#53e7ab 136.22deg,
+				#52dbff 183.77deg,
+				#6967e2 240.4deg,
 				#fe58e3 300.44deg,
-				#ff008c 343.12deg,
-				#ff7300 366.13deg
+				#fe6459 343.12deg,
+				#fe6459 366.13deg
+			)
+			border-box;
+}
+.feature-preview-c {
+	background: linear-gradient(var(--bg-primary), var(--bg-primary))
+	/* background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)) */
+			padding-box,
+		conic-gradient(
+				from 90deg at 50% 50%,
+				#fe6459 -16.88deg,
+				#fe6459 6.13deg,
+				#fedd40 56.93deg,
+				#53e7ab 136.22deg,
+				#52dbff 183.77deg,
+				#6967e2 240.4deg,
+				#fe58e3 300.44deg,
+				#fe6459 343.12deg,
+				#fe6459 366.13deg
+			)
+			border-box;
+}
+.feature-preview-d {
+	background: linear-gradient(var(--bg-primary), var(--bg-primary))
+	/* background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)) */
+			padding-box,
+		conic-gradient(
+				from 180deg at 50% 50%,
+				#fe6459 -16.88deg,
+				#fe6459 6.13deg,
+				#fedd40 56.93deg,
+				#53e7ab 136.22deg,
+				#52dbff 183.77deg,
+				#6967e2 240.4deg,
+				#fe58e3 300.44deg,
+				#fe6459 343.12deg,
+				#fe6459 366.13deg
 			)
 			border-box;
 }
