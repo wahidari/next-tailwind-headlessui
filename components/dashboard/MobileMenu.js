@@ -48,7 +48,7 @@ export default function MobileMenu() {
               leaveFrom="translate-x-0"
               leaveTo="-translate-x-full"
             >
-              <div className="pointer-events-auto relative w-screen max-w-md">
+              <div className="pointer-events-auto relative w-screen max-w-sm">
                 {/* Close Panel Button  */}
                 <div className="absolute top-0 right-0 pt-6 mr-6">
                   <button
@@ -90,19 +90,19 @@ export default function MobileMenu() {
                         <Menu>
                           {({ open }) => (
                             <>
-                              <Menu.Button className="px-2 w-full py-1 rounded font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all">
+                              <Menu.Button className="px-2 w-full py-1 rounded text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all">
                                 <div className="flex justify-between items-center">
                                   <span>Accordion Menu</span>
                                   <ChevronRightIcon
                                     className={`${open ? 'transform rotate-90 transition-transform duration-200' : 'transition-transform duration-200'
-                                      } w-5 h-5`}
+                                      } w-4 h-4`}
                                   />
                                 </div>
                               </Menu.Button>
-                              <Menu.Items className="px-4 gap-y-1 flex flex-col">
+                              <Menu.Items className="px-3 gap-y-1 flex flex-col">
                                 <Menu.Item>
                                   <ActiveLink activeClassName="bg-gray-100" href="/">
-                                    <a className="px-2 block py-1 rounded font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
+                                    <a className="px-2 block py-1 rounded text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
                                       1
                                     </a>
                                   </ActiveLink>
@@ -120,18 +120,18 @@ export default function MobileMenu() {
                         <Disclosure>
                           {({ open }) => (
                             <>
-                              <Disclosure.Button className="flex justify-between px-2 py-1 items-center font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 rounded transition-all">
+                              <Disclosure.Button className="flex justify-between px-2 py-1 items-center text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 rounded transition-all">
                                 <span>Accordion Disclosure</span>
                                 <ChevronRightIcon
                                   className={`
                         ${open ? 'transform rotate-90 transition-transform duration-200' : 'transition-transform duration-200'} 
-                        w-5 h-5 
+                        w-4 h-4 
                         `}
                                 />
                               </Disclosure.Button>
-                              <Disclosure.Panel className="px-4 space-y-1">
+                              <Disclosure.Panel className="px-3 space-y-1">
                                 <ActiveLink activeClassName="bg-gray-100" href="/">
-                                  <a className="px-2 block py-1 rounded font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
+                                  <a className="px-2 block py-1 rounded text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
                                     A
                                   </a>
                                 </ActiveLink>
@@ -148,7 +148,7 @@ export default function MobileMenu() {
 
                         <MobileNavAccordion name="First" routeName="/dashboard/first">
                           <ActiveLink activeClassName="bg-gray-100 dark:bg-neutral-800" href="/dashboard/first">
-                            <a className="px-2 block py-1 rounded font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
+                            <a className="px-2 block py-1 rounded text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
                               First A
                             </a>
                           </ActiveLink>
@@ -162,7 +162,7 @@ export default function MobileMenu() {
 
                         <MobileNavAccordion name="Second" routeName="/dashboard/second">
                           <ActiveLink activeClassName="bg-gray-100 dark:bg-neutral-800" href="/dashboard/second">
-                            <a className="px-2 block py-1 rounded font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
+                            <a className="px-2 block py-1 rounded text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
                               Second A
                             </a>
                           </ActiveLink>
@@ -175,7 +175,7 @@ export default function MobileMenu() {
                         </MobileNavAccordion>
 
                         <ActiveLink activeClassName="bg-gray-100 dark:bg-neutral-800" href="/dashboard">
-                          <a className="px-2 block py-1 rounded font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
+                          <a className="px-2 block py-1 rounded text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
                             Dashboard
                           </a>
                         </ActiveLink>
