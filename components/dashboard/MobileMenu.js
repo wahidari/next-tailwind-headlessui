@@ -17,7 +17,7 @@ export default function MobileMenu() {
 
   // handle auto close mobile menu panel based on route changes 
   useEffect(() => {
-    setShowMobileMenu(!showMobileMenu)
+    setShowMobileMenu(false)
   },[router.pathname])
 
   return (
@@ -85,6 +85,7 @@ export default function MobileMenu() {
                   <div className="relative mt-6 flex-1 px-4 sm:px-6">
                     {/* Mobile Menu Link */}
                     <div className="absolute inset-0 px-4">
+                      {/* <div className="h-full flex flex-col gap-y-1 pr-2 overflow-auto scrollbar-thin scrollbar-thumb-gray-200 dark:scrollbar-thumb-neutral-700 scrollbar-thumb-rounded" aria-hidden="true"> */}
                       <div className="h-full flex flex-col gap-y-1 overflow-auto" aria-hidden="true">
                         <Menu>
                           {({ open }) => (
