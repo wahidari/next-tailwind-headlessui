@@ -7,6 +7,9 @@ import Head from "next/head";
 import ActiveLink from "@components/ActiveLink";
 import Layout from "@components/Layout";
 import SidebarMenu from "@components/dashboard/SidebarMenu";
+import ThemeToggle from "@components/dashboard/ThemeToggle";
+import DashboardNav from "@components/dashboard/DashboardNav";
+import MobileMenu from "@components/dashboard/MobileMenu";
 
 export default function Index() {
 
@@ -23,140 +26,24 @@ export default function Index() {
 
       <Layout>
 
-        <div className="!py-2 px-2 rounded mx-4 bg-opacity-20 dark:bg-opacity-40 bg-gray-100 backdrop-filter backdrop-blur fixed bottom-20 right-3 md:right-10 z-10">
-          {darkMode ?
-            <button onClick={() => setDarkMode(!darkMode)} aria-label="Change Theme" className="w-8 h-8 p-1 transition-all ease-in duration-300 bg-neutral-800 hover:bg-neutral-700 text-white rounded-full">
-              <SunIcon />
-            </button>
-            :
-            <button onClick={() => setDarkMode(!darkMode)} aria-label="Change Theme" className="w-8 h-8 p-1 transition-all ease-in duration-300 bg-gray-100 hover:bg-gray-200 rounded-full">
-              <MoonIcon />
-            </button>
-          }
-        </div>
+        <ThemeToggle />
 
-        <nav className="border dark:border-neutral-700 flex max-w-screen-2xl mx-auto px-2 sticky top-0 z-10">
-          <div className="border dark:border-neutral-700 px-2 w-full my-2 flex gap-2 dark:text-white font-medium">
-            <button onClick={() => setOpenMobileMenu(true)} className="block lg:hidden">
-              <span className="sr-only">Open panel</span>
-              <MenuIcon className="block h-5 w-5" aria-hidden="true" />
-            </button>
-            navbar
-          </div>
-        </nav>
+        <DashboardNav />
 
-        <div className="max-w-screen-2xl mx-auto px-2 mt-2 border dark:border-neutral-700 h-full mb-2">
+        <MobileMenu />
+
+        <div className="max-w-screen-2xl mx-auto px-2 mt-2 border dark:border-neutral-700 h-full">
           <div className="lg:flex py-2 h-full">
-            <Transition.Root show={openMobileMenu} as={Fragment}>
-              <Dialog as="aside" className="fixed inset-0 overflow-hidden lg:hidden z-20" onClose={setOpenMobileMenu}>
-                <div className="absolute inset-0 overflow-hidden">
-                  {/* Backdrop */}
-                  <Transition.Child
-                    as={Fragment}
-                    enter="ease-in-out duration-500"
-                    enterFrom="opacity-0"
-                    enterTo="opacity-100"
-                    leave="ease-in-out duration-500"
-                    leaveFrom="opacity-100"
-                    leaveTo="opacity-0"
-                  >
-                    <Dialog.Overlay className="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
-                  </Transition.Child>
-                  {/* End Backdrop */}
-
-                  {/* Mobile Menu Panel  */}
-                  <div className="pointer-events-none fixed inset-y-0 left-0 flex max-w-full pr-16">
-                    <Transition.Child
-                      as={Fragment}
-                      enter="transform transition ease-in-out duration-500 sm:duration-700"
-                      enterFrom="-translate-x-full"
-                      enterTo="translate-x-0"
-                      leave="transform transition ease-in-out duration-500 sm:duration-700"
-                      leaveFrom="translate-x-0"
-                      leaveTo="-translate-x-full"
-                    >
-                      <div className="pointer-events-auto relative w-screen max-w-md">
-                        {/* Close Panel Button  */}
-                        <div className="absolute top-0 right-0 flex pt-6 mr-6">
-                          <button
-                            type="button"
-                            className="rounded p-1 text-gray-500 hover:text-gray-800 ring-2 ring-gray-500 hover:ring-gray-800"
-                            onClick={() => setOpenMobileMenu(false)}
-                          >
-                            <span className="sr-only">Close panel</span>
-                            <XIcon className="h-5 w-5" aria-hidden="true" />
-                          </button>
-                        </div>
-                        {/* End Close Panel Button  */}
-                        <div className="flex h-full flex-col overflow-y-hide bg-white py-6 shadow-xl">
-                          <div className="px-6">
-                            <Dialog.Title className="text-lg font-medium text-gray-900"> Menu </Dialog.Title>
-                          </div>
-                          <div className="relative mt-6 flex-1 px-4 sm:px-6">
-                            {/* Navbar Link */}
-                            <div className="absolute inset-0 px-4">
-                              <div className="h-full" aria-hidden="true">
-                                <ActiveLink activeClassName="bg-gray-100" href="/dashboard">
-                                  <a className="border-b-1 px-2 block py-2 rounded text-base font-medium text-gray-600 hover:bg-gray-100">Dashboard</a>
-                                </ActiveLink>
-                                <hr className="my-1 mx-2" />
-                                <ActiveLink activeClassName="bg-gray-100" href="/second">
-                                  <a className="border-b-1 px-2 block py-2 rounded text-base font-medium text-gray-600 hover:bg-gray-100">Second</a>
-                                </ActiveLink>
-                                <hr className="my-1 mx-2" />
-                                <Menu>
-                                  {({ open }) => (
-                                    <>
-                                      <Menu.Button className="border-b-1 px-2 w-full py-2 rounded text-base font-medium text-gray-600 hover:bg-gray-100">
-                                        <div className="flex justify-between items-center">
-                                          <span>More</span>
-                                          <ChevronRightIcon
-                                            className={`${open ? 'transform rotate-90 transition-transform duration-200' : 'transition-transform duration-200'
-                                              } w-5 h-5`}
-                                          />
-                                        </div>
-                                      </Menu.Button>
-                                      <Menu.Items className="space-y-1 px-3">
-                                        <Menu.Item>
-                                          <ActiveLink activeClassName="bg-gray-100" href="/third">
-                                            <a className="block px-3 py-2 rounded text-base font-medium text-gray-600 hover:bg-gray-100">Third</a>
-                                          </ActiveLink>
-                                        </Menu.Item>
-                                        <hr className="my-1 mx-3" />
-                                        <Menu.Item>
-                                          <ActiveLink activeClassName="bg-gray-100" href="/fourth">
-                                            <a className="block px-3 py-2 rounded text-base font-medium text-gray-600 hover:bg-gray-100">Fourth</a>
-                                          </ActiveLink>
-                                        </Menu.Item>
-                                      </Menu.Items>
-                                    </>
-                                  )}
-                                </Menu>
-                                <hr className="my-1 mx-2" />
-                                <ActiveLink activeClassName="bg-gray-100" href="/nav-bar">
-                                  <a className="border-b-1 px-2 block py-2 rounded text-base font-medium text-gray-600 hover:bg-gray-100">Navbar</a>
-                                </ActiveLink>
-                              </div>
-                            </div>
-                            {/* End Navbar Link */}
-                          </div>
-                        </div>
-                      </div>
-                    </Transition.Child>
-                  </div>
-                  {/* End Mobile Menu Panel  */}
-                </div>
-              </Dialog>
-            </Transition.Root>
 
             <SidebarMenu />
 
             <main className="px-2 w-full border dark:border-neutral-700 lg:ml-60">
-              <div className="bg-blue-500 h-96">
-              </div>
-              <div className="bg-red-500 h-96">
+              <div className="bg-red-500 h-96 flex items-center justify-center">
+                <h1 className="text-white font-medium text-2xl px-8">{`The "First" Menu Accordion Should Be Opened`}</h1>
               </div>
               <div className="bg-teal-500 h-96">
+              </div>
+              <div className="bg-blue-500 h-96">
               </div>
             </main>
           </div>

@@ -21,10 +21,10 @@ export default function Index() {
 
         <DashboardNav />
 
+        <MobileMenu />
+
         <div className="max-w-screen-2xl mx-auto px-2 mt-2 border dark:border-neutral-700 h-full">
           <div className="lg:flex py-2 h-full">
-
-            <MobileMenu />
 
             <SidebarMenu />
 
