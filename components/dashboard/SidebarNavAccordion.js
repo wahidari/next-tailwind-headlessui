@@ -32,7 +32,7 @@ export default function SidebarNavAccordion({ name, routeName, children }) {
       <Disclosure defaultOpen={isOpen}>
         {({ open }) => (
           <>
-            <Disclosure.Button className="flex justify-between px-2 py-1 items-center text-sm font-medium dark:text-white hover:bg-gray-100 dark:bg-neutral-900 dark:hover:bg-neutral-800 rounded transition-all">
+            <Disclosure.Button className="w-full flex justify-between px-2 py-1 items-center text-sm font-medium dark:text-white hover:bg-gray-100 dark:bg-neutral-900 dark:hover:bg-neutral-800 rounded transition-all">
               <span>{name}</span>
               <ChevronRightIcon
                 className={`w-4 h-4
