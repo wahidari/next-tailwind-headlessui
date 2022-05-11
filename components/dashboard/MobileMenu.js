@@ -4,7 +4,7 @@ import ActiveLink from "@components/ActiveLink";
 import { useContext, useEffect } from "react";
 import { Fragment } from 'react'
 import { GlobalContext } from "@utils/GlobalContext";
-import { ChevronRightIcon, MoonIcon, SunIcon } from "@heroicons/react/outline";
+import { LibraryIcon, ChevronRightIcon, MoonIcon, SunIcon, UserGroupIcon, ArrowSmRightIcon } from "@heroicons/react/outline";
 import MobileNavLink from "./MobileNavLink";
 import MobileNavAccordion from "./MobileNavAccordion";
 import { useRouter } from "next/router";
@@ -82,11 +82,11 @@ export default function MobileMenu() {
                   <div className="px-6">
                     <Dialog.Title className="text-lg font-medium dark:text-white"> Menu </Dialog.Title>
                   </div>
-                  <div className="relative mt-6 flex-1 px-4 sm:px-6">
+                  <div className="relative mt-6 flex-1">
                     {/* Mobile Menu Link */}
                     <div className="absolute inset-0 px-4">
                       {/* <div className="h-full flex flex-col gap-y-1 pr-2 overflow-auto scrollbar-thin scrollbar-thumb-gray-200 dark:scrollbar-thumb-neutral-700 scrollbar-thumb-rounded" aria-hidden="true"> */}
-                      <div className="h-full flex flex-col gap-y-1 overflow-auto" aria-hidden="true">
+                      <div className="h-full flex flex-col gap-y-1 overflow-auto pr-3" aria-hidden="true">
                         <Menu>
                           {({ open }) => (
                             <>
@@ -99,7 +99,7 @@ export default function MobileMenu() {
                                   />
                                 </div>
                               </Menu.Button>
-                              <Menu.Items className="px-3 gap-y-1 flex flex-col">
+                              <Menu.Items className="px-4 gap-y-1 flex flex-col">
                                 <Menu.Item>
                                   <ActiveLink activeClassName="bg-gray-100" href="/">
                                     <a className="px-2 block py-1 rounded text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
@@ -129,7 +129,7 @@ export default function MobileMenu() {
                         `}
                                 />
                               </Disclosure.Button>
-                              <Disclosure.Panel className="px-3 space-y-1">
+                              <Disclosure.Panel className="px-4 space-y-1">
                                 <ActiveLink activeClassName="bg-gray-100" href="/">
                                   <a className="px-2 block py-1 rounded text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
                                     A
@@ -152,7 +152,7 @@ export default function MobileMenu() {
                               First A
                             </a>
                           </ActiveLink>
-                          <MobileNavLink href="/dashboard/first/b">
+                          <MobileNavLink href="/dashboard/first/b" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
                             First B
                           </MobileNavLink>
                           <MobileNavLink href="/dashboard/first/c">
@@ -166,7 +166,7 @@ export default function MobileMenu() {
                               Second A
                             </a>
                           </ActiveLink>
-                          <MobileNavLink href="/dashboard/second/b">
+                          <MobileNavLink href="/dashboard/second/b" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
                             Second B
                           </MobileNavLink>
                           <MobileNavLink href="/dashboard/second/c">
@@ -175,20 +175,21 @@ export default function MobileMenu() {
                         </MobileNavAccordion>
 
                         <ActiveLink activeClassName="bg-gray-100 dark:bg-neutral-800" href="/dashboard">
-                          <a className="px-2 block py-1 rounded text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
+                          <a className="px-2 flex justify-start gap-2 items-center py-1 rounded text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
+                            <ArrowSmRightIcon className="w-4 h-4" />
                             Dashboard
                           </a>
                         </ActiveLink>
-                        <MobileNavLink href="/dashboard/first">
+                        <MobileNavLink href="/dashboard/first" icon={<LibraryIcon className="w-4 h-4" />}>
                           First
                         </MobileNavLink>
-                        <MobileNavLink href="/dashboard/second">
+                        <MobileNavLink href="/dashboard/second" icon={<UserGroupIcon className="w-4 h-4" />}>
                           Second
                         </MobileNavLink>
 
                         {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(item => {
                           return (
-                            <MobileNavLink key={item + 1} href="#">
+                            <MobileNavLink key={item + 1} href="#" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
                               Link #{item}
                             </MobileNavLink>
                           )
