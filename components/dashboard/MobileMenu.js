@@ -15,7 +15,7 @@ export default function MobileMenu() {
   const { darkMode, setDarkMode } = useContext(GlobalContext);
   const router = useRouter()
 
-  // handle auto close mobile menu panel based on route changes 
+  // handle auto close mobile menu panel based on route changes or page being refreshed
   useEffect(() => {
     setShowMobileMenu(false)
   },[router.pathname])
