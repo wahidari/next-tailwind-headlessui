@@ -1,6 +1,6 @@
 import ActiveLink from "@components/ActiveLink"
 import { Disclosure, Menu } from "@headlessui/react"
-import { ChevronRightIcon } from "@heroicons/react/outline"
+import { ArrowSmRightIcon, ChevronRightIcon, LibraryIcon, UserGroupIcon } from "@heroicons/react/outline"
 import SidebarNavAccordion from "./SidebarNavAccordion"
 import SidebarNavLink from "./SidebarNavLink"
 
@@ -88,7 +88,7 @@ export default function SidebarMenu() {
               First A
             </a>
           </ActiveLink>
-          <SidebarNavLink href="/dashboard/first/b">
+          <SidebarNavLink href="/dashboard/first/b" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
             First B
           </SidebarNavLink>
           <SidebarNavLink href="/dashboard/first/c">
@@ -102,7 +102,7 @@ export default function SidebarMenu() {
               Second A
             </a>
           </ActiveLink>
-          <SidebarNavLink href="/dashboard/second/b">
+          <SidebarNavLink href="/dashboard/second/b" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
             Second B
           </SidebarNavLink>
           <SidebarNavLink href="/dashboard/second/c">
@@ -111,20 +111,21 @@ export default function SidebarMenu() {
         </SidebarNavAccordion>
 
         <ActiveLink activeClassName="bg-gray-100 dark:bg-neutral-800" href="/dashboard">
-          <a className="px-2 block py-1 rounded text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
+          <a className="px-2 flex justify-start items-center gap-2 py-1 rounded text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
+            <ArrowSmRightIcon className="w-4 h-4" />
             Dashboard
           </a>
         </ActiveLink>
-        <SidebarNavLink href="/dashboard/first">
+        <SidebarNavLink href="/dashboard/first" icon={<LibraryIcon className="w-4 h-4" />}>
           First
         </SidebarNavLink>
-        <SidebarNavLink href="/dashboard/second">
+        <SidebarNavLink href="/dashboard/second" icon={<UserGroupIcon className="w-4 h-4" />}>
           Second
         </SidebarNavLink>
 
         {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(item => {
           return (
-            <SidebarNavLink key={item + 1} href="#">
+            <SidebarNavLink key={item + 1} href="#" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
               Link #{item}
             </SidebarNavLink>
           )
