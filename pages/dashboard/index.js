@@ -31,30 +31,9 @@ export default function Index() {
             <SidebarMenu />
 
             <main className="px-2 w-full border dark:border-neutral-700 lg:ml-60">
-              <nav className="p-2 border dark:border-neutral-700 my-2 overflow-x-auto" aria-label="Breadcrumb">
-                <ol className="flex items-center space-x-1">
-                  <li>
-                    <div className="flex items-center">
-                      <ChevronRightIcon className="text-gray-600 dark:text-gray-300 w-4 h-4" />
-                      <a href="#" className="ml-1 text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-all">Home</a>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="flex items-center">
-                      <ChevronRightIcon className="text-gray-600 dark:text-gray-300 w-4 h-4" />
-                      <a href="#" className="ml-1 text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-all">Projects</a>
-                    </div>
-                  </li>
-                  {/* Current Page  */}
-                  <li aria-current="page">
-                    <div className="flex items-center">
-                      <ChevronRightIcon className="text-gray-600 dark:text-gray-300 w-4 h-4" />
-                      <span className="ml-1 text-sm font-medium text-blue-500">Page</span>
-                    </div>
-                  </li>
-                </ol>
-              </nav>
+              
               <Breadcrumb/>
+              
               <div className="bg-blue-500 h-96">
               </div>
               <div className="bg-red-500 h-96">

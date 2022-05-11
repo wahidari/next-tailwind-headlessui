@@ -10,6 +10,7 @@ import SidebarMenu from "@components/dashboard/SidebarMenu";
 import MobileMenu from "@components/dashboard/MobileMenu";
 import DashboardNav from "@components/dashboard/DashboardNav";
 import ThemeToggle from "@components/dashboard/ThemeToggle";
+import Breadcrumb from "@components/Breadcrumb";
 
 export default function Index() {
 
@@ -38,6 +39,9 @@ export default function Index() {
             <SidebarMenu />
 
             <main className="px-2 w-full border dark:border-neutral-700 lg:ml-60">
+
+              <Breadcrumb />
+
               <div className="bg-teal-500 h-96 flex items-center justify-center">
                 <h1 className="text-white font-medium text-2xl px-8">{`The "Second" Menu Accordion Should Be Opened`}</h1>
               </div>

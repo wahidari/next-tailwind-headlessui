@@ -1,4 +1,5 @@
 import { ChevronRightIcon } from "@heroicons/react/outline";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 export default function Breadcrumb() {
@@ -48,12 +49,13 @@ export default function Breadcrumb() {
   const breadcrumb = generateBreadcrumb();
   console.log(breadcrumb)
 
-  function capitalizeFirstLetter (string) {
+  function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
+
   console.log(paths)
-  paths.map((item, index) => {
-    console.log(capitalizeFirstLetter(paths[index]))
+  paths.map(item => {
+    console.log(capitalizeFirstLetter(item))
   })
 
   return (
@@ -62,23 +64,37 @@ export default function Breadcrumb() {
         <li>
           <div className="flex items-center">
             <ChevronRightIcon className="text-gray-600 dark:text-gray-300 w-4 h-4" />
-
-            <a href="" className="ml-1 text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-all">Home</a>
+            <Link href="/">
+              <a className="ml-1 text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-all">Home</a>
+            </Link>
           </div>
         </li>
-        <li>
-          <div className="flex items-center">
-            <ChevronRightIcon className="text-gray-600 dark:text-gray-300 w-4 h-4" />
-            <a href="#" className="ml-1 text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-all">Projects</a>
-          </div>
-        </li>
-        {/* Current Page  */}
-        <li aria-current="page">
-          <div className="flex items-center">
-            <ChevronRightIcon className="text-gray-600 dark:text-gray-300 w-4 h-4" />
-            <span className="ml-1 text-sm font-medium text-blue-500">Page</span>
-          </div>
-        </li>
+        {paths.map((item, index) => {
+          // last index is current page 
+          if (index == paths.length - 1) {
+            return (
+              <li aria-current="page">
+                <div className="flex items-center">
+                  <ChevronRightIcon className="text-gray-600 dark:text-gray-300 w-4 h-4" />
+                  <span className="ml-1 text-sm font-medium text-blue-500">{capitalizeFirstLetter(item)}</span>
+                </div>
+              </li>
+            )
+          }
+          // make link if not last index 
+          return (
+            <li key={index}>
+              <div className="flex items-center">
+                <ChevronRightIcon className="text-gray-600 dark:text-gray-300 w-4 h-4" />
+                <Link href={breadcrumb[index]}>
+                  <a className="ml-1 text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-all">
+                    {capitalizeFirstLetter(item)}
+                  </a>
+                </Link>
+              </div>
+            </li>
+          )
+        })}
       </ol>
     </nav>
   )
