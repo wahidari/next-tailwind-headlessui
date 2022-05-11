@@ -1,4 +1,4 @@
-import { Disclosure } from "@headlessui/react";
+import { Disclosure, Transition } from "@headlessui/react";
 import { ChevronRightIcon } from "@heroicons/react/outline";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
@@ -39,9 +39,18 @@ export default function SidebarNavAccordion({ name, routeName, children }) {
                   className={`w-4 h-4 ${open ? 'transform rotate-90 transition-transform' : 'transition-transform'}`}
                 />
               </Disclosure.Button>
-              <Disclosure.Panel className="px-4 text-sm space-y-1">
-                {children}
-              </Disclosure.Panel>
+              {/* <Transition
+                enter="transition duration-300 ease-in"
+                enterFrom="transform opacity-0"
+                enterTo="transform opacity-100"
+                leave="transition-all ease-out"
+                leaveFrom="transform opacity-100"
+                leaveTo="transform opacity-0"
+              > */}
+                <Disclosure.Panel className="px-4 text-sm space-y-1">
+                  {children}
+                </Disclosure.Panel>
+              {/* </Transition> */}
             </>
           )}
         </Disclosure>
