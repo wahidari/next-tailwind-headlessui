@@ -4,11 +4,9 @@ import { useRouter } from "next/router";
 
 export default function Breadcrumb() {
   const router = useRouter()
-  // console.log(router.pathname)
   // split by "/" and remove first item 
   const paths = router.pathname.split("/").splice(1)
   // ['', 'dashboard', 'first']
-  // console.log(paths)
 
   // function generateBreadcrumbs() {
   //   // Iterate over the list of paths list and build a "crumb item" object for each one.
@@ -29,38 +27,32 @@ export default function Breadcrumb() {
 
   function generateBreadcrumb() {
     let arrayPath = []
-    // console.log(paths)
     // example paths array = ['dashboard', 'first']
     paths.map((item, index) => {
       // first iteration, slice array from index 0, take 0+1 item then push to arrayPath
       // ['/dashboard']
-      // second iteration, slice array from index 0, take 1+1 item then push to arrayPath
+      // second iteration, slice array from index 0, take 1+1 item then push to arrayPath join with "/"
       // ['/dashboard', '/dashboard/first']
-      // N iteration, slice array from index 0, take N+1 item then push to arrayPath
+      // N iteration, slice array from index 0, take N+1 item then push to arrayPath join with "/"
       // ['/dashboard', '/dashboard/first', ...N]
       arrayPath.push("/" + paths.slice(0, index + 1).join("/"))
-      // console.log(index+1)
-      // console.log("/" + paths.slice(0, index + 1).join("/"))
     })
-    // console.log(arrayPath)
     return arrayPath
   }
 
   const breadcrumb = generateBreadcrumb();
-  console.log(breadcrumb)
+  // console.log(breadcrumb)
 
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
 
-  console.log(paths)
-  paths.map(item => {
-    console.log(capitalizeFirstLetter(item))
-  })
+  // console.log(paths)
 
   return (
-    <nav className="p-2 border dark:border-neutral-700 my-2 overflow-x-auto" aria-label="Breadcrumb">
-      <ol className="flex items-center space-x-1">
+    <nav className="p-2 border dark:border-neutral-700 my-2 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-200 dark:scrollbar-thumb-neutral-700 scrollbar-thumb-rounded" aria-label="Breadcrumb">
+      {/* <nav className="p-2 border dark:border-neutral-700 my-2 overflow-x-auto" aria-label="Breadcrumb"> */}
+      <ol className="flex items-center space-x-1 last:pr-4">
         <li>
           <div className="flex items-center">
             <ChevronRightIcon className="text-gray-600 dark:text-gray-300 w-4 h-4" />
@@ -70,13 +62,15 @@ export default function Breadcrumb() {
           </div>
         </li>
         {paths.map((item, index) => {
-          // last index is current page 
+          // last index is current active page 
           if (index == paths.length - 1) {
             return (
               <li aria-current="page">
                 <div className="flex items-center">
                   <ChevronRightIcon className="text-gray-600 dark:text-gray-300 w-4 h-4" />
-                  <span className="ml-1 text-sm font-medium text-blue-500">{capitalizeFirstLetter(item)}</span>
+                  <span className="ml-1 mr-3 text-sm font-medium text-blue-500">
+                    {capitalizeFirstLetter(item)}
+                  </span>
                 </div>
               </li>
             )
