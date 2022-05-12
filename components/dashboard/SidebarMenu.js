@@ -1,6 +1,6 @@
 import ActiveLink from "@components/ActiveLink"
 import { Disclosure, Menu } from "@headlessui/react"
-import { ArrowSmRightIcon, ChevronDoubleRightIcon, ChevronRightIcon, LibraryIcon, UserGroupIcon } from "@heroicons/react/outline"
+import { ArrowSmRightIcon, ChevronDoubleRightIcon, ChevronRightIcon, LibraryIcon, TemplateIcon, UserGroupIcon } from "@heroicons/react/outline"
 import SidebarNavAccordion from "./SidebarNavAccordion"
 import SidebarNavLink from "./SidebarNavLink"
 
@@ -122,8 +122,11 @@ export default function SidebarMenu() {
         <SidebarNavLink href="/dashboard/second" icon={<UserGroupIcon className="w-4 h-4" />}>
           Second
         </SidebarNavLink>
+        <SidebarNavLink href="/dashboard/third" icon={<TemplateIcon className="w-4 h-4" />}>
+          Third (Layout Dashboard)
+        </SidebarNavLink>
         <SidebarNavLink href="/breadcrumb/first/second/detail/1" icon={<ChevronDoubleRightIcon className="w-4 h-4" />}>
-          Breadcrumb Tes
+          Breadcrumb
         </SidebarNavLink>
 
         {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(item => {

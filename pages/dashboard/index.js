@@ -4,7 +4,6 @@ import SidebarMenu from "@components/dashboard/SidebarMenu";
 import MobileMenu from "@components/dashboard/MobileMenu";
 import DashboardNav from "@components/dashboard/DashboardNav";
 import ThemeToggle from '@components/dashboard/ThemeToggle';
-import { ArrowRightIcon, ChevronRightIcon } from "@heroicons/react/outline";
 import Breadcrumb from "@components/Breadcrumb";
 
 export default function Index() {

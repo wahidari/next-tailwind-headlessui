@@ -4,7 +4,7 @@ import ActiveLink from "@components/ActiveLink";
 import { useContext, useEffect } from "react";
 import { Fragment } from 'react'
 import { GlobalContext } from "@utils/GlobalContext";
-import { LibraryIcon, ChevronRightIcon, MoonIcon, SunIcon, UserGroupIcon, ArrowSmRightIcon, ChevronDoubleRightIcon } from "@heroicons/react/outline";
+import { LibraryIcon, ChevronRightIcon, MoonIcon, SunIcon, UserGroupIcon, ArrowSmRightIcon, ChevronDoubleRightIcon, TemplateIcon } from "@heroicons/react/outline";
 import MobileNavLink from "./MobileNavLink";
 import MobileNavAccordion from "./MobileNavAccordion";
 import { useRouter } from "next/router";
@@ -186,8 +186,11 @@ export default function MobileMenu() {
                         <MobileNavLink href="/dashboard/second" icon={<UserGroupIcon className="w-4 h-4" />}>
                           Second
                         </MobileNavLink>
+                        <MobileNavLink href="/dashboard/third" icon={<TemplateIcon className="w-4 h-4" />}>
+                          Third (Layout Dashboard)
+                        </MobileNavLink>
                         <MobileNavLink href="/breadcrumb/first/second/detail/1" icon={<ChevronDoubleRightIcon className="w-4 h-4" />}>
-                          Breadcrumb Tes
+                          Breadcrumb
                         </MobileNavLink>
 
                         {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(item => {
