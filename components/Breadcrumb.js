@@ -47,49 +47,51 @@ export default function Breadcrumb() {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
 
-  // console.log(paths)
+  // console.log(paths)  
 
   return (
-    <nav className="p-2 border dark:border-neutral-700 my-2 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-200 dark:scrollbar-thumb-neutral-700 scrollbar-thumb-rounded" aria-label="Breadcrumb">
-      {/* <nav className="p-2 border dark:border-neutral-700 my-2 overflow-x-auto" aria-label="Breadcrumb"> */}
-      <ol className="flex items-center space-x-1 last:pr-4">
-        <li>
-          <div className="flex items-center">
-            <ChevronRightIcon className="text-gray-500 dark:text-gray-300 w-4 h-4" />
-            <Link href="/">
-              <a className="ml-1 text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-all">Home</a>
-            </Link>
-          </div>
-        </li>
-        {paths.map((item, index) => {
-          // last index is current active page 
-          if (index == paths.length - 1) {
+    <div className="py-2">
+      <nav className="p-2 border dark:border-neutral-700 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-200 dark:scrollbar-thumb-neutral-700 scrollbar-thumb-rounded" aria-label="Breadcrumb">
+        {/* <nav className="p-2 border dark:border-neutral-700 my-2 overflow-x-auto" aria-label="Breadcrumb"> */}
+        <ol className="flex items-center space-x-1 last:pr-4">
+          <li>
+            <div className="flex items-center">
+              <ChevronRightIcon className="text-gray-500 dark:text-gray-300 w-4 h-4" />
+              <Link href="/">
+                <a className="ml-1 text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-all">Home</a>
+              </Link>
+            </div>
+          </li>
+          {paths.map((item, index) => {
+            // last index is current active page 
+            if (index == paths.length - 1) {
+              return (
+                <li aria-current="page">
+                  <div className="flex items-center">
+                    <ChevronRightIcon className="text-gray-500 dark:text-gray-300 w-4 h-4" />
+                    <span className="ml-1 mr-3 text-sm font-medium text-blue-500">
+                      {capitalizeFirstLetter(item)}
+                    </span>
+                  </div>
+                </li>
+              )
+            }
+            // make link if not last index 
             return (
-              <li aria-current="page">
+              <li key={index}>
                 <div className="flex items-center">
                   <ChevronRightIcon className="text-gray-500 dark:text-gray-300 w-4 h-4" />
-                  <span className="ml-1 mr-3 text-sm font-medium text-blue-500">
-                    {capitalizeFirstLetter(item)}
-                  </span>
+                  <Link href={breadcrumb[index]}>
+                    <a className="ml-1 text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-all">
+                      {capitalizeFirstLetter(item)}
+                    </a>
+                  </Link>
                 </div>
               </li>
             )
-          }
-          // make link if not last index 
-          return (
-            <li key={index}>
-              <div className="flex items-center">
-                <ChevronRightIcon className="text-gray-500 dark:text-gray-300 w-4 h-4" />
-                <Link href={breadcrumb[index]}>
-                  <a className="ml-1 text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-all">
-                    {capitalizeFirstLetter(item)}
-                  </a>
-                </Link>
-              </div>
-            </li>
-          )
-        })}
-      </ol>
-    </nav>
+          })}
+        </ol>
+      </nav>
+    </div>
   )
 }
