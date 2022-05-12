@@ -1,4 +1,3 @@
-import LayoutDashboard from "@components/dashboard/LayoutDashboard";
 import { Fragment, useState, useContext } from 'react'
 import { GlobalContext } from "@utils/GlobalContext";
 import { Dialog, Transition, Menu } from '@headlessui/react'
@@ -6,7 +5,7 @@ import { ChevronRightIcon, MenuIcon, MoonIcon, SunIcon, XIcon } from '@heroicons
 import Head from "next/head";
 import ActiveLink from "@components/ActiveLink";
 import Layout from "@components/Layout";
-import SidebarMenu from "@components/dashboard/SidebarMenu";
+import ExSidebarMenu from "@components/exdashboard/ExSidebarMenu";
 
 export default function Index() {
 
@@ -149,7 +148,7 @@ export default function Index() {
               </Dialog>
             </Transition.Root>
 
-            <SidebarMenu />
+            <ExSidebarMenu />
 
             <main className="px-2 w-full border dark:border-neutral-700 lg:ml-60">
               <div className="bg-blue-500 h-96">

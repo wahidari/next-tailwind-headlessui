@@ -1,6 +1,6 @@
 import Breadcrumb from "@components/Breadcrumb";
 import Link from "next/link";
-import ThemeToggle from "@components/dashboard/ThemeToggle";
+import ThemeToggle from "@components/exdashboard/ThemeToggle";
 import Layout from "@components/Layout";
 
 export default function Index() {

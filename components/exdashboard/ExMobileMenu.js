@@ -5,11 +5,11 @@ import { useContext, useEffect } from "react";
 import { Fragment } from 'react'
 import { GlobalContext } from "@utils/GlobalContext";
 import { LibraryIcon, ChevronRightIcon, MoonIcon, SunIcon, UserGroupIcon, ArrowSmRightIcon, ChevronDoubleRightIcon, TemplateIcon } from "@heroicons/react/outline";
-import MobileNavLink from "./MobileNavLink";
-import MobileNavAccordion from "./MobileNavAccordion";
+import ExMobileNavLink from "@components/exdashboard/ExMobileNavLink";
+import ExMobileNavAccordion from "@components/exdashboard/ExMobileNavAccordion";
 import { useRouter } from "next/router";
 
-export default function MobileMenu() {
+export default function ExMobileMenu() {
 
   const { showMobileMenu, setShowMobileMenu } = useContext(GlobalContext);
   const { darkMode, setDarkMode } = useContext(GlobalContext);
@@ -108,9 +108,9 @@ export default function MobileMenu() {
                                   </ActiveLink>
                                 </Menu.Item>
                                 <Menu.Item>
-                                  <MobileNavLink href="/">
+                                  <ExMobileNavLink href="/">
                                     2
-                                  </MobileNavLink>
+                                  </ExMobileNavLink>
                                 </Menu.Item>
                               </Menu.Items>
                             </>
@@ -135,44 +135,44 @@ export default function MobileMenu() {
                                     A
                                   </a>
                                 </ActiveLink>
-                                <MobileNavLink href="/">
+                                <ExMobileNavLink href="/">
                                   B
-                                </MobileNavLink>
-                                <MobileNavLink href="/">
+                                </ExMobileNavLink>
+                                <ExMobileNavLink href="/">
                                   C
-                                </MobileNavLink>
+                                </ExMobileNavLink>
                               </Disclosure.Panel>
                             </>
                           )}
                         </Disclosure>
 
-                        <MobileNavAccordion name="First" routeName="/dashboard/first">
+                        <ExMobileNavAccordion name="First" routeName="/dashboard/first">
                           <ActiveLink activeClassName="bg-gray-100 dark:bg-neutral-800" href="/dashboard/first">
                             <a className="px-2 block py-1 rounded text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
                               First A
                             </a>
                           </ActiveLink>
-                          <MobileNavLink href="/dashboard/first/b" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
+                          <ExMobileNavLink href="/dashboard/first/b" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
                             First B
-                          </MobileNavLink>
-                          <MobileNavLink href="/dashboard/first/c">
+                          </ExMobileNavLink>
+                          <ExMobileNavLink href="/dashboard/first/c">
                             First C
-                          </MobileNavLink>
-                        </MobileNavAccordion>
+                          </ExMobileNavLink>
+                        </ExMobileNavAccordion>
 
-                        <MobileNavAccordion name="Second" routeName="/dashboard/second">
+                        <ExMobileNavAccordion name="Second" routeName="/dashboard/second">
                           <ActiveLink activeClassName="bg-gray-100 dark:bg-neutral-800" href="/dashboard/second">
                             <a className="px-2 block py-1 rounded text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
                               Second A
                             </a>
                           </ActiveLink>
-                          <MobileNavLink href="/dashboard/second/b" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
+                          <ExMobileNavLink href="/dashboard/second/b" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
                             Second B
-                          </MobileNavLink>
-                          <MobileNavLink href="/dashboard/second/c">
+                          </ExMobileNavLink>
+                          <ExMobileNavLink href="/dashboard/second/c">
                             Second C
-                          </MobileNavLink>
-                        </MobileNavAccordion>
+                          </ExMobileNavLink>
+                        </ExMobileNavAccordion>
 
                         <ActiveLink activeClassName="bg-gray-100 dark:bg-neutral-800" href="/dashboard">
                           <a className="px-2 flex justify-start gap-2 items-center py-1 rounded text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
@@ -180,24 +180,24 @@ export default function MobileMenu() {
                             Dashboard
                           </a>
                         </ActiveLink>
-                        <MobileNavLink href="/dashboard/first" icon={<LibraryIcon className="w-4 h-4" />}>
+                        <ExMobileNavLink href="/dashboard/first" icon={<LibraryIcon className="w-4 h-4" />}>
                           First
-                        </MobileNavLink>
-                        <MobileNavLink href="/dashboard/second" icon={<UserGroupIcon className="w-4 h-4" />}>
+                        </ExMobileNavLink>
+                        <ExMobileNavLink href="/dashboard/second" icon={<UserGroupIcon className="w-4 h-4" />}>
                           Second
-                        </MobileNavLink>
-                        <MobileNavLink href="/dashboard/third" icon={<TemplateIcon className="w-4 h-4" />}>
+                        </ExMobileNavLink>
+                        <ExMobileNavLink href="/dashboard/third" icon={<TemplateIcon className="w-4 h-4" />}>
                           Third (Layout Dashboard)
-                        </MobileNavLink>
-                        <MobileNavLink href="/breadcrumb/first/second/detail/1" icon={<ChevronDoubleRightIcon className="w-4 h-4" />}>
+                        </ExMobileNavLink>
+                        <ExMobileNavLink href="/breadcrumb/first/second/detail/1" icon={<ChevronDoubleRightIcon className="w-4 h-4" />}>
                           Breadcrumb
-                        </MobileNavLink>
+                        </ExMobileNavLink>
 
                         {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(item => {
                           return (
-                            <MobileNavLink key={item + 1} href="#" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
+                            <ExMobileNavLink key={item + 1} href="#" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
                               Link #{item}
-                            </MobileNavLink>
+                            </ExMobileNavLink>
                           )
                         })}
                         

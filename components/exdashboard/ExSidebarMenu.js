@@ -1,10 +1,10 @@
 import ActiveLink from "@components/ActiveLink"
 import { Disclosure, Menu } from "@headlessui/react"
 import { ArrowSmRightIcon, ChevronDoubleRightIcon, ChevronRightIcon, LibraryIcon, TemplateIcon, UserGroupIcon } from "@heroicons/react/outline"
-import SidebarNavAccordion from "./SidebarNavAccordion"
-import SidebarNavLink from "./SidebarNavLink"
+import ExSidebarNavAccordion from "@components/exdashboard/ExSidebarNavAccordion"
+import ExSidebarNavLink from "@components/exdashboard/ExSidebarNavLink"
 
-export default function SidebarMenu() {
+export default function ExSidebarMenu() {
   return (
     <aside className="w-60 hidden lg:block pt-[3.8rem] fixed inset-y-0">
       {/* <aside className="w-60 flex flex-nowrap flex-col fixed top-[3.8rem]"> */}
@@ -30,9 +30,9 @@ export default function SidebarMenu() {
                   </ActiveLink>
                 </Menu.Item>
                 <Menu.Item>
-                  <SidebarNavLink href="/">
+                  <ExSidebarNavLink href="/">
                     2
-                  </SidebarNavLink>
+                  </ExSidebarNavLink>
                 </Menu.Item>
               </Menu.Items>
             </>
@@ -57,12 +57,12 @@ export default function SidebarMenu() {
                     A
                   </a>
                 </ActiveLink>
-                <SidebarNavLink href="/">
+                <ExSidebarNavLink href="/">
                   B
-                </SidebarNavLink>
-                <SidebarNavLink href="/">
+                </ExSidebarNavLink>
+                <ExSidebarNavLink href="/">
                   C
-                </SidebarNavLink>
+                </ExSidebarNavLink>
               </Disclosure.Panel>
             </>
           )}
@@ -74,41 +74,41 @@ export default function SidebarMenu() {
                   Dashboard A
                 </a>
               </ActiveLink>
-              <SidebarNavLink href="/dashboard/b">
+              <ExSidebarNavLink href="/dashboard/b">
                 Dashboard B
-              </SidebarNavLink>
-              <SidebarNavLink href="/dashboard/c">
+              </ExSidebarNavLink>
+              <ExSidebarNavLink href="/dashboard/c">
                 Dashboard C
-              </SidebarNavLink>
+              </ExSidebarNavLink>
             </SidebarNavAccordion> */}
 
-        <SidebarNavAccordion name="First" routeName="/dashboard/first">
+        <ExSidebarNavAccordion name="First" routeName="/dashboard/first">
           <ActiveLink activeClassName="bg-gray-100 dark:bg-neutral-800" href="/dashboard/first">
             <a className="px-2 block py-1 rounded text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
               First A
             </a>
           </ActiveLink>
-          <SidebarNavLink href="/dashboard/first/b" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
+          <ExSidebarNavLink href="/dashboard/first/b" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
             First B
-          </SidebarNavLink>
-          <SidebarNavLink href="/dashboard/first/c">
+          </ExSidebarNavLink>
+          <ExSidebarNavLink href="/dashboard/first/c">
             First C
-          </SidebarNavLink>
-        </SidebarNavAccordion>
+          </ExSidebarNavLink>
+        </ExSidebarNavAccordion>
 
-        <SidebarNavAccordion name="Second" routeName="/dashboard/second">
+        <ExSidebarNavAccordion name="Second" routeName="/dashboard/second">
           <ActiveLink activeClassName="bg-gray-100 dark:bg-neutral-800" href="/dashboard/second">
             <a className="px-2 block py-1 rounded text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
               Second A
             </a>
           </ActiveLink>
-          <SidebarNavLink href="/dashboard/second/b" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
+          <ExSidebarNavLink href="/dashboard/second/b" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
             Second B
-          </SidebarNavLink>
-          <SidebarNavLink href="/dashboard/second/c">
+          </ExSidebarNavLink>
+          <ExSidebarNavLink href="/dashboard/second/c">
             Second C
-          </SidebarNavLink>
-        </SidebarNavAccordion>
+          </ExSidebarNavLink>
+        </ExSidebarNavAccordion>
 
         <ActiveLink activeClassName="bg-gray-100 dark:bg-neutral-800" href="/dashboard">
           <a className="px-2 flex justify-start items-center gap-2 py-1 rounded text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
@@ -116,24 +116,24 @@ export default function SidebarMenu() {
             Dashboard
           </a>
         </ActiveLink>
-        <SidebarNavLink href="/dashboard/first" icon={<LibraryIcon className="w-4 h-4" />}>
+        <ExSidebarNavLink href="/dashboard/first" icon={<LibraryIcon className="w-4 h-4" />}>
           First
-        </SidebarNavLink>
-        <SidebarNavLink href="/dashboard/second" icon={<UserGroupIcon className="w-4 h-4" />}>
+        </ExSidebarNavLink>
+        <ExSidebarNavLink href="/dashboard/second" icon={<UserGroupIcon className="w-4 h-4" />}>
           Second
-        </SidebarNavLink>
-        <SidebarNavLink href="/dashboard/third" icon={<TemplateIcon className="w-4 h-4" />}>
+        </ExSidebarNavLink>
+        <ExSidebarNavLink href="/dashboard/third" icon={<TemplateIcon className="w-4 h-4" />}>
           Third (Layout Dashboard)
-        </SidebarNavLink>
-        <SidebarNavLink href="/breadcrumb/first/second/detail/1" icon={<ChevronDoubleRightIcon className="w-4 h-4" />}>
+        </ExSidebarNavLink>
+        <ExSidebarNavLink href="/breadcrumb/first/second/detail/1" icon={<ChevronDoubleRightIcon className="w-4 h-4" />}>
           Breadcrumb
-        </SidebarNavLink>
+        </ExSidebarNavLink>
 
         {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(item => {
           return (
-            <SidebarNavLink key={item + 1} href="#" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
+            <ExSidebarNavLink key={item + 1} href="#" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
               Link #{item}
-            </SidebarNavLink>
+            </ExSidebarNavLink>
           )
         })}
 

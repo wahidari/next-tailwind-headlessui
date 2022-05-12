@@ -1,5 +1,5 @@
 import Head from "next/head";
-import LayoutDashboard from "@components/dashboard/LayoutDashboard";
+import ExLayoutDashboard from "@components/exdashboard/ExLayoutDashboard";
 
 export default function Third() {
   return (
@@ -10,7 +10,7 @@ export default function Third() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <LayoutDashboard>
+      <ExLayoutDashboard>
         <div className="bg-orange-500 h-96 flex items-center justify-center">
           <h1 className="text-white font-medium text-2xl px-8">Example Dashboard Layout using Component</h1>
         </div>
@@ -18,7 +18,7 @@ export default function Third() {
         </div>
         <div className="bg-pink-500 h-96">
         </div>
-      </LayoutDashboard>
+      </ExLayoutDashboard>
     </>
   )
 }

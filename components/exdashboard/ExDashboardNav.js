@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { GlobalContext } from "@utils/GlobalContext";
 import { MenuIcon } from "@heroicons/react/outline";
 
-export default function DashboardNav() {
+export default function ExDashboardNav() {
 
   const { setShowMobileMenu } = useContext(GlobalContext);
 

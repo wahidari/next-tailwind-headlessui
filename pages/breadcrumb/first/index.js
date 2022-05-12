@@ -1,5 +1,5 @@
 import Breadcrumb from "@components/Breadcrumb";
-import ThemeToggle from "@components/dashboard/ThemeToggle";
+import ThemeToggle from "@components/exdashboard/ThemeToggle";
 import Layout from "@components/Layout";
 import Link from "next/link";
 

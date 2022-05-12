@@ -1,21 +1,12 @@
-import LayoutDashboard from "@components/dashboard/LayoutDashboard";
-import { Fragment, useState, useContext } from 'react'
-import { GlobalContext } from "@utils/GlobalContext";
-import { Dialog, Transition, Menu } from '@headlessui/react'
-import { ChevronRightIcon, MenuIcon, MoonIcon, SunIcon, XIcon } from '@heroicons/react/outline'
 import Head from "next/head";
-import ActiveLink from "@components/ActiveLink";
 import Layout from "@components/Layout";
-import SidebarMenu from "@components/dashboard/SidebarMenu";
-import ThemeToggle from "@components/dashboard/ThemeToggle";
-import DashboardNav from "@components/dashboard/DashboardNav";
-import MobileMenu from "@components/dashboard/MobileMenu";
+import ThemeToggle from "@components/exdashboard/ThemeToggle";
+import ExSidebarMenu from "@components/exdashboard/ExSidebarMenu";
+import ExDashboardNav from "@components/exdashboard/ExDashboardNav";
+import ExMobileMenu from "@components/exdashboard/ExMobileMenu";
 import Breadcrumb from "@components/Breadcrumb";
 
 export default function Index() {
-
-  const [openMobileMenu, setOpenMobileMenu] = useState(false)
-  const { darkMode, setDarkMode } = useContext(GlobalContext);
 
   return (
     <>
@@ -29,14 +20,14 @@ export default function Index() {
 
         <ThemeToggle />
 
-        <DashboardNav />
+        <ExDashboardNav />
 
-        <MobileMenu />
+        <ExMobileMenu />
 
         <div className="max-w-screen-2xl mx-auto px-2 mt-2 border dark:border-neutral-700 h-full">
           <div className="lg:flex py-2 h-full">
 
-            <SidebarMenu />
+            <ExSidebarMenu />
 
             <main className="px-2 w-full border dark:border-neutral-700 lg:ml-60">
 

@@ -1,6 +1,6 @@
 import ActiveLink from "@components/ActiveLink";
 
-export default function SidebarNavLink({ href = "", icon, children }) {
+export default function ExMobileNavLink({ href = "", icon, children }) {
 
   return (
     <ActiveLink activeClassName="bg-gray-100 dark:bg-neutral-800" href={href}>
