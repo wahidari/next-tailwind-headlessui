@@ -55,9 +55,9 @@ export default function Breadcrumb() {
       <ol className="flex items-center space-x-1 last:pr-4">
         <li>
           <div className="flex items-center">
-            <ChevronRightIcon className="text-gray-600 dark:text-gray-300 w-4 h-4" />
+            <ChevronRightIcon className="text-gray-500 dark:text-gray-300 w-4 h-4" />
             <Link href="/">
-              <a className="ml-1 text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-all">Home</a>
+              <a className="ml-1 text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-all">Home</a>
             </Link>
           </div>
         </li>
@@ -67,7 +67,7 @@ export default function Breadcrumb() {
             return (
               <li aria-current="page">
                 <div className="flex items-center">
-                  <ChevronRightIcon className="text-gray-600 dark:text-gray-300 w-4 h-4" />
+                  <ChevronRightIcon className="text-gray-500 dark:text-gray-300 w-4 h-4" />
                   <span className="ml-1 mr-3 text-sm font-medium text-blue-500">
                     {capitalizeFirstLetter(item)}
                   </span>
@@ -79,9 +79,9 @@ export default function Breadcrumb() {
           return (
             <li key={index}>
               <div className="flex items-center">
-                <ChevronRightIcon className="text-gray-600 dark:text-gray-300 w-4 h-4" />
+                <ChevronRightIcon className="text-gray-500 dark:text-gray-300 w-4 h-4" />
                 <Link href={breadcrumb[index]}>
-                  <a className="ml-1 text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-all">
+                  <a className="ml-1 text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-all">
                     {capitalizeFirstLetter(item)}
                   </a>
                 </Link>
