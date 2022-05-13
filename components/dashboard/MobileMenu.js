@@ -2,12 +2,11 @@ import { useContext, useEffect } from "react";
 import { Fragment } from 'react'
 import { useRouter } from "next/router";
 import { GlobalContext } from "@utils/GlobalContext";
-import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
-import ActiveLink from "@components/ActiveLink";
+import { Dialog, Transition } from "@headlessui/react";
 import MobileNavLink from "@components/dashboard/MobileNavLink";
 import MobileNavAccordion from "@components/dashboard/MobileNavAccordion";
 import { XIcon } from "@heroicons/react/solid";
-import { LibraryIcon, ChevronRightIcon, MoonIcon, SunIcon, UserGroupIcon, ArrowSmRightIcon, ChevronDoubleRightIcon, TemplateIcon, ArrowCircleRightIcon } from "@heroicons/react/outline";
+import { LibraryIcon, MoonIcon, SunIcon, UserGroupIcon, ArrowSmRightIcon, ChevronDoubleRightIcon, TemplateIcon, ArrowCircleRightIcon } from "@heroicons/react/outline";
 
 export default function MobileMenu() {
 
@@ -50,14 +49,14 @@ export default function MobileMenu() {
             >
               <div className="pointer-events-auto relative w-screen max-w-sm">
                 {/* Close Panel Button  */}
-                <div className="absolute top-0 right-0 pt-6 mr-6">
+                <div className="absolute top-0 right-0 pt-[1.6rem] mr-7">
                   <button
                     type="button"
-                    className="rounded p-1 transition-all text-gray-500 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-200 ring-2 ring-gray-500 hover:ring-gray-800 dark:ring-gray-300 dark:hover:ring-gray-200"
+                    className="rounded p-1 transition-all text-gray-500 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-200 border border-gray-500 hover:border-gray-800 dark:border-gray-300 dark:hover:border-gray-200"
                     onClick={() => setShowMobileMenu(false)}
                   >
                     <span className="sr-only">Close panel</span>
-                    <XIcon className="h-5 w-5" aria-hidden="true" />
+                    <XIcon className="h-4 w-4" aria-hidden="true" />
                   </button>
                 </div>
                 {/* End Close Panel Button  */}
@@ -66,7 +65,7 @@ export default function MobileMenu() {
                 <div className="flex h-full flex-col overflow-y-hide bg-white dark:bg-neutral-900 py-6 shadow-xl">
 
                   {/* Theme Toggle  */}
-                  <div className="!py-2 px-2 rounded mx-4 bg-opacity-20 dark:bg-opacity-40 bg-gray-100 backdrop-filter backdrop-blur fixed bottom-20 left-56 md:left-80 z-10">
+                  <div className="!py-2 px-2 rounded mx-4 bg-opacity-40 dark:bg-opacity-40 bg-gray-300 dark:bg-neutral-600 backdrop-filter backdrop-blur fixed bottom-20 left-32 z-10">
                     {darkMode ?
                       <button onClick={() => setDarkMode(!darkMode)} aria-label="Change Theme" className="w-8 h-8 p-1 transition-all ease-in duration-300 bg-neutral-800 hover:bg-neutral-700 text-white rounded-full">
                         <SunIcon />
@@ -79,107 +78,32 @@ export default function MobileMenu() {
                   </div>
                   {/* End Theme Toggle  */}
 
-                  <div className="px-6">
+                  <div className="px-5">
                     <Dialog.Title className="text-lg font-medium dark:text-white"> Menu </Dialog.Title>
                   </div>
                   <div className="relative mt-6 flex-1">
                     {/* Mobile Menu Link */}
-                    <div className="absolute inset-0 px-4">
-                      {/* <div className="h-full flex flex-col gap-y-1 pr-2 overflow-auto scrollbar-thin scrollbar-thumb-gray-200 dark:scrollbar-thumb-neutral-700 scrollbar-thumb-rounded" aria-hidden="true"> */}
-                      <div className="h-full flex flex-col gap-y-1 overflow-auto pr-3" aria-hidden="true">
-                        <Menu>
-                          {({ open }) => (
-                            <>
-                              <Menu.Button className="px-2 w-full py-1 rounded text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all">
-                                <div className="flex justify-between items-center">
-                                  <span>Accordion Menu</span>
-                                  <ChevronRightIcon
-                                    className={`${open ? 'transform rotate-90 transition-transform duration-200' : 'transition-transform duration-200'
-                                      } w-4 h-4`}
-                                  />
-                                </div>
-                              </Menu.Button>
-                              <Menu.Items className="px-4 gap-y-1 flex flex-col">
-                                <Menu.Item>
-                                  <ActiveLink activeClassName="bg-gray-100" href="/">
-                                    <a className="px-2 block py-1 rounded text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
-                                      1
-                                    </a>
-                                  </ActiveLink>
-                                </Menu.Item>
-                                <Menu.Item>
-                                  <MobileNavLink href="/">
-                                    2
-                                  </MobileNavLink>
-                                </Menu.Item>
-                              </Menu.Items>
-                            </>
-                          )}
-                        </Menu>
-
-                        <Disclosure>
-                          {({ open }) => (
-                            <>
-                              <Disclosure.Button className="flex justify-between px-2 py-1 items-center text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 rounded transition-all">
-                                <span>Accordion Disclosure</span>
-                                <ChevronRightIcon
-                                  className={`
-                        ${open ? 'transform rotate-90 transition-transform duration-200' : 'transition-transform duration-200'} 
-                        w-4 h-4 
-                        `}
-                                />
-                              </Disclosure.Button>
-                              <Disclosure.Panel className="px-4 space-y-1">
-                                <ActiveLink activeClassName="bg-gray-100" href="/">
-                                  <a className="px-2 block py-1 rounded text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
-                                    A
-                                  </a>
-                                </ActiveLink>
-                                <MobileNavLink href="/">
-                                  B
-                                </MobileNavLink>
-                                <MobileNavLink href="/">
-                                  C
-                                </MobileNavLink>
-                              </Disclosure.Panel>
-                            </>
-                          )}
-                        </Disclosure>
+                    <div className="absolute inset-0 pl-4 pr-2">
+                      <div className="h-full flex flex-col gap-y-1 pl-1 pr-4 overflow-auto scrollbar-thin scrollbar-thumb-gray-200 dark:scrollbar-thumb-neutral-700 scrollbar-thumb-rounded" aria-hidden="true">
 
                         <MobileNavAccordion name="First" routeName="/dashboard/first">
-                          <ActiveLink activeClassName="bg-gray-100 dark:bg-neutral-800" href="/dashboard/first">
-                            <a className="px-2 block py-1 rounded text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
-                              First A
-                            </a>
-                          </ActiveLink>
                           <MobileNavLink href="/dashboard/first/b" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
                             First B
                           </MobileNavLink>
-                          <MobileNavLink href="/dashboard/first/c">
+                          <MobileNavLink href="/dashboard/first/c" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
                             First C
                           </MobileNavLink>
                         </MobileNavAccordion>
 
                         <MobileNavAccordion name="Second" routeName="/dashboard/second">
-                          <ActiveLink activeClassName="bg-gray-100 dark:bg-neutral-800" href="/dashboard/second">
-                            <a className="px-2 block py-1 rounded text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
-                              Second A
-                            </a>
-                          </ActiveLink>
                           <MobileNavLink href="/dashboard/second/b" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
                             Second B
                           </MobileNavLink>
-                          <MobileNavLink href="/dashboard/second/c">
+                          <MobileNavLink href="/dashboard/second/c" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
                             Second C
                           </MobileNavLink>
                         </MobileNavAccordion>
 
-                        <ActiveLink activeClassName="bg-gray-100 dark:bg-neutral-800" href="/dashboard">
-                          <a className="px-2 flex justify-start gap-2 items-center py-1 rounded text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
-                            <ArrowSmRightIcon className="w-4 h-4" />
-                            Dashboard
-                          </a>
-                        </ActiveLink>
                         <MobileNavLink href="/dashboard/first" icon={<LibraryIcon className="w-4 h-4" />}>
                           First
                         </MobileNavLink>
@@ -196,13 +120,13 @@ export default function MobileMenu() {
                           Dashboardd
                         </MobileNavLink>
 
-                        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(item => {
+                        {/* {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(item => {
                           return (
                             <MobileNavLink key={item + 1} href="#" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
                               Link #{item}
                             </MobileNavLink>
                           )
-                        })}
+                        })} */}
                         
                       </div>
                     </div>
@@ -214,7 +138,6 @@ export default function MobileMenu() {
               </div>
             </Transition.Child>
           </div>
-
         </div>
       </Dialog>
     </Transition.Root>
