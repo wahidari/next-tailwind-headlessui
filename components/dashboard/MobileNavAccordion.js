@@ -34,7 +34,7 @@ export default function MobileNavAccordion({ name, routeName, icon, children }) 
           {({ open }) => (
             <>
               <Disclosure.Button className="w-full flex justify-between px-2 py-1.5 items-center text-sm font-medium dark:text-white hover:bg-gray-100 dark:bg-neutral-900 dark:hover:bg-neutral-800 rounded transition-all">
-                <div className="flex gap-x-2">
+                <div className="flex items-center gap-x-2">
                   {icon}
                   <span>{name}</span>
                 </div>

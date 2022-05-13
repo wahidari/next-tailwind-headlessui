@@ -22,7 +22,7 @@ export default function DashboardNav() {
           </button>
           Dashboard
         </div>
-        <div className="flex gap-2 dark:text-white text-sm font-medium items-center">
+        <div className="flex gap-x-3 dark:text-white text-sm font-medium items-center">
           <ChangeTheme/>
           <Link href="/dashboardd">
             <a className="px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-neutral-800 flex items-center transition-all">Link</a>

@@ -6,7 +6,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import MobileNavLink from "@components/dashboard/MobileNavLink";
 import MobileNavAccordion from "@components/dashboard/MobileNavAccordion";
 import { XIcon } from "@heroicons/react/solid";
-import { LibraryIcon, MoonIcon, SunIcon, UserGroupIcon, ArrowSmRightIcon, ChevronDoubleRightIcon, TemplateIcon, ArrowCircleRightIcon } from "@heroicons/react/outline";
+import { MoonIcon, SunIcon, ArrowSmRightIcon, ArrowCircleRightIcon, BadgeCheckIcon, BellIcon } from "@heroicons/react/outline";
 
 export default function MobileMenu() {
 
@@ -65,7 +65,7 @@ export default function MobileMenu() {
                 <div className="flex h-full flex-col overflow-y-hide bg-white dark:bg-neutral-900 py-6 shadow-xl">
 
                   {/* Theme Toggle  */}
-                  <div className="!py-2 px-2 rounded mx-4 bg-opacity-40 dark:bg-opacity-40 bg-gray-300 dark:bg-neutral-600 backdrop-filter backdrop-blur fixed bottom-20 left-32 z-10">
+                  <div className="!py-2 px-2 rounded mx-4 bg-opacity-40 dark:bg-opacity-40 bg-gray-300 dark:bg-neutral-600 backdrop-filter backdrop-blur fixed bottom-20 z-10">
                     {darkMode ?
                       <button onClick={() => setDarkMode(!darkMode)} aria-label="Change Theme" className="w-8 h-8 p-1 transition-all ease-in duration-300 bg-neutral-800 hover:bg-neutral-700 text-white rounded-full">
                         <SunIcon />
@@ -86,41 +86,33 @@ export default function MobileMenu() {
                     <div className="absolute inset-0 pl-4 pr-2">
                       <div className="h-full flex flex-col gap-y-1 pl-1 pr-4 overflow-auto scrollbar-thin scrollbar-thumb-gray-200 dark:scrollbar-thumb-neutral-700 scrollbar-thumb-rounded" aria-hidden="true">
 
-                        <MobileNavAccordion name="First" routeName="/dashboard/first" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
-                          <MobileNavLink href="/dashboard/first/b" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
+                        <MobileNavLink href="/dashboard" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
+                          Dashboard
+                        </MobileNavLink>
+
+                        <MobileNavAccordion name="First" routeName="/dashboardd/first" icon={<BadgeCheckIcon className="w-4 h-4" />}>
+                          <MobileNavLink href="/dashboardd/first" icon={<BadgeCheckIcon className="w-4 h-4" />}>
+                            First
+                          </MobileNavLink>
+                          <MobileNavLink href="/dashboardd/first/b" icon={<BadgeCheckIcon className="w-4 h-4" />}>
                             First B
                           </MobileNavLink>
-                          <MobileNavLink href="/dashboard/first/c" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
-                            First C
-                          </MobileNavLink>
                         </MobileNavAccordion>
 
-                        <MobileNavAccordion name="Second" routeName="/dashboard/second" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
-                          <MobileNavLink href="/dashboard/second/b" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
+                        <MobileNavAccordion name="Second" routeName="/dashboardd/second" icon={<BellIcon className="w-4 h-4" />}>
+                          <MobileNavLink href="/dashboardd/second" icon={<BellIcon className="w-4 h-4" />}>
+                            Second
+                          </MobileNavLink>
+                          <MobileNavLink href="/dashboardd/second/b" icon={<BellIcon className="w-4 h-4" />}>
                             Second B
                           </MobileNavLink>
-                          <MobileNavLink href="/dashboard/second/c" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
-                            Second C
-                          </MobileNavLink>
                         </MobileNavAccordion>
 
-                        <MobileNavLink href="/dashboard/first" icon={<LibraryIcon className="w-4 h-4" />}>
-                          First
-                        </MobileNavLink>
-                        <MobileNavLink href="/dashboard/second" icon={<UserGroupIcon className="w-4 h-4" />}>
-                          Second
-                        </MobileNavLink>
-                        <MobileNavLink href="/dashboard/third" icon={<TemplateIcon className="w-4 h-4" />}>
-                          Third (Layout Dashboard)
-                        </MobileNavLink>
-                        <MobileNavLink href="/breadcrumb/first/second/detail/1" icon={<ChevronDoubleRightIcon className="w-4 h-4" />}>
-                          Breadcrumb
-                        </MobileNavLink>
                         <MobileNavLink href="/dashboardd" icon={<ArrowCircleRightIcon className="w-4 h-4" />}>
                           Dashboardd
                         </MobileNavLink>
 
-                        {/* {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(item => {
+                        {/* {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map(item => {
                           return (
                             <MobileNavLink key={item + 1} href="#" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
                               Link #{item}
