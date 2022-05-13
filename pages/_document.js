@@ -11,7 +11,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head />
         {/* if using custom scrollbar */}
-        {/* <body className="scrollbar scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-300 dark:scrollbar-thumb-neutral-800"> */}
+        {/* <body className="scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-300 dark:scrollbar-thumb-neutral-800"> */}
         <body>
           <Main />
           <NextScript />
