@@ -4,7 +4,7 @@ import ActiveLink from "@components/ActiveLink";
 import { useContext, useEffect } from "react";
 import { Fragment } from 'react'
 import { GlobalContext } from "@utils/GlobalContext";
-import { LibraryIcon, ChevronRightIcon, MoonIcon, SunIcon, UserGroupIcon, ArrowSmRightIcon, ChevronDoubleRightIcon, TemplateIcon } from "@heroicons/react/outline";
+import { LibraryIcon, ChevronRightIcon, MoonIcon, SunIcon, UserGroupIcon, ArrowSmRightIcon, ChevronDoubleRightIcon, TemplateIcon, ArrowCircleRightIcon } from "@heroicons/react/outline";
 import ExMobileNavLink from "@components/exdashboard/ExMobileNavLink";
 import ExMobileNavAccordion from "@components/exdashboard/ExMobileNavAccordion";
 import { useRouter } from "next/router";
@@ -191,6 +191,9 @@ export default function ExMobileMenu() {
                         </ExMobileNavLink>
                         <ExMobileNavLink href="/breadcrumb/first/second/detail/1" icon={<ChevronDoubleRightIcon className="w-4 h-4" />}>
                           Breadcrumb
+                        </ExMobileNavLink>
+                        <ExMobileNavLink href="/dashboardd" icon={<ArrowCircleRightIcon className="w-4 h-4" />}>
+                          Dashboardd
                         </ExMobileNavLink>
 
                         {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(item => {

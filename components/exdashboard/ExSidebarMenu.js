@@ -1,6 +1,6 @@
 import ActiveLink from "@components/ActiveLink"
 import { Disclosure, Menu } from "@headlessui/react"
-import { ArrowSmRightIcon, ChevronDoubleRightIcon, ChevronRightIcon, LibraryIcon, TemplateIcon, UserGroupIcon } from "@heroicons/react/outline"
+import { ArrowCircleRightIcon, ArrowSmRightIcon, ChevronDoubleRightIcon, ChevronRightIcon, LibraryIcon, TemplateIcon, UserGroupIcon } from "@heroicons/react/outline"
 import ExSidebarNavAccordion from "@components/exdashboard/ExSidebarNavAccordion"
 import ExSidebarNavLink from "@components/exdashboard/ExSidebarNavLink"
 
@@ -127,6 +127,9 @@ export default function ExSidebarMenu() {
         </ExSidebarNavLink>
         <ExSidebarNavLink href="/breadcrumb/first/second/detail/1" icon={<ChevronDoubleRightIcon className="w-4 h-4" />}>
           Breadcrumb
+        </ExSidebarNavLink>
+        <ExSidebarNavLink href="/dashboardd" icon={<ArrowCircleRightIcon className="w-4 h-4" />}>
+          Dashboardd
         </ExSidebarNavLink>
 
         {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(item => {
