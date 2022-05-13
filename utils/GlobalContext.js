@@ -6,6 +6,7 @@ export function GlobalProvider({ children }) {
 
   const [darkMode, setDarkMode] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [showSidebarMenu, setShowSidebarMenu] = useState(true);
 
   // check dark mode to true if theme in local storage is dark 
   useEffect(() => {
@@ -26,7 +27,9 @@ export function GlobalProvider({ children }) {
   }, [darkMode]);
 
   return (
-    <GlobalContext.Provider value={{ darkMode, setDarkMode, showMobileMenu, setShowMobileMenu }}>
+    <GlobalContext.Provider value={
+      { darkMode, setDarkMode, showMobileMenu, setShowMobileMenu, showSidebarMenu, setShowSidebarMenu }
+    }>
       {children}
     </GlobalContext.Provider>
   );
