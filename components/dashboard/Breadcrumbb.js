@@ -51,7 +51,7 @@ export default function Breadcrumbb() {
 
   return (
     <div className="py-2">
-      <nav className="p-2 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-200 dark:scrollbar-thumb-neutral-700 scrollbar-thumb-rounded" aria-label="Breadcrumb">
+      <nav className="py-2 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-200 dark:scrollbar-thumb-neutral-700 scrollbar-thumb-rounded" aria-label="Breadcrumb">
         {/* <nav className="p-2 border dark:border-neutral-700 my-2 overflow-x-auto" aria-label="Breadcrumb"> */}
         <ol className="flex items-center space-x-1 last:pr-4">
           <li>
