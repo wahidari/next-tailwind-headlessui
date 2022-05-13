@@ -10,10 +10,12 @@ export default function LayoutDashboard({ children }) {
       <ThemeToggle />
       <DashboardNav />
       <MobileMenu />
-      <div className="max-w-screen-2xl mx-auto px-2 mt-2 h-full">
-        <div className="lg:flex py-2 h-full">
+      {/* Full Width */}
+      {/* <div className="mx-auto px-2 py-2 h-full"> */}
+      <div className="max-w-screen-2xl mx-auto px-2 py-2 h-full">
+        <div className="lg:flex h-full">
           <SidebarMenu />
-          <main className="pl-2 w-full lg:ml-60">
+          <main className="pl-2 w-full lg:ml-60 ">
             <Breadcrumbb />
             {/* Start Content */}
             {children}
