@@ -3,7 +3,7 @@ import { ChevronRightIcon } from "@heroicons/react/outline";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-export default function MobileNavAccordion({ name, routeName, children }) {
+export default function MobileNavAccordion({ name, routeName, icon, children }) {
 
   const [isOpen, setIsOpen] = useState(false)
   const [cek, setCek] = useState(false)
@@ -33,8 +33,11 @@ export default function MobileNavAccordion({ name, routeName, children }) {
         <Disclosure defaultOpen={isOpen}>
           {({ open }) => (
             <>
-              <Disclosure.Button className="w-full flex justify-between px-2 py-1 items-center text-sm font-medium dark:text-white hover:bg-gray-100 dark:bg-neutral-900 dark:hover:bg-neutral-800 rounded transition-all">
-                <span>{name}</span>
+              <Disclosure.Button className="w-full flex justify-between px-2 py-1.5 items-center text-sm font-medium dark:text-white hover:bg-gray-100 dark:bg-neutral-900 dark:hover:bg-neutral-800 rounded transition-all">
+                <div className="flex gap-x-2">
+                  {icon}
+                  <span>{name}</span>
+                </div>
                 <ChevronRightIcon
                   className={`w-4 h-4 ${open ? 'transform rotate-90 transition-transform' : 'transition-transform'}`}
                 />
@@ -45,7 +48,7 @@ export default function MobileNavAccordion({ name, routeName, children }) {
             </>
           )}
         </Disclosure>
-        <hr className="border-neutral-200 dark:border-neutral-800" />
+        {/* <hr className="border-neutral-200 dark:border-neutral-800" /> */}
       </>
       : ""
   )

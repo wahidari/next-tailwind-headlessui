@@ -86,7 +86,7 @@ export default function MobileMenu() {
                     <div className="absolute inset-0 pl-4 pr-2">
                       <div className="h-full flex flex-col gap-y-1 pl-1 pr-4 overflow-auto scrollbar-thin scrollbar-thumb-gray-200 dark:scrollbar-thumb-neutral-700 scrollbar-thumb-rounded" aria-hidden="true">
 
-                        <MobileNavAccordion name="First" routeName="/dashboard/first">
+                        <MobileNavAccordion name="First" routeName="/dashboard/first" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
                           <MobileNavLink href="/dashboard/first/b" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
                             First B
                           </MobileNavLink>
@@ -95,7 +95,7 @@ export default function MobileMenu() {
                           </MobileNavLink>
                         </MobileNavAccordion>
 
-                        <MobileNavAccordion name="Second" routeName="/dashboard/second">
+                        <MobileNavAccordion name="Second" routeName="/dashboard/second" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
                           <MobileNavLink href="/dashboard/second/b" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
                             Second B
                           </MobileNavLink>

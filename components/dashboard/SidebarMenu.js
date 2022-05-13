@@ -5,33 +5,23 @@ import { ArrowCircleRightIcon, ArrowSmRightIcon, ChevronDoubleRightIcon, Library
 
 export default function SidebarMenu() {
   return (
-    <aside className="w-60 hidden lg:block pt-[3.8rem] fixed inset-y-0 border-r dark:border-r-neutral-800 ">
+    <aside className="w-60 hidden lg:block pt-[3.5rem] fixed inset-y-0 border-r dark:border-r-neutral-800 ">
       <div className="max-h-full overflow-auto pl-2 pr-4 gap-y-1 flex flex-col scrollbar-thin scrollbar-thumb-gray-200 dark:scrollbar-thumb-neutral-700 scrollbar-thumb-rounded">
 
-        <SidebarNavAccordion name="First" routeName="/dashboard/first">
-          <ActiveLink activeClassName="bg-gray-100 dark:bg-neutral-800" href="/dashboard/first">
-            <a className="px-2 block py-1 rounded text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
-              First A
-            </a>
-          </ActiveLink>
+        <SidebarNavAccordion name="First" routeName="/dashboard/first" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
           <SidebarNavLink href="/dashboard/first/b" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
             First B
           </SidebarNavLink>
-          <SidebarNavLink href="/dashboard/first/c">
+          <SidebarNavLink href="/dashboard/first/c" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
             First C
           </SidebarNavLink>
         </SidebarNavAccordion>
 
-        <SidebarNavAccordion name="Second" routeName="/dashboard/second">
-          <ActiveLink activeClassName="bg-gray-100 dark:bg-neutral-800" href="/dashboard/second">
-            <a className="px-2 block py-1 rounded text-sm font-medium dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all cursor-pointer">
-              Second A
-            </a>
-          </ActiveLink>
+        <SidebarNavAccordion name="Second" routeName="/dashboard/second" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
           <SidebarNavLink href="/dashboard/second/b" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
             Second B
           </SidebarNavLink>
-          <SidebarNavLink href="/dashboard/second/c">
+          <SidebarNavLink href="/dashboard/second/c" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
             Second C
           </SidebarNavLink>
         </SidebarNavAccordion>

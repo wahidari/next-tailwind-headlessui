@@ -15,7 +15,7 @@ export default function LayoutDashboard({ children }) {
       <div className="max-w-screen-2xl mx-auto px-2 py-2 h-full">
         <div className="lg:flex h-full">
           <SidebarMenu />
-          <main className="pl-2 w-full lg:ml-60 ">
+          <main className="lg:pl-4 lg:pr-2 w-full lg:ml-60 ">
             <Breadcrumbb />
             {/* Start Content */}
             {children}
