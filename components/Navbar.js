@@ -125,7 +125,7 @@ export default function Navbar() {
                           leaveFrom="opacity-100 scale-100"
                           leaveTo="opacity-0 scale-95"
                         >
-                          <Popover.Panel className="absolute bg-white shadow space-y-1 top-12 px-2 py-2 rounded w-40 z-10">
+                          <Popover.Panel className="absolute bg-white shadow space-y-1 top-12 px-2 py-2 rounded w-44 z-10">
                             <ActiveLink activeClassName="bg-gray-100" href="/dashboard">
                               <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all">Dashboard</a>
                             </ActiveLink>
@@ -137,6 +137,9 @@ export default function Navbar() {
                             </ActiveLink>
                             <ActiveLink activeClassName="bg-gray-100" href="/dashboardtwo">
                               <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all">Dashboard Two</a>
+                            </ActiveLink>
+                            <ActiveLink activeClassName="bg-gray-100" href="/dashboardthree">
+                              <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all">Dashboard Three</a>
                             </ActiveLink>
                           </Popover.Panel>
                         </Transition>
@@ -318,6 +321,11 @@ export default function Navbar() {
                       <Menu.Item>
                         <ActiveLink activeClassName="bg-gray-100" href="/dashboardtwo">
                           <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all">Dashboard Two</a>
+                        </ActiveLink>
+                      </Menu.Item>
+                      <Menu.Item>
+                        <ActiveLink activeClassName="bg-gray-100" href="/dashboardthree">
+                          <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all">Dashboard Three</a>
                         </ActiveLink>
                       </Menu.Item>
                     </Menu.Items>
