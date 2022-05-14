@@ -135,6 +135,9 @@ export default function Navbar() {
                             <ActiveLink activeClassName="bg-gray-100" href="/dashboarddd">
                               <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all">Dashboarddd</a>
                             </ActiveLink>
+                            <ActiveLink activeClassName="bg-gray-100" href="/dashboardtwo">
+                              <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all">Dashboard Two</a>
+                            </ActiveLink>
                           </Popover.Panel>
                         </Transition>
                       </>
@@ -309,7 +312,12 @@ export default function Navbar() {
                       </Menu.Item>
                       <Menu.Item>
                         <ActiveLink activeClassName="bg-gray-100" href="/dashboarddd">
-                          <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all">DashboarddD</a>
+                          <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all">Dashboarddd</a>
+                        </ActiveLink>
+                      </Menu.Item>
+                      <Menu.Item>
+                        <ActiveLink activeClassName="bg-gray-100" href="/dashboardtwo">
+                          <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all">Dashboard Two</a>
                         </ActiveLink>
                       </Menu.Item>
                     </Menu.Items>

@@ -12,7 +12,7 @@ export default function Index() {
 
       <LayoutDashboardThird>
         <div className="bg-orange-500 h-96 flex items-center justify-center">
-          <h1 className="text-white font-medium text-2xl px-8">Example Dashboard Layout using Component</h1>
+          <h1 className="text-white font-medium text-2xl px-8">Example Dashboard Layout Collapse Sidebar</h1>
         </div>
         <div className="bg-purple-500 h-96">
         </div>
