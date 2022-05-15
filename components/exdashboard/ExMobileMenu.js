@@ -196,6 +196,18 @@ export default function ExMobileMenu() {
                           Dashboardd
                         </ExMobileNavLink>
 
+                        <ExMobileNavLink href="/dashboarddd" icon={<ArrowCircleRightIcon className="w-4 h-4" />}>
+                          Dashboarddd
+                        </ExMobileNavLink>
+
+                        <ExMobileNavLink href="/dashboardtwo" icon={<ArrowCircleRightIcon className="w-4 h-4" />}>
+                          Dashboard Two
+                        </ExMobileNavLink>
+
+                        <ExMobileNavLink href="/dashboardthree" icon={<ArrowCircleRightIcon className="w-4 h-4" />}>
+                          Dashboard Three
+                        </ExMobileNavLink>
+
                         {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(item => {
                           return (
                             <ExMobileNavLink key={item + 1} href="#" icon={<ArrowSmRightIcon className="w-4 h-4" />}>

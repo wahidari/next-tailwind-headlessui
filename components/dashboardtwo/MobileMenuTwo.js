@@ -96,6 +96,14 @@ export default function MobileMenuTwo() {
                         <MobileNavLink href="/dashboarddd" icon={<ArrowCircleRightIcon className="w-4 h-4" />}>
                           Dashboarddd
                         </MobileNavLink>
+
+                        <MobileNavLink href="/dashboardtwo" icon={<ArrowCircleRightIcon className="w-4 h-4" />}>
+                          Dashboard Two
+                        </MobileNavLink>
+
+                        <MobileNavLink href="/dashboardthree" icon={<ArrowCircleRightIcon className="w-4 h-4" />}>
+                          Dashboard Three
+                        </MobileNavLink>
                         
                       </div>
                     </div>

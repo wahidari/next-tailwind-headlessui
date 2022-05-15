@@ -112,6 +112,18 @@ export default function MobileMenu() {
                           Dashboardd
                         </MobileNavLink>
 
+                        <MobileNavLink href="/dashboarddd" icon={<ArrowCircleRightIcon className="w-4 h-4" />}>
+                          Dashboarddd
+                        </MobileNavLink>
+
+                        <MobileNavLink href="/dashboardtwo" icon={<ArrowCircleRightIcon className="w-4 h-4" />}>
+                          Dashboard Two
+                        </MobileNavLink>
+
+                        <MobileNavLink href="/dashboardthree" icon={<ArrowCircleRightIcon className="w-4 h-4" />}>
+                          Dashboard Three
+                        </MobileNavLink>
+
                         {/* {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map(item => {
                           return (
                             <MobileNavLink key={item + 1} href="#" icon={<ArrowSmRightIcon className="w-4 h-4" />}>
