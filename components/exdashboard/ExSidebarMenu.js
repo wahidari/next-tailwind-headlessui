@@ -132,6 +132,18 @@ export default function ExSidebarMenu() {
           Dashboardd
         </ExSidebarNavLink>
 
+        <ExSidebarNavLink href="/dashboarddd" icon={<ArrowCircleRightIcon className="w-4 h-4" />}>
+          Dashboarddd
+        </ExSidebarNavLink>
+
+        <ExSidebarNavLink href="/dashboardtwo" icon={<ArrowCircleRightIcon className="w-4 h-4" />}>
+          Dashboard Two
+        </ExSidebarNavLink>
+
+        <ExSidebarNavLink href="/dashboardthree" icon={<ArrowCircleRightIcon className="w-4 h-4" />}>
+          Dashboard Three
+        </ExSidebarNavLink>
+
         {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(item => {
           return (
             <ExSidebarNavLink key={item + 1} href="#" icon={<ArrowSmRightIcon className="w-4 h-4" />}>

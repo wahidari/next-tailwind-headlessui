@@ -23,6 +23,14 @@ export default function SidebarMenuThird() {
           Dashboarddd
         </SidebarNavLink>
 
+        <SidebarNavLink href="/dashboardtwo" icon={<ArrowCircleRightIcon className="w-4 h-4" />}>
+          Dashboard Two
+        </SidebarNavLink>
+
+        <SidebarNavLink href="/dashboardthree" icon={<ArrowCircleRightIcon className="w-4 h-4" />}>
+          Dashboard Three
+        </SidebarNavLink>
+
       </div>
     </aside>
   )

@@ -26,6 +26,14 @@ export default function SidebarMenuThree() {
           <SidebarNavLink href="/dashboarddd" icon={<ArrowCircleRightIcon className="w-4 h-4" />}>
             Dashboarddd
           </SidebarNavLink>
+
+          <SidebarNavLink href="/dashboardtwo" icon={<ArrowCircleRightIcon className="w-4 h-4" />}>
+            Dashboard Two
+          </SidebarNavLink>
+
+          <SidebarNavLink href="/dashboardthree" icon={<ArrowCircleRightIcon className="w-4 h-4" />}>
+            Dashboard Three
+          </SidebarNavLink>
           
           {/* {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((item, index) => {
             return (
