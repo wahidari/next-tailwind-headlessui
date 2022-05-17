@@ -113,7 +113,6 @@ html {
 
 .feature-preview {
 	background: linear-gradient(var(--bg-primary), var(--bg-primary))
-	/* background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)) */
 			padding-box,
 		conic-gradient(
 				from -90deg at 56.46% 50%,
@@ -131,7 +130,6 @@ html {
 }
 .feature-preview-b {
 	background: linear-gradient(var(--bg-primary), var(--bg-primary))
-	/* background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)) */
 			padding-box,
 		conic-gradient(
 				from 0deg at 50% 50%,
@@ -149,7 +147,6 @@ html {
 }
 .feature-preview-c {
 	background: linear-gradient(var(--bg-primary), var(--bg-primary))
-	/* background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)) */
 			padding-box,
 		conic-gradient(
 				from 90deg at 50% 50%,
@@ -167,7 +164,75 @@ html {
 }
 .feature-preview-d {
 	background: linear-gradient(var(--bg-primary), var(--bg-primary))
-	/* background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)) */
+			padding-box,
+		conic-gradient(
+				from 180deg at 50% 50%,
+				#fe6459 -16.88deg,
+				#fe6459 6.13deg,
+				#fedd40 56.93deg,
+				#53e7ab 136.22deg,
+				#52dbff 183.77deg,
+				#6967e2 240.4deg,
+				#fe58e3 300.44deg,
+				#fe6459 343.12deg,
+				#fe6459 366.13deg
+			)
+			border-box;
+}
+
+.feature-preview-e {
+	background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0))
+			padding-box,
+		conic-gradient(
+				from -90deg at 50% 50%,
+				#fe6459 -16.88deg,
+				#fe6459 6.13deg,
+				#fedd40 56.93deg,
+				#53e7ab 136.22deg,
+				#52dbff 183.77deg,
+				#6967e2 240.4deg,
+				#fe58e3 300.44deg,
+				#fe6459 343.12deg,
+				#fe6459 366.13deg
+			)
+			border-box;
+}
+.feature-preview-f {
+	background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0))
+			padding-box,
+		conic-gradient(
+				from 0deg at 50% 50%,
+				#fe6459 -16.88deg,
+				#fe6459 6.13deg,
+				#fedd40 56.93deg,
+				#53e7ab 136.22deg,
+				#52dbff 183.77deg,
+				#6967e2 240.4deg,
+				#fe58e3 300.44deg,
+				#fe6459 343.12deg,
+				#fe6459 366.13deg
+			)
+			border-box;
+}
+.feature-preview-g {
+	background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0))
+			padding-box,
+		conic-gradient(
+				from 90deg at 50% 50%,
+				#fe6459 -16.88deg,
+				#fe6459 6.13deg,
+				#fedd40 56.93deg,
+				#53e7ab 136.22deg,
+				#52dbff 183.77deg,
+				#6967e2 240.4deg,
+				#fe58e3 300.44deg,
+				#fe6459 343.12deg,
+				#fe6459 366.13deg
+			)
+			border-box;
+}
+.feature-preview-h {
+	background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0))
 			padding-box,
 		conic-gradient(
 				from 180deg at 50% 50%,

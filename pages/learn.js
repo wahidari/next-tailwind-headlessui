@@ -3,7 +3,7 @@ import Image from "next/image";
 import Footer from "@components/Footer";
 import Navbar from "@components/Navbar";
 import Section from "@components/Section";
-import { MoonIcon, SunIcon } from "@heroicons/react/outline";
+import { AcademicCapIcon, MoonIcon, SunIcon } from "@heroicons/react/outline";
 import { GlobalContext } from "@utils/GlobalContext";
 import { useContext } from "react";
 import BackToTop from "@components/BackToTop";
@@ -29,6 +29,296 @@ export default function Learn() {
 			<Layout>
 				<main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pb-16">
 
+					<Section id="icon-background" name="Icon Background">
+						<div className="flex flex-wrap gap-2 my-2">
+							<div className="flex justify-center items-center rounded-sm bg-blue-500 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded bg-emerald-500 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-md bg-red-500 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-lg bg-violet-500 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-xl bg-orange-500 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-2xl bg-teal-500 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-full bg-pink-500 h-12 w-12">
+								<AcademicCapIcon className="w-7 h-7 text-white" />
+							</div>
+						</div>
+						<div className="flex flex-wrap gap-2 my-2">
+							<div className="flex justify-center items-center rounded-sm bg-blue-100 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-blue-500" />
+							</div>
+							<div className="flex justify-center items-center rounded bg-emerald-100 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-emerald-500" />
+							</div>
+							<div className="flex justify-center items-center rounded-md bg-red-100 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-red-500" />
+							</div>
+							<div className="flex justify-center items-center rounded-lg bg-violet-100 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-violet-500" />
+							</div>
+							<div className="flex justify-center items-center rounded-xl bg-orange-100 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-orange-500" />
+							</div>
+							<div className="flex justify-center items-center rounded-2xl bg-teal-100 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-teal-500" />
+							</div>
+							<div className="flex justify-center items-center rounded-full bg-pink-100 h-12 w-12">
+								<AcademicCapIcon className="w-7 h-7 text-pink-500" />
+							</div>
+						</div>
+						<div className="flex flex-wrap gap-2 my-2">
+							<div className="flex justify-center items-center rounded-sm bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded bg-gradient-to-t from-green-400 via-green-500 to-green-600 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-md bg-gradient-to-tr from-red-400 via-red-500 to-red-600 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-lg bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-xl bg-gradient-to-bl from-orange-400 via-orange-500 to-orange-600 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-2xl bg-gradient-to-tl from-teal-400 via-teal-500 to-teal-600 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-full bg-gradient-to-l from-pink-400 via-pink-500 to-pink-600 h-12 w-12">
+								<AcademicCapIcon className="w-7 h-7 text-white" />
+							</div>
+						</div>
+						<div className="flex flex-wrap gap-2 my-2">
+							<div className="flex justify-center items-center rounded-sm bg-gradient-to-r from-blue-300 to-blue-400 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded bg-gradient-to-t from-green-300 to-green-400 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-md bg-gradient-to-tr from-red-300  to-red-400 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-lg bg-gradient-to-br from-purple-300 to-purple-400 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-xl bg-gradient-to-bl from-orange-300 to-orange-400 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-2xl bg-gradient-to-tl from-teal-300 to-teal-400 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-full bg-gradient-to-l from-pink-300 to-pink-400 h-12 w-12">
+								<AcademicCapIcon className="w-7 h-7 text-white" />
+							</div>
+						</div>
+						<div className="flex flex-wrap gap-2 my-2">
+							<div className="flex justify-center items-center rounded-sm bg-gradient-to-r from-blue-500 to-green-700 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded bg-gradient-to-t from-green-400 to-red-600 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-md bg-gradient-to-tr from-red-400 to-purple-600 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-lg bg-gradient-to-br from-purple-500 to-orange-700 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-xl bg-gradient-to-bl from-orange-400 to-teal-600 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-2xl bg-gradient-to-tl from-teal-400 to-pink-600 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-full bg-gradient-to-l from-pink-400 to-blue-600 h-12 w-12">
+								<AcademicCapIcon className="w-7 h-7 text-white" />
+							</div>
+						</div>
+						<div className="flex flex-wrap gap-2 my-2">
+							<div className="flex justify-center items-center rounded-sm bg-gradient-to-r from-blue-400 to-green-400 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded bg-gradient-to-t from-green-400 to-red-400 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-md bg-gradient-to-tr from-red-400 to-purple-400 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-lg bg-gradient-to-br from-purple-400 to-orange-400 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-xl bg-gradient-to-bl from-orange-400 to-teal-400 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-2xl bg-gradient-to-tl from-teal-400 to-pink-400 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-full bg-gradient-to-l from-pink-400 to-blue-400 h-12 w-12">
+								<AcademicCapIcon className="w-7 h-7 text-white" />
+							</div>
+						</div>
+					</Section>
+
+					<Section id="icon-shadow" name="Icon Shadow">
+						<div className="flex flex-wrap gap-4 my-4">
+							<div className="flex justify-center items-center rounded-sm bg-blue-500 h-12 w-12 shadow-sm">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded bg-emerald-500 h-12 w-12 shadow">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-md bg-red-500 h-12 w-12 shadow-md">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-lg bg-violet-500 h-12 w-12 shadow-lg">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-xl bg-orange-500 h-12 w-12 shadow-xl">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+						</div>
+						<div className="flex flex-wrap gap-4 my-4">
+							<div className="flex justify-center items-center rounded-sm bg-blue-100 h-12 w-12 shadow-sm">
+								<AcademicCapIcon className="w-8 h-8 text-blue-500" />
+							</div>
+							<div className="flex justify-center items-center rounded bg-emerald-100 h-12 w-12 shadow">
+								<AcademicCapIcon className="w-8 h-8 text-emerald-500" />
+							</div>
+							<div className="flex justify-center items-center rounded-md bg-red-100 h-12 w-12 shadow-md">
+								<AcademicCapIcon className="w-8 h-8 text-red-500" />
+							</div>
+							<div className="flex justify-center items-center rounded-lg bg-violet-100 h-12 w-12 shadow-lg">
+								<AcademicCapIcon className="w-8 h-8 text-violet-500" />
+							</div>
+							<div className="flex justify-center items-center rounded-xl bg-orange-100 h-12 w-12 shadow-xl">
+								<AcademicCapIcon className="w-8 h-8 text-orange-500" />
+							</div>
+						</div>
+					</Section>
+
+					<Section id="icon-shadow-color" name="Icon Shadow Color">
+						<div className="flex flex-wrap gap-6 my-6">
+							<div className="flex justify-center items-center rounded-sm bg-blue-500 h-12 w-12 shadow-blue-500/50 shadow-lg">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded bg-emerald-500 h-12 w-12 shadow-emerald-500/50 shadow-lg">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-md bg-red-500 h-12 w-12 shadow-red-500/50 shadow-lg">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-lg bg-violet-500 h-12 w-12 shadow-violet-500/50 shadow-lg">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-xl bg-orange-500 h-12 w-12 shadow-orange-500/50 shadow-lg">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-2xl bg-teal-500 h-12 w-12 shadow-teal-500/50 shadow-lg">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+							<div className="flex justify-center items-center rounded-full bg-pink-500 h-12 w-12 shadow-pink-500/50 shadow-lg">
+								<AcademicCapIcon className="w-8 h-8 text-white" />
+							</div>
+						</div>
+						<div className="flex flex-wrap gap-6 my-6">
+							<div className="flex justify-center items-center rounded-sm bg-blue-100 h-12 w-12 shadow-blue-400/50 shadow-lg">
+								<AcademicCapIcon className="w-8 h-8 text-blue-500" />
+							</div>
+							<div className="flex justify-center items-center rounded bg-emerald-100 h-12 w-12 shadow-emerald-400/50 shadow-lg">
+								<AcademicCapIcon className="w-8 h-8 text-emerald-500" />
+							</div>
+							<div className="flex justify-center items-center rounded-md bg-red-100 h-12 w-12 shadow-red-400/50 shadow-lg">
+								<AcademicCapIcon className="w-8 h-8 text-red-500" />
+							</div>
+							<div className="flex justify-center items-center rounded-lg bg-violet-100 h-12 w-12 shadow-violet-400/50 shadow-lg">
+								<AcademicCapIcon className="w-8 h-8 text-violet-500" />
+							</div>
+							<div className="flex justify-center items-center rounded-xl bg-orange-100 h-12 w-12 shadow-orange-400/50 shadow-lg">
+								<AcademicCapIcon className="w-8 h-8 text-orange-500" />
+							</div>
+							<div className="flex justify-center items-center rounded-2xl bg-teal-100 h-12 w-12 shadow-teal-400/50 shadow-lg">
+								<AcademicCapIcon className="w-8 h-8 text-teal-500" />
+							</div>
+							<div className="flex justify-center items-center rounded-full bg-pink-100 h-12 w-12 shadow-pink-400/50 shadow-lg">
+								<AcademicCapIcon className="w-8 h-8 text-pink-500" />
+							</div>
+						</div>
+					</Section>
+
+					<Section id="icon-border" name="Icon Border">
+						<div className="flex flex-wrap gap-2 my-2">
+							<div className="flex justify-center items-center rounded-sm border-2 border-dotted border-blue-500 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-blue-500" />
+							</div>
+							<div className="flex justify-center items-center rounded border-2 border-dashed border-emerald-500 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-emerald-500" />
+							</div>
+							<div className="flex justify-center items-center rounded-md border-4 border-double border-red-500 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-red-500" />
+							</div>
+							<div className="flex justify-center items-center rounded-lg border-2 border-dotted border-violet-500 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-violet-500" />
+							</div>
+							<div className="flex justify-center items-center rounded-xl border-2 border-dashed border-orange-500 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-orange-500" />
+							</div>
+							<div className="flex justify-center items-center rounded-2xl border-4 border-double border-teal-500 h-12 w-12">
+								<AcademicCapIcon className="w-8 h-8 text-teal-500" />
+							</div>
+							<div className="flex justify-center items-center rounded-full border-2 border-dotted border-pink-500 h-12 w-12">
+								<AcademicCapIcon className="w-7 h-7 text-pink-500" />
+							</div>
+						</div>
+						<div className="flex flex-wrap gap-2 my-2">
+							<div className="flex items-center justify-center p-0.5 rounded-lg bg-gradient-to-br from-blue-600 to-green-500">
+								<div className="p-1.5 bg-white dark:bg-neutral-900 rounded-md">
+									<AcademicCapIcon className="w-8 h-8 text-green-600" />
+								</div>
+							</div>
+							<div className="flex items-center justify-center p-0.5 rounded-lg bg-gradient-to-br from-green-600 to-red-500">
+								<div className="p-1.5 bg-white dark:bg-neutral-900 rounded-md">
+									<AcademicCapIcon className="w-8 h-8 text-red-600" />
+								</div>
+							</div>
+							<div className="flex items-center justify-center p-0.5 rounded-lg bg-gradient-to-br from-red-600 to-violet-500">
+								<div className="p-1.5 bg-white dark:bg-neutral-900 rounded-md">
+									<AcademicCapIcon className="w-8 h-8 text-violet-600" />
+								</div>
+							</div>
+							<div className="flex items-center justify-center p-0.5 rounded-lg bg-gradient-to-br from-violet-600 to-orange-500">
+								<div className="p-1.5 bg-white dark:bg-neutral-900 rounded-md">
+									<AcademicCapIcon className="w-8 h-8 text-orange-600" />
+								</div>
+							</div>
+							<div className="flex items-center justify-center p-0.5 rounded-full bg-gradient-to-br from-orange-600 to-cyan-500">
+								<div className="p-1.5 bg-white dark:bg-neutral-900 rounded-full">
+									<AcademicCapIcon className="w-8 h-8 text-cyan-600" />
+								</div>
+							</div>
+							<div className="flex items-center justify-center p-0.5 rounded-full bg-gradient-to-br from-cyan-600 to-pink-500">
+								<div className="p-1.5 bg-white dark:bg-neutral-900 rounded-full">
+									<AcademicCapIcon className="w-8 h-8 text-pink-600" />
+								</div>
+							</div>
+							<div className="flex items-center justify-center p-0.5 rounded-full bg-gradient-to-br from-pink-600 to-blue-500">
+								<div className="p-1.5 bg-white dark:bg-neutral-900 rounded-full">
+									<AcademicCapIcon className="w-8 h-8 text-blue-600" />
+								</div>
+							</div>
+						</div>
+					</Section>
+
 					<Section id="nav-icon-menu-animation" name="Nav Icon Menu Animation">
 						<button className="w-8 h-8 border dark:border-neutral-700 relative focus:outline-none mx-2 mb-2" onClick={() => setOpen(!open)}>
 							<span className="sr-only">Open main menu</span>
@@ -46,7 +336,24 @@ export default function Learn() {
 								<span aria-hidden="true" className={`${open ? "rotate-45" : "translate-y-1.5"} block absolute h-0.5 w-5 bg-slate-900 dark:bg-white transform transition duration-500 ease-in-out`}></span>
 							</div>
 						</button>
-						<br/>
+						<br />
+						<button className="w-8 h-8 border dark:border-neutral-700 relative focus:outline-none mx-2 mb-2" onClick={() => setOpen(!open)}>
+							<span className="sr-only">Open main menu</span>
+							<div className="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+								<span aria-hidden="true" className={`${open ? "rotate-45" : "-translate-y-1.5"} block absolute h-0.5 w-5 bg-slate-900 dark:bg-white transform transition duration-500 ease-in-out`}></span>
+								<span aria-hidden="true" className={`${open ? "translate-x-3 opacity-0" : ""} block absolute h-0.5 w-5 bg-slate-900 dark:bg-white transform transition duration-500 ease-in-out`}></span>
+								<span aria-hidden="true" className={`${open ? "-rotate-45" : "translate-y-1.5"} block absolute h-0.5 w-5 bg-slate-900 dark:bg-white transform transition duration-500 ease-in-out`}></span>
+							</div>
+						</button>
+						<button className="w-8 h-8 border dark:border-neutral-700 relative focus:outline-none mx-2 mb-2" onClick={() => setOpen(!open)}>
+							<span className="sr-only">Open main menu</span>
+							<div className="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+								<span aria-hidden="true" className={`${open ? "-rotate-45" : "-translate-y-1.5"} block absolute h-0.5 w-5 bg-slate-900 dark:bg-white transform transition duration-500 ease-in-out`}></span>
+								<span aria-hidden="true" className={`${open ? "-translate-x-3 opacity-0" : ""} block absolute h-0.5 w-5 bg-slate-900 dark:bg-white transform transition duration-500 ease-in-out`}></span>
+								<span aria-hidden="true" className={`${open ? "rotate-45" : "translate-y-1.5"} block absolute h-0.5 w-5 bg-slate-900 dark:bg-white transform transition duration-500 ease-in-out`}></span>
+							</div>
+						</button>
+						<br />
 						<button className="w-8 h-8 border dark:border-neutral-700 relative focus:outline-none mx-2 mb-2" onClick={() => setOpen(!open)}>
 							<span className="sr-only">Open main menu</span>
 							<div className="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -63,7 +370,7 @@ export default function Learn() {
 								<span aria-hidden="true" className={`${open ? "rotate-45" : "translate-y-1.5"} block absolute h-0.5 w-5 bg-slate-900 dark:bg-white transform transition duration-500 ease-in-out`}></span>
 							</div>
 						</button>
-						<br/>
+						<br />
 						<button className="w-8 h-8 border dark:border-neutral-700 relative focus:outline-none mx-2 mb-2" onClick={() => setOpen(!open)}>
 							<span className="sr-only">Open main menu</span>
 							<div className="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -103,6 +410,35 @@ export default function Learn() {
 								</div>
 							</div>
 							<div className="feature-preview-d border-2 border-dashed border-white dark:border-neutral-900 p-8">
+								<div className="max-w-md mx-auto">
+									<p className="text-3xl text-center dark:text-white">Content</p>
+									<p className="mt-4 text-center lg:text-xs text-purple-500 uppercase font-semibold">Coming soon</p>
+								</div>
+							</div>
+						</div>
+					</Section>
+
+					<Section id="gradient-background-colorfull" name="Gradient Background Colorfull">
+						<div className="grid sm:grid-cols-2 gap-4">
+							<div className="feature-preview-e border-2 border-dashed border-white dark:border-neutral-900 p-8">
+								<div className="max-w-md mx-auto">
+									<p className="text-3xl text-center dark:text-white">Content</p>
+									<p className="mt-4 text-center lg:text-xs text-purple-500 uppercase font-semibold">Coming soon</p>
+								</div>
+							</div>
+							<div className="feature-preview-f border-2 border-dashed border-white dark:border-neutral-900 p-8">
+								<div className="max-w-md mx-auto">
+									<p className="text-3xl text-center dark:text-white">Content</p>
+									<p className="mt-4 text-center lg:text-xs text-purple-500 uppercase font-semibold">Coming soon</p>
+								</div>
+							</div>
+							<div className="feature-preview-g border-2 border-dashed border-white dark:border-neutral-900 p-8">
+								<div className="max-w-md mx-auto">
+									<p className="text-3xl text-center dark:text-white">Content</p>
+									<p className="mt-4 text-center lg:text-xs text-purple-500 uppercase font-semibold">Coming soon</p>
+								</div>
+							</div>
+							<div className="feature-preview-h border-2 border-dashed border-white dark:border-neutral-900 p-8">
 								<div className="max-w-md mx-auto">
 									<p className="text-3xl text-center dark:text-white">Content</p>
 									<p className="mt-4 text-center lg:text-xs text-purple-500 uppercase font-semibold">Coming soon</p>
