@@ -9,6 +9,15 @@ import { useContext } from "react";
 import BackToTop from "@components/BackToTop";
 import Layout from "@components/Layout";
 import { useState } from "react";
+import Link from "next/link";
+
+function TocLink({href, text}) {
+	return (
+		<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 transition-all">
+			<Link href={href}>{text}</Link>
+		</span>
+	)
+}
 
 export default function Learn() {
 	const { darkMode, setDarkMode } = useContext(GlobalContext);
@@ -28,6 +37,30 @@ export default function Learn() {
 
 			<Layout>
 				<main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pb-16">
+
+					<Section id="components" name="Learn TOC">
+						<div className="grid sm:grid-cols-2 md:grid-cols-3">
+							<div>
+								<TocLink href="#icon-background" text="Icon Background" />
+								<TocLink href="#icon-shadow" text="Icon Shadow" />
+								<TocLink href="#icon-shadow-color" text="Icon Shadow Color" />
+								<TocLink href="#icon-border" text="Icon Border" />
+							</div>
+							<div>
+								<TocLink href="#nav-icon-menu-animation" text="Nav Icon Menu Animation" />
+								<TocLink href="#gradient-border-colorfull" text="Gradient Border Colorfull" />
+								<TocLink href="#gradient-background-colorfull" text="Gradient Background Colorfull" />
+								<TocLink href="#gradient-border" text="Gradient Border" />
+							</div>
+							<div>
+								<TocLink href="#gradient-text" text="Gradient Text" />
+								<TocLink href="#strong-gradient-text" text="Strong Gradient Text" />
+								<TocLink href="#gradient-monochrome" text="Gradient Monochrome" />
+								<TocLink href="#gradient-dual-tone" text="Gradient Dual Tone" />
+								<TocLink href="#gradient-outline" text="Gradient Outline" />
+							</div>
+						</div>
+					</Section>
 
 					<Section id="icon-background" name="Icon Background">
 						<div className="flex flex-wrap gap-2 my-2">
