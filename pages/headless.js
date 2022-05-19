@@ -1,9 +1,9 @@
 import Head from "next/head";
 import { GlobalContext } from "@utils/GlobalContext";
-import { useContext, useState, useRef, Fragment, useEffect } from "react";
+import { useContext, useState, Fragment } from "react";
 import { Tab, Disclosure, Listbox, Menu, Transition, Combobox, Dialog, RadioGroup } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
-import { MoonIcon, SunIcon, ExclamationIcon, MinusSmIcon, PlusSmIcon, SelectorIcon, CheckIcon, ChevronUpIcon } from '@heroicons/react/outline'
+import { MoonIcon, SunIcon, ExclamationIcon, MinusSmIcon, PlusSmIcon, SelectorIcon, ChevronUpIcon } from '@heroicons/react/outline'
 import toast, { Toaster } from 'react-hot-toast';
 import Button from "@components/Button";
 import Footer from "@components/Footer"
@@ -26,8 +26,8 @@ import SelectBoxCustom from "@components/SelectBoxCustom";
 import RadioBox from "@components/RadioBox";
 import useToast from "@utils/useToast";
 import SearchBox from "@components/SearchBox";
-import Link from "next/link";
 import Select from 'react-select'
+import TocLink from "@components/TocLink";
 
 const reactMultiSelectOptions = [
 	{ value: 'red', label: 'Red' },
@@ -184,7 +184,7 @@ export default function Third() {
 		setFilteredOption(people.filter((person) => person.nik.includes(e.target.value)))
 	}
 
-	const [multiSelect, setMultiSelect] = useState([reactMultiSelectOptions[0], reactMultiSelectOptions[1] ])
+	const [multiSelect, setMultiSelect] = useState([reactMultiSelectOptions[0], reactMultiSelectOptions[1]])
 	function handleMultiSelectChange(e) {
 		setMultiSelect(e)
 	}
@@ -213,61 +213,27 @@ export default function Third() {
 					<Section id="components" name="Headless Components TOC">
 						<div className="grid sm:grid-cols-2 md:grid-cols-3">
 							<div>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#react-multi-select-search">React Multi Select Search</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#search-box">Search Box</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#combo-box">Combo Box</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#select-box">Select Box</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#list-box">List Box</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#radio-box">Radio Box</Link>
-								</span>
+								<TocLink href="#react-multi-select-search" text="React Multi Select Search" />
+								<TocLink href="#search-box" text="Search Box" />
+								<TocLink href="#combo-box" text="Combo Box" />
+								<TocLink href="#select-box" text="Select Box" />
+								<TocLink href="#list-box" text="List Box" />
+								<TocLink href="#radio-box" text="Radio Box" />
 							</div>
 							<div>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#radio-group">Radio Group</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#disclosure">Disclosure</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#menu">Menu</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#modal">Modal</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#simple-tab">Simple Tab</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#tab">Tab</Link>
-								</span>
+								<TocLink href="#radio-group" text="Radio Group" />
+								<TocLink href="#disclosure" text="Disclosure" />
+								<TocLink href="#menu" text="Menu" />
+								<TocLink href="#modal" text="Modal" />
+								<TocLink href="#simple-tab" text="Simple Tab" />
+								<TocLink href="#tab" text="Tab" />
 							</div>
 							<div>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#tab-style-a">Tab Style A</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#tab-style-b">Tab Style B</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#accordion">Accordion</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#toast">Toast</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#dark-mode">Dark Mode</Link>
-								</span>
+								<TocLink href="#tab-style-a" text="Tab Style A" />
+								<TocLink href="#tab-style-b" text="Tab Style B" />
+								<TocLink href="#accordion" text="Accordion" />
+								<TocLink href="#toast" text="Toast" />
+								<TocLink href="#dark-mode" text="Dark Mode" />
 							</div>
 						</div>
 					</Section>

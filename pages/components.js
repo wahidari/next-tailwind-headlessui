@@ -33,6 +33,7 @@ import Spinner from "@components/Spinner";
 import FileInput from "@components/FileInput";
 import Image from "next/image";
 import FileInputLarge from "@components/FileInputLarge";
+import TocLink from "@components/TocLink";
 
 export default function Third() {
 	const { darkMode, setDarkMode } = useContext(GlobalContext);
@@ -145,88 +146,36 @@ export default function Third() {
 					<Section id="components" name="Components TOC">
 						<div className="grid sm:grid-cols-2 md:grid-cols-3">
 							<div>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#dark-mode">Dark Mode</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#radio">Native Radio</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#checkbox">Native Checkbox</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#native-select">Native Select</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#input-label">Input Label</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#input">Input</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#text-area">Text Area</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#input-file">Input File</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#input-image">Input Image</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#input-image-multiple">Input Image Multiple</Link>
-								</span>
+								<TocLink href="#dark-mode" text="Dark Mode" />
+								<TocLink href="#radio" text="Native Radio" />
+								<TocLink href="#checkbox" text="Native Checkbox" />
+								<TocLink href="#native-select" text="Native Select" />
+								<TocLink href="#input-label" text="Input Label" />
+								<TocLink href="#input" text="Input" />
+								<TocLink href="#text-area" text="Text Area" />
+								<TocLink href="#input-file" text="Input File" />
+								<TocLink href="#input-image" text="Input Image" />
+								<TocLink href="#input-image-multiple" text="Input Image Multiple" />
 							</div>
 							<div>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#avatar">Avatar</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#spinner">Spinner</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#section">Section</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#container">Container</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#heading">Heading</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#text">Text</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#button">Button</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#button-outline">Button Outline</Link>
-								</span>
+								<TocLink href="#avatar" text="Avatar" />
+								<TocLink href="#spinner" text="Spinner" />
+								<TocLink href="#section" text="Section" />
+								<TocLink href="#container" text="Container" />
+								<TocLink href="#heading" text="Heading" />
+								<TocLink href="#text" text="Text" />
+								<TocLink href="#button" text="Button" />
+								<TocLink href="#button-outline" text="Button Outline" />
 							</div>
 							<div>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#link-button">Link Button</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#link-button-outline">Link Button Outline</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#badge">Badge</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#badge-outline">Badge Outline</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#alert">Alert</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#alert-outline">Alert Outline</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#skeletons">Skeletons</Link>
-								</span>
-								<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 hover:underline transition-all">
-									<Link href="#progress">Progress</Link>
-								</span>
+								<TocLink href="#link-button" text="Link Button" />
+								<TocLink href="#link-button-outline" text="Link Button Outline" />
+								<TocLink href="#badge" text="Badge" />
+								<TocLink href="#badge-outline" text="Badge Outline" />
+								<TocLink href="#alert" text="Alert" />
+								<TocLink href="#alert-outline" text="Alert Outline" />
+								<TocLink href="#skeletons" text="Skeletons" />
+								<TocLink href="#progress" text="Progress" />
 							</div>
 						</div>
 					</Section>

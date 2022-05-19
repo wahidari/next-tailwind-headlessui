@@ -1,23 +1,14 @@
+import { useState } from "react";
+import { useContext } from "react";
+import { GlobalContext } from "@utils/GlobalContext";
 import Head from "next/head";
-import Image from "next/image";
+import { AcademicCapIcon, MoonIcon, SunIcon } from "@heroicons/react/outline";
 import Footer from "@components/Footer";
 import Navbar from "@components/Navbar";
 import Section from "@components/Section";
-import { AcademicCapIcon, MoonIcon, SunIcon } from "@heroicons/react/outline";
-import { GlobalContext } from "@utils/GlobalContext";
-import { useContext } from "react";
 import BackToTop from "@components/BackToTop";
 import Layout from "@components/Layout";
-import { useState } from "react";
-import Link from "next/link";
-
-function TocLink({href, text}) {
-	return (
-		<span className="block mb-1 font-medium text-blue-500 hover:text-blue-600 transition-all">
-			<Link href={href}>{text}</Link>
-		</span>
-	)
-}
+import TocLink from "@components/TocLink";
 
 export default function Learn() {
 	const { darkMode, setDarkMode } = useContext(GlobalContext);
