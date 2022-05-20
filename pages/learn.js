@@ -36,19 +36,21 @@ export default function Learn() {
 								<TocLink href="#icon-shadow" text="Icon Shadow" />
 								<TocLink href="#icon-shadow-color" text="Icon Shadow Color" />
 								<TocLink href="#icon-border" text="Icon Border" />
+								<TocLink href="#nav-icon-menu-animation" text="Nav Icon Menu Animation" />
 							</div>
 							<div>
-								<TocLink href="#nav-icon-menu-animation" text="Nav Icon Menu Animation" />
 								<TocLink href="#gradient-border-colorfull" text="Gradient Border Colorfull" />
 								<TocLink href="#gradient-background-colorfull" text="Gradient Background Colorfull" />
 								<TocLink href="#gradient-border" text="Gradient Border" />
-							</div>
-							<div>
 								<TocLink href="#gradient-text" text="Gradient Text" />
 								<TocLink href="#strong-gradient-text" text="Strong Gradient Text" />
+							</div>
+							<div>
 								<TocLink href="#gradient-monochrome" text="Gradient Monochrome" />
 								<TocLink href="#gradient-dual-tone" text="Gradient Dual Tone" />
 								<TocLink href="#gradient-outline" text="Gradient Outline" />
+								<TocLink href="#background-gradient" text="Background Gradient" />
+								<TocLink href="#background-gradient-css" text="Background Gradient CSS" />
 							</div>
 						</div>
 					</Section>
@@ -624,6 +626,180 @@ export default function Learn() {
 						</button>
 					</Section>
 
+
+					<Section id="background-gradient" name="Background Gradient">
+						<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3">
+							<div className="rounded-md w-full h-32 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500"></div>
+							<div className="rounded-md w-full h-32 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"></div>
+							<div className="rounded-md w-full h-32 bg-gradient-to-r from-indigo-300 to-purple-400"></div>
+							<div className="rounded-md w-full h-32 bg-gradient-to-r from-red-400 via-gray-300 to-blue-500"></div>
+							<div className="rounded-md w-full h-32 bg-gradient-to-r from-red-500 to-green-500"></div>
+							<div className="rounded-md w-full h-32 bg-gradient-to-r from-lime-600 via-yellow-300 to-red-600"></div>
+							<div className="rounded-md w-full h-32 bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500"></div>
+							<div className="rounded-md w-full h-32 bg-gradient-to-r from-sky-400 via-rose-400 to-lime-400"></div>
+							<div className="rounded-md w-full h-32 bg-gradient-to-r from-blue-400 to-emerald-400"></div>
+							<div className="rounded-md w-full h-32 bg-gradient-to-r from-yellow-400 via-gray-50 to-teal-300"></div>
+							<div className="rounded-md w-full h-32 bg-gradient-to-t from-orange-400 to-sky-400"></div>
+							<div className="rounded-md w-full h-32 bg-gradient-to-bl from-slate-900 via-fuchsia-900 to-sky-700"></div>
+							<div className="rounded-md w-full h-32 bg-gradient-to-tl from-sky-600 via-slate-900 to-cyan-300"></div>
+							<div className="rounded-md w-full h-32 bg-gradient-to-l from-amber-900 via-emerald-900 to-purple-800"></div>
+							<div className="rounded-md w-full h-32 bg-gradient-to-br from-green-300 via-teal-600 to-red-800"></div>
+							<div className="rounded-md w-full h-32 bg-gradient-to-tl from-green-800 via-slate-700 to-amber-700"></div>
+							<div className="rounded-md w-full h-32 bg-gradient-to-tr from-violet-900 via-rose-700 to-lime-300"></div>
+							<div className="rounded-md w-full h-32 bg-gradient-to-b from-gray-800 via-teal-600 to-green-600"></div>
+						</div>
+					</Section>
+
+					<Section id="background-gradient-css" name="Background Gradient CSS">
+						<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3">
+							<div style={{
+								backgroundColor: "rgb(20, 184, 166)",
+								backgroundImage: `
+							radial-gradient(at 75% 92%, rgb(251, 113, 133) 0, transparent 68%), 
+							radial-gradient(at 77% 50%, rgb(6, 182, 212) 0, transparent 60%), 
+							radial-gradient(at 36% 64%, rgb(203, 213, 225) 0, transparent 53%), 
+							radial-gradient(at 21% 90%, rgb(113, 63, 18) 0, transparent 41%), 
+							radial-gradient(at 100% 10%, rgb(238, 242, 255) 0, transparent 82%), 
+							radial-gradient(at 29% 56%, rgb(13, 148, 136) 0, transparent 78%)`
+							}}
+								className="rounded-md w-full h-32">
+							</div>
+							<div style={{
+								backgroundColor: `rgb(163, 163, 163)`,
+								backgroundImage: `
+							radial-gradient(at 9% 91%, rgb(220, 38, 38) 0, transparent 72%), 
+							radial-gradient(at 7% 67%, rgb(67, 56, 202) 0, transparent 99%), 
+							radial-gradient(at 68% 71%, rgb(202, 138, 4) 0, transparent 73%), 
+							radial-gradient(at 25% 19%, rgb(234, 179, 8) 0, transparent 53%), 
+							radial-gradient(at 99% 29%, rgb(39, 39, 42) 0, transparent 37%), 
+							radial-gradient(at 9% 66%, rgb(13, 148, 136) 0, transparent 2%)`
+							}}
+								className="rounded-md w-full h-32">
+							</div>
+							<div style={{
+								backgroundColor: `rgb(41, 37, 36)`,
+								backgroundImage: `
+							radial-gradient(at 25% 77%, rgb(180, 83, 9) 0, transparent 38%), 
+							radial-gradient(at 43% 78%, rgb(120, 113, 108) 0, transparent 36%), 
+							radial-gradient(at 19% 75%, rgb(232, 121, 249) 0, transparent 2%), 
+							radial-gradient(at 34% 81%, rgb(252, 165, 165) 0, transparent 73%), 
+							radial-gradient(at 69% 69%, rgb(79, 70, 229) 0, transparent 45%), 
+							radial-gradient(at 46% 92%, rgb(17, 94, 89) 0, transparent 64%)`
+							}}
+								className="rounded-md w-full h-32">
+							</div>
+							<div style={{
+								backgroundColor: `rgb(113, 63, 18)`,
+								backgroundImage: `
+							radial-gradient(at 15% 20%, rgb(4, 120, 87) 0, transparent 82%), 
+							radial-gradient(at 65% 5%, rgb(220, 38, 38) 0, transparent 81%), 
+							radial-gradient(at 75% 86%, rgb(38, 38, 38) 0, transparent 95%), 
+							radial-gradient(at 7% 11%, rgb(12, 74, 110) 0, transparent 54%), 
+							radial-gradient(at 61% 90%, rgb(120, 53, 15) 0, transparent 76%), 
+							radial-gradient(at 41% 31%, rgb(254, 249, 195) 0, transparent 71%)`
+							}}
+								className="rounded-md w-full h-32">
+							</div>
+							<div style={{
+								backgroundColor: `rgb(202, 138, 4)`,
+								backgroundImage: `
+							radial-gradient(at 29% 80%, rgb(248, 250, 252) 0, transparent 87%), 
+							radial-gradient(at 83% 47%, rgb(107, 114, 128) 0, transparent 77%), 
+							radial-gradient(at 81% 6%, rgb(56, 189, 248) 0, transparent 83%), 
+							radial-gradient(at 100% 99%, rgb(30, 58, 138) 0, transparent 78%), 
+							radial-gradient(at 98% 19%, rgb(255, 255, 255) 0, transparent 23%), 
+							radial-gradient(at 50% 79%, rgb(45, 212, 191) 0, transparent 57%)`
+							}}
+								className="rounded-md w-full h-32">
+							</div>
+							<div style={{
+								backgroundColor: `rgb(252, 211, 77)`,
+								backgroundImage: `
+							radial-gradient(at 99% 13%, rgb(8, 145, 178) 0, transparent 65%), 
+							radial-gradient(at 40% 57%, rgb(55, 48, 163) 0, transparent 48%), 
+							radial-gradient(at 88% 61%, rgb(127, 29, 29) 0, transparent 89%), 
+							radial-gradient(at 25% 35%, rgb(234, 88, 12) 0, transparent 71%), 
+							radial-gradient(at 4% 52%, rgb(8, 145, 178) 0, transparent 66%), 
+							radial-gradient(at 61% 74%, rgb(134, 239, 172) 0, transparent 22%)`
+							}}
+								className="rounded-md w-full h-32">
+							</div>
+							<div style={{
+								backgroundColor: `rgb(250, 250, 250)`,
+								backgroundImage: `
+							radial-gradient(at 79% 34%, rgb(168, 162, 158) 0, transparent 79%), 
+							radial-gradient(at 14% 65%, rgb(2, 132, 199) 0, transparent 68%), 
+							radial-gradient(at 2% 54%, rgb(252, 211, 77) 0, transparent 87%), 
+							radial-gradient(at 7% 36%, rgb(148, 163, 184) 0, transparent 81%), 
+							radial-gradient(at 98% 71%, rgb(37, 99, 235) 0, transparent 40%), 
+							radial-gradient(at 50% 82%, rgb(88, 28, 135) 0, transparent 68%)`
+							}}
+								className="rounded-md w-full h-32">
+							</div>
+							<div style={{
+								backgroundColor: `rgb(20, 83, 45)`,
+								backgroundImage: `
+							radial-gradient(at 27% 1%, rgb(147, 197, 253) 0, transparent 74%), 
+							radial-gradient(at 65% 65%, rgb(24, 24, 27) 0, transparent 60%), 
+							radial-gradient(at 4% 98%, rgb(185, 28, 28) 0, transparent 76%), 
+							radial-gradient(at 23% 47%, rgb(190, 18, 60) 0, transparent 4%), 
+							radial-gradient(at 32% 94%, rgb(244, 244, 245) 0, transparent 53%), 
+							radial-gradient(at 23% 14%, rgb(245, 158, 11) 0, transparent 44%)`
+							}}
+								className="rounded-md w-full h-32">
+							</div>
+							<div style={{
+								backgroundColor: `rgb(133, 77, 14)`,
+								backgroundImage: `
+							radial-gradient(at 13% 93%, rgb(67, 56, 202) 0, transparent 45%), 
+							radial-gradient(at 91% 40%, rgb(51, 65, 85) 0, transparent 80%), 
+							radial-gradient(at 20% 70%, rgb(237, 233, 254) 0, transparent 74%), 
+							radial-gradient(at 93% 42%, rgb(190, 242, 100) 0, transparent 19%), 
+							radial-gradient(at 61% 23%, rgb(6, 78, 59) 0, transparent 64%), 
+							radial-gradient(at 53% 32%, rgb(14, 165, 233) 0, transparent 81%)`
+							}}
+								className="rounded-md w-full h-32">
+							</div>
+							<div style={{
+								backgroundColor: `rgb(113, 113, 122)`,
+								backgroundImage: `
+							radial-gradient(at 32% 31%, rgb(4, 120, 87) 0, transparent 42%), 
+							radial-gradient(at 68% 79%, rgb(254, 215, 170) 0, transparent 40%), 
+							radial-gradient(at 47% 4%, rgb(125, 211, 252) 0, transparent 62%), 
+							radial-gradient(at 32% 36%, rgb(0, 0, 0) 0, transparent 100%), 
+							radial-gradient(at 94% 91%, rgb(231, 229, 228) 0, transparent 78%), 
+							radial-gradient(at 12% 61%, rgb(209, 250, 229) 0, transparent 87%)`
+							}}
+								className="rounded-md w-full h-32">
+							</div>
+							<div style={{
+								backgroundColor: `rgb(5, 150, 105)`,
+								backgroundImage: `
+							radial-gradient(at 30% 68%, rgb(238, 242, 255) 0, transparent 87%), 
+							radial-gradient(at 42% 41%, rgb(253, 186, 116) 0, transparent 90%), 
+							radial-gradient(at 73% 15%, rgb(59, 130, 246) 0, transparent 30%), 
+							radial-gradient(at 99% 82%, rgb(5, 150, 105) 0, transparent 28%), 
+							radial-gradient(at 16% 93%, rgb(250, 204, 21) 0, transparent 70%), 
+							radial-gradient(at 23% 18%, rgb(88, 28, 135) 0, transparent 75%)`
+							}}
+								className="rounded-md w-full h-32">
+							</div>
+							<div style={{
+								backgroundColor: `rgb(87, 83, 78)`,
+								backgroundImage: `
+							radial-gradient(at 91% 2%, rgb(217, 249, 157) 0, transparent 70%), 
+							radial-gradient(at 22% 10%, rgb(115, 115, 115) 0, transparent 22%), 
+							radial-gradient(at 69% 51%, rgb(94, 234, 212) 0, transparent 62%), 
+							radial-gradient(at 14% 42%, rgb(64, 64, 64) 0, transparent 2%), 
+							radial-gradient(at 70% 16%, rgb(220, 38, 38) 0, transparent 29%), 
+							radial-gradient(at 89% 78%, rgb(243, 244, 246) 0, transparent 30%)
+							`
+							}}
+								className="rounded-md w-full h-32">
+							</div>
+						</div>
+					</Section>
+
 					<div className="!py-2 px-2 rounded mx-4 bg-opacity-20 dark:bg-opacity-40 bg-gray-100 dark:bg-neutral-800 backdrop-filter backdrop-blur fixed bottom-20 right-3 md:right-10 z-10">
 						{darkMode ?
 							<button onClick={() => setDarkMode(!darkMode)} aria-label="Change Theme" className="w-8 h-8 p-1 transition-all ease-in duration-300 bg-neutral-800 hover:bg-neutral-700 text-white rounded-full">
@@ -642,6 +818,6 @@ export default function Learn() {
 			</Layout>
 
 			<Footer />
-		</div>
+		</div >
 	);
 }
