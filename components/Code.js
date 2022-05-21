@@ -7,10 +7,19 @@ export default function Code({ code, className }) {
 		Prism.highlightAll();
 	}, []);
 	return (
-		<div className={`Code mt-4 ${className ? className : " "}`}>
-			<pre className="line-numbers">
-				<code className={`language-javascript`}>{code}</code>
-			</pre>
-		</div>
+		<>
+			<style jsx>{`
+        code[class*=language-], pre[class*=language-] {
+					-moz-tab-size: 2;
+					-o-tab-size: 2;
+					tab-size: 2;
+				}
+      `}</style>
+			<div className={`Code mt-4 ${className ? className : " "}`}>
+				<pre className="line-numbers">
+					<code className={`language-javascript`}>{code}</code>
+				</pre>
+			</div>
+		</>
 	);
 }
