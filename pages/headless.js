@@ -28,6 +28,7 @@ import useToast from "@utils/useToast";
 import SearchBox from "@components/SearchBox";
 import Select from 'react-select'
 import TocLink from "@components/TocLink";
+import AccordionCode from "@components/AccordionCode";
 
 const reactMultiSelectOptions = [
 	{ value: 'red', label: 'Red' },
@@ -1056,14 +1057,21 @@ export default function Third() {
 					</Section>
 
 					<Section id="accordion" name="Accordion">
-						<Accordion title="Accordion Title" className="max-w-xl my-2 !text-base">
+						<Accordion title="Accordion Title" className="max-w-2xl my-2 !text-base">
 							<Text>Accordion Body</Text>
 						</Accordion>
 						<Accordion title="Accordion Title" className="max-w-xl my-2">
 							<Text className="text-sm">Accordion Body</Text>
 						</Accordion>
-						<Code code={
-							`import Accordion from "@components/Accordion";
+						<Accordion title="Accordion Title" className="max-w-lg my-2">
+							<Text className="text-sm">Accordion Body</Text>
+						</Accordion>
+						<Accordion title="Accordion Title" className="max-w-md my-2">
+							<Text className="text-sm">Accordion Body</Text>
+						</Accordion>
+						<AccordionCode title="Show Code">
+							<Code code={
+								`import Accordion from "@components/Accordion";
 
 <Accordion title="Accordion Title" className="max-w-xl my-2 !text-base">
 	<Text>Accordion Body</Text>
@@ -1071,8 +1079,9 @@ export default function Third() {
 <Accordion title="Accordion Title" className="max-w-xl my-2">
 	<Text className="text-sm">Accordion Body</Text>
 </Accordion>`
-						}>
-						</Code>
+							}>
+							</Code>
+						</AccordionCode>
 					</Section>
 
 					<div className="!py-2 px-2 rounded mx-4 bg-opacity-20 dark:bg-opacity-40 bg-gray-100 dark:bg-neutral-800 backdrop-filter backdrop-blur fixed bottom-20 right-3 md:right-10 z-10">
