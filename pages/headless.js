@@ -1060,14 +1060,14 @@ export default function Third() {
 						<Accordion title="Accordion Title" className="max-w-2xl my-2 !text-base">
 							<Text>Accordion Body</Text>
 						</Accordion>
-						<Accordion title="Accordion Title" className="max-w-xl my-2">
-							<Text className="text-sm">Accordion Body</Text>
+						<Accordion title="Accordion Title" className="max-w-xl my-2 !text-base">
+							<Text>Accordion Body</Text>
 						</Accordion>
 						<Accordion title="Accordion Title" className="max-w-lg my-2">
-							<Text className="text-sm">Accordion Body</Text>
+							<Text className="!text-sm">Accordion Body</Text>
 						</Accordion>
 						<Accordion title="Accordion Title" className="max-w-md my-2">
-							<Text className="text-sm">Accordion Body</Text>
+							<Text className="!text-sm">Accordion Body</Text>
 						</Accordion>
 						<AccordionCode title="Show Code">
 							<Code code={
