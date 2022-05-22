@@ -9,6 +9,7 @@ import Section from "@components/Section";
 import BackToTop from "@components/BackToTop";
 import Layout from "@components/Layout";
 import TocLink from "@components/TocLink";
+import Image from "next/image";
 
 export default function Learn() {
 	const { darkMode, setDarkMode } = useContext(GlobalContext);
@@ -32,6 +33,7 @@ export default function Learn() {
 					<Section id="components" name="Learn TOC">
 						<div className="grid sm:grid-cols-2 md:grid-cols-3">
 							<div>
+								<TocLink href="#next-image-responsive" text="Next/Image Responsive" />
 								<TocLink href="#icon-background" text="Icon Background" />
 								<TocLink href="#icon-shadow" text="Icon Shadow" />
 								<TocLink href="#icon-shadow-color" text="Icon Shadow Color" />
@@ -51,6 +53,52 @@ export default function Learn() {
 								<TocLink href="#gradient-outline" text="Gradient Outline" />
 								<TocLink href="#background-gradient" text="Background Gradient" />
 								<TocLink href="#background-gradient-css" text="Background Gradient CSS" />
+							</div>
+						</div>
+					</Section>
+
+					<Section id="next-image-responsive" name="Next/Image Responsive">
+						<div className="relative h-32 w-32 sm:h-40 sm:w-40 md:h-52 md:w-52 xl:h-64 xl:w-64">
+							<Image
+								className="object-cover object-center rounded"
+								src="https://dummyimage.com/720x600"
+								alt="hero"
+								layout="fill"
+							/>
+						</div>
+						<br />
+						<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2">
+							<div className="relative h-52 sm:h-60 md:h-52">
+								<Image
+									src="https://dummyimage.com/720x600"
+									alt="image"
+									layout="fill"
+									className="rounded-lg"
+								/>
+							</div>
+							<div className="relative h-52 sm:h-60 md:h-52">
+								<Image
+									src="https://dummyimage.com/720x600"
+									alt="image"
+									layout="fill"
+									className="rounded-lg"
+								/>
+							</div>
+							<div className="relative h-52 sm:h-60 md:h-52">
+								<Image
+									src="https://dummyimage.com/720x600"
+									alt="image"
+									layout="fill"
+									className="rounded-lg"
+								/>
+							</div>
+							<div className="relative h-52 sm:h-60 md:h-52">
+								<Image
+									src="https://dummyimage.com/720x600"
+									alt="image"
+									layout="fill"
+									className="rounded-lg"
+								/>
 							</div>
 						</div>
 					</Section>
