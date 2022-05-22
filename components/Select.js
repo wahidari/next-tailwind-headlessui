@@ -1,4 +1,4 @@
-export default function Select({ label, id, name, className, defaultValue, children, ...rest }) {
+export default function Select({ label, id, name, className, defaultValue, onChange, children, ...rest }) {
   return (
     <div className="mb-4">
       {label &&
@@ -11,6 +11,7 @@ export default function Select({ label, id, name, className, defaultValue, child
         id={id}
         name={name}
         defaultValue={defaultValue}
+        onChange={onChange}
         className={`
           ${className ? className + " " : ""}
           mt-2 block w-full px-3 py-[0.6rem] text-sm rounded-md transition-all
