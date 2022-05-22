@@ -547,38 +547,24 @@ export default function Third() {
 										key={option.name}
 										value={option}
 										disabled={!option.disabled}
-										className={({ active }) =>
-											classNames(
-												option.disabled ? 'bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-200 cursor-pointer' : 'bg-gray-50 dark:bg-neutral-900 text-gray-300 dark:text-gray-600 cursor-not-allowed focus:ring-0',
-												active ? 'ring-2 ring-blue-500' : '',
-												'group relative border dark:border-neutral-700 rounded-md py-1.5 px-3 flex justify-center text-sm font-medium hover:bg-gray-100 dark:hover:bg-neutral-800 focus:ring-1'
-											)
-										}
+										className={`
+												${option.disabled ? 'bg-white dark:bg-neutral-900 text-gray-900 dark:text-gray-200 cursor-pointer' : 'bg-gray-50 dark:bg-neutral-900 text-gray-300 dark:text-gray-600 cursor-not-allowed'}
+												relative border dark:border-neutral-700 rounded-md py-1.5 px-3 flex justify-center text-sm font-medium hover:bg-gray-100 dark:hover:bg-neutral-800
+										`}
 									>
-										{({ active, checked }) => (
+										{({ checked }) => (
 											<>
 												<RadioGroup.Label as="p">{option.name}</RadioGroup.Label>
 												{option.disabled ? (
 													<div
-														className={classNames(
-															active ? 'border' : 'border-2',
-															checked ? 'border-blue-500' : 'border-transparent',
-															'absolute -inset-px rounded-md pointer-events-none'
-														)}
+														className={`${checked && 'border-2 border-blue-500'} absolute -inset-px rounded-md pointer-events-none`}
 														aria-hidden="true"
 													/>
 												) : (
-													<div
-														aria-hidden="true"
-														className="absolute -inset-px rounded-md border border-gray-200 dark:border-neutral-700 pointer-events-none"
-													> <svg
-														className="absolute inset-0 w-full h-full text-gray-200 dark:text-gray-600 stroke-1"
-														viewBox="0 0 100 100"
-														preserveAspectRatio="none"
-														stroke="currentColor"
-													>
-															{/* <line x1={100} y1={100} x2={0} y2={0} vectorEffect="non-scaling-stroke" /> */}
-															<line x1={0} y1={100} x2={100} y2={0} vectorEffect="non-scaling-stroke" />
+													<div aria-hidden="true" className="absolute inset-px rounded-md pointer-events-none">
+														<svg
+															className="absolute inset-0 w-full h-full text-gray-200 dark:text-gray-600 stroke-1" viewBox="0 0 100 100" preserveAspectRatio="none" stroke="currentColor">
+															<line x1={100} y1={100} x2={0} y2={0} vectorEffect="non-scaling-stroke" />
 														</svg>
 													</div>
 												)}
@@ -599,8 +585,8 @@ export default function Third() {
 										value={color}
 										className={({ active, checked }) =>
 											classNames(
-												active && checked ? 'ring-1 ring-gray-500' : '',
-												!active && checked ? 'ring-1 ring-gray-500' : '',
+												active && checked ? 'ring-2 ring-gray-500' : '',
+												!active && checked ? 'ring-2 ring-gray-500' : '',
 												'relative p-0.5 rounded-full flex items-center justify-center cursor-pointer'
 											)
 										}
