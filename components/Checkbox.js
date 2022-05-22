@@ -1,4 +1,4 @@
-export default function Checkbox({ label, name, value, onChange, defaultChecked, className, ...rest }) {
+export default function Checkbox({ label, name, value, onChange, checked, defaultChecked, className, ...rest }) {
   return (
     <div className="mb-2 text-sm font-medium">
       <label className="inline-flex items-center cursor-pointer">
@@ -7,6 +7,7 @@ export default function Checkbox({ label, name, value, onChange, defaultChecked,
           name={name}
           value={value}
           onChange={onChange}
+          checked={checked}
           defaultChecked={defaultChecked}
           type="checkbox"
           className={`
