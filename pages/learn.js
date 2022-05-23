@@ -10,10 +10,54 @@ import BackToTop from "@components/BackToTop";
 import Layout from "@components/Layout";
 import TocLink from "@components/TocLink";
 import Image from "next/image";
+import { tabledata } from "@utils/useTableData";
+import Input from "@components/Input";
+import Badge from "@components/Badge";
+import Select from "@components/Select";
+import Button from "@components/Button";
 
 export default function Learn() {
 	const { darkMode, setDarkMode } = useContext(GlobalContext);
 	const [open, setOpen] = useState(false)
+	const slicedTableData = tabledata.slice(0, 10)
+	const [userData, setUserData] = useState(slicedTableData)
+	const [search, setSearch] = useState()
+	const [sort, setSort] = useState()
+	const [filter, setFilter] = useState()
+
+	function handleSearchChange(e) {
+		setSearch(e.target.value)
+		let inputLower = e.target.value.toLowerCase()
+		setUserData(slicedTableData.filter(item => item.name.toLowerCase().includes(inputLower)))
+	}
+
+	function handleFilterChange(e) {
+		setFilter(e.target.value)
+		if (e.target.value == "all") {
+			setUserData(slicedTableData);
+		} else {
+			setUserData(slicedTableData.filter(item => item.gender == e.target.value));
+		}
+	};
+
+	function handleSortChange(e) {
+		setSort(e.target.value)
+		if (e.target.value == "descending") {
+			let descendingUser = slicedTableData.sort((a, b) => a.name > b.name ? 1 : -1)
+			setUserData(descendingUser)
+		} else {
+			let ascendingUser = slicedTableData.sort((a, b) => a.name < b.name ? 1 : -1)
+			setUserData(ascendingUser)
+		}
+	};
+
+	function handleReset() {
+		setSearch("")
+		setFilter("")
+		setSort("")
+		setUserData(slicedTableData)
+	}
+
 	return (
 		<div>
 			<Head>
@@ -34,13 +78,14 @@ export default function Learn() {
 						<div className="grid sm:grid-cols-2 md:grid-cols-3">
 							<div>
 								<TocLink href="#next-image-responsive" text="Next/Image Responsive" />
+								<TocLink href="#sort-search-filter" text="Sort Search-Filter" />
 								<TocLink href="#icon-background" text="Icon Background" />
 								<TocLink href="#icon-shadow" text="Icon Shadow" />
 								<TocLink href="#icon-shadow-color" text="Icon Shadow Color" />
 								<TocLink href="#icon-border" text="Icon Border" />
-								<TocLink href="#nav-icon-menu-animation" text="Nav Icon Menu Animation" />
 							</div>
 							<div>
+								<TocLink href="#nav-icon-menu-animation" text="Nav Icon Menu Animation" />
 								<TocLink href="#gradient-border-colorfull" text="Gradient Border Colorfull" />
 								<TocLink href="#gradient-background-colorfull" text="Gradient Background Colorfull" />
 								<TocLink href="#gradient-border" text="Gradient Border" />
@@ -57,20 +102,50 @@ export default function Learn() {
 						</div>
 					</Section>
 
+					<Section id="sort-search-filter" name="Sort Search Filter">
+						<div className="flex flex-wrap gap-x-3 mb-2">
+							<Input name="search" label="Search Name" onChange={handleSearchChange} value={search} className="w-28 !p-1.5" placeholder="Search Name"/>
+							<Select name="filter" label="Filter Gender" onChange={handleFilterChange} value={filter} className="w-28 !p-1.5">
+								<Select.option value="all">All</Select.option>
+								<Select.option value="male">Male</Select.option>
+								<Select.option value="female">Female</Select.option>
+							</Select>
+							<Select name="sort" label="Sort Name" onChange={handleSortChange} value={sort ? sort : "Sort By"} className="w-28 !p-1.5">
+								<Select.option value="" hidden>Sort By</Select.option>
+								<Select.option value="descending">Descending</Select.option>
+								<Select.option value="ascending">Ascending</Select.option>
+							</Select>
+							<div>
+								<p className="text-sm font-medium dark:text-white mb-2">Clear</p>
+								<Button.red onClick={handleReset} className="!px-10">Reset</Button.red>
+							</div>
+						</div>
+						<ul className="space-y-2.5">
+							{userData.map((item, index) => {
+								return (
+									<li key={index} className="dark:text-white text-sm">
+										{item.id} - {item.name} - {" "}
+										{item.gender == "male" ? <Badge className="!py-0.5">{item.gender}</Badge> : <Badge.red className="!py-0.5">{item.gender}</Badge.red>}
+									</li>
+								)
+							})}
+						</ul>
+					</Section>
+
 					<Section id="next-image-responsive" name="Next/Image Responsive">
 						<div className="relative h-32 w-32 sm:h-40 sm:w-40 md:h-52 md:w-52 xl:h-64 xl:w-64">
 							<Image
 								className="object-cover object-center rounded"
-								src="https://dummyimage.com/720x600"
+								src="https://dummyimage.com/600x400"
 								alt="hero"
 								layout="fill"
 							/>
 						</div>
 						<br />
-						<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2">
+						<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
 							<div className="relative h-52 sm:h-60 md:h-52">
 								<Image
-									src="https://dummyimage.com/720x600"
+									src="https://dummyimage.com/600x400"
 									alt="image"
 									layout="fill"
 									className="rounded-lg"
@@ -78,7 +153,7 @@ export default function Learn() {
 							</div>
 							<div className="relative h-52 sm:h-60 md:h-52">
 								<Image
-									src="https://dummyimage.com/720x600"
+									src="https://dummyimage.com/600x400"
 									alt="image"
 									layout="fill"
 									className="rounded-lg"
@@ -86,7 +161,7 @@ export default function Learn() {
 							</div>
 							<div className="relative h-52 sm:h-60 md:h-52">
 								<Image
-									src="https://dummyimage.com/720x600"
+									src="https://dummyimage.com/600x400"
 									alt="image"
 									layout="fill"
 									className="rounded-lg"
@@ -94,7 +169,7 @@ export default function Learn() {
 							</div>
 							<div className="relative h-52 sm:h-60 md:h-52">
 								<Image
-									src="https://dummyimage.com/720x600"
+									src="https://dummyimage.com/600x400"
 									alt="image"
 									layout="fill"
 									className="rounded-lg"
