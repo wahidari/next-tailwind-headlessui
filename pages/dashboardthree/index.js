@@ -1,15 +1,36 @@
 import Head from "next/head";
 import LayoutDashboardThree from "@components/dashboardthree/LayoutDashboardThree";
+import useScrollSpy from 'react-use-scrollspy';
+import { useRef } from "react";
 
-function SideLink({children}) {
+function SideLink({className, children}) {
  return (
-   <li className="pb-0.5 text-neutral-600 hover:text-neutral-900 dark:text-gray-300 dark:hover:text-white transition-all">
+   <li className={`${className} pb-0.5 text-neutral-600 hover:text-neutral-900 dark:text-gray-300 dark:hover:text-white transition-all`}>
      {children}
    </li>
  )
 }
 
 export default function Index() {
+
+  const sectionRefs = [
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+  ];
+
+  const activeSection = useScrollSpy({
+    sectionElementRefs: sectionRefs,
+    offsetPx: -200,
+  });
+
   return (
     <>
       <Head>
@@ -22,34 +43,34 @@ export default function Index() {
         <div className="flex gap-x-4">
 
           <div className="w-full">
-            <div id="One" className="bg-slate-500 h-screen mb-4 flex items-center justify-center">
+            <div ref={sectionRefs[0]} id="One" className="bg-slate-500 h-screen mb-4 flex items-center justify-center">
               <h1 className="text-white font-medium text-2xl px-8">Example Dashboard Layout Three Column</h1>
             </div>
-            <div id="Two" className="bg-red-500 h-screen mb-4 flex items-center justify-center">
+            <div ref={sectionRefs[1]} id="Two" className="bg-red-500 h-screen mb-4 flex items-center justify-center">
               <h1 className="text-white font-medium text-2xl px-8">Two</h1>
             </div>
-            <div id="Three" className="bg-orange-500 h-screen mb-4 flex items-center justify-center">
+            <div ref={sectionRefs[2]} id="Three" className="bg-orange-500 h-screen mb-4 flex items-center justify-center">
               <h1 className="text-white font-medium text-2xl px-8">Three</h1>
             </div>
-            <div id="Four" className="bg-yellow-500 h-screen mb-4 flex items-center justify-center">
+            <div ref={sectionRefs[3]} id="Four" className="bg-yellow-500 h-screen mb-4 flex items-center justify-center">
               <h1 className="text-white font-medium text-2xl px-8">Four</h1>
             </div>
-            <div id="Five" className="bg-lime-500 h-screen mb-4 flex items-center justify-center">
+            <div ref={sectionRefs[4]} id="Five" className="bg-lime-500 h-screen mb-4 flex items-center justify-center">
               <h1 className="text-white font-medium text-2xl px-8">Five</h1>
             </div>
-            <div id="Six" className="bg-emerald-500 h-screen mb-4 flex items-center justify-center">
+            <div ref={sectionRefs[5]} id="Six" className="bg-emerald-500 h-screen mb-4 flex items-center justify-center">
               <h1 className="text-white font-medium text-2xl px-8">Six</h1>
             </div>
-            <div id="Seven" className="bg-indigo-500 h-screen mb-4 flex items-center justify-center">
+            <div ref={sectionRefs[6]} id="Seven" className="bg-indigo-500 h-screen mb-4 flex items-center justify-center">
               <h1 className="text-white font-medium text-2xl px-8">Seven</h1>
             </div>
-            <div id="Eight" className="bg-violet-500 h-screen mb-4 flex items-center justify-center">
+            <div ref={sectionRefs[7]} id="Eight" className="bg-violet-500 h-screen mb-4 flex items-center justify-center">
               <h1 className="text-white font-medium text-2xl px-8">Eight</h1>
             </div>
-            <div id="Nine" className="bg-pink-500 h-screen mb-4 flex items-center justify-center">
+            <div ref={sectionRefs[8]} id="Nine" className="bg-pink-500 h-screen mb-4 flex items-center justify-center">
               <h1 className="text-white font-medium text-2xl px-8">Nine</h1>
             </div>
-            <div id="Ten" className="bg-rose-500 h-screen flex items-center justify-center">
+            <div ref={sectionRefs[9]} id="Ten" className="bg-rose-500 h-screen flex items-center justify-center">
               <h1 className="text-white font-medium text-2xl px-8">Ten</h1>
             </div>
           </div>
@@ -59,34 +80,34 @@ export default function Index() {
               <h5 className="mb-3 text-sm font-semibold text-gray-900 dark:text-white">On This Page</h5>
               <nav>
                 <ul className="flex flex-col gap-y-1">
-                  <SideLink>
+                  <SideLink className={activeSection === 0 && "!text-blue-500 font-medium"}>
                     <a href="#One">One</a>
                   </SideLink>
-                  <SideLink>
+                  <SideLink className={activeSection === 1 && "!text-blue-500 font-medium"}>
                     <a href="#Two">Two</a>
                   </SideLink>
-                  <SideLink>
+                  <SideLink className={activeSection === 2 && "!text-blue-500 font-medium"}>
                     <a href="#Three">Three</a>
                   </SideLink>
-                  <SideLink>
+                  <SideLink className={activeSection === 3 && "!text-blue-500 font-medium"}>
                     <a href="#Four">Four</a>
                   </SideLink>
-                  <SideLink>
+                  <SideLink className={activeSection === 4 && "!text-blue-500 font-medium"}>
                     <a href="#Five">Five</a>
                   </SideLink>
-                  <SideLink>
+                  <SideLink className={activeSection === 5 && "!text-blue-500 font-medium"}>
                     <a href="#Six">Six</a>
                   </SideLink>
-                  <SideLink>
+                  <SideLink className={activeSection === 6 && "!text-blue-500 font-medium"}>
                     <a href="#Seven">Seven</a>
                   </SideLink>
-                  <SideLink>
+                  <SideLink className={activeSection === 7 && "!text-blue-500 font-medium"}>
                     <a href="#Eight">Eight</a>
                   </SideLink>
-                  <SideLink>
+                  <SideLink className={activeSection === 8 && "!text-blue-500 font-medium"}>
                     <a href="#Nine">Nine</a>
                   </SideLink>
-                  <SideLink>
+                  <SideLink className={activeSection === 9 && "!text-blue-500 font-medium"}>
                     <a href="#Ten">Ten</a>
                   </SideLink>
                 </ul>

@@ -2408,6 +2408,11 @@ lodash.sortby@^4.7.0:
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
   integrity sha1-7dFMgk4sycHgsKG0K7UhBRakJDg=
 
+lodash@4.17.21:
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
+
 loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.npmjs.org/loose-envify/-/loose-envify-1.4.0.tgz"
@@ -3151,6 +3156,13 @@ react-transition-group@^4.3.0:
     dom-helpers "^5.0.1"
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
+
+react-use-scrollspy@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/react-use-scrollspy/-/react-use-scrollspy-3.0.2.tgz#7748b7f0f4317dd00350d066402a8ef752643c81"
+  integrity sha512-MgXt4p4Ois21Xo2nI1jJyt7J9pxmtF0AQbj5DQWncmMLz1mijwsLQ3w6N7T67yULvluyYJQ9dUnCXFVZh0UIgA==
+  dependencies:
+    lodash "4.17.21"
 
 react@^17.0.2:
   version "17.0.2"
