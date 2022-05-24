@@ -19,7 +19,7 @@ export default function Code({ code, className }) {
 					border-radius: 0.375rem;
 				}
       `}</style>
-			<div className={`Code mt-4 rounded-md dark:border dark:border-neutral-700 ${className ? className : " "}`}>
+			<div className={`Code mt-4 rounded-md border border-transparent dark:border dark:border-neutral-700 ${className ? className : " "}`}>
 				<pre className="line-numbers">
 					<code className={`language-javascript`}>{code}</code>
 				</pre>
