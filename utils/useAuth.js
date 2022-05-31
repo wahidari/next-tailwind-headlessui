@@ -39,8 +39,15 @@ export function AuthProvider({ children }) {
    * if current route in protectedRoute and user not authenticated,
    * show SignIn Page
    */
+
+  // Render SignIn Page if user not authenticated
+  // if (protectedRoute.includes(path[0]) && status === "unauthenticated") {
+  //   return <Signin/>
+  // } 
+
+  // Push to SignIn Page if user not authenticated
   if (protectedRoute.includes(path[0]) && status === "unauthenticated") {
-    return <Signin/>
+    router.push("/signin")
   } 
 
   return (

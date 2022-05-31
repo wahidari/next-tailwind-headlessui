@@ -29,6 +29,8 @@ export default function Protected() {
 										<p>ID {session.id}</p>
 										<p>Name {session.user.name}</p>
 										<p>Email {session.user.email}</p>
+										<p>Token {session.user.token} aa</p>
+										<p>Token {session.token}</p>
 									</>
 								}
 							</div>
