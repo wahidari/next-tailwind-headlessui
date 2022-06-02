@@ -14,7 +14,7 @@ export default function Select({ label, id, name, className, defaultValue, onCha
         onChange={onChange}
         className={`
           ${className ? className + " " : ""}
-          mt-2 block w-full px-3 py-[0.6rem] text-sm rounded-md transition-all
+          cursor-pointer mt-2 block w-full px-3 py-[0.6rem] text-sm rounded-md transition-all
           dark:text-white bg-white dark:bg-neutral-900  
           border border-gray-300 dark:border-neutral-700 
           focus:ring-1 focus:outline-none focus:ring-blue-500 focus:border-blue-500 outline-none
