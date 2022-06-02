@@ -16,6 +16,7 @@ export default function Input({ id, className, label, type, name, placeholder, v
         onChange={onChange}
         className={`
           ${className ? className + " " : ""} 
+          ${type == "date" ? "cursor-pointer" : ""}
           text-sm transition-all w-full px-3 py-[0.6rem] rounded-md mt-2
           dark:text-white bg-white dark:bg-neutral-900  
           border border-gray-300 dark:border-neutral-700 
