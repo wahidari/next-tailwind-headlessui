@@ -53,12 +53,15 @@ export default function Navbar() {
                           leaveFrom="opacity-100 scale-100"
                           leaveTo="opacity-0 scale-95"
                         >
-                          <Popover.Panel className="absolute bg-white shadow space-y-1 top-12 px-2 py-2 rounded w-40 z-10">
+                          <Popover.Panel className="absolute bg-white shadow space-y-1 top-12 px-2 py-2 rounded w-52 z-10">
                             <ActiveLink activeClassName="bg-gray-100" href="/components">
                               <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all">Components</a>
                             </ActiveLink>
                             <ActiveLink activeClassName="bg-gray-100" href="/headless">
                               <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all">Headless</a>
+                            </ActiveLink>
+                            <ActiveLink activeClassName="bg-gray-100" href="/preview-component">
+                              <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all">Preview Components</a>
                             </ActiveLink>
                             <ActiveLink activeClassName="bg-gray-100" href="/learn">
                               <a className="block px-3 py-1 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all">Learn</a>
@@ -237,6 +240,11 @@ export default function Navbar() {
                       <Menu.Item>
                         <ActiveLink activeClassName="bg-gray-100" href="/headless">
                           <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all">Headless</a>
+                        </ActiveLink>
+                      </Menu.Item>
+                      <Menu.Item>
+                        <ActiveLink activeClassName="bg-gray-100" href="/preview-component">
+                          <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100 transition-all">Preview Components</a>
                         </ActiveLink>
                       </Menu.Item>
                       <Menu.Item>
